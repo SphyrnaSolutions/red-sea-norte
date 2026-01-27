@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Red Sea Norte - Microsite Frontend
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=flat-square&logo=tailwind-css)
 
-First, run the development server:
+Microsite frontend para Red Sea Diving - Centro de buceo certificado SSI en el Mar Rojo Norte. Implementación basada en diseños de Pencil con estética refinada y animaciones profesionales.
 
-```bash
+## 🚀 Demo
+
+- **Producción**: [En desarrollo]
+- **Repositorio**: [github.com/mandycs/red-sea-norte](https://github.com/mandycs/red-sea-norte)
+
+## ✨ Características
+
+### 🎨 Diseño
+- **Tipografía distintiva**: Sora (headings) + DM Sans (body)
+- **Paleta cohesiva**: Azules profundos + Naranja coral
+- **Animaciones suaves**: fadeInUp, scaleIn, float con delays escalonados
+- **Micro-interacciones**: Hover scales, shine effects, glassmorphism
+
+### 🏗️ Arquitectura
+- **Next.js 16** con App Router
+- **TypeScript** strict mode
+- **Tailwind CSS v4** con design tokens personalizados
+- **Atomic Design** pattern
+
+### 📱 Páginas Implementadas
+- ✅ **Homepage** - Hero + Why Section + Spec Section + Carousel funcional
+- ⏳ **Ruta Norte 7 Días**
+- ⏳ **Blog Listing** - Masonry layout
+- ⏳ **Blog Post** - StreamField blocks
+- ⏳ **Curso/Especialidad**
+- ⏳ **Experiencia Pecios**
+- ⏳ **Landing Oferta Early Bird**
+
+## 📦 Instalación
+
+\`\`\`bash
+# Clonar repositorio
+git clone https://github.com/mandycs/red-sea-norte.git
+cd red-sea-norte
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Diseño
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El diseño base está definido en el archivo \`design.pen\` (Pencil). 
 
-## Learn More
+## 📁 Estructura del Proyecto
 
-To learn more about Next.js, take a look at the following resources:
+\`\`\`
+red_sea_norte/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   ├── components/             # React components
+│   │   ├── atoms/             # Basic components
+│   │   ├── molecules/         # Composed components
+│   │   ├── organisms/         # Complex components
+│   │   └── ui/                # Primitives
+│   └── lib/                   # Utilities & mock data
+├── design.pen                 # Pencil design file
+└── tailwind.config.ts
+\`\`\`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚢 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+\`\`\`bash
+npm run build
+npm start
+\`\`\`
 
-## Deploy on Vercel
+## 👥 Autor
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Claude Sonnet 4.5** - Implementación para Red Sea Diving
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Nota**: Este es un proyecto frontend independiente. La integración con el backend (Wagtail) se realizará en fase posterior.
