@@ -26,10 +26,11 @@ export default function CursoPage({ params }: { params: { slug: string } }) {
       {/* Hero Section */}
       <HeroSection
         backgroundImage={curso.hero.image}
-        badge={curso.badge}
+        badge={{ text: curso.badge, backgroundColor: "#FF5722" }}
         title={curso.hero.title}
         subtitle={curso.hero.subtitle}
-        minHeight="min-h-[500px]"
+        ctas={[]}
+        trustLine=""
       />
 
       {/* Info Bars - Overlapping */}
@@ -169,9 +170,7 @@ export default function CursoPage({ params }: { params: { slug: string } }) {
       <CTASection
         title={curso.cta.title}
         description={curso.cta.description}
-        primaryCTA={curso.cta.primaryCTA}
-        secondaryCTA={curso.cta.secondaryCTA}
-        variant="gradient"
+        buttonText={curso.cta.primaryCTA?.text || "Reservar Ahora"}
       />
     </div>
   )

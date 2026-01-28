@@ -1,36 +1,40 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 @theme inline {
-  /* ===== COLOR PALETTE ===== */
+  /* ===== COLOR PALETTE - DRAMATIC EDITION ===== */
 
-  /* Primary Colors */
-  --color-primary-blue: #0066CC;
-  --color-primary-orange: #FF6B35;
+  /* Primary Colors - Deep Ocean Drama */
+  --color-ocean-deep: #0A2540;
+  --color-ocean-midnight: #0D3A5D;
+  --color-coral-fire: #FF5722;
+  --color-coral-ember: #F4511E;
 
   /* Secondary Colors */
-  --color-secondary-dark: #0D3A5D;
-  --color-secondary-cyan: #3DABC2;
+  --color-abyss: #0A1929;
   --color-cyan-light: #00CED1;
   --color-electric-blue: #004E92;
 
   /* Text Colors */
-  --color-text-primary: #333333;
-  --color-text-secondary: #666666;
-  --color-text-muted: #999999;
-  --color-text-heading: #0D3A5D;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4A5568;
+  --color-text-muted: #718096;
+  --color-text-heading: #0A2540;
 
   /* Background Colors */
-  --color-bg-beige: #F5E6D3;
-  --color-bg-gray: #F5F5F5;
-  --color-bg-mint: #ECFDF5;
+  --color-bg-sand: #F5E6D3;
+  --color-bg-gray: #F7FAFC;
   --color-bg-white: #FFFFFF;
 
-  /* ===== TYPOGRAPHY ===== */
+  /* Overlay Colors */
+  --overlay-hero-dark: linear-gradient(180deg, rgba(10, 37, 64, 0.75) 0%, rgba(10, 37, 64, 0.35) 100%);
+  --overlay-card-subtle: rgba(10, 37, 64, 0.8);
+
+  /* ===== TYPOGRAPHY - DRAMATIC EDITION ===== */
 
   /* Font Family */
-  --font-display: 'Sora', var(--font-inter), system-ui, sans-serif;
-  --font-sans: 'DM Sans', var(--font-inter), system-ui, sans-serif;
+  --font-display: 'Bebas Neue', 'Oswald', system-ui, sans-serif;
+  --font-display-alt: 'Oswald', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Font Sizes - Display & Headings */
   --font-size-display: 92px;
@@ -87,8 +91,6 @@
 /* ===== GLOBAL STYLES ===== */
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -101,7 +103,7 @@ body {
   font-size: var(--font-size-body);
   line-height: var(--line-height-loose);
   color: var(--color-text-primary);
-  background-color: var(--color-bg-white);
+  background-color: var(--color-bg-sand);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -183,11 +185,11 @@ a {
 /* ===== UTILITY CLASSES ===== */
 
 .container-custom {
-  max-width: 1440px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 160px;
+  padding-right: 160px;
 }
 
 @media (max-width: 1024px) {

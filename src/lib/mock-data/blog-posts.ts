@@ -66,22 +66,42 @@ export const blogPosts: BlogPost[] = [
         value: {
           cards: [
             {
-              icon: "Anchor",
+              icon: "⚓",
               value: "30m",
               label: "Profundidad",
-              color: "blue",
+              color: "#0066CC",
             },
             {
-              icon: "Timer",
-              value: "45 min",
-              label: "Duración",
-              color: "orange",
+              icon: "👁",
+              value: "20-30m",
+              label: "Visibilidad",
+              color: "#FF6B35",
             },
             {
-              icon: "Award",
-              value: "Advanced",
-              label: "Nivel Mínimo",
-              color: "cyan",
+              icon: "🌡",
+              value: "24-26°C",
+              label: "Temperatura",
+              color: "#3DABC2",
+            },
+          ],
+        },
+      },
+      {
+        type: "gallery",
+        id: "6b",
+        value: {
+          images: [
+            {
+              url: images.thistlegorm,
+              alt: "Vista del pecio Thistlegorm",
+            },
+            {
+              url: images.rassMohammed,
+              alt: "Arrecifes del Mar Rojo",
+            },
+            {
+              url: images.safetyGuide,
+              alt: "Buceadores explorando",
             },
           ],
         },
@@ -115,14 +135,13 @@ export const blogPosts: BlogPost[] = [
         id: "10",
         value: {
           leftColumn: {
-            title: "Preparación",
-            content: "<ul><li>Certificación Advanced Open Water mínima</li><li>Experiencia en buceo profundo</li><li>Buena flotabilidad neutral</li><li>Linterna potente recomendada</li></ul>",
+            image: images.thistlegorm,
+            alt: "Interior del pecio Thistlegorm",
           },
           rightColumn: {
-            title: "En el Pecio",
-            content: "<ul><li>Respeta las reglas: no tocar ni llevar souvenirs</li><li>Cuidado con la estructura: partes frágiles</li><li>Controla tu profundidad constantemente</li><li>Planifica tu aire con margen de seguridad</li></ul>",
+            title: "La bodega de carga está llena de artefactos militares perfectamente preservados:",
+            content: "<ul><li>• Motocicletas BSA en perfecto estado</li><li>• Camiones Bedford y locomotoras</li><li>• Munición sin explotar (¡no tocar!)</li><li>• Rifles Lee-Enfield en sus cajas originales</li></ul>",
           },
-          split: "40/60",
         },
       },
       {

@@ -1,13 +1,27 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Bebas_Neue, Oswald } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/organisms/Header"
 import { Footer } from "@/components/organisms/Footer"
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
+  display: "swap",
+})
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-display",
+  display: "swap",
+})
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display-alt",
   display: "swap",
 })
 
@@ -30,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="es" className={`${inter.variable} ${bebasNeue.variable} ${oswald.variable}`}>
       <body className="antialiased font-sans">
         <Header />
         <main>{children}</main>

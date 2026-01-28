@@ -1,59 +1,18 @@
-import { cn } from "@/lib/utils/cn"
-import { LucideIcon } from "lucide-react"
+import React from "react"
 
-export interface InfoCardProps {
-  icon: LucideIcon
-  value: string
-  label: string
-  color?: "blue" | "orange" | "cyan"
+interface InfoCardProps {
+  icon?: React.ReactNode
+  title: string
+  description: string
   className?: string
 }
 
-export function InfoCard({
-  icon: Icon,
-  value,
-  label,
-  color = "blue",
-  className,
-}: InfoCardProps) {
-  const colorClasses = {
-    blue: "bg-primary-blue",
-    orange: "bg-primary-orange",
-    cyan: "bg-secondary-cyan",
-  }
-
+export function InfoCard({ icon, title, description, className = "" }: InfoCardProps) {
   return (
-    <div
-      className={cn(
-        "rounded-[var(--radius-card)] p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1",
-        "bg-white border-t-4",
-        color === "blue" && "border-primary-blue",
-        color === "orange" && "border-primary-orange",
-        color === "cyan" && "border-secondary-cyan",
-        className
-      )}
-    >
-      <div className="flex flex-col items-center text-center gap-4">
-        {/* Icon */}
-        <div
-          className={cn(
-            "w-16 h-16 rounded-full flex items-center justify-center",
-            colorClasses[color]
-          )}
-        >
-          <Icon size={32} className="text-white" />
-        </div>
-
-        {/* Value */}
-        <div className="text-4xl font-black text-text-heading">
-          {value}
-        </div>
-
-        {/* Label */}
-        <div className="text-text-secondary font-medium text-sm uppercase tracking-wide">
-          {label}
-        </div>
-      </div>
+    <div className={`bg-white rounded-xl p-6 shadow-lg ${className}`}>
+      {icon && <div className="mb-4 text-[#FF5722]">{icon}</div>}
+      <h3 className="text-xl font-bold text-[#0A2540] mb-2">{title}</h3>
+      <p className="text-[#4A5568] leading-relaxed">{description}</p>
     </div>
   )
 }

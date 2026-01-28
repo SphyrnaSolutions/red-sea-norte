@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { useModalStore } from "@/lib/stores/useModalStore"
 
 const navLinks = [
   { href: "/rutas/norte-7-dias", label: "Destinos" },
@@ -14,6 +15,7 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { openModal } = useModalStore()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,20 +28,27 @@ export function Header() {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 border-b-2 border-[#E5E7EB] ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-white shadow-sm"
+          : "bg-white shadow-md"
       }`}
     >
-      <div className="container-custom py-6 flex items-center justify-between">
+      <div className={`container-custom flex items-center justify-between ${
+        isScrolled ? "py-4" : "py-6"
+      }`}>
         {/* Logo */}
         <Link
           href="/"
-          className="text-[#0066CC] text-2xl font-bold transition-transform duration-300 hover:scale-105"
-          style={{ fontFamily: "var(--font-display)" }}
+          className={`text-[#0A2540] font-bold transition-all duration-300 hover:scale-105 tracking-tight ${
+            isScrolled ? "text-3xl" : "text-4xl"
+          }`}
+          style={{
+            fontFamily: "var(--font-display)",
+            letterSpacing: "-0.01em"
+          }}
         >
-          Red Sea Diving
+          RED SEA DIVING
         </Link>
 
         {/* Desktop Navigation */}
@@ -48,7 +57,8 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[#2C3E50] text-base font-medium hover:text-[#0066CC] transition-colors"
+              className="text-[#4A5568] text-lg font-semibold hover:text-[#0A2540] transition-colors"
+              style={{ fontFamily: "var(--font-sans)" }}
             >
               {link.label}
             </Link>
@@ -57,16 +67,22 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="hidden lg:block">
-          <div className="bg-[#FF6B35] rounded-lg px-7 py-3.5 cursor-pointer hover:bg-[#F57415] hover:shadow-lg hover:scale-105 transition-all duration-300">
-            <span className="text-white text-base font-semibold">
+          <button
+            onClick={openModal}
+            className="bg-[#FF5722] rounded-lg px-8 py-3.5 cursor-pointer hover:bg-[#F4511E] hover:shadow-[0_4px_16px_rgba(255,87,34,0.3)] hover:scale-[1.02] transition-all duration-300"
+          >
+            <span
+              className="text-white text-lg font-bold"
+              style={{ fontFamily: "var(--font-sans)" }}
+            >
               Reserva Ahora
             </span>
-          </div>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-[#2C3E50]"
+          className="lg:hidden p-2 text-[#0A2540]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -88,11 +104,14 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4">
-              <div className="bg-[#FF6B35] rounded-lg px-7 py-3.5 text-center cursor-pointer">
+              <button
+                onClick={openModal}
+                className="w-full bg-[#FF6B35] rounded-lg px-7 py-3.5 text-center cursor-pointer"
+              >
                 <span className="text-white text-base font-semibold">
                   Reserva Ahora
                 </span>
-              </div>
+              </button>
             </div>
           </nav>
         </div>

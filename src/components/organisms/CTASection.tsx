@@ -1,81 +1,38 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils/cn"
+import { useModalStore } from "@/lib/stores/useModalStore"
 
-interface CTAButton {
-  text: string
-  href: string
-  variant?: "primary" | "secondary" | "gradient" | "outline"
-}
-
-export interface CTASectionProps {
-  title: string
+interface CTASectionProps {
+  title?: string
   description?: string
-  primaryCTA?: CTAButton
-  secondaryCTA?: CTAButton
-  variant?: "gradient" | "dark" | "light"
-  className?: string
+  buttonText?: string
+  backgroundColor?: string
 }
 
 export function CTASection({
-  title,
-  description,
-  primaryCTA,
-  secondaryCTA,
-  variant = "gradient",
-  className,
+  title = "¿Listo para Bucear?",
+  description = "Reserva tu plaza y comienza tu aventura submarina",
+  buttonText = "Reservar Ahora",
+  backgroundColor = "#0A2540",
 }: CTASectionProps) {
-  const variantClasses = {
-    gradient: "bg-gradient-cta",
-    dark: "bg-secondary-dark",
-    light: "bg-bg-gray",
-  }
-
-  const textColor = variant === "light" ? "text-text-heading" : "text-white"
-  const descColor = variant === "light" ? "text-text-secondary" : "text-white/90"
+  const { openModal } = useModalStore()
 
   return (
-    <section className={cn("section-padding", variantClasses[variant], className)}>
-      <div className="container-custom">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className={cn("mb-6", textColor)}>
-            {title}
-          </h2>
-
-          {description && (
-            <p className={cn("text-xl mb-10 leading-relaxed", descColor)}>
-              {description}
-            </p>
-          )}
-
-          {(primaryCTA || secondaryCTA) && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {primaryCTA && (
-                <Button
-                  variant={primaryCTA.variant || (variant === "light" ? "gradient" : "primary")}
-                  size="lg"
-                  rounded="pill"
-                  className={variant === "light" ? "" : "bg-white text-primary-blue hover:bg-white/90"}
-                  onClick={() => window.location.href = primaryCTA.href}
-                >
-                  {primaryCTA.text}
-                </Button>
-              )}
-              {secondaryCTA && (
-                <Button
-                  variant={secondaryCTA.variant || "outline"}
-                  size="lg"
-                  rounded="pill"
-                  className={variant === "light" ? "" : "border-white text-white hover:bg-white/10"}
-                  onClick={() => window.location.href = secondaryCTA.href}
-                >
-                  {secondaryCTA.text}
-                </Button>
-              )}
-            </div>
-          )}
-        </div>
+    <section className="py-24" style={{ backgroundColor }}>
+      <div className="container-custom text-center">
+        <h2
+          className="text-4xl md:text-5xl font-bold text-white mb-6"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          {title}
+        </h2>
+        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">{description}</p>
+        <button
+          onClick={openModal}
+          className="bg-[#FF5722] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#F4511E] hover:shadow-lg transition-all duration-300"
+        >
+          {buttonText}
+        </button>
       </div>
     </section>
   )
