@@ -16,7 +16,7 @@
 import axios, { AxiosInstance } from 'axios'
 
 const WAGTAIL_API_URL = process.env.NEXT_PUBLIC_WAGTAIL_API_URL || 'http://localhost:8000/api/v2'
-const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || '1'
+const SITE_HOSTNAME = process.env.NEXT_PUBLIC_SITE_HOSTNAME || 'localhost:3000'
 
 // Configurar instancia de axios
 const wagtailClient: AxiosInstance = axios.create({
@@ -86,7 +86,7 @@ export async function getPages<T extends WagtailPage>(
     const response = await wagtailClient.get<WagtailAPIResponse<T>>('/pages/', {
       params: {
         type,
-        site: SITE_ID,
+        site: SITE_HOSTNAME,
         fields: '*',
         ...params,
       },
@@ -115,6 +115,7 @@ export async function getPage<T extends WagtailPage>(id: number): Promise<T | nu
     const response = await wagtailClient.get<T>(`/pages/${id}/`, {
       params: {
         fields: '*',
+        site: SITE_HOSTNAME,
       },
     })
 
@@ -146,7 +147,7 @@ export async function getPageBySlug<T extends WagtailPage>(
     const response = await wagtailClient.get<WagtailAPIResponse<T>>('/pages/', {
       params: {
         type,
-        site: SITE_ID,
+        site: SITE_HOSTNAME,
         slug,
         fields: '*',
       },
@@ -171,7 +172,11 @@ export async function getPageBySlug<T extends WagtailPage>(
  */
 export async function getImage(id: number): Promise<any> {
   try {
-    const response = await wagtailClient.get(`/images/${id}/`)
+    const response = await wagtailClient.get(`/images/${id}/`, {
+      params: {
+        site: SITE_HOSTNAME,
+      },
+    })
     return response.data
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -197,7 +202,7 @@ export async function searchPages<T extends WagtailPage>(
     const response = await wagtailClient.get<WagtailAPIResponse<T>>('/pages/', {
       params: {
         search: query,
-        site: SITE_ID,
+        site: SITE_HOSTNAME,
         fields: '*',
         ...(type && { type }),
       },
@@ -230,6 +235,7 @@ export async function getPreviewPage<T extends WagtailPage>(
       params: {
         content_type: contentType,
         token: token,
+        site: SITE_HOSTNAME,
       },
     })
 

@@ -17,7 +17,8 @@ export async function GET(request: Request) {
 
   // Fetch preview data desde Wagtail
   const wagtailUrl = process.env.NEXT_PUBLIC_WAGTAIL_URL || 'http://localhost:8000'
-  const previewUrl = `${wagtailUrl}/api/v2/page_preview/?content_type=${contentType}&token=${token}`
+  const siteHostname = process.env.NEXT_PUBLIC_SITE_HOSTNAME || 'localhost:3000'
+  const previewUrl = `${wagtailUrl}/api/v2/page_preview/?content_type=${contentType}&token=${token}&site=${siteHostname}`
 
   try {
     const response = await fetch(previewUrl, {
