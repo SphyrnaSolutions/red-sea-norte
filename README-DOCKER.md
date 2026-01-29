@@ -45,13 +45,17 @@ docker-compose down
 
 El contenedor expone el puerto **3000 internamente** (no mapeado a host).
 
-Debes configurar tu reverse proxy (Nginx, Traefik, Caddy) para apuntar a:
+El contenedor está conectado a dos redes:
+- **`redsea-network`** - Red interna del proyecto
+- **`dokploy-network`** - Red externa de Dokploy para el reverse proxy
+
+Debes configurar tu reverse proxy (Dokploy, Nginx, Traefik, Caddy) para apuntar a:
 
 **Nombre del contenedor:** `redsea-frontend`
 **Puerto interno:** `3000`
-**Red:** `redsea-network`
+**Red:** `dokploy-network`
 
-### Ejemplo con Nginx (en otro contenedor en la misma red)
+### Ejemplo con Nginx (en otro contenedor en dokploy-network)
 
 ```nginx
 upstream frontend {
@@ -69,9 +73,17 @@ server {
         proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
 ```
+
+### Configuración con Dokploy
+
+Si usas Dokploy, el reverse proxy ya está configurado automáticamente.
+Solo asegúrate de que el contenedor esté en la red `dokploy-network` (ya incluido en el compose).
 
 ## Healthcheck
 

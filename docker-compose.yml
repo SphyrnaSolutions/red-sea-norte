@@ -17,6 +17,7 @@ services:
       - "3000"
     networks:
       - redsea-network
+      - dokploy-network
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
       interval: 30s
@@ -27,3 +28,5 @@ services:
 networks:
   redsea-network:
     driver: bridge
+  dokploy-network:
+    external: true
