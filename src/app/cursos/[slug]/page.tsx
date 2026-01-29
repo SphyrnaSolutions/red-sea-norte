@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import { draftMode } from "next/headers"
 import { HeroSection } from "@/components/organisms/HeroSection"
 import { CTASection } from "@/components/organisms/CTASection"
 import { Badge } from "@/components/ui/badge"
@@ -14,8 +15,18 @@ const iconMap: Record<string, any> = {
   Camera,
 }
 
-export default function CursoPage({ params }: { params: { slug: string } }) {
-  const curso = getCurso(params.slug)
+export default async function CursoPage({ params }: { params: { slug: string } }) {
+  const { isEnabled } = await draftMode()
+
+  // Fetch data según el modo
+  let curso
+  if (isEnabled) {
+    // Draft Mode: sin cache, datos mock (cambiaremos a Wagtail después)
+    curso = getCurso(params.slug)
+  } else {
+    // Published Mode: con ISR cache
+    curso = getCurso(params.slug)
+  }
 
   if (!curso) {
     notFound()
@@ -23,6 +34,20 @@ export default function CursoPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="pt-20">
+      {/* Preview Banner */}
+      {isEnabled && (
+        <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
+          <div className="flex items-center justify-center gap-3">
+            <span>🚧 MODO PREVIEW - Viendo cambios no publicados</span>
+            <a
+              href="/api/disable-draft"
+              className="underline hover:no-underline"
+            >
+              Salir del preview
+            </a>
+          </div>
+        </div>
+      )}
       {/* Hero Section */}
       <HeroSection
         backgroundImage={curso.hero.image}
@@ -175,3 +200,6 @@ export default function CursoPage({ params }: { params: { slug: string } }) {
     </div>
   )
 }
+
+// ISR: Revalidar cada hora (3600 segundos)
+export const revalidate = 3600

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { notFound } from "next/navigation"
+import { draftMode } from "next/headers"
 import { getRuta, getAllRutas } from "@/lib/mock-data/rutas"
 import type { RutaData } from "@/lib/mock-data/types"
 
@@ -19,7 +20,19 @@ export async function generateStaticParams() {
 
 export default async function RutaPage({ params }: RutaPageProps) {
   const { slug } = await params
-  const ruta = getRuta(slug)
+  const { isEnabled } = await draftMode()
+
+  // Fetch diferente según modo
+  let ruta: RutaData | undefined
+
+  if (isEnabled) {
+    // Draft Mode: sin cache, mock data por ahora
+    ruta = getRuta(slug)
+  } else {
+    // Published Mode: con ISR cache
+    ruta = getRuta(slug)
+    // En el futuro aquí se agregará revalidate: 3600
+  }
 
   if (!ruta) {
     notFound()
@@ -27,6 +40,19 @@ export default async function RutaPage({ params }: RutaPageProps) {
 
   return (
     <div className="pt-20">
+      {isEnabled && (
+        <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
+          <div className="flex items-center justify-center gap-3">
+            <span>🚧 MODO PREVIEW - Viendo cambios no publicados</span>
+            <a
+              href="/api/disable-draft"
+              className="underline hover:no-underline"
+            >
+              Salir del preview
+            </a>
+          </div>
+        </div>
+      )}
       {/* Hero Ruta */}
       <HeroRuta ruta={ruta} />
 

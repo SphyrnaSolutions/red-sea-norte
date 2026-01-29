@@ -5,7 +5,7 @@
  */
 
 // Client functions (bajo nivel)
-export { getPages, getPage, getPageBySlug, getImage, searchPages } from './client'
+export { getPages, getPage, getPageBySlug, getImage, searchPages, getPreviewPage } from './client'
 export type { WagtailPage } from './client'
 
 // Wagtail types

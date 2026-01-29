@@ -216,3 +216,33 @@ export async function searchPages<T extends WagtailPage>(
     return []
   }
 }
+
+/**
+ * Fetch preview content con token
+ * Usado por páginas en Draft Mode
+ */
+export async function getPreviewPage<T extends WagtailPage>(
+  contentType: string,
+  token: string
+): Promise<T | null> {
+  try {
+    const response = await wagtailClient.get<T>('/page_preview/', {
+      params: {
+        content_type: contentType,
+        token: token,
+      },
+    })
+
+    return response.data
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error('Error fetching preview page:', {
+        status: error.response?.status,
+        message: error.message,
+      })
+    } else {
+      console.error('Error fetching preview page:', error)
+    }
+    return null
+  }
+}

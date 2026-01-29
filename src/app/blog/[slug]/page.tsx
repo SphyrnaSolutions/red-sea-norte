@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { draftMode } from "next/headers"
 import { blogPosts } from "@/lib/mock-data/blog-posts"
 import type { Block } from "@/lib/mock-data/types"
 
@@ -18,9 +19,22 @@ export async function generateStaticParams() {
   }))
 }
 
+// ISR Configuration - revalidate every hour
+export const revalidate = 3600
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
-  const post = blogPosts.find(p => p.slug === slug)
+  const { isEnabled } = await draftMode()
+
+  // Fetch según modo
+  let post
+  if (isEnabled) {
+    // Draft Mode: sin cache, mock data por ahora
+    post = blogPosts.find(p => p.slug === slug)
+  } else {
+    // Published Mode: con ISR cache
+    post = blogPosts.find(p => p.slug === slug)
+  }
 
   if (!post) {
     notFound()
@@ -28,6 +42,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="pt-20">
+      {/* Draft Mode Banner */}
+      {isEnabled && (
+        <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
+          <div className="flex items-center justify-center gap-3">
+            <span>🚧 MODO PREVIEW - Viendo cambios no publicados</span>
+            <a
+              href="/api/disable-draft"
+              className="underline hover:no-underline"
+            >
+              Salir del preview
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="relative h-[600px] max-md:h-[500px] w-full">
         <Image

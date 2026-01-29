@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { draftMode } from "next/headers"
 import { getExperiencia, getAllExperiencias } from "@/lib/mock-data/experiencias"
 import type { ExperienciaData, ExperienciaSection } from "@/lib/mock-data/types"
 import { LeadFormModal } from "@/components/organisms/LeadFormModal"
@@ -21,9 +22,23 @@ export async function generateStaticParams() {
   }))
 }
 
+// ISR configuration: revalidate every hour (3600 seconds)
+export const revalidate = 3600
+
 export default async function ExperienciaPage({ params }: ExperienciaPageProps) {
   const { slug } = await params
-  const experiencia = getExperiencia(slug)
+  const { isEnabled } = await draftMode()
+
+  // Fetch data based on draft mode
+  let experiencia: ExperienciaData | undefined
+
+  if (isEnabled) {
+    // Draft mode: no cache, use mock data (will change to Wagtail later)
+    experiencia = getExperiencia(slug)
+  } else {
+    // Published mode: with ISR cache
+    experiencia = getExperiencia(slug)
+  }
 
   if (!experiencia) {
     notFound()
@@ -31,6 +46,21 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
 
   return (
     <div className="pt-20">
+      {/* Draft Mode Banner */}
+      {isEnabled && (
+        <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
+          <div className="flex items-center justify-center gap-3">
+            <span>🚧 MODO PREVIEW - Viendo cambios no publicados</span>
+            <a
+              href="/api/disable-draft"
+              className="underline hover:no-underline"
+            >
+              Salir del preview
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <HeroExperiencia experiencia={experiencia} />
 
