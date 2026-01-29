@@ -6,7 +6,7 @@ services:
       args:
         NEXT_PUBLIC_WAGTAIL_URL: ${NEXT_PUBLIC_WAGTAIL_URL}
         NEXT_PUBLIC_SITE_HOSTNAME: ${NEXT_PUBLIC_SITE_HOSTNAME}
-    container_name: redsea-frontend
+    container_name: frontend-redsea
     restart: unless-stopped
     environment:
       - NODE_ENV=production

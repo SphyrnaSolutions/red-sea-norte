@@ -51,7 +51,7 @@ El contenedor está conectado a dos redes:
 
 Debes configurar tu reverse proxy (Dokploy, Nginx, Traefik, Caddy) para apuntar a:
 
-**Nombre del contenedor:** `redsea-frontend`
+**Nombre del contenedor:** `frontend-redsea`
 **Puerto interno:** `3000`
 **Red:** `dokploy-network`
 
@@ -59,7 +59,7 @@ Debes configurar tu reverse proxy (Dokploy, Nginx, Traefik, Caddy) para apuntar 
 
 ```nginx
 upstream frontend {
-    server redsea-frontend:3000;
+    server frontend-redsea:3000;
 }
 
 server {
@@ -107,7 +107,7 @@ docker-compose ps
 ### Verificar healthcheck
 
 ```bash
-docker inspect redsea-frontend | grep -A 10 Health
+docker inspect frontend-redsea | grep -A 10 Health
 ```
 
 ### Reconstruir desde cero
