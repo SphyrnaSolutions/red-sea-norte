@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'standalone', // Para Docker
   images: {
     remotePatterns: [
       {
@@ -12,6 +13,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'i.pravatar.cc',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'back.redsea.sphyrnasolutions.com',
         port: '',
         pathname: '/**',
       },
