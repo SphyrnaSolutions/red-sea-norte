@@ -1,8 +1,11 @@
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
-import { getRuta, getAllRutas } from "@/lib/mock-data/rutas"
+import { getAllRutasSlugsData, getRutaData } from "@/lib/data"
 import type { RutaData } from "@/lib/mock-data/types"
+
+// ISR configuration: revalidate every 30 minutes (1800 seconds)
+export const revalidate = 1800
 
 interface RutaPageProps {
   params: Promise<{
@@ -12,7 +15,7 @@ interface RutaPageProps {
 
 // Generate static paths para todas las rutas
 export async function generateStaticParams() {
-  const rutas = getAllRutas()
+  const rutas = await getAllRutasSlugsData()
   return rutas.map((ruta) => ({
     slug: ruta.slug,
   }))
@@ -22,17 +25,8 @@ export default async function RutaPage({ params }: RutaPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
 
-  // Fetch diferente según modo
-  let ruta: RutaData | undefined
-
-  if (isEnabled) {
-    // Draft Mode: sin cache, mock data por ahora
-    ruta = getRuta(slug)
-  } else {
-    // Published Mode: con ISR cache
-    ruta = getRuta(slug)
-    // En el futuro aquí se agregará revalidate: 3600
-  }
+  // Data layer handles caching and draft mode internally
+  const ruta = await getRutaData(slug)
 
   if (!ruta) {
     notFound()

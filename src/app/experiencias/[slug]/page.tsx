@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
-import { getExperiencia, getAllExperiencias } from "@/lib/mock-data/experiencias"
+import { getAllExperienciasSlugsData, getExperienciaData } from "@/lib/data"
 import type { ExperienciaData, ExperienciaSection } from "@/lib/mock-data/types"
 import { LeadFormModal } from "@/components/organisms/LeadFormModal"
 import { CTAButton } from "./CTAButton"
@@ -16,29 +16,19 @@ interface ExperienciaPageProps {
 
 // Generate static paths for all experiencias
 export async function generateStaticParams() {
-  const experiencias = getAllExperiencias()
-  return experiencias.map((experiencia) => ({
-    slug: experiencia.slug,
-  }))
+  const experiencias = await getAllExperienciasSlugsData()
+  return experiencias.map((exp) => ({ slug: exp.slug }))
 }
 
-// ISR configuration: revalidate every hour (3600 seconds)
-export const revalidate = 3600
+// ISR configuration: revalidate every 30 minutes
+export const revalidate = 1800
 
 export default async function ExperienciaPage({ params }: ExperienciaPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
 
-  // Fetch data based on draft mode
-  let experiencia: ExperienciaData | undefined
-
-  if (isEnabled) {
-    // Draft mode: no cache, use mock data (will change to Wagtail later)
-    experiencia = getExperiencia(slug)
-  } else {
-    // Published mode: with ISR cache
-    experiencia = getExperiencia(slug)
-  }
+  // Fetch data using the data layer (handles draft mode internally)
+  const experiencia = await getExperienciaData(slug)
 
   if (!experiencia) {
     notFound()
@@ -108,7 +98,9 @@ function HeroExperiencia({ experiencia }: { experiencia: ExperienciaData }) {
             className="text-xs font-bold uppercase tracking-[4px] mb-6"
             style={{ color: '#FF6B35', letterSpacing: '4px' }}
           >
-            {experiencia.hero.badge}
+            {typeof experiencia.hero.badge === 'string'
+              ? experiencia.hero.badge
+              : experiencia.hero.badge.text}
           </span>
         )}
 

@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
-import { blogPosts } from "@/lib/mock-data/blog-posts"
+import { getAllBlogPostSlugsData, getBlogPostData } from "@/lib/data"
 import type { Block } from "@/lib/mock-data/types"
 
 interface BlogPostPageProps {
@@ -14,7 +14,8 @@ interface BlogPostPageProps {
 
 // Generate static paths for all blog posts
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  const posts = await getAllBlogPostSlugsData()
+  return posts.map((post) => ({
     slug: post.slug,
   }))
 }
@@ -26,15 +27,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
 
-  // Fetch según modo
-  let post
-  if (isEnabled) {
-    // Draft Mode: sin cache, mock data por ahora
-    post = blogPosts.find(p => p.slug === slug)
-  } else {
-    // Published Mode: con ISR cache
-    post = blogPosts.find(p => p.slug === slug)
-  }
+  // Fetch post from data layer (handles API + fallback)
+  const post = await getBlogPostData(slug)
 
   if (!post) {
     notFound()

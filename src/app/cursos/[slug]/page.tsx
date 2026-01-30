@@ -3,7 +3,7 @@ import { draftMode } from "next/headers"
 import { HeroSection } from "@/components/organisms/HeroSection"
 import { CTASection } from "@/components/organisms/CTASection"
 import { Badge } from "@/components/ui/badge"
-import { getCurso } from "@/lib/mock-data/cursos"
+import { getAllCursosSlugsData, getCursoData } from "@/lib/data"
 import { Check, Book, Waves, Award, Package, Ship, Camera } from "lucide-react"
 
 const iconMap: Record<string, any> = {
@@ -15,18 +15,17 @@ const iconMap: Record<string, any> = {
   Camera,
 }
 
-export default async function CursoPage({ params }: { params: { slug: string } }) {
+export async function generateStaticParams() {
+  const cursos = await getAllCursosSlugsData()
+  return cursos.map((curso) => ({ slug: curso.slug }))
+}
+
+export default async function CursoPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const { isEnabled } = await draftMode()
 
-  // Fetch data según el modo
-  let curso
-  if (isEnabled) {
-    // Draft Mode: sin cache, datos mock (cambiaremos a Wagtail después)
-    curso = getCurso(params.slug)
-  } else {
-    // Published Mode: con ISR cache
-    curso = getCurso(params.slug)
-  }
+  // Fetch data using the data layer (handles draft mode internally)
+  const curso = await getCursoData(slug)
 
   if (!curso) {
     notFound()

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { draftMode } from 'next/headers'
-import { getOferta, getAllOfertaSlugs } from '@/lib/mock-data/ofertas'
+import { getAllOfertasSlugsData, getOfertaData } from '@/lib/data'
 import { HeroOffer } from '@/components/organisms/HeroOffer'
 import CountdownAsym from '@/components/organisms/CountdownAsym'
 import { IncludesAsym } from '@/components/organisms/IncludesAsym'
@@ -14,15 +14,8 @@ export default async function OfertaPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params
   const { isEnabled } = await draftMode()
 
-  // Fetch diferente según modo
-  let oferta
-  if (isEnabled) {
-    // Draft Mode: sin cache, usa mock data por ahora (cambiaremos a Wagtail después)
-    oferta = getOferta(slug)
-  } else {
-    // Published Mode: con ISR cache
-    oferta = getOferta(slug)
-  }
+  // Data layer handles draft mode and caching internally
+  const oferta = await getOfertaData(slug)
 
   if (!oferta) {
     notFound()
@@ -45,7 +38,7 @@ export default async function OfertaPage({ params }: { params: Promise<{ slug: s
       )}
       <HeroOffer
         backgroundImage={oferta.hero.backgroundImage}
-        badge={oferta.hero.badge}
+        badge={typeof oferta.hero.badge === 'string' ? oferta.hero.badge : oferta.hero.badge?.text}
         title={oferta.hero.title}
         subtitle={oferta.hero.subtitle}
         primaryCTA={oferta.hero.primaryCTA}
@@ -82,9 +75,11 @@ export default async function OfertaPage({ params }: { params: Promise<{ slug: s
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllOfertaSlugs()
-  return slugs.map((slug) => ({ slug }))
+  const ofertas = await getAllOfertasSlugsData()
+  return ofertas
+    .filter((oferta): oferta is NonNullable<typeof oferta> => oferta !== null && oferta !== undefined)
+    .map((oferta) => ({ slug: oferta.slug }))
 }
 
-// ISR: Revalidar cada hora en modo published
-export const revalidate = 3600
+// ISR: Revalidar cada 15 minutos
+export const revalidate = 900
