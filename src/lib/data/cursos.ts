@@ -25,7 +25,8 @@ async function fetchCursoInternal(slug: string) {
     if (!data) {
       const mockCurso = getMockCurso(slug)
       if (mockCurso) return mockCurso
-      throw new Error(`Curso not found: ${slug}`)
+      // Return null instead of throwing - let the page handle notFound()
+      return null
     }
     return data
   } catch (error) {
@@ -37,7 +38,8 @@ async function fetchCursoInternal(slug: string) {
         return mockCurso
       }
     }
-    throw error
+    // Return null on error instead of throwing
+    return null
   }
 }
 

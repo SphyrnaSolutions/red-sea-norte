@@ -4,22 +4,15 @@ import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
 
 const footerLinks = {
   explora: [
-    { label: "Ruta Norte 7 Días", href: "/rutas/norte-7-dias" },
-    { label: "Experiencia Pecios", href: "/experiencias/pecios" },
-    { label: "Liveaboards", href: "/liveaboards" },
-    { label: "Ofertas Especiales", href: "/ofertas/early-bird" },
+    { label: "Rutas", href: "/rutas" },
+    { label: "Experiencias", href: "/experiencias" },
+    { label: "Ofertas", href: "/ofertas" },
   ],
   cursos: [
-    { label: "Open Water Diver", href: "/cursos/open-water" },
-    { label: "Advanced Open Water", href: "/cursos/advanced-open-water" },
-    { label: "Rescue Diver", href: "/cursos/rescue-diver" },
-    { label: "Especialidades", href: "/cursos/especialidades" },
+    { label: "Todos los Cursos", href: "/cursos" },
   ],
   compania: [
-    { label: "Sobre Nosotros", href: "/sobre-nosotros" },
     { label: "Blog", href: "/blog" },
-    { label: "Contacto", href: "/contacto" },
-    { label: "FAQs", href: "/faqs" },
   ],
 }
 

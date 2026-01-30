@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react"
 import { useModalStore } from "@/lib/stores/useModalStore"
 
 const navLinks = [
-  { href: "/rutas/norte-7-dias", label: "Destinos" },
-  { href: "/cursos/advanced-open-water", label: "Cursos" },
-  { href: "/experiencias/pecios", label: "Experiencias" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/rutas", label: "Rutas" },
+  { href: "/cursos", label: "Cursos" },
+  { href: "/experiencias", label: "Experiencias" },
+  { href: "/blog", label: "Blog" },
 ]
 
 export function Header() {
