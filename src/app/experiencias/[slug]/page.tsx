@@ -71,6 +71,9 @@ export async function generateStaticParams() {
 // ISR configuration: revalidate every 30 minutes
 export const revalidate = 1800
 
+// Base URL for structured data and canonical URLs
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+
 export default async function ExperienciaPage({ params }: ExperienciaPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
@@ -82,8 +85,29 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
     notFound()
   }
 
+  // JSON-LD structured data for TouristTrip schema
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: experiencia.title,
+    description: experiencia.seo?.metaDescription || experiencia.description,
+    image: experiencia.hero?.backgroundImage ? `${BASE_URL}${experiencia.hero.backgroundImage}` : undefined,
+    touristType: 'Scuba Diving Experience',
+    provider: {
+      '@type': 'Organization',
+      name: 'Red Sea Norte',
+      sameAs: BASE_URL,
+    },
+    url: `${BASE_URL}/experiencias/${experiencia.slug}`,
+  }
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Draft Mode Banner */}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">

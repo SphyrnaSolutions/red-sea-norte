@@ -5,6 +5,9 @@ import { getAllRutasSlugsData, getRutaData } from "@/lib/data"
 import type { RutaData } from "@/lib/mock-data/types"
 import type { Metadata } from 'next'
 
+// Base URL for absolute URLs in structured data
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+
 // ISR configuration: revalidate every 30 minutes (1800 seconds)
 export const revalidate = 1800
 
@@ -65,6 +68,48 @@ export async function generateStaticParams() {
   }))
 }
 
+// Generate JSON-LD structured data for TouristTrip schema
+function generateJsonLd(ruta: RutaData) {
+  // Extract price from infoCards (look for the price card)
+  const priceCard = ruta.infoCards?.find(card => card.label.toLowerCase() === 'precio')
+  const priceValue = priceCard?.value?.replace(/[^0-9]/g, '') || undefined
+
+  // Build itinerary from days data
+  const itinerary = ruta.itinerary?.days?.map(day => ({
+    '@type': 'ItemList' as const,
+    name: `Día ${day.day}: ${day.title}`,
+    description: day.description,
+    itemListElement: day.dives.map((dive, index) => ({
+      '@type': 'ListItem' as const,
+      position: index + 1,
+      name: dive,
+    })),
+  }))
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: ruta.title,
+    description: ruta.storyIntro?.description || ruta.hero.subtitle,
+    image: ruta.hero.backgroundImage ?
+      (ruta.hero.backgroundImage.startsWith('http') ? ruta.hero.backgroundImage : `${BASE_URL}${ruta.hero.backgroundImage}`)
+      : undefined,
+    touristType: 'Scuba Diving',
+    itinerary: itinerary,
+    offers: priceValue ? {
+      '@type': 'Offer',
+      price: priceValue,
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: `${BASE_URL}/rutas/${ruta.slug}`,
+    } : undefined,
+    provider: {
+      '@type': 'Organization',
+      name: 'Red Sea Norte',
+    },
+  }
+}
+
 export default async function RutaPage({ params }: RutaPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
@@ -76,8 +121,15 @@ export default async function RutaPage({ params }: RutaPageProps) {
     notFound()
   }
 
+  // Generate JSON-LD structured data
+  const jsonLd = generateJsonLd(ruta)
+
   return (
     <div className="pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
           <div className="flex items-center justify-center gap-3">

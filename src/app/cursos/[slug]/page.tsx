@@ -78,8 +78,52 @@ export default async function CursoPage({ params }: CursoPageProps) {
     notFound()
   }
 
+  // Base URL for absolute URLs in structured data
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+
+  // Extract price and duration from infoBars if available
+  const priceBar = curso.infoBars.find(bar => bar.label.toLowerCase().includes('precio'))
+  const durationBar = curso.infoBars.find(bar => bar.label.toLowerCase().includes('duraci'))
+  const levelBar = curso.infoBars.find(bar => bar.label.toLowerCase().includes('nivel'))
+
+  // Parse price value (remove currency symbols and convert to number)
+  const priceValue = priceBar?.value ? parseFloat(priceBar.value.replace(/[^0-9.,]/g, '').replace(',', '.')) : undefined
+
+  // JSON-LD structured data for Course schema
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: curso.title,
+    description: curso.hero.subtitle,
+    image: curso.hero.image ? (curso.hero.image.startsWith('http') ? curso.hero.image : `${BASE_URL}${curso.hero.image}`) : undefined,
+    provider: {
+      '@type': 'Organization',
+      name: 'Red Sea Norte',
+      sameAs: BASE_URL,
+    },
+    educationalLevel: levelBar?.value,
+    coursePrerequisites: curso.requisitos.items,
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'onsite',
+      duration: durationBar?.value,
+    },
+    offers: priceValue ? {
+      '@type': 'Offer',
+      price: priceValue,
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: `${BASE_URL}/cursos/${curso.slug}`,
+    } : undefined,
+  }
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Preview Banner */}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">

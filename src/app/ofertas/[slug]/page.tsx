@@ -68,8 +68,42 @@ export default async function OfertaPage({ params }: OfertaPageProps) {
     notFound()
   }
 
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+
+  // JSON-LD structured data for Product with Offer schema
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: oferta.hero.title,
+    description: oferta.hero.subtitle,
+    image: oferta.hero.backgroundImage
+      ? oferta.hero.backgroundImage.startsWith('http')
+        ? oferta.hero.backgroundImage
+        : `${BASE_URL}${oferta.hero.backgroundImage}`
+      : undefined,
+    offers: {
+      '@type': 'Offer',
+      price: oferta.precio.actual,
+      priceCurrency: oferta.precio.moneda || 'EUR',
+      availability: oferta.urgencia.plazasDisponibles > 0
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/SoldOut',
+      validThrough: oferta.urgencia.countdownTo,
+      url: `${BASE_URL}/ofertas/${oferta.slug}`,
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'Red Sea Norte',
+    },
+  }
+
   return (
-    <div className="pt-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-20">
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
           <div className="flex items-center justify-center gap-3">
@@ -118,6 +152,7 @@ export default async function OfertaPage({ params }: OfertaPageProps) {
         successMessage="¡Gracias! Te contactaremos pronto"
       />
     </div>
+    </>
   )
 }
 
