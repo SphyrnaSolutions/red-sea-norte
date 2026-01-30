@@ -25,7 +25,8 @@ async function fetchRutaInternal(slug: string) {
     if (!data) {
       const mockRuta = getMockRuta(slug)
       if (mockRuta) return mockRuta
-      throw new Error(`Ruta not found: ${slug}`)
+      // Return null instead of throwing - let the page handle notFound()
+      return null
     }
     return data
   } catch (error) {
@@ -37,7 +38,8 @@ async function fetchRutaInternal(slug: string) {
         return mockRuta
       }
     }
-    throw error
+    // Return null on error instead of throwing
+    return null
   }
 }
 

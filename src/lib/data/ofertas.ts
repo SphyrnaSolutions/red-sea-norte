@@ -30,7 +30,8 @@ async function fetchOfertaInternal(slug: string) {
     if (!data) {
       const mockOferta = getMockOferta(slug)
       if (mockOferta) return mockOferta
-      throw new Error(`Oferta not found: ${slug}`)
+      // Return null instead of throwing - let the page handle notFound()
+      return null
     }
     return data
   } catch (error) {
@@ -42,7 +43,8 @@ async function fetchOfertaInternal(slug: string) {
         return mockOferta
       }
     }
-    throw error
+    // Return null on error instead of throwing
+    return null
   }
 }
 

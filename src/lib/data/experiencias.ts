@@ -25,7 +25,8 @@ async function fetchExperienciaInternal(slug: string) {
     if (!data) {
       const mockExperiencia = getMockExperiencia(slug)
       if (mockExperiencia) return mockExperiencia
-      throw new Error(`Experiencia not found: ${slug}`)
+      // Return null instead of throwing - let the page handle notFound()
+      return null
     }
     return data
   } catch (error) {
@@ -37,7 +38,8 @@ async function fetchExperienciaInternal(slug: string) {
         return mockExperiencia
       }
     }
-    throw error
+    // Return null on error instead of throwing
+    return null
   }
 }
 

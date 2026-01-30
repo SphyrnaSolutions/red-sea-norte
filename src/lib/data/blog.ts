@@ -25,7 +25,8 @@ async function fetchBlogPostInternal(slug: string) {
     if (!data) {
       const mockPost = mockPosts.find(p => p.slug === slug)
       if (mockPost) return mockPost
-      throw new Error(`Blog post not found: ${slug}`)
+      // Return null instead of throwing - let the page handle notFound()
+      return null
     }
     return data
   } catch (error) {
@@ -37,7 +38,8 @@ async function fetchBlogPostInternal(slug: string) {
         return mockPost
       }
     }
-    throw error
+    // Return null on error instead of throwing
+    return null
   }
 }
 
