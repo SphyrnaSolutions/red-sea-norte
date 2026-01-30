@@ -121,3 +121,7 @@ export const cursosData: Record<string, CursoData> = {
 export const getCurso = (slug: string): CursoData | undefined => {
   return cursosData[slug]
 }
+
+export const getAllCursos = (): CursoData[] => {
+  return Object.values(cursosData)
+}

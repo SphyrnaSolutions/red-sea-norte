@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { draftMode } from 'next/headers'
 import { getAllOfertasSlugsData, getOfertaData } from '@/lib/data'
@@ -10,7 +11,53 @@ import { GuaranteeBar } from '@/components/organisms/GuaranteeBar'
 import { Guarantee } from '@/components/organisms/Guarantee'
 import { LeadFormModal } from '@/components/organisms/LeadFormModal'
 
-export default async function OfertaPage({ params }: { params: Promise<{ slug: string }> }) {
+interface OfertaPageProps {
+  params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata({ params }: OfertaPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const oferta = await getOfertaData(slug)
+
+  if (!oferta) {
+    return {
+      title: 'Oferta no encontrada | Red Sea Diving',
+    }
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const title = oferta.hero.title || `Oferta ${oferta.badge}`
+  const description = oferta.hero.subtitle || `Oferta especial de buceo en el Mar Rojo - ${oferta.badge}`
+
+  return {
+    title: `${title} | Red Sea Diving`,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      images: [
+        {
+          url: oferta.hero.backgroundImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [oferta.hero.backgroundImage],
+    },
+    alternates: {
+      canonical: `${baseUrl}/ofertas/${slug}`,
+    },
+  }
+}
+
+export default async function OfertaPage({ params }: OfertaPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
 

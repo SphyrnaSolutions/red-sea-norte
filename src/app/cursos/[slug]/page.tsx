@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
 import { HeroSection } from "@/components/organisms/HeroSection"
@@ -5,6 +6,10 @@ import { CTASection } from "@/components/organisms/CTASection"
 import { Badge } from "@/components/ui/badge"
 import { getAllCursosSlugsData, getCursoData } from "@/lib/data"
 import { Check, Book, Waves, Award, Package, Ship, Camera } from "lucide-react"
+
+interface CursoPageProps {
+  params: Promise<{ slug: string }>
+}
 
 const iconMap: Record<string, any> = {
   Book,
@@ -15,12 +20,54 @@ const iconMap: Record<string, any> = {
   Camera,
 }
 
+export async function generateMetadata({ params }: CursoPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const curso = await getCursoData(slug)
+
+  if (!curso) {
+    return {
+      title: 'Curso no encontrado | Red Sea Diving',
+    }
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const title = curso.hero.title || curso.title
+  const description = curso.hero.subtitle || `Curso de buceo ${curso.title} - Certificación SSI en el Mar Rojo`
+
+  return {
+    title: `${title} | Cursos SSI Red Sea Diving`,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      images: [
+        {
+          url: curso.hero.image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [curso.hero.image],
+    },
+    alternates: {
+      canonical: `${baseUrl}/cursos/${slug}`,
+    },
+  }
+}
+
 export async function generateStaticParams() {
   const cursos = await getAllCursosSlugsData()
   return cursos.map((curso) => ({ slug: curso.slug }))
 }
 
-export default async function CursoPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CursoPage({ params }: CursoPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
 

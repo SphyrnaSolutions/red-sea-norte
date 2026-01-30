@@ -7,17 +7,17 @@ import { useModalStore } from "@/stores/useModalStore"
 
 interface HeroSectionProps {
   backgroundImage: string
-  badge: {
+  badge?: {
     text: string
     backgroundColor: string
   }
   title: string
   subtitle: string
-  ctas: Array<{
+  ctas?: Array<{
     text: string
     variant: string
   }>
-  trustLine: string
+  trustLine?: string | string[]
 }
 
 export function HeroSection({
@@ -74,17 +74,19 @@ export function HeroSection({
         <div className="max-w-[900px] w-full flex flex-col items-center gap-6">
 
           {/* Badge - Backdrop blur with cyan translucent background */}
-          <div
-            className="rounded-full px-5 py-2.5 animate-fadeInUp backdrop-blur-md border border-white/20 mt-8"
-            style={{
-              backgroundColor: badge.backgroundColor,
-              boxShadow: '0 4px 24px rgba(0, 206, 209, 0.2)'
-            }}
-          >
-            <span className="text-white text-[11px] font-bold tracking-[3px] uppercase">
-              {badge.text}
-            </span>
-          </div>
+          {badge && (
+            <div
+              className="rounded-full px-5 py-2.5 animate-fadeInUp backdrop-blur-md border border-white/20 mt-8"
+              style={{
+                backgroundColor: badge.backgroundColor,
+                boxShadow: '0 4px 24px rgba(0, 206, 209, 0.2)'
+              }}
+            >
+              <span className="text-white text-[11px] font-bold tracking-[3px] uppercase">
+                {badge.text}
+              </span>
+            </div>
+          )}
 
           {/* Title - Bebas Neue, 96px desktop / 56px mobile, text-shadow-lg */}
           <h1
@@ -111,41 +113,45 @@ export function HeroSection({
           </p>
 
           {/* CTAs - Primary coral (#FF5722) + Outline white */}
-          <div className="flex flex-wrap gap-4 mt-4 animate-fadeInUp delay-300 justify-center">
-            {ctas.map((cta, index) => (
-              <Button
-                key={index}
-                onClick={openModal}
-                variant={cta.variant === "primary" ? "primary" : "outline"}
-                size="lg"
-                className={
-                  cta.variant === "primary"
-                    ? "bg-[#FF5722] hover:bg-[#F4511E] text-white border-0 shadow-[0_4px_24px_rgba(255,87,34,0.4)] hover:shadow-[0_8px_32px_rgba(255,87,34,0.6)] hover:scale-[1.03] transition-all duration-300 font-semibold text-lg px-12 h-14 min-w-[240px]"
-                    : "border-2 border-white/90 text-white hover:bg-white hover:text-[#0A2540] backdrop-blur-sm transition-all duration-300 font-semibold text-lg px-12 h-14 min-w-[240px] hover:scale-[1.03]"
-                }
-              >
-                {cta.text}
-              </Button>
-            ))}
-          </div>
+          {ctas && ctas.length > 0 && (
+            <div className="flex flex-wrap gap-4 mt-4 animate-fadeInUp delay-300 justify-center">
+              {ctas.map((cta, index) => (
+                <Button
+                  key={index}
+                  onClick={openModal}
+                  variant={cta.variant === "primary" ? "primary" : "outline"}
+                  size="lg"
+                  className={
+                    cta.variant === "primary"
+                      ? "bg-[#FF5722] hover:bg-[#F4511E] text-white border-0 shadow-[0_4px_24px_rgba(255,87,34,0.4)] hover:shadow-[0_8px_32px_rgba(255,87,34,0.6)] hover:scale-[1.03] transition-all duration-300 font-semibold text-lg px-12 h-14 min-w-[240px]"
+                      : "border-2 border-white/90 text-white hover:bg-white hover:text-[#0A2540] backdrop-blur-sm transition-all duration-300 font-semibold text-lg px-12 h-14 min-w-[240px] hover:scale-[1.03]"
+                  }
+                >
+                  {cta.text}
+                </Button>
+              ))}
+            </div>
+          )}
 
           {/* Trust Line - 16px, white/80, flex with bullets */}
-          <div
-            className="text-white/80 text-base mt-6 animate-fadeInUp delay-400 flex flex-wrap items-center justify-center gap-2"
-            style={{
-              fontFamily: 'var(--font-sans)',
-              textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)'
-            }}
-          >
-            {trustLine.split('•').map((item, index) => (
-              <span key={index} className="flex items-center gap-2">
-                {item.trim()}
-                {index < trustLine.split('•').length - 1 && (
-                  <span className="text-white/40">•</span>
-                )}
-              </span>
-            ))}
-          </div>
+          {trustLine && (
+            <div
+              className="text-white/80 text-base mt-6 animate-fadeInUp delay-400 flex flex-wrap items-center justify-center gap-2"
+              style={{
+                fontFamily: 'var(--font-sans)',
+                textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)'
+              }}
+            >
+              {(Array.isArray(trustLine) ? trustLine.join(' • ') : trustLine).split('•').map((item, index) => (
+                <span key={index} className="flex items-center gap-2">
+                  {item.trim()}
+                  {index < (Array.isArray(trustLine) ? trustLine.join(' • ') : trustLine).split('•').length - 1 && (
+                    <span className="text-white/40">•</span>
+                  )}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

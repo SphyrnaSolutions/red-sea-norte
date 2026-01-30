@@ -61,7 +61,10 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
   return {
     hero: {
       backgroundImage: getImageUrl(wagtailPage.hero_background_image),
-      badge: wagtailPage.hero_badge,
+      badge: wagtailPage.hero_badge ? {
+        text: wagtailPage.hero_badge.text,
+        backgroundColor: wagtailPage.hero_badge.background_color,
+      } : undefined,
       title: wagtailPage.hero_title,
       subtitle: wagtailPage.hero_subtitle,
       primaryCTA: wagtailPage.hero_primary_cta_text ? {
@@ -72,29 +75,74 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
         text: wagtailPage.hero_secondary_cta_text,
         href: wagtailPage.hero_secondary_cta_link || '#',
       } : undefined,
+      ctas: [
+        ...(wagtailPage.hero_primary_cta_text ? [{
+          text: wagtailPage.hero_primary_cta_text,
+          variant: 'primary' as const,
+        }] : []),
+        ...(wagtailPage.hero_secondary_cta_text ? [{
+          text: wagtailPage.hero_secondary_cta_text,
+          variant: 'outline' as const,
+        }] : []),
+      ],
+      trustLine: wagtailPage.hero_trust_line,
     },
     whySection: {
       title: wagtailPage.why_section_title,
       subtitle: wagtailPage.why_section_subtitle,
-      cards: wagtailPage.why_section_cards.map(card => {
-        if (card.type === 'feature_card') {
+      topRow: wagtailPage.why_section_cards.slice(0, 2).map(card => card.value),
+      bottomRow: wagtailPage.why_section_cards.slice(2).map(card => card.value),
+    },
+    diveSites: {
+      title: wagtailPage.dive_sites_title,
+      subtitle: wagtailPage.dive_sites_subtitle,
+      sites: wagtailPage.dive_sites.map(site => {
+        if (site.type === 'dive_site') {
           return {
-            image: getImageUrl(card.value.image),
-            title: card.value.title,
-            description: card.value.description,
-            variant: card.value.variant,
-            href: card.value.href,
-          }
-        } else {
-          // stats_card
-          return {
-            badge: card.value.badge,
-            stat: card.value.stat,
-            label: card.value.label,
-            backgroundColor: card.value.background_color,
+            name: site.value.name,
+            image: getImageUrl(site.value.image),
+            depth: site.value.depth,
+            highlight: site.value.highlight,
           }
         }
+        return site.value
       }),
+    },
+    programSection: {
+      title: wagtailPage.program_section_title,
+      subtitle: wagtailPage.program_section_subtitle,
+      includes: wagtailPage.program_section_includes.map(item => {
+        if (item.type === 'text' || item.type === 'list_item') {
+          return item.value
+        }
+        return item.value
+      }),
+      price: {
+        amount: wagtailPage.program_section_price_amount,
+        badge: wagtailPage.program_section_price_badge,
+        perPerson: wagtailPage.program_section_price_per_person,
+        highlight: wagtailPage.program_section_price_highlight,
+      },
+    },
+    specSection: {
+      sectionLabel: wagtailPage.spec_section_label,
+      bigCard: wagtailPage.spec_big_card.value,
+      specialtyCards: wagtailPage.spec_specialty_cards.map(card => card.value),
+      mainTitle: wagtailPage.spec_main_title,
+      navCards: wagtailPage.spec_nav_cards.map(card => card.value),
+      cta: {
+        price: wagtailPage.spec_cta_price,
+        details: wagtailPage.spec_cta_details,
+        buttonText: wagtailPage.spec_cta_button_text,
+      },
+    },
+    leadForm: {
+      title: wagtailPage.lead_form_title,
+      subtitle: wagtailPage.lead_form_subtitle,
+      fields: wagtailPage.lead_form_fields.map(field => field.value),
+      submitButton: wagtailPage.lead_form_submit_button,
+      privacyText: wagtailPage.lead_form_privacy_text,
+      successMessage: wagtailPage.lead_form_success_message,
     },
     ctaSection: {
       title: wagtailPage.cta_title,

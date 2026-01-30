@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
 import { getAllRutasSlugsData, getRutaData } from "@/lib/data"
 import type { RutaData } from "@/lib/mock-data/types"
+import type { Metadata } from 'next'
 
 // ISR configuration: revalidate every 30 minutes (1800 seconds)
 export const revalidate = 1800
@@ -11,6 +12,49 @@ interface RutaPageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+// Generate metadata for SEO
+export async function generateMetadata({ params }: RutaPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const ruta = await getRutaData(slug)
+
+  if (!ruta) {
+    return {
+      title: 'Ruta no encontrada | Red Sea Diving',
+    }
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const title = ruta.hero.title || ruta.title
+  const description = ruta.hero.subtitle || ruta.storyIntro.description
+
+  return {
+    title: `${title} | Red Sea Diving`,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      images: [
+        {
+          url: ruta.hero.backgroundImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ruta.hero.backgroundImage],
+    },
+    alternates: {
+      canonical: `${baseUrl}/rutas/${slug}`,
+    },
+  }
 }
 
 // Generate static paths para todas las rutas

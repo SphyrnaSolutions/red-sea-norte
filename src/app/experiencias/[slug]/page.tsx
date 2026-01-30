@@ -1,4 +1,5 @@
 import React from "react"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -12,6 +13,53 @@ interface ExperienciaPageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+// Add after imports, before generateStaticParams
+export async function generateMetadata({ params }: ExperienciaPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const experiencia = await getExperienciaData(slug)
+
+  if (!experiencia) {
+    return {
+      title: 'Experiencia no encontrada | Red Sea Diving',
+    }
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+
+  // Use dedicated SEO fields
+  const title = experiencia.seo.metaTitle || experiencia.title
+  const description = experiencia.seo.metaDescription || experiencia.description
+  const keywords = experiencia.seo.keywords
+
+  return {
+    title,
+    description,
+    keywords,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      images: [
+        {
+          url: experiencia.hero.backgroundImage,
+          width: 1200,
+          height: 630,
+          alt: experiencia.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [experiencia.hero.backgroundImage],
+    },
+    alternates: {
+      canonical: `${baseUrl}/experiencias/${slug}`,
+    },
+  }
 }
 
 // Generate static paths for all experiencias

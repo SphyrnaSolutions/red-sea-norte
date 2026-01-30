@@ -6,7 +6,7 @@ const ofertas: Record<string, OfertaData> = {
     badge: 'OFERTA LIMITADA',
     hero: {
       backgroundImage: 'https://images.unsplash.com/photo-1622070978659-2a27e7cb254c?w=1920&q=80',
-      badge: 'AHORRA 200€',
+      badge: { text: 'AHORRA 200€', backgroundColor: '#FF6B35' },
       title: 'Oferta Early Bird - Mar Rojo Norte',
       subtitle: 'Consigue tu Advanced SSI + 7 días liveaboard al mejor precio del año',
       primaryCTA: { text: 'Reservar Ahora', href: '#reserva', variant: 'primary' as const },

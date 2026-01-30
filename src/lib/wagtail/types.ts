@@ -30,16 +30,44 @@ export interface WagtailStreamFieldBlock {
 
 export interface WagtailHomePage extends WagtailPage {
   hero_background_image: WagtailImage
-  hero_badge?: string
+  hero_badge?: {
+    text: string
+    background_color: string
+  }
   hero_title: string
   hero_subtitle: string
   hero_primary_cta_text?: string
   hero_primary_cta_link?: string
   hero_secondary_cta_text?: string
   hero_secondary_cta_link?: string
+  hero_trust_line?: string
   why_section_title: string
   why_section_subtitle: string
   why_section_cards: WagtailStreamFieldBlock[]
+  dive_sites_title: string
+  dive_sites_subtitle: string
+  dive_sites: WagtailStreamFieldBlock[]
+  program_section_title: string
+  program_section_subtitle: string
+  program_section_includes: WagtailStreamFieldBlock[]
+  program_section_price_amount: string
+  program_section_price_badge: string
+  program_section_price_per_person: string
+  program_section_price_highlight: string
+  spec_section_label: string
+  spec_big_card: WagtailStreamFieldBlock
+  spec_specialty_cards: WagtailStreamFieldBlock[]
+  spec_main_title: string
+  spec_nav_cards: WagtailStreamFieldBlock[]
+  spec_cta_price: string
+  spec_cta_details: string
+  spec_cta_button_text: string
+  lead_form_title: string
+  lead_form_subtitle: string
+  lead_form_fields: WagtailStreamFieldBlock[]
+  lead_form_submit_button: string
+  lead_form_privacy_text: string
+  lead_form_success_message: string
   cta_title: string
   cta_description: string
   cta_primary_text: string

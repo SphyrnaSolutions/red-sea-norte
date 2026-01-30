@@ -5,11 +5,55 @@ import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
 import { getAllBlogPostSlugsData, getBlogPostData } from "@/lib/data"
 import type { Block } from "@/lib/mock-data/types"
+import type { Metadata } from 'next'
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+// Generate metadata for SEO
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = await getBlogPostData(slug)
+
+  if (!post) {
+    return {
+      title: 'Post no encontrado | Red Sea Diving',
+    }
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+
+  return {
+    title: `${post.title} | Red Sea Diving Blog`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      authors: [post.author.name],
+      images: [
+        {
+          url: post.hero.image,
+          width: 1200,
+          height: 630,
+          alt: post.hero.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.hero.image],
+    },
+    alternates: {
+      canonical: `${baseUrl}/blog/${slug}`,
+    },
+  }
 }
 
 // Generate static paths for all blog posts

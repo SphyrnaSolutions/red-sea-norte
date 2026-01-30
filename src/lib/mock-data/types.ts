@@ -12,12 +12,19 @@ export interface CTAButton {
 
 export interface HeroData {
   backgroundImage: string
-  badge?: string
+  badge?: {
+    text: string
+    backgroundColor: string
+  }
   title: string
   subtitle: string
   primaryCTA?: CTAButton
   secondaryCTA?: CTAButton
-  trustLine?: string[]
+  ctas?: Array<{
+    text: string
+    variant: "primary" | "secondary" | "gradient" | "outline"
+  }>
+  trustLine?: string | string[]
 }
 
 /**
@@ -44,7 +51,127 @@ export interface HomepageData {
   whySection: {
     title: string
     subtitle: string
-    cards: (FeatureCardData | StatsCardData)[]
+    topRow: Array<
+      | {
+          type: "image-large"
+          image: string
+          title: string
+          description: string
+        }
+      | {
+          type: "conditions-image"
+          image: string
+          badge: string
+          title: string
+          highlight: string
+        }
+    >
+    bottomRow: Array<
+      | {
+          type: "certification"
+          icon: string
+          title: string
+          subtitle: string
+        }
+      | {
+          type: "image-small"
+          image: string
+          badge: string
+          title: string
+        }
+      | {
+          type: "equipment"
+          image: string
+          badge: string
+          title: string
+        }
+    >
+  }
+  diveSites: {
+    title: string
+    subtitle: string
+    sites: Array<{
+      name: string
+      image: string
+      depth: string
+      highlight: string
+    }>
+  }
+  programSection: {
+    title: string
+    subtitle: string
+    includes: string[]
+    price: {
+      amount: string
+      badge: string
+      perPerson: string
+      highlight: string
+    }
+  }
+  specSection: {
+    sectionLabel: string
+    bigCard: {
+      image: string
+      title: string
+      subtitle: string
+    }
+    specialtyCards: Array<
+      | {
+          type: "depth"
+          image: string
+          label: string
+          value: string
+          description: string
+        }
+      | {
+          type: "nitrox"
+          image: string
+          title: string
+          description: string
+        }
+    >
+    mainTitle: string
+    navCards: Array<
+      | {
+          type: "icon"
+          image: string
+          icon: string
+          title: string
+          description: string
+        }
+      | {
+          type: "image"
+          image: string
+          title: string
+          description: string
+        }
+      | {
+          type: "stat"
+          image: string
+          number: string
+          label: string
+          sublabel: string
+        }
+    >
+    cta: {
+      price: string
+      details: string
+      buttonText: string
+    }
+  }
+  leadForm: {
+    title: string
+    subtitle: string
+    fields: Array<{
+      name: string
+      type: "text" | "email" | "tel" | "select" | "textarea"
+      placeholder: string
+      required: boolean
+      options?: Array<{ value: string; label: string }>
+    }>
+    submitButton: string
+    privacyText: string
+    successMessage: string
   }
   ctaSection: {
     title: string

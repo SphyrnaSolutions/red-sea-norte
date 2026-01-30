@@ -7,7 +7,7 @@ export const rutasData: Record<string, RutaData> = {
     title: "Ruta Norte 7 Días",
     hero: {
       backgroundImage: "https://images.unsplash.com/photo-1667852976428-3b6f59f0db4f?w=1600&h=900&fit=crop&q=80",
-      badge: "RUTA PREMIUM",
+      badge: { text: "RUTA PREMIUM", backgroundColor: "#00CED1" },
       title: "Ruta Norte 7 Días: Lo Mejor del Mar Rojo",
       subtitle: "Explora los mejores pecios y arrecifes del Mar Rojo Norte en 7 días inolvidables",
       primaryCTA: {
