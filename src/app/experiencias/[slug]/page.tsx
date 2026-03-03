@@ -264,7 +264,7 @@ function HeroExperiencia({ experiencia }: { experiencia: ExperienciaData }) {
         {experiencia.hero.badge && (
           <span
             className="text-xs font-bold uppercase tracking-[4px] mb-6"
-            style={{ color: '#FF6B35', letterSpacing: '4px' }}
+            style={{ color: '#FFFFFF', letterSpacing: '4px' }}
           >
             {typeof experiencia.hero.badge === 'string'
               ? experiencia.hero.badge

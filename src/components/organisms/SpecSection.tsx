@@ -336,11 +336,11 @@ function DepthCard({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/47" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
       <div className="relative z-10 space-y-4">
-        <div className="text-white/50 text-xs font-bold tracking-wider uppercase">
+        <div className="text-white/80 text-xs font-bold tracking-wider uppercase">
           {label}
         </div>
         <div
@@ -392,7 +392,7 @@ function NitroxCard({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/47" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
       <div className="relative z-10 space-y-3">
@@ -402,7 +402,7 @@ function NitroxCard({
         >
           {title}
         </div>
-        <div className="text-white/75 text-sm max-w-xs">{description}</div>
+        <div className="text-white/90 text-sm max-w-xs">{description}</div>
       </div>
     </motion.div>
   )
@@ -441,7 +441,7 @@ function CompassCard({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/47" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
@@ -538,7 +538,7 @@ function SpecialtyStatCard({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/47" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
       <div className="relative z-10 space-y-5">

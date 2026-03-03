@@ -665,7 +665,7 @@ function NewsletterBlock({ block }: { block: Block }) {
         style={{ backgroundColor: '#FF6B35' }}
       >
         <h3
-          className="text-white max-md:text-2xl"
+          className="text-[#0A2540] max-md:text-2xl"
           style={{
             fontSize: '36px',
             fontWeight: 900,
@@ -677,7 +677,7 @@ function NewsletterBlock({ block }: { block: Block }) {
         </h3>
 
         <p
-          className="max-w-[720px] text-white/90 max-md:text-base"
+          className="max-w-[720px] text-[#0A2540] max-md:text-base"
           style={{
             fontSize: '18px',
             lineHeight: 1.6,

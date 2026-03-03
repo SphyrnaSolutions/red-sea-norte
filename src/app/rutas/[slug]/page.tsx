@@ -305,7 +305,7 @@ function StoryIntro({ ruta }: { ruta: RutaData }) {
           className="text-white max-md:text-base"
           style={{
             fontSize: "18px",
-            opacity: 0.6,
+            opacity: 0.85,
             lineHeight: 1.7,
             fontFamily: "var(--font-sans)",
           }}
@@ -397,7 +397,7 @@ function ItineraryDaySection({ day }: { day: ItineraryDay }) {
             className="text-white max-md:text-sm"
             style={{
               fontSize: "16px",
-              opacity: 0.72,
+              opacity: 0.9,
               lineHeight: 1.7,
               fontFamily: "var(--font-sans)",
             }}
@@ -517,7 +517,7 @@ function CTAFinal({ ruta }: { ruta: RutaData }) {
           className="max-w-[760px] text-white text-center max-md:text-base"
           style={{
             fontSize: "18px",
-            opacity: 0.7,
+            opacity: 0.9,
             lineHeight: 1.6,
             fontFamily: "var(--font-sans)",
           }}

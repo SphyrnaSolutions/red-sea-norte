@@ -141,7 +141,7 @@ export function IncludesAsym({ precio }: IncludesAsymProps) {
               height: '140px',
             }}
           >
-            <p className="text-white text-[24px] font-black text-center leading-tight">
+            <p className="text-[#0A2540] text-[24px] font-black text-center leading-tight">
               THISTLEGORM X2 INMERSIONES • ROSALIE MOLLER • ABU NUHAS
             </p>
           </motion.div>

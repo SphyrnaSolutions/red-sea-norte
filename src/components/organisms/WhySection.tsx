@@ -90,7 +90,7 @@ export function WhySection({ title, subtitle, topRow, bottomRow }: WhySectionPro
           >
             {title}
           </h2>
-          <p className="text-[#6B7280] text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-[#4B5563] text-lg md:text-xl max-w-3xl mx-auto">
             {subtitle}
           </p>
         </motion.div>

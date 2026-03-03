@@ -37,7 +37,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Logo variant="white" />
-            <p className="mt-6 text-white/80 text-sm leading-relaxed max-w-md">
+            <p className="mt-6 text-white/90 text-sm leading-relaxed max-w-md">
               Centro de buceo certificado SSI en el Mar Rojo. Ofrecemos cursos de todos los
               niveles y las mejores experiencias de buceo en pecios y arrecifes.
             </p>
@@ -47,7 +47,7 @@ export function Footer() {
               {contactInfo.map((item, index) => {
                 const Icon = item.icon
                 return (
-                  <div key={index} className="flex items-center gap-3 text-sm text-white/70">
+                  <div key={index} className="flex items-center gap-3 text-sm text-white/90">
                     <Icon size={16} />
                     <span>{item.text}</span>
                   </div>
@@ -83,7 +83,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-white/70 hover:text-primary-orange transition-colors duration-200 text-sm"
+                    className="text-white/90 hover:text-primary-orange transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </Link>
@@ -100,7 +100,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-white/70 hover:text-primary-orange transition-colors duration-200 text-sm"
+                    className="text-white/90 hover:text-primary-orange transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </Link>
@@ -117,7 +117,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-white/70 hover:text-primary-orange transition-colors duration-200 text-sm"
+                    className="text-white/90 hover:text-primary-orange transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </Link>
@@ -131,7 +131,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
             <p>© 2026 Red Sea Diving. Todos los derechos reservados.</p>
             <div className="flex gap-6">
               <Link href="/privacidad" className="hover:text-white transition-colors">

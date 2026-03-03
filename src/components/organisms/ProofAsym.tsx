@@ -88,11 +88,11 @@ export function ProofAsym({ testimonios }: ProofAsymProps) {
 
             {/* Author + Date en NEGRO */}
             <div className="mt-auto">
-              <p className="text-[#000000]/70 text-[18px] font-bold mb-1">
+              <p className="text-[#000000] text-[18px] font-bold mb-1">
                 {featuredTestimonial.name}
               </p>
               {featuredTestimonial.date && (
-                <p className="text-[#000000]/60 text-[16px]">
+                <p className="text-[#000000]/80 text-[16px]">
                   {featuredTestimonial.date}
                 </p>
               )}
