@@ -393,7 +393,7 @@ export default async function RutasPage() {
             className="text-white max-w-2xl max-md:text-base"
             style={{
               fontSize: '18px',
-              opacity: 0.8,
+              opacity: 0.9,
               lineHeight: 1.6
             }}
           >

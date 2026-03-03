@@ -220,7 +220,7 @@ export function SpecSection({
             <h3 className="text-white text-4xl md:text-5xl font-bold">
               {cta.price}
             </h3>
-            <p className="text-white/65 text-base">{cta.details}</p>
+            <p className="text-white/90 text-base">{cta.details}</p>
           </div>
           <motion.button
             onClick={openModal}

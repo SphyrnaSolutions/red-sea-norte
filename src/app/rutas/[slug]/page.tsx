@@ -210,7 +210,7 @@ function HeroRuta({ ruta }: { ruta: RutaData }) {
               className="max-w-[760px] text-white max-md:text-base"
               style={{
                 fontSize: "18px",
-                opacity: 0.78,
+                opacity: 0.9,
                 lineHeight: 1.6,
                 fontFamily: "var(--font-sans)",
               }}
@@ -260,7 +260,7 @@ function HeroRuta({ ruta }: { ruta: RutaData }) {
             </span>
             <span
               className="text-white text-[13px] uppercase"
-              style={{ opacity: 0.67, letterSpacing: "1.5px" }}
+              style={{ opacity: 0.85, letterSpacing: "1.5px" }}
             >
               {card.label}
             </span>
