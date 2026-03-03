@@ -84,14 +84,14 @@ export default async function ExperienciasPage() {
 
           <h1
             className="text-5xl md:text-7xl font-bold mb-6 text-shadow-lg"
-            style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1 }}
+            style={{ fontFamily: 'var(--font-sans)', lineHeight: 1 }}
           >
             Experiencias de Buceo
           </h1>
 
           <p
             className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto leading-relaxed"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'var(--font-sans)' }}
           >
             Vive aventuras unicas bajo el agua. Pecios historicos de la Segunda Guerra Mundial,
             arrecifes de coral virgenes y encuentros inolvidables con la vida marina.
@@ -149,7 +149,7 @@ export default async function ExperienciasPage() {
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <h2
                         className="text-2xl md:text-3xl font-bold text-white text-shadow"
-                        style={{ fontFamily: 'Inter, sans-serif' }}
+                        style={{ fontFamily: 'var(--font-sans)' }}
                       >
                         {exp.title}
                       </h2>
@@ -163,7 +163,7 @@ export default async function ExperienciasPage() {
                       style={{
                         fontSize: '16px',
                         lineHeight: 1.7,
-                        fontFamily: 'Inter, sans-serif'
+                        fontFamily: 'var(--font-sans)'
                       }}
                     >
                       {exp.description}
@@ -171,7 +171,7 @@ export default async function ExperienciasPage() {
 
                     {/* CTA */}
                     <div className="flex items-center gap-2 text-coral-fire font-semibold group-hover:gap-4 transition-all duration-300">
-                      <span style={{ fontFamily: 'Inter, sans-serif' }}>Descubrir mas</span>
+                      <span style={{ fontFamily: 'var(--font-sans)' }}>Descubrir mas</span>
                       <svg
                         className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
                         fill="none"
@@ -211,14 +211,14 @@ export default async function ExperienciasPage() {
         <div className="container-custom relative z-10 text-center">
           <h2
             className="text-3xl md:text-5xl font-bold text-white mb-6"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'var(--font-sans)' }}
           >
             No encuentras lo que buscas?
           </h2>
 
           <p
             className="text-xl text-white/80 mb-10 max-w-2xl mx-auto"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'var(--font-sans)' }}
           >
             Contactanos para disenar una experiencia de buceo personalizada
             adaptada a tus preferencias y nivel de certificacion.
@@ -229,7 +229,7 @@ export default async function ExperienciasPage() {
             className="inline-flex items-center justify-center px-10 py-4 rounded-full text-white font-bold text-lg transition-transform hover:scale-105 hover:shadow-xl"
             style={{
               backgroundColor: '#FF6B35',
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
           >
             Contactar ahora

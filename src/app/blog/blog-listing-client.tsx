@@ -11,6 +11,8 @@ interface BlogListingClientProps {
 }
 
 export default function BlogListingClient({ posts }: BlogListingClientProps) {
+  const [featuredPost, imagePost, solidPost, darkPost, ...remainingPosts] = posts
+
   return (
     <div className="pt-20">
       {/* Hero Section - With Background Image */}
@@ -45,7 +47,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-white text-7xl font-black mb-5 max-md:text-5xl max-lg:text-6xl"
             style={{
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              fontFamily: 'var(--font-sans)',
               fontWeight: 900,
               lineHeight: 1.2,
               textShadow: '0 2px 20px rgba(0,0,0,0.3)'
@@ -73,35 +75,63 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
         style={{ background: 'linear-gradient(180deg, #D6E8F5 0%, #F8FAFC 50%, #D6E8F5 100%)' }}
       >
         <div className="container-custom py-[80px] px-[120px] max-lg:py-[60px] max-lg:px-[48px] max-md:py-[48px] max-md:px-[24px]">
-
-          {/* Row 1: Featured + 2 cards column */}
-          <div className="grid grid-cols-1 lg:grid-cols-[750px_1fr] gap-8 mb-8 max-lg:grid-cols-1">
-            {/* Featured Card */}
-            <div className="h-[520px] max-md:h-[400px]">
-              <FeaturedCard post={posts[0]} />
+          {posts.length === 0 ? (
+            <div className="rounded-[24px] bg-white p-12 text-center shadow-[0_16px_48px_rgba(10,37,64,0.08)]">
+              <h2 className="mb-3 text-3xl font-black text-[#0D3A5D]">No hay artículos publicados</h2>
+              <p className="text-[#4A5568]">Cuando lleguen nuevas historias del Mar Rojo aparecerán aquí.</p>
             </div>
+          ) : (
+            <>
+              {/* Row 1: Featured + 2 cards column */}
+              <div className="grid grid-cols-1 lg:grid-cols-[750px_1fr] gap-8 mb-8 max-lg:grid-cols-1">
+                {featuredPost && (
+                  <div className="h-[520px] max-md:h-[400px]">
+                    <FeaturedCard post={featuredPost} />
+                  </div>
+                )}
 
-            {/* Right column with 2 cards */}
-            <div className="flex flex-col gap-8">
-              <div className="h-[240px] max-md:h-auto max-md:min-h-[200px]">
-                <SolidCard post={posts[2]} />
+                {(solidPost || imagePost) && (
+                  <div className="flex flex-col gap-8">
+                    {solidPost && (
+                      <div className="h-[240px] max-md:h-auto max-md:min-h-[200px]">
+                        <SolidCard post={solidPost} />
+                      </div>
+                    )}
+                    {imagePost && (
+                      <div className="flex-1 min-h-[260px] max-md:h-[300px]">
+                        <ImageCard post={imagePost} />
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
-              <div className="flex-1 min-h-[260px] max-md:h-[300px]">
-                <ImageCard post={posts[1]} />
-              </div>
-            </div>
-          </div>
 
-          {/* Row 2: Dark card + Image card */}
-          <div className="grid grid-cols-1 lg:grid-cols-[460px_1fr] gap-8 max-lg:grid-cols-1">
-            <div className="h-[380px] max-md:h-auto max-md:min-h-[300px]">
-              <DarkCard post={posts[0]} />
-            </div>
-            <div className="h-[380px] max-md:h-[300px]">
-              <ImageCard post={posts[1]} />
-            </div>
-          </div>
+              {(darkPost || remainingPosts[0]) && (
+                <div className="grid grid-cols-1 lg:grid-cols-[460px_1fr] gap-8 max-lg:grid-cols-1">
+                  {darkPost && (
+                    <div className="h-[380px] max-md:h-auto max-md:min-h-[300px]">
+                      <DarkCard post={darkPost} />
+                    </div>
+                  )}
+                  {remainingPosts[0] && (
+                    <div className="h-[380px] max-md:h-[300px]">
+                      <ImageCard post={remainingPosts[0]} />
+                    </div>
+                  )}
+                </div>
+              )}
 
+              {remainingPosts.slice(1).length > 0 && (
+                <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+                  {remainingPosts.slice(1).map((post) => (
+                    <div key={post.slug} className="h-[320px]">
+                      <ImageCard post={post} />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
         </div>
       </section>
     </div>

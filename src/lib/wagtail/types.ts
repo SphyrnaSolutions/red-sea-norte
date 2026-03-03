@@ -20,7 +20,7 @@ export interface WagtailImage {
 
 export interface WagtailStreamFieldBlock {
   type: string
-  value: any
+  value: unknown
   id: string
 }
 

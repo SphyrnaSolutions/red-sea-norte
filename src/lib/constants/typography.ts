@@ -5,7 +5,9 @@
 
 export const typography = {
   fontFamily: {
-    sans: "'Inter', system-ui, -apple-system, sans-serif",
+    sans: "'Satoshi', system-ui, -apple-system, sans-serif",
+    display: "'Clash Display', system-ui, sans-serif",
+    mono: "'JetBrains Mono', ui-monospace, monospace",
   },
 
   fontSize: {

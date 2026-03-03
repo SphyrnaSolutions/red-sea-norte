@@ -21,7 +21,7 @@ export function CTAButton({ text, className, style }: CTAButtonProps) {
         className="text-white font-semibold uppercase"
         style={{
           fontSize: '16px',
-          fontFamily: 'Inter, sans-serif'
+          fontFamily: 'var(--font-sans)'
         }}
       >
         {text}

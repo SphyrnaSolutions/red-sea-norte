@@ -1,5 +1,4 @@
 import { RutaData } from "./types"
-import { images } from "@/lib/constants/images"
 
 export const rutasData: Record<string, RutaData> = {
   "norte-7-dias": {

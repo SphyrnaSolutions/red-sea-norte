@@ -68,11 +68,18 @@ interface WagtailPageMeta {
   locale: string
 }
 
+interface DownloadableImage {
+  url?: string
+  meta?: {
+    download_url?: string
+  }
+}
+
 export interface WagtailPage {
   id: number
   meta: WagtailPageMeta
   title: string
-  [key: string]: any
+  [key: string]: unknown
 }
 
 /**
@@ -170,9 +177,9 @@ export async function getPageBySlug<T extends WagtailPage>(
 /**
  * Fetch imagen de Wagtail
  */
-export async function getImage(id: number): Promise<any> {
+export async function getImage(id: number): Promise<DownloadableImage | null> {
   try {
-    const response = await wagtailClient.get(`/images/${id}/`, {
+    const response = await wagtailClient.get<DownloadableImage>(`/images/${id}/`, {
       params: {
         site: SITE_HOSTNAME,
       },

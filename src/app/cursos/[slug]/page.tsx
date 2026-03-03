@@ -3,15 +3,15 @@ import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
 import { HeroSection } from "@/components/organisms/HeroSection"
 import { CTASection } from "@/components/organisms/CTASection"
-import { Badge } from "@/components/ui/badge"
 import { getAllCursosSlugsData, getCursoData } from "@/lib/data"
 import { Check, Book, Waves, Award, Package, Ship, Camera } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
 
 interface CursoPageProps {
   params: Promise<{ slug: string }>
 }
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   Book,
   Waves,
   Award,

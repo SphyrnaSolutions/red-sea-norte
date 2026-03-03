@@ -13,6 +13,70 @@ interface BlogPostPageProps {
   }>
 }
 
+interface RichTextValue {
+  content: string
+}
+
+interface HeadingValue {
+  level: number
+  text: string
+}
+
+interface ImageValue {
+  url: string
+  alt?: string
+  caption?: string
+}
+
+interface QuoteValue {
+  text: string
+  author: string
+  role?: string
+}
+
+interface InfoCardItem {
+  icon: string
+  value: string
+  label: string
+  color: string
+}
+
+interface GalleryImage {
+  url: string
+  alt?: string
+}
+
+interface TwoColumnValue {
+  leftColumn: {
+    image: string
+    alt?: string
+  }
+  rightColumn: {
+    title: string
+    content: string
+  }
+}
+
+interface CTAValue {
+  title: string
+  description: string
+  primaryCTA: {
+    text: string
+    href: string
+  }
+}
+
+interface AccordionItem {
+  title: string
+  content: string
+}
+
+interface NewsletterValue {
+  title: string
+  description: string
+  buttonText: string
+}
+
 // Generate metadata for SEO
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params
@@ -170,7 +234,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               fontSize: '64px',
               fontWeight: 900,
               lineHeight: 1.1,
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
           >
             {post.title}
@@ -196,8 +260,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       >
         <div className="py-[80px] max-md:py-[48px]">
           <div className="flex flex-col items-center">
-            {post.body.map((block, index) => (
-              <BlockRenderer key={block.id} block={block} index={index} />
+            {post.body.map((block) => (
+              <BlockRenderer key={block.id} block={block} />
             ))}
           </div>
         </div>
@@ -210,24 +274,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
    Block Renderer
    =========================== */
 
-function BlockRenderer({ block, index }: { block: Block; index: number }) {
+function BlockRenderer({ block }: { block: Block }) {
   switch (block.type) {
     case 'rich_text':
-      return <RichTextBlock block={block} index={index} />
+      return <RichTextBlock block={block} />
     case 'heading':
-      return <HeadingBlock block={block} index={index} />
+      return <HeadingBlock block={block} />
     case 'image':
-      return <ImageBlock block={block} index={index} />
+      return <ImageBlock block={block} />
     case 'quote':
-      return <QuoteBlock block={block} index={index} />
+      return <QuoteBlock block={block} />
     case 'info_cards':
-      return <InfoCardsBlock block={block} index={index} />
+      return <InfoCardsBlock block={block} />
     case 'gallery':
-      return <GalleryBlock block={block} index={index} />
+      return <GalleryBlock block={block} />
     case 'two_column':
-      return <TwoColumnBlock block={block} index={index} />
+      return <TwoColumnBlock block={block} />
     case 'cta':
-      return <CTABlock block={block} index={index} />
+      return <CTABlock block={block} />
+    case 'accordion':
+      return <AccordionBlock block={block} />
+    case 'newsletter':
+      return <NewsletterBlock block={block} />
     default:
       return null
   }
@@ -237,7 +305,9 @@ function BlockRenderer({ block, index }: { block: Block; index: number }) {
    Block Components
    =========================== */
 
-function RichTextBlock({ block, index }: { block: Block; index: number }) {
+function RichTextBlock({ block }: { block: Block }) {
+  const value = block.value as RichTextValue
+
   return (
     <div className="w-full max-w-[800px] mb-10">
       <div
@@ -246,16 +316,17 @@ function RichTextBlock({ block, index }: { block: Block; index: number }) {
           color: '#333333',
           fontSize: '20px',
           lineHeight: 1.7,
-          fontFamily: 'Inter, sans-serif'
+          fontFamily: 'var(--font-sans)'
         }}
-        dangerouslySetInnerHTML={{ __html: block.value.content }}
+        dangerouslySetInnerHTML={{ __html: value.content }}
       />
     </div>
   )
 }
 
-function HeadingBlock({ block, index }: { block: Block; index: number }) {
-  const HeadingTag = `h${block.value.level}` as keyof React.JSX.IntrinsicElements
+function HeadingBlock({ block }: { block: Block }) {
+  const value = block.value as HeadingValue
+  const HeadingTag = `h${value.level}` as keyof React.JSX.IntrinsicElements
 
   return (
     <div
@@ -264,49 +335,53 @@ function HeadingBlock({ block, index }: { block: Block; index: number }) {
       <HeadingTag
         style={{
           color: '#0D3A5D',
-          fontSize: block.value.level === 2 ? '42px' : '32px',
+          fontSize: value.level === 2 ? '42px' : '32px',
           fontWeight: 900,
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'var(--font-sans)',
           lineHeight: 1.2
         }}
         className="max-md:text-3xl"
       >
-        {block.value.text}
+        {value.text}
       </HeadingTag>
     </div>
   )
 }
 
-function ImageBlock({ block, index }: { block: Block; index: number }) {
+function ImageBlock({ block }: { block: Block }) {
+  const value = block.value as ImageValue
+
   return (
     <div
       className="w-full max-w-[1200px] mb-10"
     >
       <div className="relative h-[600px] max-md:h-[400px] rounded-[20px] overflow-hidden">
         <Image
-          src={block.value.url}
-          alt={block.value.alt || ''}
+          src={value.url}
+          alt={value.alt || ''}
           fill
           className="object-cover"
         />
       </div>
-      {block.value.caption && (
+      {value.caption && (
         <p
           className="text-center mt-3 mb-10 italic"
           style={{
             color: '#666666',
             fontSize: '15px',
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
-          {block.value.caption}
+          {value.caption}
         </p>
       )}
     </div>
   )
 }
 
-function QuoteBlock({ block, index }: { block: Block; index: number }) {
+function QuoteBlock({ block }: { block: Block }) {
+  const value = block.value as QuoteValue
+
   return (
     <div
       className="w-full max-w-[900px] my-10"
@@ -325,7 +400,7 @@ function QuoteBlock({ block, index }: { block: Block; index: number }) {
             fontFamily: 'Georgia, serif'
           }}
         >
-          "
+          &quot;
         </span>
 
         {/* Quote Text */}
@@ -336,10 +411,10 @@ function QuoteBlock({ block, index }: { block: Block; index: number }) {
             fontSize: '28px',
             fontWeight: 600,
             lineHeight: 1.5,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
-          {block.value.text}
+          {value.text}
         </p>
 
         {/* Author */}
@@ -348,24 +423,26 @@ function QuoteBlock({ block, index }: { block: Block; index: number }) {
             color: '#666666',
             fontSize: '18px',
             fontWeight: 600,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
-          — {block.value.author}
-          {block.value.role && `, ${block.value.role}`}
+          - {value.author}
+          {value.role && `, ${value.role}`}
         </p>
       </div>
     </div>
   )
 }
 
-function InfoCardsBlock({ block, index }: { block: Block; index: number }) {
+function InfoCardsBlock({ block }: { block: Block }) {
+  const value = block.value as { cards: InfoCardItem[] }
+
   return (
     <div
       className="w-full flex justify-center my-10"
     >
       <div className="flex gap-6 flex-wrap justify-center max-w-[900px]">
-        {block.value.cards.map((card: any, idx: number) => (
+        {value.cards.map((card, idx) => (
           <div
             key={idx}
             className="flex flex-col items-center gap-3 rounded-[16px] p-8 min-w-[260px] max-md:min-w-full"
@@ -389,7 +466,7 @@ function InfoCardsBlock({ block, index }: { block: Block; index: number }) {
               style={{
                 fontSize: '32px',
                 fontWeight: 900,
-                fontFamily: 'Inter, sans-serif'
+                fontFamily: 'var(--font-sans)'
               }}
             >
               {card.value}
@@ -401,7 +478,7 @@ function InfoCardsBlock({ block, index }: { block: Block; index: number }) {
               style={{
                 fontSize: '16px',
                 opacity: 0.9,
-                fontFamily: 'Inter, sans-serif'
+                fontFamily: 'var(--font-sans)'
               }}
             >
               {card.label}
@@ -413,13 +490,15 @@ function InfoCardsBlock({ block, index }: { block: Block; index: number }) {
   )
 }
 
-function GalleryBlock({ block, index }: { block: Block; index: number }) {
+function GalleryBlock({ block }: { block: Block }) {
+  const value = block.value as { images: GalleryImage[] }
+
   return (
     <div
       className="w-full max-w-[1200px] my-20 max-md:my-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {block.value.images.map((image: any, idx: number) => (
+        {value.images.map((image, idx) => (
           <div
             key={idx}
             className="relative h-[380px] max-md:h-[280px] rounded-[16px] overflow-hidden group cursor-pointer"
@@ -437,7 +516,9 @@ function GalleryBlock({ block, index }: { block: Block; index: number }) {
   )
 }
 
-function TwoColumnBlock({ block, index }: { block: Block; index: number }) {
+function TwoColumnBlock({ block }: { block: Block }) {
+  const value = block.value as TwoColumnValue
+
   return (
     <div
       className="w-full max-w-[1200px] my-20 max-md:my-10"
@@ -446,8 +527,8 @@ function TwoColumnBlock({ block, index }: { block: Block; index: number }) {
         {/* Left Column - Image */}
         <div className="relative h-[420px] max-md:h-[300px] rounded-[16px] overflow-hidden">
           <Image
-            src={block.value.leftColumn.image}
-            alt={block.value.leftColumn.alt || ''}
+            src={value.leftColumn.image}
+            alt={value.leftColumn.alt || ''}
             fill
             className="object-cover"
           />
@@ -461,10 +542,10 @@ function TwoColumnBlock({ block, index }: { block: Block; index: number }) {
               fontSize: '18px',
               fontWeight: 600,
               lineHeight: 1.7,
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
           >
-            {block.value.rightColumn.title}
+            {value.rightColumn.title}
           </p>
 
           <div
@@ -473,9 +554,9 @@ function TwoColumnBlock({ block, index }: { block: Block; index: number }) {
               color: '#333333',
               fontSize: '18px',
               lineHeight: 1.7,
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
-            dangerouslySetInnerHTML={{ __html: block.value.rightColumn.content }}
+            dangerouslySetInnerHTML={{ __html: value.rightColumn.content }}
           />
         </div>
       </div>
@@ -483,7 +564,9 @@ function TwoColumnBlock({ block, index }: { block: Block; index: number }) {
   )
 }
 
-function CTABlock({ block, index }: { block: Block; index: number }) {
+function CTABlock({ block }: { block: Block }) {
+  const value = block.value as CTAValue
+
   return (
     <div
       className="w-full max-w-[1000px] my-20 max-md:my-10"
@@ -501,11 +584,11 @@ function CTABlock({ block, index }: { block: Block; index: number }) {
             fontSize: '36px',
             fontWeight: 900,
             lineHeight: 1.2,
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'var(--font-sans)',
             textShadow: '0 2px 8px rgba(0,0,0,0.2)'
           }}
         >
-          {block.value.title}
+          {value.title}
         </h3>
 
         {/* Description */}
@@ -514,16 +597,16 @@ function CTABlock({ block, index }: { block: Block; index: number }) {
           style={{
             fontSize: '18px',
             lineHeight: 1.6,
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'var(--font-sans)',
             textShadow: '0 1px 4px rgba(0,0,0,0.15)'
           }}
         >
-          {block.value.description}
+          {value.description}
         </p>
 
         {/* CTA Button */}
         <Link
-          href={block.value.primaryCTA.href}
+          href={value.primaryCTA.href}
           className="flex items-center justify-center rounded-[30px] transition-all duration-300 hover:scale-105"
           style={{
             backgroundColor: '#FF6B35',
@@ -536,12 +619,84 @@ function CTABlock({ block, index }: { block: Block; index: number }) {
             style={{
               fontSize: '18px',
               fontWeight: 800,
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
           >
-            {block.value.primaryCTA.text}
+            {value.primaryCTA.text}
           </span>
         </Link>
+      </div>
+    </div>
+  )
+}
+
+function AccordionBlock({ block }: { block: Block }) {
+  const value = block.value as { items: AccordionItem[] }
+
+  return (
+    <div className="w-full max-w-[900px] my-20 max-md:my-10">
+      <div className="flex flex-col gap-4">
+        {value.items.map((item) => (
+          <details
+            key={item.title}
+            className="group rounded-[20px] border border-[#D6E8F5] bg-white px-6 py-5 shadow-[0_12px_24px_rgba(10,37,64,0.05)]"
+          >
+            <summary className="cursor-pointer list-none text-[20px] font-bold text-[#0D3A5D]">
+              {item.title}
+            </summary>
+            <div
+              className="prose prose-lg mt-4 max-w-none text-[#4A5568]"
+              dangerouslySetInnerHTML={{ __html: item.content }}
+            />
+          </details>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function NewsletterBlock({ block }: { block: Block }) {
+  const value = block.value as NewsletterValue
+
+  return (
+    <div className="w-full max-w-[1000px] my-20 max-md:my-10">
+      <div
+        className="rounded-[24px] p-[80px] max-md:p-[40px] flex flex-col items-center gap-6 text-center"
+        style={{ backgroundColor: '#FF6B35' }}
+      >
+        <h3
+          className="text-white max-md:text-2xl"
+          style={{
+            fontSize: '36px',
+            fontWeight: 900,
+            lineHeight: 1.2,
+            fontFamily: 'var(--font-sans)',
+          }}
+        >
+          {value.title}
+        </h3>
+
+        <p
+          className="max-w-[720px] text-white/90 max-md:text-base"
+          style={{
+            fontSize: '18px',
+            lineHeight: 1.6,
+            fontFamily: 'var(--font-sans)',
+          }}
+        >
+          {value.description}
+        </p>
+
+        <div className="flex w-full max-w-[560px] flex-col gap-4 md:flex-row">
+          <input
+            type="email"
+            placeholder="Tu email"
+            className="h-[56px] flex-1 rounded-full border-0 px-6 text-[#0D3A5D] outline-none"
+          />
+          <button className="h-[56px] rounded-full bg-[#0D3A5D] px-8 font-semibold text-white transition-transform hover:scale-[1.02]">
+            {value.buttonText}
+          </button>
+        </div>
       </div>
     </div>
   )

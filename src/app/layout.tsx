@@ -1,27 +1,15 @@
 import type { Metadata } from "next"
-import { Inter, Bebas_Neue, Oswald } from "next/font/google"
+import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/organisms/Header"
 import { Footer } from "@/components/organisms/Footer"
+import { FloatingWhatsApp } from "@/components/atoms/FloatingWhatsApp"
+import { MobileCTABar } from "@/components/organisms/MobileCTABar"
 
-const inter = Inter({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const bebasNeue = Bebas_Neue({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-display",
-  display: "swap",
-})
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-display-alt",
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-mono",
   display: "swap",
 })
 
@@ -44,11 +32,19 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${bebasNeue.variable} ${oswald.variable}`}>
+    <html lang="es" className={jetbrainsMono.variable}>
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&f[]=clash-display@200,300,400,500,600,700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="antialiased font-sans">
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingWhatsApp />
+        <MobileCTABar />
       </body>
     </html>
   )

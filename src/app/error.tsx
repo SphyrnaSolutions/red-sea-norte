@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Error({
   error,
@@ -110,12 +111,12 @@ export default function Error({
       </button>
 
       {/* Back to home link */}
-      <a
+      <Link
         href="/"
         className="mt-4 text-[var(--color-ocean-deep)] hover:text-[var(--color-coral-fire)] font-medium transition-colors duration-200 underline underline-offset-4"
       >
         Volver al inicio
-      </a>
+      </Link>
     </div>
   )
 }

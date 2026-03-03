@@ -32,9 +32,10 @@
   /* ===== TYPOGRAPHY - DRAMATIC EDITION ===== */
 
   /* Font Family */
-  --font-display: 'Bebas Neue', 'Oswald', system-ui, sans-serif;
-  --font-display-alt: 'Oswald', system-ui, sans-serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Clash Display', system-ui, sans-serif;
+  --font-display-alt: 'Clash Display', system-ui, sans-serif;
+  --font-sans: 'Satoshi', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* Font Sizes - Display & Headings */
   --font-size-display: 92px;
@@ -327,3 +328,17 @@ a {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 .delay-600 { animation-delay: 600ms; }
+
+/* WhatsApp floating button pulse */
+@keyframes pulse-subtle {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+}

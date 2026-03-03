@@ -1,5 +1,5 @@
 {
-  "version": "2.6",
+  "version": "2.8",
   "children": [
     {
       "type": "frame",
@@ -40,11 +40,12 @@
               "type": "text",
               "id": "Pjtpo",
               "name": "logo",
-              "fill": "#0066CC",
+              "fill": "#0D3A5D",
               "content": "Red Sea Diving",
-              "fontFamily": "Inter",
-              "fontSize": 24,
-              "fontWeight": "bold"
+              "fontFamily": "Clash Display",
+              "fontSize": 22,
+              "fontWeight": "700",
+              "letterSpacing": 1
             },
             {
               "type": "frame",
@@ -58,7 +59,7 @@
                   "name": "navItem1",
                   "fill": "#2C3E50",
                   "content": "Destinos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -68,7 +69,7 @@
                   "name": "navItem2",
                   "fill": "#2C3E50",
                   "content": "Cursos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -78,7 +79,7 @@
                   "name": "navItem3",
                   "fill": "#2C3E50",
                   "content": "Experiencias",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -88,7 +89,7 @@
                   "name": "navItem4",
                   "fill": "#2C3E50",
                   "content": "Contacto",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 }
@@ -111,7 +112,7 @@
                   "name": "ctaHeaderText",
                   "fill": "#FFFFFF",
                   "content": "Reserva Ahora",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "600"
                 }
@@ -179,7 +180,7 @@
                       "name": "heroBadgeText",
                       "fill": "#FFFFFF",
                       "content": "Certificación SSI Advanced",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 14,
                       "fontWeight": "600"
                     }
@@ -195,9 +196,9 @@
                   "content": "Lleva Tu Buceo al Siguiente Nivel en el Mar Rojo",
                   "lineHeight": 1.1,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
-                  "fontSize": 56,
-                  "fontWeight": "bold"
+                  "fontFamily": "Clash Display",
+                  "fontSize": 60,
+                  "fontWeight": "700"
                 },
                 {
                   "type": "text",
@@ -209,7 +210,7 @@
                   "content": "Consigue tu Advanced SSI en uno de los destinos de buceo más espectaculares del mundo. Pecios legendarios, arrecifes vibrantes y vida marina increíble.",
                   "lineHeight": 1.4,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 20,
                   "fontWeight": "normal"
                 },
@@ -236,7 +237,7 @@
                           "name": "ctaPrimaryText",
                           "fill": "#FFFFFF",
                           "content": "Ver Paquetes",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 18,
                           "fontWeight": "600"
                         }
@@ -263,7 +264,7 @@
                           "name": "ctaSecondaryText",
                           "fill": "#FFFFFF",
                           "content": "Más Información",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 18,
                           "fontWeight": "600"
                         }
@@ -277,7 +278,7 @@
                   "name": "trustLine",
                   "fill": "#FFFFFFAA",
                   "content": "✓ Instructores certificados SSI  •  ✓ Grupos pequeños  •  ✓ Equipo profesional incluido",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 14,
                   "fontWeight": "normal"
                 }
@@ -290,7 +291,7 @@
           "id": "ek91T",
           "name": "whySection",
           "width": "fill_container",
-          "fill": "#FFFFFF",
+          "fill": "#0A1628",
           "layout": "vertical",
           "gap": 60,
           "padding": [
@@ -311,27 +312,27 @@
                   "type": "text",
                   "id": "8duPq",
                   "name": "whyTitle",
-                  "fill": "#2C3E50",
+                  "fill": "#FFFFFF",
                   "textGrowth": "fixed-width",
                   "width": 800,
                   "content": "Por Qué Conseguir tu Advanced SSI Aquí",
                   "lineHeight": 1.2,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 48,
-                  "fontWeight": "bold"
+                  "fontWeight": "700"
                 },
                 {
                   "type": "text",
                   "id": "14J1a",
                   "name": "whySubtitle",
-                  "fill": "#6B7280",
+                  "fill": "#FFFFFF99",
                   "textGrowth": "fixed-width",
                   "width": 700,
                   "content": "El Mar Rojo ofrece las condiciones perfectas para elevar tus habilidades de buceo",
                   "lineHeight": 1.5,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 20,
                   "fontWeight": "normal"
                 }
@@ -419,7 +420,7 @@
                               "width": "fill_container",
                               "content": "Bucea en el Thistlegorm",
                               "lineHeight": 1.1,
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 32,
                               "fontWeight": "bold"
                             },
@@ -432,7 +433,7 @@
                               "width": "fill_container",
                               "content": "Explora uno de los pecios más famosos del mundo. Perfecto para tu especialidad de buceo en naufragios del Advanced.",
                               "lineHeight": 1.5,
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 16,
                               "fontWeight": "normal"
                             }
@@ -469,7 +470,7 @@
                               "name": "card2BadgeText",
                               "fill": "#FFFFFF",
                               "content": "TODO EL AÑO",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 12,
                               "fontWeight": "bold"
                             }
@@ -481,7 +482,7 @@
                           "name": "card2Title",
                           "fill": "#FFFFFF",
                           "content": "Visibilidad +30m",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 36,
                           "fontWeight": "bold"
                         },
@@ -498,7 +499,7 @@
                               "name": "card2Stat1Num",
                               "fill": "#3DABC2",
                               "content": "24-28°C",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 28,
                               "fontWeight": "bold"
                             },
@@ -508,7 +509,7 @@
                               "name": "card2Stat1Label",
                               "fill": "#FFFFFFAA",
                               "content": "Temperatura del agua",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -527,7 +528,7 @@
                               "name": "card2Stat2Num",
                               "fill": "#3DABC2",
                               "content": "0-2 nudos",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 28,
                               "fontWeight": "bold"
                             },
@@ -537,7 +538,7 @@
                               "name": "card2Stat2Label",
                               "fill": "#FFFFFFAA",
                               "content": "Corrientes suaves y predecibles",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -559,11 +560,11 @@
                       "id": "K9rS3",
                       "name": "card3",
                       "width": "fill_container",
-                      "fill": "#FFFFFF",
+                      "fill": "#0D3A5D",
                       "cornerRadius": 12,
                       "stroke": {
-                        "thickness": 2,
-                        "fill": "#E5E7EB"
+                        "thickness": 1,
+                        "fill": "#FFFFFF11"
                       },
                       "layout": "vertical",
                       "gap": 20,
@@ -584,7 +585,7 @@
                               "name": "card3IconInner",
                               "fill": "#00CED1",
                               "content": "✓",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 32,
                               "fontWeight": "bold"
                             }
@@ -594,12 +595,12 @@
                           "type": "text",
                           "id": "k49UQ",
                           "name": "card3Title",
-                          "fill": "#2C3E50",
+                          "fill": "#FFFFFF",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Certificación SSI reconocida mundialmente",
                           "lineHeight": 1.3,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 24,
                           "fontWeight": "bold"
                         },
@@ -607,12 +608,12 @@
                           "type": "text",
                           "id": "jLYvz",
                           "name": "card3Desc",
-                          "fill": "#6B7280",
+                          "fill": "#FFFFFF99",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Más de 15 años formando buceadores Advanced en el Mar Rojo. Instructores experimentados con miles de inmersiones.",
                           "lineHeight": 1.6,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 16,
                           "fontWeight": "normal"
                         },
@@ -620,7 +621,7 @@
                           "type": "frame",
                           "id": "o44p2",
                           "name": "card3CTA",
-                          "fill": "#F5E6D3",
+                          "fill": "#FF6B35",
                           "cornerRadius": 6,
                           "padding": [
                             12,
@@ -633,7 +634,7 @@
                               "name": "card3CTAText",
                               "fill": "#0066CC",
                               "content": "Ver instructores →",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 14,
                               "fontWeight": "600"
                             }
@@ -687,7 +688,7 @@
                               "name": "card4Subtitle",
                               "fill": "#3DABC2",
                               "content": "BIODIVERSIDAD ÚNICA",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 12,
                               "fontWeight": "bold",
                               "letterSpacing": 1
@@ -698,7 +699,7 @@
                               "name": "card4Title",
                               "fill": "#FFFFFF",
                               "content": "1000+ especies marinas",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 28,
                               "fontWeight": "bold"
                             }
@@ -724,9 +725,9 @@
                           "name": "card5Title",
                           "fill": "#FFFFFF",
                           "content": "Desde 1.200€",
-                          "fontFamily": "Inter",
+                          "fontFamily": "JetBrains Mono",
                           "fontSize": 42,
-                          "fontWeight": "bold"
+                          "fontWeight": "800"
                         },
                         {
                           "type": "frame",
@@ -744,7 +745,7 @@
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "• Certificación SSI Advanced completa",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 15,
                               "fontWeight": "normal"
                             },
@@ -756,7 +757,7 @@
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "• 5 inmersiones de especialidad",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 15,
                               "fontWeight": "normal"
                             },
@@ -768,7 +769,7 @@
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "• Equipo completo incluido",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 15,
                               "fontWeight": "normal"
                             },
@@ -780,7 +781,7 @@
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
                               "content": "• 7 días / 6 noches vida a bordo",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 15,
                               "fontWeight": "normal"
                             }
@@ -813,7 +814,7 @@
               "name": "specIntro",
               "fill": "#F57415",
               "content": "TU PROGRAMA ADVANCED →",
-              "fontFamily": "Inter",
+              "fontFamily": "Satoshi",
               "fontSize": 14,
               "fontWeight": "bold",
               "letterSpacing": 2
@@ -875,7 +876,7 @@
                           "width": "fill_container",
                           "content": "Pecios del Mar Rojo",
                           "lineHeight": 1.05,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 52,
                           "fontWeight": "bold"
                         },
@@ -885,7 +886,7 @@
                           "name": "bigSub",
                           "fill": "#FFFFFFCC",
                           "content": "Thistlegorm, Dunraven, Abu Nuhas",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 18,
                           "fontWeight": "normal"
                         }
@@ -920,7 +921,7 @@
                           "name": "sc1Label",
                           "fill": "#FFFFFF88",
                           "content": "PROFUNDO",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 11,
                           "fontWeight": "bold",
                           "letterSpacing": 1.5
@@ -931,7 +932,7 @@
                           "name": "sc1Big",
                           "fill": "#FFFFFF",
                           "content": "30m",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 64,
                           "fontWeight": "bold"
                         },
@@ -941,7 +942,7 @@
                           "name": "sc1Desc",
                           "fill": "#FFFFFFDD",
                           "content": "Alcanza nuevas profundidades",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 15,
                           "fontWeight": "normal"
                         }
@@ -965,7 +966,7 @@
                           "name": "sc2Title",
                           "fill": "#FFFFFF",
                           "content": "Nitrox",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 28,
                           "fontWeight": "bold"
                         },
@@ -977,7 +978,7 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Más tiempo en el fondo con aire enriquecido",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -996,9 +997,9 @@
               "width": "fill_container",
               "content": "Navegación + Flotabilidad Perfecta",
               "lineHeight": 0.95,
-              "fontFamily": "Inter",
-              "fontSize": 72,
-              "fontWeight": "bold"
+              "fontFamily": "Clash Display",
+              "fontSize": 80,
+              "fontWeight": "800"
             },
             {
               "type": "frame",
@@ -1026,7 +1027,7 @@
                       "name": "nav1Title",
                       "fill": "#FFFFFF",
                       "content": "Brújula",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 36,
                       "fontWeight": "bold"
                     },
@@ -1038,7 +1039,7 @@
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Navegación precisa en corrientes",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 15,
                       "fontWeight": "normal"
                     },
@@ -1048,7 +1049,7 @@
                       "name": "nav1Icon",
                       "fill": "#FFFFFF",
                       "content": "🧭",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 48,
                       "fontWeight": "normal"
                     }
@@ -1100,7 +1101,7 @@
                           "name": "nav2Title",
                           "fill": "#FFFFFF",
                           "content": "Control Total",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 32,
                           "fontWeight": "bold"
                         },
@@ -1110,7 +1111,7 @@
                           "name": "nav2Desc",
                           "fill": "#FFFFFFDD",
                           "content": "Protege los arrecifes con flotabilidad perfecta",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -1140,7 +1141,7 @@
                       "name": "nav3Num",
                       "fill": "#00CED1",
                       "content": "5",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 88,
                       "fontWeight": "bold"
                     },
@@ -1152,7 +1153,7 @@
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
                       "content": "Inmersiones de especialidad",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "600"
                     },
@@ -1162,7 +1163,7 @@
                       "name": "nav3Sub",
                       "fill": "#6B7280",
                       "content": "4-5 días",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 13,
                       "fontWeight": "normal"
                     }
@@ -1195,9 +1196,9 @@
                       "name": "ctaTitle",
                       "fill": "#FFFFFF",
                       "content": "Desde 1.200€",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Clash Display",
                       "fontSize": 48,
-                      "fontWeight": "bold"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -1205,7 +1206,7 @@
                       "name": "ctaSub",
                       "fill": "#FFFFFFAA",
                       "content": "Certificación completa • Equipo • 7 días liveaboard",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -1228,7 +1229,7 @@
                       "name": "ctaBtnText",
                       "fill": "#FFFFFF",
                       "content": "Ver Paquetes →",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "600"
                     }
@@ -1242,6 +1243,7 @@
           "type": "frame",
           "id": "PGMPF",
           "name": "carouselSection",
+          "clip": true,
           "width": "fill_container",
           "fill": "#0D3A5D",
           "layout": "vertical",
@@ -1266,7 +1268,7 @@
                   "name": "carouselLabel",
                   "fill": "#3DABC2",
                   "content": "DONDE BUCEARÁS →",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 12,
                   "fontWeight": "bold",
                   "letterSpacing": 2
@@ -1278,9 +1280,9 @@
                   "fill": "#FFFFFF",
                   "content": "Spots Legendarios",
                   "lineHeight": 1,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 64,
-                  "fontWeight": "bold"
+                  "fontWeight": "700"
                 }
               ]
             },
@@ -1367,7 +1369,7 @@
                               "name": "slide1BadgeText",
                               "fill": "#FFFFFF",
                               "content": "PECIO WWII",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 12,
                               "fontWeight": "bold"
                             }
@@ -1380,9 +1382,9 @@
                           "fill": "#FFFFFF",
                           "content": "SS Thistlegorm",
                           "lineHeight": 0.95,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Clash Display",
                           "fontSize": 68,
-                          "fontWeight": "bold"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "text",
@@ -1393,7 +1395,7 @@
                           "width": 800,
                           "content": "30m de profundidad • Carguero británico hundido en 1941 • Uno de los mejores pecios del mundo",
                           "lineHeight": 1.5,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 20,
                           "fontWeight": "normal"
                         }
@@ -1448,9 +1450,9 @@
                           "fill": "#FFFFFF",
                           "content": "Ras Mohammed",
                           "lineHeight": 0.95,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Clash Display",
                           "fontSize": 68,
-                          "fontWeight": "bold"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "text",
@@ -1458,7 +1460,7 @@
                           "name": "slide2Desc",
                           "fill": "#FFFFFFDD",
                           "content": "5-30m • Parque Nacional protegido • Paredes verticales con vida marina abundante",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 20,
                           "fontWeight": "normal"
                         }
@@ -1523,7 +1525,7 @@
                               "name": "slide3BadgeText",
                               "fill": "#FFFFFF",
                               "content": "ENCUENTRO CON VIDA",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 12,
                               "fontWeight": "bold"
                             }
@@ -1536,9 +1538,9 @@
                           "fill": "#FFFFFF",
                           "content": "Sha'ab Samadai",
                           "lineHeight": 0.95,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Clash Display",
                           "fontSize": 68,
-                          "fontWeight": "bold"
+                          "fontWeight": "700"
                         },
                         {
                           "type": "text",
@@ -1546,7 +1548,7 @@
                           "name": "slide3Desc",
                           "fill": "#FFFFFFDD",
                           "content": "6-25m • Conocido como 'Dolphin House' • Snorkel y buceo con delfines spinner",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 20,
                           "fontWeight": "normal"
                         }
@@ -1593,7 +1595,7 @@
                       "name": "footerLogo",
                       "fill": "#FFFFFF",
                       "content": "Red Sea Diving",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 28,
                       "fontWeight": "bold"
                     },
@@ -1606,7 +1608,7 @@
                       "width": "fill_container",
                       "content": "Consigue tu Advanced SSI en el destino de buceo más espectacular del mundo.",
                       "lineHeight": 1.5,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -1631,7 +1633,7 @@
                           "name": "footerCol1Title",
                           "fill": "#FFFFFF",
                           "content": "Explora",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -1641,7 +1643,7 @@
                           "name": "footerLink1",
                           "fill": "#FFFFFFAA",
                           "content": "Puntos de buceo",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -1651,7 +1653,7 @@
                           "name": "footerLink2",
                           "fill": "#FFFFFFAA",
                           "content": "Paquetes",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -1661,7 +1663,7 @@
                           "name": "footerLink3",
                           "fill": "#FFFFFFAA",
                           "content": "Liveaboards",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -1680,7 +1682,7 @@
                           "name": "footerCol2Title",
                           "fill": "#FFFFFF",
                           "content": "Cursos",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -1690,7 +1692,7 @@
                           "name": "footerLink4",
                           "fill": "#FFFFFFAA",
                           "content": "Advanced SSI",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -1700,7 +1702,7 @@
                           "name": "footerLink5",
                           "fill": "#FFFFFFAA",
                           "content": "Especialidades",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -1736,7 +1738,7 @@
                   "name": "footerCopy",
                   "fill": "#FFFFFF66",
                   "content": "© 2026 Red Sea Diving. Todos los derechos reservados.",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 14,
                   "fontWeight": "normal"
                 }
@@ -1773,11 +1775,12 @@
               "type": "text",
               "id": "AYmw5",
               "name": "logo",
-              "fill": "#0066CC",
+              "fill": "#0D3A5D",
               "content": "Red Sea Diving",
-              "fontFamily": "Inter",
-              "fontSize": 24,
-              "fontWeight": "bold"
+              "fontFamily": "Clash Display",
+              "fontSize": 22,
+              "fontWeight": "700",
+              "letterSpacing": 1
             },
             {
               "type": "frame",
@@ -1791,7 +1794,7 @@
                   "name": "navItem1",
                   "fill": "#2C3E50",
                   "content": "Destinos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -1801,7 +1804,7 @@
                   "name": "navItem2",
                   "fill": "#2C3E50",
                   "content": "Cursos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -1811,7 +1814,7 @@
                   "name": "navItem3",
                   "fill": "#2C3E50",
                   "content": "Experiencias",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -1821,7 +1824,7 @@
                   "name": "navItem4",
                   "fill": "#2C3E50",
                   "content": "Contacto",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 }
@@ -1844,7 +1847,7 @@
                   "name": "ctaHeaderText",
                   "fill": "#FFFFFF",
                   "content": "Reserva Ahora",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "600"
                 }
@@ -1932,9 +1935,9 @@
                       "name": "heroLabelRuta",
                       "fill": "#3DABC2",
                       "content": "7 DÍAS • RUTA NORTE",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 14,
-                      "fontWeight": "bold",
+                      "fontWeight": "700",
                       "letterSpacing": 2
                     },
                     {
@@ -1946,9 +1949,9 @@
                       "width": 1000,
                       "content": "La Aventura Definitiva del Mar Rojo",
                       "lineHeight": 1.05,
-                      "fontFamily": "Inter",
-                      "fontSize": 72,
-                      "fontWeight": "bold"
+                      "fontFamily": "Clash Display",
+                      "fontSize": 80,
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
@@ -1956,7 +1959,7 @@
                       "name": "heroSubRuta",
                       "fill": "#FFFFFFDD",
                       "content": "Thistlegorm • Ras Mohammed • Straits of Tiran • Gubal Island",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 22,
                       "fontWeight": "normal"
                     }
@@ -1989,9 +1992,9 @@
                       "name": "info1NumRuta",
                       "fill": "#FFFFFF",
                       "content": "7 días",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 36,
-                      "fontWeight": "bold"
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
@@ -1999,7 +2002,7 @@
                       "name": "info1LabelRuta",
                       "fill": "#FFFFFFAA",
                       "content": "6 noches a bordo",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -2018,9 +2021,9 @@
                       "name": "info2NumRuta",
                       "fill": "#FFFFFF",
                       "content": "18-20",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 36,
-                      "fontWeight": "bold"
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
@@ -2028,7 +2031,7 @@
                       "name": "info2LabelRuta",
                       "fill": "#FFFFFFAA",
                       "content": "inmersiones",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -2047,9 +2050,9 @@
                       "name": "info3NumRuta",
                       "fill": "#FF6B35",
                       "content": "Desde 1.400€",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 36,
-                      "fontWeight": "bold"
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
@@ -2057,7 +2060,7 @@
                       "name": "info3LabelRuta",
                       "fill": "#FFFFFFAA",
                       "content": "por persona",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -2072,7 +2075,7 @@
           "id": "lBgRI",
           "name": "storyIntroRuta",
           "width": "fill_container",
-          "fill": "#FFFFFF",
+          "fill": "#0A1628",
           "layout": "vertical",
           "gap": 32,
           "padding": [
@@ -2084,9 +2087,9 @@
               "type": "text",
               "id": "Dexwn",
               "name": "storyBadgeRuta",
-              "fill": "#F57415",
+              "fill": "#FF6B35",
               "content": "TU AVENTURA →",
-              "fontFamily": "Inter",
+              "fontFamily": "Satoshi",
               "fontSize": 12,
               "fontWeight": "bold",
               "letterSpacing": 2
@@ -2095,25 +2098,25 @@
               "type": "text",
               "id": "4VO0c",
               "name": "storyTitleRuta",
-              "fill": "#2C3E50",
+              "fill": "#FFFFFF",
               "textGrowth": "fixed-width",
               "width": 900,
               "content": "7 Días que Cambiarán tu Forma de Bucear",
               "lineHeight": 1.1,
-              "fontFamily": "Inter",
-              "fontSize": 56,
-              "fontWeight": "bold"
+              "fontFamily": "Clash Display",
+              "fontSize": 60,
+              "fontWeight": "700"
             },
             {
               "type": "text",
               "id": "ihx8p",
               "name": "storyDescRuta",
-              "fill": "#6B7280",
+              "fill": "#FFFFFF88",
               "textGrowth": "fixed-width",
               "width": 900,
               "content": "Esta no es una ruta cualquiera. Es la combinación perfecta de historia, adrenalina y naturaleza. Desde pecios de la Segunda Guerra Mundial hasta paredes verticales llenas de vida. Cada inmersión cuenta una historia diferente.",
               "lineHeight": 1.6,
-              "fontFamily": "Inter",
+              "fontFamily": "Satoshi",
               "fontSize": 20,
               "fontWeight": "normal"
             }
@@ -2151,9 +2154,9 @@
                       "name": "day1Num",
                       "fill": "#3DABC2",
                       "content": "Día 1",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 16,
-                      "fontWeight": "bold",
+                      "fontWeight": "700",
                       "letterSpacing": 1.5
                     },
                     {
@@ -2165,9 +2168,9 @@
                       "width": "fill_container",
                       "content": "Embarque y Primera Inmersión",
                       "lineHeight": 1.15,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Clash Display",
                       "fontSize": 42,
-                      "fontWeight": "bold"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -2178,7 +2181,7 @@
                       "width": "fill_container",
                       "content": "Subes al barco en Hurghada. Después de instalarte, inmersión de chequeo en Sha'ab el Erg. Aguas tranquilas, arrecife vibrante. El Mar Rojo te da la bienvenida.",
                       "lineHeight": 1.6,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "normal"
                     },
@@ -2188,7 +2191,7 @@
                       "name": "day1Spots",
                       "fill": "#3DABC2",
                       "content": "→ Sha'ab el Erg (15-20m)",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -2259,9 +2262,9 @@
                       "name": "day2Num",
                       "fill": "#FFFFFF88",
                       "content": "Día 2",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 16,
-                      "fontWeight": "bold",
+                      "fontWeight": "700",
                       "letterSpacing": 1.5
                     },
                     {
@@ -2273,9 +2276,9 @@
                       "width": "fill_container",
                       "content": "El Thistlegorm",
                       "lineHeight": 1.15,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Clash Display",
                       "fontSize": 42,
-                      "fontWeight": "bold"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -2286,7 +2289,7 @@
                       "width": "fill_container",
                       "content": "El momento que estabas esperando. Desciendes a 30 metros y ahí está: el carguero británico hundido en 1941. Motocicletas, camiones, munición. Historia tangible. Dos inmersiones aquí, no es suficiente.",
                       "lineHeight": 1.6,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "normal"
                     },
@@ -2296,7 +2299,7 @@
                       "name": "day2Spots",
                       "fill": "#FFFFFFDD",
                       "content": "→ SS Thistlegorm (30m) • 2 inmersiones",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -2329,9 +2332,9 @@
                       "name": "day3Num",
                       "fill": "#FFFFFF88",
                       "content": "Día 3-4",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 16,
-                      "fontWeight": "bold",
+                      "fontWeight": "700",
                       "letterSpacing": 1.5
                     },
                     {
@@ -2343,9 +2346,9 @@
                       "width": "fill_container",
                       "content": "Ras Mohammed y Straits of Tiran",
                       "lineHeight": 1.15,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Clash Display",
                       "fontSize": 42,
-                      "fontWeight": "bold"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -2356,7 +2359,7 @@
                       "width": "fill_container",
                       "content": "Parque Nacional. Paredes que caen a 800 metros. Corrientes que traen pelágicos. Jackson Reef, Woodhouse Reef. Cada inmersión es diferente. Barracudas, napoleones, tortugas. Aquí entiendes por qué el Mar Rojo es legendario.",
                       "lineHeight": 1.6,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "normal"
                     },
@@ -2366,7 +2369,7 @@
                       "name": "day3Spots",
                       "fill": "#FFFFFFDD",
                       "content": "→ Shark Reef, Yolanda Reef, Jackson Reef, Woodhouse",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -2430,7 +2433,7 @@
                       "name": "footerLogo",
                       "fill": "#FFFFFF",
                       "content": "Red Sea Diving",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 28,
                       "fontWeight": "bold"
                     },
@@ -2443,7 +2446,7 @@
                       "width": "fill_container",
                       "content": "Consigue tu Advanced SSI en el destino de buceo más espectacular del mundo.",
                       "lineHeight": 1.5,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -2468,7 +2471,7 @@
                           "name": "footerCol1Title",
                           "fill": "#FFFFFF",
                           "content": "Explora",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -2478,7 +2481,7 @@
                           "name": "footerLink1",
                           "fill": "#FFFFFFAA",
                           "content": "Puntos de buceo",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -2488,7 +2491,7 @@
                           "name": "footerLink2",
                           "fill": "#FFFFFFAA",
                           "content": "Paquetes",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -2498,7 +2501,7 @@
                           "name": "footerLink3",
                           "fill": "#FFFFFFAA",
                           "content": "Liveaboards",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -2517,7 +2520,7 @@
                           "name": "footerCol2Title",
                           "fill": "#FFFFFF",
                           "content": "Cursos",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -2527,7 +2530,7 @@
                           "name": "footerLink4",
                           "fill": "#FFFFFFAA",
                           "content": "Advanced SSI",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -2537,7 +2540,7 @@
                           "name": "footerLink5",
                           "fill": "#FFFFFFAA",
                           "content": "Especialidades",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -2573,7 +2576,7 @@
                   "name": "footerCopy",
                   "fill": "#FFFFFF66",
                   "content": "© 2026 Red Sea Diving. Todos los derechos reservados.",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 14,
                   "fontWeight": "normal"
                 }
@@ -2586,8 +2589,11 @@
           "id": "h85Yh",
           "name": "day5Container",
           "width": "fill_container",
-          "height": 500,
-          "gap": 60,
+          "height": 550,
+          "padding": [
+            0,
+            120
+          ],
           "alignItems": "center",
           "children": [
             {
@@ -2607,8 +2613,7 @@
                 "enabled": true,
                 "url": "https://images.unsplash.com/photo-1589308945435-38c3f99b3824?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzIxNjl8&ixlib=rb-4.1.0&q=80&w=1080",
                 "mode": "fill"
-              },
-              "cornerRadius": 20
+              }
             },
             {
               "type": "frame",
@@ -2624,9 +2629,9 @@
                   "name": "day5Num",
                   "fill": "#0D3A5D",
                   "content": "Día 5",
-                  "fontFamily": "Inter",
+                  "fontFamily": "JetBrains Mono",
                   "fontSize": 14,
-                  "fontWeight": "600",
+                  "fontWeight": "700",
                   "letterSpacing": 1.5
                 },
                 {
@@ -2636,7 +2641,7 @@
                   "fill": "#0D3A5D",
                   "content": "Rosalie Moller y Kingston",
                   "lineHeight": 1.1,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 42,
                   "fontWeight": "700"
                 },
@@ -2647,7 +2652,7 @@
                   "fill": "#333333",
                   "content": "Dos gigantes hundidos. El Rosalie Moller, a 50 metros, es solo para Advanced con experiencia. El Kingston, más accesible a 25m, está cubierto de coral blando.\n\nPecios menos visitados, más vírgenes. La sensación de ser explorador.",
                   "lineHeight": 1.6,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "normal"
                 },
@@ -2657,7 +2662,7 @@
                   "name": "day5Sites",
                   "fill": "#666666",
                   "content": "Rosalie Moller (45-50m) • Kingston (25-30m)",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 }
@@ -2670,8 +2675,11 @@
           "id": "ysPiX",
           "name": "day6Container",
           "width": "fill_container",
-          "height": 500,
-          "gap": 60,
+          "height": 550,
+          "padding": [
+            0,
+            120
+          ],
           "alignItems": "center",
           "children": [
             {
@@ -2688,9 +2696,9 @@
                   "name": "day6Num",
                   "fill": "#FF6B35",
                   "content": "Día 6",
-                  "fontFamily": "Inter",
+                  "fontFamily": "JetBrains Mono",
                   "fontSize": 14,
-                  "fontWeight": "600",
+                  "fontWeight": "700",
                   "letterSpacing": 1.5
                 },
                 {
@@ -2700,7 +2708,7 @@
                   "fill": "#FF6B35",
                   "content": "Abu Nuhas: El Cementerio de Barcos",
                   "lineHeight": 1.1,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 42,
                   "fontWeight": "700"
                 },
@@ -2711,7 +2719,7 @@
                   "fill": "#333333",
                   "content": "Cuatro pecios en un solo arrecife. El Giannis D, el Carnatic, el Chrisoula K. Cada uno con su historia, cada uno a diferente profundidad.\n\nDos inmersiones aquí son tres historias diferentes. El arrecife que hundió imperios comerciales.",
                   "lineHeight": 1.6,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "normal"
                 },
@@ -2721,7 +2729,7 @@
                   "name": "day6Sites",
                   "fill": "#666666",
                   "content": "Giannis D (18-27m) • Carnatic (20-26m)",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 }
@@ -2744,8 +2752,7 @@
                 "enabled": true,
                 "url": "https://images.unsplash.com/photo-1630771076084-51cdc6bdafef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzIxNzB8&ixlib=rb-4.1.0&q=80&w=1080",
                 "mode": "fill"
-              },
-              "cornerRadius": 20
+              }
             }
           ]
         },
@@ -2754,8 +2761,11 @@
           "id": "RJOzx",
           "name": "day7Container",
           "width": "fill_container",
-          "height": 480,
-          "gap": 60,
+          "height": 530,
+          "padding": [
+            0,
+            120
+          ],
           "alignItems": "center",
           "children": [
             {
@@ -2775,8 +2785,7 @@
                 "enabled": true,
                 "url": "https://images.unsplash.com/photo-1583297016126-171661ade4e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzIxNzB8&ixlib=rb-4.1.0&q=80&w=1080",
                 "mode": "fill"
-              },
-              "cornerRadius": 20
+              }
             },
             {
               "type": "frame",
@@ -2792,9 +2801,9 @@
                   "name": "day7Num",
                   "fill": "#3DABC2",
                   "content": "Día 7",
-                  "fontFamily": "Inter",
+                  "fontFamily": "JetBrains Mono",
                   "fontSize": 14,
-                  "fontWeight": "600",
+                  "fontWeight": "700",
                   "letterSpacing": 1.5
                 },
                 {
@@ -2804,7 +2813,7 @@
                   "fill": "#3DABC2",
                   "content": "Última Inmersión y Regreso",
                   "lineHeight": 1.1,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 42,
                   "fontWeight": "700"
                 },
@@ -2815,7 +2824,7 @@
                   "fill": "#333333",
                   "content": "Una inmersión matutina tranquila. Sha'ab el Erg o similares. Tiempo para procesar lo vivido, para ver a los peces de siempre con ojos de quien ha visto pecios a 50 metros.\n\nDesembarque por la tarde. 18-20 inmersiones completadas. Tu Advanced Open Water sellado.",
                   "lineHeight": 1.6,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "normal"
                 },
@@ -2825,7 +2834,7 @@
                   "name": "day7Sites",
                   "fill": "#666666",
                   "content": "Sha'ab el Erg (15-25m) • Transfer a puerto",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 }
@@ -2838,7 +2847,7 @@
           "id": "J6CL6",
           "name": "ctaRuta",
           "width": "fill_container",
-          "fill": "#0066CC",
+          "fill": "#0A1628",
           "layout": "vertical",
           "gap": 32,
           "padding": [
@@ -2854,7 +2863,7 @@
               "fill": "#FFFFFF",
               "content": "¿Listo para la Ruta Norte?",
               "textAlign": "center",
-              "fontFamily": "Inter",
+              "fontFamily": "Clash Display",
               "fontSize": 48,
               "fontWeight": "700"
             },
@@ -2866,7 +2875,7 @@
               "fill": "#FFFFFF",
               "content": "7 días • 18-20 inmersiones • Pecios legendarios • Desde 1.400€",
               "textAlign": "center",
-              "fontFamily": "Inter",
+              "fontFamily": "Satoshi",
               "fontSize": 20,
               "fontWeight": "normal"
             },
@@ -2887,7 +2896,7 @@
                   "name": "ctaBtnTextRuta",
                   "fill": "#FFFFFF",
                   "content": "Solicitar Información",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "600"
                 }
@@ -2924,11 +2933,12 @@
               "type": "text",
               "id": "03HKA",
               "name": "logo",
-              "fill": "#0066CC",
+              "fill": "#0D3A5D",
               "content": "Red Sea Diving",
-              "fontFamily": "Inter",
-              "fontSize": 24,
-              "fontWeight": "bold"
+              "fontFamily": "Clash Display",
+              "fontSize": 22,
+              "fontWeight": "700",
+              "letterSpacing": 1
             },
             {
               "type": "frame",
@@ -2942,7 +2952,7 @@
                   "name": "navItem1",
                   "fill": "#2C3E50",
                   "content": "Destinos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -2952,7 +2962,7 @@
                   "name": "navItem2",
                   "fill": "#2C3E50",
                   "content": "Cursos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -2962,7 +2972,7 @@
                   "name": "navItem3",
                   "fill": "#2C3E50",
                   "content": "Experiencias",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -2972,7 +2982,7 @@
                   "name": "navItem4",
                   "fill": "#2C3E50",
                   "content": "Contacto",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 }
@@ -2995,7 +3005,7 @@
                   "name": "ctaHeaderText",
                   "fill": "#FFFFFF",
                   "content": "Reserva Ahora",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "600"
                 }
@@ -3040,8 +3050,8 @@
                   "content": "TOCA\nHISTORIA",
                   "lineHeight": 0.9,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
-                  "fontSize": 120,
+                  "fontFamily": "Clash Display",
+                  "fontSize": 140,
                   "fontWeight": "800"
                 },
                 {
@@ -3051,7 +3061,7 @@
                   "opacity": 0.9,
                   "fill": "#FFFFFF",
                   "content": "Pecios de la Segunda Guerra Mundial • 30-50m",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 20,
                   "fontWeight": "normal",
                   "letterSpacing": 2
@@ -3087,9 +3097,9 @@
                   "fill": "#FF6B35",
                   "content": "1941",
                   "lineHeight": 0.8,
-                  "fontFamily": "Inter",
-                  "fontSize": 160,
-                  "fontWeight": "900"
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 180,
+                  "fontWeight": "800"
                 },
                 {
                   "type": "frame",
@@ -3108,10 +3118,10 @@
                   "content": "BOMBARDEADO\nEN EL MAR ROJO",
                   "lineHeight": 1.3,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 24,
                   "fontWeight": "700",
-                  "letterSpacing": 2
+                  "letterSpacing": 3
                 }
               ]
             },
@@ -3191,9 +3201,9 @@
                   "fill": "#FFFFFF",
                   "content": "30 metros.\nOscuridad.\nHistoria.",
                   "lineHeight": 1,
-                  "fontFamily": "Inter",
-                  "fontSize": 64,
-                  "fontWeight": "800"
+                  "fontFamily": "Clash Display",
+                  "fontSize": 72,
+                  "fontWeight": "700"
                 },
                 {
                   "type": "text",
@@ -3203,7 +3213,7 @@
                   "fill": "#FFFFFF",
                   "content": "No es solo un pecio. Es un museo bajo el agua. Entras por bodegas de carga, ves motocicletas BSA de 1941, pasas entre proyectiles sin explotar.\n\nLos peces loro duermen en los camarotes. Las morenas viven en las cocinas.",
                   "lineHeight": 1.7,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 20,
                   "fontWeight": "normal"
                 },
@@ -3224,7 +3234,7 @@
                       "name": "splitCTAText",
                       "fill": "#FFFFFF",
                       "content": "Ver Rutas",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "700"
                     }
@@ -3282,7 +3292,7 @@
                       "name": "pecio1Name",
                       "fill": "#FFFFFF",
                       "content": "SS THISTLEGORM",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 56,
                       "fontWeight": "900",
                       "letterSpacing": 3
@@ -3336,7 +3346,7 @@
                           "content": "ROSALIE MOLLER\n50m",
                           "lineHeight": 1.2,
                           "textAlign": "center",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 36,
                           "fontWeight": "800"
                         }
@@ -3381,7 +3391,7 @@
                           "content": "SALEM EXPRESS\n32m",
                           "lineHeight": 1.2,
                           "textAlign": "center",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 36,
                           "fontWeight": "800"
                         }
@@ -3431,9 +3441,9 @@
                   "fill": "#FFFFFF",
                   "content": "50",
                   "lineHeight": 0.75,
-                  "fontFamily": "Inter",
-                  "fontSize": 220,
-                  "fontWeight": "900"
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 240,
+                  "fontWeight": "800"
                 },
                 {
                   "type": "text",
@@ -3441,10 +3451,10 @@
                   "name": "meters50m",
                   "fill": "#FFFFFF",
                   "content": "METROS",
-                  "fontFamily": "Inter",
+                  "fontFamily": "JetBrains Mono",
                   "fontSize": 48,
-                  "fontWeight": "900",
-                  "letterSpacing": 8
+                  "fontWeight": "800",
+                  "letterSpacing": 12
                 },
                 {
                   "type": "text",
@@ -3453,9 +3463,9 @@
                   "opacity": 0.9,
                   "fill": "#FFFFFF",
                   "content": "Donde los recreativos no llegan",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 22,
-                  "fontWeight": "600"
+                  "fontWeight": "500"
                 }
               ]
             }
@@ -3483,10 +3493,10 @@
               "name": "needTitle",
               "fill": "#FFFFFF",
               "content": "ADVANCED + NITROX",
-              "fontFamily": "Inter",
+              "fontFamily": "Clash Display",
               "fontSize": 52,
-              "fontWeight": "900",
-              "letterSpacing": 2
+              "fontWeight": "800",
+              "letterSpacing": 4
             },
             {
               "type": "text",
@@ -3496,7 +3506,7 @@
               "fill": "#FFFFFF",
               "content": "Es todo lo que necesitas para bucear los pecios más famosos del mundo",
               "textAlign": "center",
-              "fontFamily": "Inter",
+              "fontFamily": "Satoshi",
               "fontSize": 22,
               "fontWeight": "normal"
             }
@@ -3541,9 +3551,9 @@
                   "content": "7 DÍAS BUCEANDO HISTORIA",
                   "lineHeight": 1.1,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
-                  "fontSize": 64,
-                  "fontWeight": "900"
+                  "fontFamily": "Clash Display",
+                  "fontSize": 72,
+                  "fontWeight": "800"
                 },
                 {
                   "type": "text",
@@ -3552,7 +3562,7 @@
                   "opacity": 0.9,
                   "fill": "#FFFFFF",
                   "content": "Desde 1.400€ • Incluye Advanced Open Water",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 24,
                   "fontWeight": "normal"
                 },
@@ -3573,7 +3583,7 @@
                       "name": "finalBtnText",
                       "fill": "#FFFFFF",
                       "content": "RESERVAR AHORA",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 20,
                       "fontWeight": "800",
                       "letterSpacing": 1.5
@@ -3619,7 +3629,7 @@
                       "name": "footerLogo",
                       "fill": "#FFFFFF",
                       "content": "Red Sea Diving",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 28,
                       "fontWeight": "bold"
                     },
@@ -3632,7 +3642,7 @@
                       "width": "fill_container",
                       "content": "Consigue tu Advanced SSI en el destino de buceo más espectacular del mundo.",
                       "lineHeight": 1.5,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -3657,7 +3667,7 @@
                           "name": "footerCol1Title",
                           "fill": "#FFFFFF",
                           "content": "Explora",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -3667,7 +3677,7 @@
                           "name": "footerLink1",
                           "fill": "#FFFFFFAA",
                           "content": "Puntos de buceo",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -3677,7 +3687,7 @@
                           "name": "footerLink2",
                           "fill": "#FFFFFFAA",
                           "content": "Paquetes",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -3687,7 +3697,7 @@
                           "name": "footerLink3",
                           "fill": "#FFFFFFAA",
                           "content": "Liveaboards",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -3706,7 +3716,7 @@
                           "name": "footerCol2Title",
                           "fill": "#FFFFFF",
                           "content": "Cursos",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -3716,7 +3726,7 @@
                           "name": "footerLink4",
                           "fill": "#FFFFFFAA",
                           "content": "Advanced SSI",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -3726,7 +3736,7 @@
                           "name": "footerLink5",
                           "fill": "#FFFFFFAA",
                           "content": "Especialidades",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -3762,7 +3772,7 @@
                   "name": "footerCopy",
                   "fill": "#FFFFFF66",
                   "content": "© 2026 Red Sea Diving. Todos los derechos reservados.",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 14,
                   "fontWeight": "normal"
                 }
@@ -3834,7 +3844,7 @@
                       "name": "earlyBirdText",
                       "fill": "#FFFFFF",
                       "content": "EARLY BIRD 2026",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "800",
                       "letterSpacing": 2
@@ -3849,9 +3859,9 @@
                   "content": "RUTA NORTE\nPECIOS LEGENDARIOS",
                   "lineHeight": 0.95,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
-                  "fontSize": 84,
-                  "fontWeight": "900"
+                  "fontFamily": "Clash Display",
+                  "fontSize": 96,
+                  "fontWeight": "800"
                 },
                 {
                   "type": "text",
@@ -3861,7 +3871,7 @@
                   "fill": "#FFFFFF",
                   "content": "12-19 Abril 2026 • 7 días • SS Thistlegorm + Rosalie Moller",
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 22,
                   "fontWeight": "normal"
                 },
@@ -3879,9 +3889,9 @@
                       "opacity": 0.4,
                       "fill": "#FFFFFF",
                       "content": "1.400€",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 48,
-                      "fontWeight": "700"
+                      "fontWeight": "600"
                     },
                     {
                       "type": "text",
@@ -3890,9 +3900,9 @@
                       "fill": "#FF6B35",
                       "content": "1.190€",
                       "lineHeight": 0.8,
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 92,
-                      "fontWeight": "900"
+                      "fontWeight": "800"
                     }
                   ]
                 },
@@ -3913,7 +3923,7 @@
                       "name": "savingsText",
                       "fill": "#FFFFFF",
                       "content": "AHORRA 210€ + NITROX GRATIS",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "700"
                     }
@@ -3948,7 +3958,7 @@
                           "name": "urgency1Text",
                           "fill": "#FFFFFF",
                           "content": "Solo 4 plazas disponibles",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 18,
                           "fontWeight": "600"
                         }
@@ -3976,7 +3986,7 @@
                           "name": "urgency2Text",
                           "fill": "#FFFFFF",
                           "content": "13 personas viendo esta oferta",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 18,
                           "fontWeight": "600"
                         }
@@ -4001,7 +4011,7 @@
                       "name": "ctaMassiveText",
                       "fill": "#FFFFFF",
                       "content": "RESERVAR MI PLAZA",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 22,
                       "fontWeight": "900",
                       "letterSpacing": 1
@@ -4038,9 +4048,9 @@
                   "fill": "#FFFFFF",
                   "content": "OFERTA\nTERMINA EN:",
                   "lineHeight": 0.95,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 52,
-                  "fontWeight": "900"
+                  "fontWeight": "800"
                 },
                 {
                   "type": "frame",
@@ -4068,7 +4078,7 @@
                           "fill": "#FFFFFF",
                           "content": "05",
                           "lineHeight": 1,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 38,
                           "fontWeight": "900"
                         },
@@ -4079,7 +4089,7 @@
                           "opacity": 0.9,
                           "fill": "#FFFFFF",
                           "content": "DÍAS",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 11,
                           "fontWeight": "700"
                         }
@@ -4105,7 +4115,7 @@
                           "fill": "#FFFFFF",
                           "content": "14",
                           "lineHeight": 1,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 38,
                           "fontWeight": "900"
                         },
@@ -4116,7 +4126,7 @@
                           "opacity": 0.9,
                           "fill": "#FFFFFF",
                           "content": "HRS",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 11,
                           "fontWeight": "700"
                         }
@@ -4142,7 +4152,7 @@
                           "fill": "#FFFFFF",
                           "content": "32",
                           "lineHeight": 1,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 38,
                           "fontWeight": "900"
                         },
@@ -4153,7 +4163,7 @@
                           "opacity": 0.9,
                           "fill": "#FFFFFF",
                           "content": "MIN",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 11,
                           "fontWeight": "700"
                         }
@@ -4213,9 +4223,9 @@
               "name": "includesTop",
               "fill": "#FFFFFF",
               "content": "TODO ESTO POR 1.190€",
-              "fontFamily": "Inter",
+              "fontFamily": "Clash Display",
               "fontSize": 48,
-              "fontWeight": "900"
+              "fontWeight": "800"
             },
             {
               "type": "frame",
@@ -4251,7 +4261,7 @@
                           "name": "inc1Title",
                           "fill": "#FFFFFF",
                           "content": "7 DÍAS LIVEABOARD",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 32,
                           "fontWeight": "900"
                         },
@@ -4262,7 +4272,7 @@
                           "opacity": 0.9,
                           "fill": "#FFFFFF",
                           "content": "Vida a bordo completa • Todas las comidas • Camarote privado",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 16,
                           "fontWeight": "normal"
                         }
@@ -4288,7 +4298,7 @@
                           "content": "18-20\nINMERSIONES",
                           "lineHeight": 1.1,
                           "textAlign": "center",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 36,
                           "fontWeight": "900"
                         }
@@ -4326,7 +4336,7 @@
                           "name": "inc3Title",
                           "fill": "#0D3A5D",
                           "content": "ADVANCED SSI",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 28,
                           "fontWeight": "900"
                         },
@@ -4336,7 +4346,7 @@
                           "name": "inc3Desc",
                           "fill": "#333333",
                           "content": "Curso completo incluido",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 16,
                           "fontWeight": "600"
                         }
@@ -4365,7 +4375,7 @@
                           "name": "inc4Title",
                           "fill": "#FF6B35",
                           "content": "NITROX GRATIS",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 28,
                           "fontWeight": "900"
                         },
@@ -4376,7 +4386,7 @@
                           "opacity": 0.8,
                           "fill": "#FFFFFF",
                           "content": "Valor: 180€ • Ahorro real",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 16,
                           "fontWeight": "600"
                         }
@@ -4410,7 +4420,7 @@
                           "fill": "#FFFFFF",
                           "content": "THISTLEGORM X2 INMERSIONES • ROSALIE MOLLER • ABU NUHAS",
                           "textAlign": "center",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 24,
                           "fontWeight": "900"
                         }
@@ -4466,7 +4476,7 @@
                   "name": "stars",
                   "fill": "#000000",
                   "content": "★★★★★",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 32,
                   "fontWeight": "normal"
                 },
@@ -4477,7 +4487,7 @@
                   "fill": "#000000",
                   "content": "\"El mejor viaje de buceo de mi vida. Ver el Thistlegorm con este grupo fue increíble.\"",
                   "lineHeight": 1.4,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 26,
                   "fontWeight": "700",
                   "fontStyle": "italic"
@@ -4489,7 +4499,7 @@
                   "opacity": 0.7,
                   "fill": "#000000",
                   "content": "Laura M., Madrid",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "700"
                 },
@@ -4500,7 +4510,7 @@
                   "opacity": 0.6,
                   "fill": "#000000",
                   "content": "Marzo 2025",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "normal"
                 }
@@ -4535,9 +4545,9 @@
                   "fill": "#000000",
                   "content": "4",
                   "lineHeight": 0.75,
-                  "fontFamily": "Inter",
-                  "fontSize": 200,
-                  "fontWeight": "900"
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": 220,
+                  "fontWeight": "800"
                 },
                 {
                   "type": "text",
@@ -4546,9 +4556,9 @@
                   "fill": "#000000",
                   "content": "PLAZAS\nQUEDAN",
                   "lineHeight": 0.95,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 52,
-                  "fontWeight": "900"
+                  "fontWeight": "800"
                 }
               ]
             },
@@ -4571,9 +4581,9 @@
                   "fill": "#FFFFFF",
                   "content": "NO TE QUEDES FUERA",
                   "lineHeight": 1.1,
-                  "fontFamily": "Inter",
-                  "fontSize": 42,
-                  "fontWeight": "900"
+                  "fontFamily": "Clash Display",
+                  "fontSize": 48,
+                  "fontWeight": "800"
                 },
                 {
                   "type": "text",
@@ -4583,7 +4593,7 @@
                   "fill": "#FFFFFF",
                   "content": "Grupo máximo 12 personas\nNivel Advanced mínimo\nPróxima salida: Septiembre 2026",
                   "lineHeight": 1.6,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 20,
                   "fontWeight": "normal"
                 },
@@ -4604,7 +4614,7 @@
                       "name": "finalCTABigText",
                       "fill": "#FFFFFF",
                       "content": "RESERVAR AHORA",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 24,
                       "fontWeight": "900",
                       "letterSpacing": 2
@@ -4636,35 +4646,8 @@
               "fill": "#FFFFFF",
               "content": "✓ Cancelación gratuita hasta 30 días antes  •  Pago seguro con Stripe  •  Sin cargos ocultos",
               "textAlign": "center",
-              "fontFamily": "Inter",
+              "fontFamily": "Satoshi",
               "fontSize": 17,
-              "fontWeight": "600"
-            }
-          ]
-        },
-        {
-          "type": "frame",
-          "id": "WndoF",
-          "name": "guarantee",
-          "width": "fill_container",
-          "fill": "#0D3A5D",
-          "padding": [
-            40,
-            120
-          ],
-          "justifyContent": "center",
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "text",
-              "id": "lC2KI",
-              "name": "guaranteeText",
-              "opacity": 0.9,
-              "fill": "#FFFFFF",
-              "content": "✓ Cancelación gratuita hasta 30 días antes • Pago seguro • Sin cargos ocultos",
-              "textAlign": "center",
-              "fontFamily": "Inter",
-              "fontSize": 16,
               "fontWeight": "600"
             }
           ]
@@ -4733,7 +4716,7 @@
                       "name": "postCatText",
                       "fill": "#FFFFFF",
                       "content": "PECIOS",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 12,
                       "fontWeight": "800",
                       "letterSpacing": 1
@@ -4747,9 +4730,9 @@
                   "fill": "#FFFFFF",
                   "content": "Los 7 Mejores Pecios del Mar Rojo",
                   "lineHeight": 1.1,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 64,
-                  "fontWeight": "900"
+                  "fontWeight": "800"
                 },
                 {
                   "type": "frame",
@@ -4764,7 +4747,7 @@
                       "opacity": 0.9,
                       "fill": "#FFFFFF",
                       "content": "Por Carlos Martínez",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     },
@@ -4775,7 +4758,7 @@
                       "opacity": 0.9,
                       "fill": "#FFFFFF",
                       "content": "15 min lectura • 12 Enero 2026",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -4790,7 +4773,7 @@
           "id": "qnCY9",
           "name": "contentContainer",
           "width": "fill_container",
-          "fill": "linear-gradient(180deg, #E8F1F8 0%, #FFFFFF 30%, #FFFFFF 70%, #E8F1F8 100%)",
+          "fill": "#FFFFFF",
           "layout": "vertical",
           "padding": [
             80,
@@ -4819,7 +4802,7 @@
                   "fill": "#333333",
                   "content": "El Mar Rojo es uno de los destinos más espectaculares del mundo para buceo en pecios. Con más de 50 naufragios documentados, desde barcos de la Segunda Guerra Mundial hasta cargueros modernos, cada inmersión es un viaje a través de la historia.",
                   "lineHeight": 1.7,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 20,
                   "fontWeight": "normal"
                 },
@@ -4830,7 +4813,7 @@
                   "fill": "#333333",
                   "content": "En esta guía completa, exploramos los siete pecios más impresionantes que todo buceador Advanced debe visitar al menos una vez en su vida.",
                   "lineHeight": 1.7,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 20,
                   "fontWeight": "normal"
                 }
@@ -4852,9 +4835,9 @@
                   "name": "h2Text",
                   "fill": "#0D3A5D",
                   "content": "1. SS Thistlegorm",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 42,
-                  "fontWeight": "900"
+                  "fontWeight": "800"
                 }
               ]
             },
@@ -4877,7 +4860,7 @@
                   "fill": "#333333",
                   "content": "El Thistlegorm es sin duda el pecio más famoso del Mar Rojo. Hundido en 1941 por bombarderos alemanes, este carguero británico transportaba suministros militares hacia el norte de África.",
                   "lineHeight": 1.7,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "normal"
                 }
@@ -4922,7 +4905,7 @@
                   "fill": "#666666",
                   "content": "Motocicletas BSA en la bodega del Thistlegorm, exactamente como fueron cargadas en 1941.",
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 15,
                   "fontWeight": "normal",
                   "fontStyle": "italic"
@@ -4934,8 +4917,7 @@
               "id": "hM6Ai",
               "name": "quoteBlock",
               "width": 900,
-              "fill": "#F5F5F5",
-              "cornerRadius": 20,
+              "fill": "#0A1628",
               "layout": "vertical",
               "gap": 20,
               "padding": [
@@ -4950,29 +4932,29 @@
                   "fill": "#FF6B35",
                   "content": "“",
                   "lineHeight": 0.8,
-                  "fontFamily": "Inter",
-                  "fontSize": 72,
+                  "fontFamily": "Satoshi",
+                  "fontSize": 96,
                   "fontWeight": "900"
                 },
                 {
                   "type": "text",
                   "id": "YPu9M",
                   "name": "quoteText",
-                  "fill": "#0D3A5D",
+                  "fill": "#FFFFFF",
                   "content": "El Thistlegorm no es solo un pecio. Es un museo submarino donde la historia está congelada en el tiempo. Cada inmersión es como viajar a 1941.",
                   "lineHeight": 1.5,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 28,
-                  "fontWeight": "600",
+                  "fontWeight": "500",
                   "fontStyle": "italic"
                 },
                 {
                   "type": "text",
                   "id": "PAIQ2",
                   "name": "quoteAuthor",
-                  "fill": "#666666",
+                  "fill": "#FFFFFF66",
                   "content": "— Jacques Cousteau, pionero del buceo",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "600"
                 }
@@ -4997,7 +4979,7 @@
                   "fill": "#333333",
                   "content": "La profundidad varía entre 16 y 32 metros, lo que lo hace accesible para buceadores Advanced. Se recomienda realizar al menos dos inmersiones para explorar completamente el pecio.",
                   "lineHeight": 1.7,
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "normal"
                 }
@@ -5018,7 +5000,7 @@
                   "id": "O3xkl",
                   "name": "infoCard1",
                   "width": 260,
-                  "fill": "#0066CC",
+                  "fill": "#0D3A5D",
                   "cornerRadius": 16,
                   "layout": "vertical",
                   "gap": 12,
@@ -5042,7 +5024,7 @@
                           "name": "info1IconText",
                           "fill": "#FFFFFF",
                           "content": "↓",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 32,
                           "fontWeight": "900"
                         }
@@ -5054,9 +5036,9 @@
                       "name": "info1Value",
                       "fill": "#FFFFFF",
                       "content": "16-32m",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 32,
-                      "fontWeight": "900"
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
@@ -5066,7 +5048,7 @@
                       "fill": "#FFFFFF",
                       "content": "Profundidad",
                       "textAlign": "center",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -5101,7 +5083,7 @@
                           "name": "info2IconText",
                           "fill": "#FFFFFF",
                           "content": "👁",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 28,
                           "fontWeight": "normal"
                         }
@@ -5113,9 +5095,9 @@
                       "name": "info2Value",
                       "fill": "#FFFFFF",
                       "content": "20-30m",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 32,
-                      "fontWeight": "900"
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
@@ -5125,7 +5107,7 @@
                       "fill": "#FFFFFF",
                       "content": "Visibilidad",
                       "textAlign": "center",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -5160,7 +5142,7 @@
                           "name": "info3IconText",
                           "fill": "#FFFFFF",
                           "content": "🌡",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 28,
                           "fontWeight": "normal"
                         }
@@ -5172,9 +5154,9 @@
                       "name": "info3Value",
                       "fill": "#FFFFFF",
                       "content": "24-26°C",
-                      "fontFamily": "Inter",
+                      "fontFamily": "JetBrains Mono",
                       "fontSize": 32,
-                      "fontWeight": "900"
+                      "fontWeight": "800"
                     },
                     {
                       "type": "text",
@@ -5184,7 +5166,7 @@
                       "fill": "#FFFFFF",
                       "content": "Temperatura",
                       "textAlign": "center",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -5283,7 +5265,7 @@
                   "name": "h2Text2",
                   "fill": "#0D3A5D",
                   "content": "Qué Encontrarás Dentro",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 42,
                   "fontWeight": "900"
                 }
@@ -5338,7 +5320,7 @@
                       "fill": "#333333",
                       "content": "La bodega de carga está llena de artefactos militares perfectamente preservados:",
                       "lineHeight": 1.7,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "600"
                     },
@@ -5361,7 +5343,7 @@
                               "name": "bullet1",
                               "fill": "#FF6B35",
                               "content": "•",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 24,
                               "fontWeight": "900"
                             },
@@ -5372,7 +5354,7 @@
                               "fill": "#333333",
                               "content": "Motocicletas BSA en perfecto estado",
                               "lineHeight": 1.6,
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 18,
                               "fontWeight": "normal"
                             }
@@ -5390,7 +5372,7 @@
                               "name": "bullet2",
                               "fill": "#FF6B35",
                               "content": "•",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 24,
                               "fontWeight": "900"
                             },
@@ -5401,7 +5383,7 @@
                               "fill": "#333333",
                               "content": "Camiones Bedford y locomotoras",
                               "lineHeight": 1.6,
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 18,
                               "fontWeight": "normal"
                             }
@@ -5419,7 +5401,7 @@
                               "name": "bullet3",
                               "fill": "#FF6B35",
                               "content": "•",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 24,
                               "fontWeight": "900"
                             },
@@ -5430,7 +5412,7 @@
                               "fill": "#333333",
                               "content": "Munición sin explotar (¡no tocar!)",
                               "lineHeight": 1.6,
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 18,
                               "fontWeight": "normal"
                             }
@@ -5448,7 +5430,7 @@
                               "name": "bullet4",
                               "fill": "#FF6B35",
                               "content": "•",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 24,
                               "fontWeight": "900"
                             },
@@ -5459,7 +5441,7 @@
                               "fill": "#333333",
                               "content": "Rifles Lee-Enfield en sus cajas originales",
                               "lineHeight": 1.6,
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 18,
                               "fontWeight": "normal"
                             }
@@ -5475,9 +5457,8 @@
               "type": "frame",
               "id": "nRBi2",
               "name": "ctaInline",
-              "width": 1000,
-              "fill": "linear-gradient(135deg, #000428 0%, #004E92 100%)",
-              "cornerRadius": 24,
+              "width": 1200,
+              "fill": "#0A1628",
               "layout": "vertical",
               "gap": 24,
               "padding": [
@@ -5494,9 +5475,9 @@
                   "content": "¿Listo para Bucear el Thistlegorm?",
                   "lineHeight": 1.2,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 36,
-                  "fontWeight": "900"
+                  "fontWeight": "800"
                 },
                 {
                   "type": "text",
@@ -5507,7 +5488,7 @@
                   "content": "Únete a nuestra Ruta Norte en Abril 2026. Incluye 2 inmersiones en el Thistlegorm + Advanced Open Water.",
                   "lineHeight": 1.6,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "normal"
                 },
@@ -5528,7 +5509,7 @@
                       "name": "ctaButtonText",
                       "fill": "#FFFFFF",
                       "content": "VER RUTAS",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 18,
                       "fontWeight": "800",
                       "letterSpacing": 1
@@ -5555,17 +5536,17 @@
                   "name": "accordionTitle",
                   "fill": "#0D3A5D",
                   "content": "Preguntas Frecuentes",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 42,
-                  "fontWeight": "900"
+                  "fontWeight": "800"
                 },
                 {
                   "type": "frame",
                   "id": "BsZYx",
                   "name": "accordion1",
                   "width": "fill_container",
-                  "fill": "#F5F5F5",
-                  "cornerRadius": 12,
+                  "fill": "#0D3A5D",
+                  "cornerRadius": 16,
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
@@ -5577,9 +5558,9 @@
                       "type": "text",
                       "id": "r1lM5",
                       "name": "acc1Question",
-                      "fill": "#0D3A5D",
+                      "fill": "#FFFFFF",
                       "content": "¿Necesito certificación Advanced para bucear el Thistlegorm?",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 20,
                       "fontWeight": "700"
                     },
@@ -5587,10 +5568,10 @@
                       "type": "text",
                       "id": "3pAyf",
                       "name": "acc1Answer",
-                      "fill": "#333333",
+                      "fill": "#FFFFFF99",
                       "content": "Sí, se requiere certificación Advanced Open Water como mínimo. La profundidad máxima es de 32 metros, fuera del rango de Open Water básico.",
                       "lineHeight": 1.6,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 17,
                       "fontWeight": "normal"
                     }
@@ -5601,11 +5582,11 @@
                   "id": "F3zDV",
                   "name": "accordion2",
                   "width": "fill_container",
-                  "fill": "#FFFFFF",
-                  "cornerRadius": 12,
+                  "fill": "#0A1628",
+                  "cornerRadius": 16,
                   "stroke": {
-                    "thickness": 2,
-                    "fill": "#E0E0E0"
+                    "thickness": 1,
+                    "fill": "#FFFFFF11"
                   },
                   "layout": "vertical",
                   "gap": 16,
@@ -5618,9 +5599,9 @@
                       "type": "text",
                       "id": "OvwBC",
                       "name": "acc2Question",
-                      "fill": "#0D3A5D",
+                      "fill": "#FFFFFF",
                       "content": "¿Cuándo es la mejor época para visitar el Thistlegorm?",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 20,
                       "fontWeight": "700"
                     },
@@ -5628,10 +5609,10 @@
                       "type": "text",
                       "id": "R7eMA",
                       "name": "acc2Answer",
-                      "fill": "#333333",
+                      "fill": "#FFFFFF99",
                       "content": "Marzo a Mayo y Septiembre a Noviembre ofrecen las mejores condiciones: aguas calmadas, excelente visibilidad y temperaturas agradables entre 24-26°C.",
                       "lineHeight": 1.6,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 17,
                       "fontWeight": "normal"
                     }
@@ -5642,11 +5623,11 @@
                   "id": "Di5ma",
                   "name": "accordion3",
                   "width": "fill_container",
-                  "fill": "#FFFFFF",
-                  "cornerRadius": 12,
+                  "fill": "#0A1628",
+                  "cornerRadius": 16,
                   "stroke": {
-                    "thickness": 2,
-                    "fill": "#E0E0E0"
+                    "thickness": 1,
+                    "fill": "#FFFFFF11"
                   },
                   "layout": "vertical",
                   "gap": 16,
@@ -5659,9 +5640,9 @@
                       "type": "text",
                       "id": "7FLuo",
                       "name": "acc3Question",
-                      "fill": "#0D3A5D",
+                      "fill": "#FFFFFF",
                       "content": "¿Puedo entrar dentro del barco?",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 20,
                       "fontWeight": "700"
                     },
@@ -5669,10 +5650,10 @@
                       "type": "text",
                       "id": "W1KN0",
                       "name": "acc3Answer",
-                      "fill": "#333333",
+                      "fill": "#FFFFFF99",
                       "content": "Sí, pero se recomienda hacerlo con un guía experto. Las bodegas son espaciosas, pero siempre respeta las reglas de buceo en pecios: mantén contacto visual con la salida y nunca levantes sedimento.",
                       "lineHeight": 1.6,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 17,
                       "fontWeight": "normal"
                     }
@@ -5684,9 +5665,8 @@
               "type": "frame",
               "id": "x3fP0",
               "name": "newsletterBlock",
-              "width": 1000,
+              "width": 1200,
               "fill": "#FF6B35",
-              "cornerRadius": 24,
               "layout": "vertical",
               "gap": 24,
               "padding": [
@@ -5703,9 +5683,9 @@
                   "content": "Recibe guías como esta cada semana",
                   "lineHeight": 1.3,
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Clash Display",
                   "fontSize": 32,
-                  "fontWeight": "900"
+                  "fontWeight": "800"
                 },
                 {
                   "type": "text",
@@ -5715,7 +5695,7 @@
                   "fill": "#FFFFFF",
                   "content": "Tips de buceo, nuevos destinos y ofertas exclusivas directo a tu inbox.",
                   "textAlign": "center",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 18,
                   "fontWeight": "normal"
                 },
@@ -5747,7 +5727,7 @@
                           "name": "newsInputText",
                           "fill": "#999999",
                           "content": "tu@email.com",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 16,
                           "fontWeight": "normal"
                         }
@@ -5770,7 +5750,7 @@
                           "name": "newsButtonText",
                           "fill": "#FFFFFF",
                           "content": "SUSCRIBIR",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 15,
                           "fontWeight": "800",
                           "letterSpacing": 1
@@ -5818,7 +5798,7 @@
                       "name": "footerLogo",
                       "fill": "#FFFFFF",
                       "content": "Red Sea Diving",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 28,
                       "fontWeight": "bold"
                     },
@@ -5831,7 +5811,7 @@
                       "width": "fill_container",
                       "content": "Consigue tu Advanced SSI en el destino de buceo más espectacular del mundo.",
                       "lineHeight": 1.5,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -5856,7 +5836,7 @@
                           "name": "footerCol1Title",
                           "fill": "#FFFFFF",
                           "content": "Explora",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -5866,7 +5846,7 @@
                           "name": "footerLink1",
                           "fill": "#FFFFFFAA",
                           "content": "Puntos de buceo",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -5876,7 +5856,7 @@
                           "name": "footerLink2",
                           "fill": "#FFFFFFAA",
                           "content": "Paquetes",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -5886,7 +5866,7 @@
                           "name": "footerLink3",
                           "fill": "#FFFFFFAA",
                           "content": "Liveaboards",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -5905,7 +5885,7 @@
                           "name": "footerCol2Title",
                           "fill": "#FFFFFF",
                           "content": "Cursos",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -5915,7 +5895,7 @@
                           "name": "footerLink4",
                           "fill": "#FFFFFFAA",
                           "content": "Advanced SSI",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -5925,7 +5905,7 @@
                           "name": "footerLink5",
                           "fill": "#FFFFFFAA",
                           "content": "Especialidades",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -5961,7 +5941,7 @@
                   "name": "footerCopy",
                   "fill": "#FFFFFF66",
                   "content": "© 2026 Red Sea Diving. Todos los derechos reservados.",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 14,
                   "fontWeight": "normal"
                 }
@@ -5998,11 +5978,12 @@
               "type": "text",
               "id": "4M7Ug",
               "name": "logo",
-              "fill": "#0066CC",
+              "fill": "#0D3A5D",
               "content": "Red Sea Diving",
-              "fontFamily": "Inter",
-              "fontSize": 24,
-              "fontWeight": "bold"
+              "fontFamily": "Clash Display",
+              "fontSize": 22,
+              "fontWeight": "700",
+              "letterSpacing": 1
             },
             {
               "type": "frame",
@@ -6016,7 +5997,7 @@
                   "name": "navItem1",
                   "fill": "#2C3E50",
                   "content": "Destinos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -6026,7 +6007,7 @@
                   "name": "navItem2",
                   "fill": "#2C3E50",
                   "content": "Cursos",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -6036,7 +6017,7 @@
                   "name": "navItem3",
                   "fill": "#2C3E50",
                   "content": "Experiencias",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 },
@@ -6046,7 +6027,7 @@
                   "name": "navItem4",
                   "fill": "#2C3E50",
                   "content": "Contacto",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "500"
                 }
@@ -6069,7 +6050,7 @@
                   "name": "ctaHeaderText",
                   "fill": "#FFFFFF",
                   "content": "Reserva Ahora",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 16,
                   "fontWeight": "600"
                 }
@@ -6082,13 +6063,10 @@
           "id": "liRtg",
           "name": "heroNew",
           "width": "fill_container",
-          "fill": "linear-gradient(135deg, #0D3A5D 0%, #004E92 100%)",
+          "fill": "#0A1628",
           "layout": "vertical",
           "gap": 20,
-          "padding": [
-            100,
-            120
-          ],
+          "padding": 120,
           "alignItems": "center",
           "children": [
             {
@@ -6098,19 +6076,19 @@
               "fill": "#FFFFFF",
               "content": "BLOG DE BUCEO",
               "textAlign": "center",
-              "fontFamily": "Inter",
-              "fontSize": 72,
-              "fontWeight": "900"
+              "fontFamily": "Clash Display",
+              "fontSize": 80,
+              "fontWeight": "800"
             },
             {
               "type": "text",
               "id": "DR7pE",
               "name": "heroSub",
               "opacity": 0.9,
-              "fill": "#FFFFFF",
+              "fill": "#FFFFFF99",
               "content": "Guías, consejos y experiencias del Mar Rojo",
               "textAlign": "center",
-              "fontFamily": "Inter",
+              "fontFamily": "Satoshi",
               "fontSize": 24,
               "fontWeight": "normal"
             }
@@ -6121,6 +6099,7 @@
           "id": "pkI6O",
           "name": "masonryNew",
           "width": "fill_container",
+          "fill": "#0A1628",
           "layout": "vertical",
           "gap": 32,
           "padding": [
@@ -6154,7 +6133,7 @@
                     "url": "https://images.unsplash.com/photo-1651020696866-3b95ec4d8e80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzY1NTB8&ixlib=rb-4.1.0&q=80&w=1080",
                     "mode": "fill"
                   },
-                  "cornerRadius": 20,
+                  "cornerRadius": 16,
                   "layout": "vertical",
                   "children": [
                     {
@@ -6185,7 +6164,7 @@
                               "name": "featCatTxt",
                               "fill": "#FFFFFF",
                               "content": "PECIOS",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 12,
                               "fontWeight": "800",
                               "letterSpacing": 1
@@ -6199,9 +6178,9 @@
                           "fill": "#FFFFFF",
                           "content": "Los 7 Mejores Pecios del Mar Rojo para Advanced",
                           "lineHeight": 1.2,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Clash Display",
                           "fontSize": 32,
-                          "fontWeight": "900"
+                          "fontWeight": "800"
                         },
                         {
                           "type": "text",
@@ -6210,7 +6189,7 @@
                           "opacity": 0.8,
                           "fill": "#FFFFFF",
                           "content": "15 min lectura • 12 Enero 2026",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -6232,7 +6211,7 @@
                       "name": "c1",
                       "width": "fill_container",
                       "height": 240,
-                      "fill": "#F5F5F5",
+                      "fill": "#0D3A5D",
                       "cornerRadius": 20,
                       "layout": "vertical",
                       "gap": 12,
@@ -6243,7 +6222,7 @@
                           "type": "frame",
                           "id": "UoUoA",
                           "name": "c1cat",
-                          "fill": "#0066CC",
+                          "fill": "#3DABC2",
                           "cornerRadius": 6,
                           "padding": [
                             6,
@@ -6256,7 +6235,7 @@
                               "name": "c1catTxt",
                               "fill": "#FFFFFF",
                               "content": "GUÍAS",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 11,
                               "fontWeight": "800",
                               "letterSpacing": 1
@@ -6267,10 +6246,10 @@
                           "type": "text",
                           "id": "7WxBl",
                           "name": "c1title",
-                          "fill": "#0D3A5D",
+                          "fill": "#FFFFFF",
                           "content": "Cómo Preparar tu Primera Inmersión en Pecios",
                           "lineHeight": 1.3,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 20,
                           "fontWeight": "700"
                         },
@@ -6278,9 +6257,9 @@
                           "type": "text",
                           "id": "m8RP6",
                           "name": "c1meta",
-                          "fill": "#666666",
+                          "fill": "#FFFFFF88",
                           "content": "8 min • 10 Enero",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 13,
                           "fontWeight": "normal"
                         }
@@ -6334,7 +6313,7 @@
                                   "name": "c2catTxt",
                                   "fill": "#FFFFFF",
                                   "content": "DESTINOS",
-                                  "fontFamily": "Inter",
+                                  "fontFamily": "Satoshi",
                                   "fontSize": 11,
                                   "fontWeight": "800",
                                   "letterSpacing": 1
@@ -6348,7 +6327,7 @@
                               "fill": "#FFFFFF",
                               "content": "Ras Mohammed: La Joya del Mar Rojo",
                               "lineHeight": 1.2,
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 18,
                               "fontWeight": "800"
                             }
@@ -6374,7 +6353,7 @@
                   "name": "c3",
                   "width": 460,
                   "height": "fill_container",
-                  "fill": "#0D3A5D",
+                  "fill": "#FF6B35",
                   "cornerRadius": 20,
                   "layout": "vertical",
                   "gap": 16,
@@ -6398,7 +6377,7 @@
                           "name": "c3catTxt",
                           "fill": "#FFFFFF",
                           "content": "CURSOS",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 11,
                           "fontWeight": "800",
                           "letterSpacing": 1
@@ -6412,9 +6391,9 @@
                       "fill": "#FFFFFF",
                       "content": "Advanced Open Water: Todo lo que Necesitas Saber",
                       "lineHeight": 1.3,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Clash Display",
                       "fontSize": 24,
-                      "fontWeight": "800"
+                      "fontWeight": "700"
                     },
                     {
                       "type": "text",
@@ -6424,7 +6403,7 @@
                       "fill": "#FFFFFF",
                       "content": "Profundidad, navegación, flotabilidad. Los 5 módulos explicados.",
                       "lineHeight": 1.5,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     },
@@ -6435,7 +6414,7 @@
                       "opacity": 0.7,
                       "fill": "#FFFFFF",
                       "content": "12 min • 8 Enero",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 13,
                       "fontWeight": "normal"
                     }
@@ -6489,7 +6468,7 @@
                               "name": "c4catTxt",
                               "fill": "#FFFFFF",
                               "content": "VIDA A BORDO",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Satoshi",
                               "fontSize": 11,
                               "fontWeight": "800",
                               "letterSpacing": 1
@@ -6503,7 +6482,7 @@
                           "fill": "#FFFFFF",
                           "content": "Qué Esperar en tu Primer Liveaboard",
                           "lineHeight": 1.2,
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 20,
                           "fontWeight": "800"
                         },
@@ -6514,7 +6493,7 @@
                           "opacity": 0.7,
                           "fill": "#FFFFFF",
                           "content": "10 min • 5 Enero",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 13,
                           "fontWeight": "normal"
                         }
@@ -6561,7 +6540,7 @@
                       "name": "footerLogo",
                       "fill": "#FFFFFF",
                       "content": "Red Sea Diving",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 28,
                       "fontWeight": "bold"
                     },
@@ -6574,7 +6553,7 @@
                       "width": "fill_container",
                       "content": "Consigue tu Advanced SSI en el destino de buceo más espectacular del mundo.",
                       "lineHeight": 1.5,
-                      "fontFamily": "Inter",
+                      "fontFamily": "Satoshi",
                       "fontSize": 16,
                       "fontWeight": "normal"
                     }
@@ -6599,7 +6578,7 @@
                           "name": "footerCol1Title",
                           "fill": "#FFFFFF",
                           "content": "Explora",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -6609,7 +6588,7 @@
                           "name": "footerLink1",
                           "fill": "#FFFFFFAA",
                           "content": "Puntos de buceo",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -6619,7 +6598,7 @@
                           "name": "footerLink2",
                           "fill": "#FFFFFFAA",
                           "content": "Paquetes",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -6629,7 +6608,7 @@
                           "name": "footerLink3",
                           "fill": "#FFFFFFAA",
                           "content": "Liveaboards",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -6648,7 +6627,7 @@
                           "name": "footerCol2Title",
                           "fill": "#FFFFFF",
                           "content": "Cursos",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "bold"
                         },
@@ -6658,7 +6637,7 @@
                           "name": "footerLink4",
                           "fill": "#FFFFFFAA",
                           "content": "Advanced SSI",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         },
@@ -6668,7 +6647,7 @@
                           "name": "footerLink5",
                           "fill": "#FFFFFFAA",
                           "content": "Especialidades",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Satoshi",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -6704,7 +6683,7 @@
                   "name": "footerCopy",
                   "fill": "#FFFFFF66",
                   "content": "© 2026 Red Sea Diving. Todos los derechos reservados.",
-                  "fontFamily": "Inter",
+                  "fontFamily": "Satoshi",
                   "fontSize": 14,
                   "fontWeight": "normal"
                 }

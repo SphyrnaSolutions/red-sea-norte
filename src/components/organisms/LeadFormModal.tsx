@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
 import { useModalStore } from "@/lib/stores/useModalStore"
@@ -34,14 +34,19 @@ export function LeadFormModal({
   const [formData, setFormData] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // Reset form when modal closes
-  useEffect(() => {
-    if (!isOpen) {
-      setFormData({})
-      setShowSuccess(false)
+  const handleClose = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
     }
-  }, [isOpen])
+
+    setFormData({})
+    setShowSuccess(false)
+    setIsSubmitting(false)
+    closeModal()
+  }
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -55,6 +60,14 @@ export function LeadFormModal({
     }
   }, [isOpen])
 
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current)
+      }
+    }
+  }, [])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -67,8 +80,8 @@ export function LeadFormModal({
     setShowSuccess(true)
 
     // Close modal after 2 seconds
-    setTimeout(() => {
-      closeModal()
+    closeTimeoutRef.current = setTimeout(() => {
+      handleClose()
     }, 2000)
   }
 
@@ -103,7 +116,7 @@ export function LeadFormModal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
-            onClick={closeModal}
+            onClick={handleClose}
           />
 
           {/* Modal */}
@@ -118,7 +131,7 @@ export function LeadFormModal({
             >
               {/* Close Button */}
               <button
-                onClick={closeModal}
+                onClick={handleClose}
                 className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors"
                 aria-label="Cerrar modal"
               >

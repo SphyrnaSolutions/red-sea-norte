@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Hourglass } from 'lucide-react'
 import Image from 'next/image'
+import { useModalStore } from '@/lib/stores/useModalStore'
 
 interface CountdownAsymProps {
   countdownTo: string // ISO date string "2026-03-15T23:59:59"
@@ -18,31 +19,32 @@ interface TimeLeft {
   seconds: number
 }
 
+function calculateTimeLeft(countdownTo: string): TimeLeft {
+  const difference = new Date(countdownTo).getTime() - new Date().getTime()
+
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+  }
+
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / 1000 / 60) % 60),
+    seconds: Math.floor((difference / 1000) % 60)
+  }
+}
+
 export default function CountdownAsym({
   countdownTo,
   plazasDisponibles,
   personasViendo
 }: CountdownAsymProps) {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft())
-
-  function calculateTimeLeft(): TimeLeft {
-    const difference = new Date(countdownTo).getTime() - new Date().getTime()
-
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-    }
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60)
-    }
-  }
+  const { openModal } = useModalStore()
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calculateTimeLeft(countdownTo))
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft())
+      setTimeLeft(calculateTimeLeft(countdownTo))
     }, 1000)
 
     return () => clearInterval(timer)
@@ -196,6 +198,21 @@ export default function CountdownAsym({
                 Miles de buzos ya han vivido esta experiencia inolvidable.
                 <span className="font-semibold text-white"> ¡Reserva ahora!</span>
               </p>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.85 }}
+              >
+                <motion.button
+                  onClick={openModal}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto px-8 py-4 bg-[#FF6B35] hover:bg-[#e55a2a] text-white font-bold text-lg rounded-xl transition-colors cursor-pointer"
+                >
+                  Reservar Ahora
+                </motion.button>
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}

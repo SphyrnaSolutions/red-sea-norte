@@ -46,6 +46,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
       {imageUrl && (
         <img
           src={imageUrl}
+          alt=""
           style={{
             position: 'absolute',
             top: 0,

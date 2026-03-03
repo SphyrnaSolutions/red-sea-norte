@@ -65,7 +65,7 @@ export default async function RutasPage() {
           <h1
             className="text-white text-7xl font-black mb-6 max-md:text-4xl max-lg:text-5xl"
             style={{
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              fontFamily: 'var(--font-sans)',
               fontWeight: 900,
               lineHeight: 1.1,
               textShadow: '0 2px 20px rgba(0,0,0,0.3)'
@@ -109,7 +109,7 @@ export default async function RutasPage() {
                 fontSize: '42px',
                 fontWeight: 800,
                 lineHeight: 1.2,
-                fontFamily: 'Inter, sans-serif'
+                fontFamily: 'var(--font-sans)'
               }}
             >
               Elige Tu Aventura
@@ -182,7 +182,7 @@ export default async function RutasPage() {
                           fontSize: '32px',
                           fontWeight: 800,
                           lineHeight: 1.2,
-                          fontFamily: 'Inter, sans-serif'
+                          fontFamily: 'var(--font-sans)'
                         }}
                       >
                         {ruta.title}
@@ -382,7 +382,7 @@ export default async function RutasPage() {
             style={{
               fontSize: '44px',
               fontWeight: 800,
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'var(--font-sans)',
               lineHeight: 1.2
             }}
           >

@@ -25,6 +25,7 @@ export const colors = {
   bgGray: '#F5F5F5',
   bgMint: '#ECFDF5',
   bgWhite: '#FFFFFF',
+  bgDarkNavy: '#0A1628',
 
   // Gradients
   gradients: {

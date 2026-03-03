@@ -83,7 +83,7 @@ export function ProofAsym({ testimonios }: ProofAsymProps) {
                 lineHeight: '1.4',
               }}
             >
-              "{featuredTestimonial.text}"
+              &quot;{featuredTestimonial.text}&quot;
             </blockquote>
 
             {/* Author + Date en NEGRO */}

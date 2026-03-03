@@ -1,5 +1,3 @@
-import { LucideIcon } from "lucide-react"
-
 /**
  * Common Types
  */
@@ -187,7 +185,7 @@ export interface HomepageData {
 export interface Block {
   type: string
   id: string
-  value: any
+  value: unknown
 }
 
 export interface BlogPost {

@@ -157,6 +157,31 @@ export const blogPosts: BlogPost[] = [
           },
         },
       },
+      {
+        type: "accordion",
+        id: "12",
+        value: {
+          items: [
+            {
+              title: "¿Qué certificación necesitas?",
+              content: "<p>Recomendamos al menos Advanced Open Water o equivalente, con experiencia reciente en profundidad y pecios.</p>",
+            },
+            {
+              title: "¿Cuál es la mejor época?",
+              content: "<p>La ruta funciona bien gran parte del año, pero primavera y otoño suelen ofrecer la combinación más equilibrada de visibilidad, temperatura y mar.</p>",
+            },
+          ],
+        },
+      },
+      {
+        type: "newsletter",
+        id: "13",
+        value: {
+          title: "Recibe nuevas guías del Mar Rojo",
+          description: "Te avisamos cuando publiquemos rutas, consejos de seguridad y nuevas salidas con plazas abiertas.",
+          buttonText: "Suscribirme",
+        },
+      },
     ],
   },
   {

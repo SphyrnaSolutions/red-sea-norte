@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { useModalStore } from '@/lib/stores/useModalStore'
 
 interface FinalDiagonalProps {
   title: string
@@ -21,6 +22,8 @@ export function FinalDiagonal({
   pricing,
   plazasDisponibles,
 }: FinalDiagonalProps) {
+  const { openModal } = useModalStore()
+
   return (
     <section className="relative w-full overflow-hidden">
       {/* Desktop: Diagonal Layout */}
@@ -43,13 +46,13 @@ export function FinalDiagonal({
             >
               <div
                 className="text-[200px] font-black leading-[0.75] mb-2"
-                style={{ fontFamily: 'Bebas Neue, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'var(--font-display)', fontWeight: 900 }}
               >
                 {plazasDisponibles}
               </div>
               <div
                 className="text-[52px] font-black leading-[0.95] whitespace-pre-line"
-                style={{ fontFamily: 'Bebas Neue, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'var(--font-display)', fontWeight: 900 }}
               >
                 PLAZAS{'\n'}QUEDAN
               </div>
@@ -74,10 +77,15 @@ export function FinalDiagonal({
             >
               <h2 className="text-4xl font-bold mb-4">{title}</h2>
               <p className="text-2xl mb-8 text-gray-300">{description}</p>
+              <p className="mb-8 text-sm uppercase tracking-[0.18em] text-[#FF6B35]">
+                Desde {pricing.actual}
+                {pricing.moneda}
+              </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   size="lg"
-                  className="h-[85px] w-[450px] bg-white text-black hover:bg-[#FF6B35] hover:text-white rounded-xl text-lg font-semibold transition-colors"
+                  onClick={openModal}
+                  className="h-[85px] w-[450px] bg-white text-black hover:bg-[#FF6B35] hover:text-white rounded-xl text-lg font-semibold transition-colors cursor-pointer"
                 >
                   {primaryCTA.text}
                 </Button>
@@ -105,13 +113,13 @@ export function FinalDiagonal({
             >
               <div
                 className="text-[120px] font-black leading-[0.75] mb-2"
-                style={{ fontFamily: 'Bebas Neue, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'var(--font-display)', fontWeight: 900 }}
               >
                 {plazasDisponibles}
               </div>
               <div
                 className="text-[40px] font-black leading-[0.95] whitespace-pre-line"
-                style={{ fontFamily: 'Bebas Neue, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'var(--font-display)', fontWeight: 900 }}
               >
                 PLAZAS{'\n'}QUEDAN
               </div>
@@ -130,10 +138,15 @@ export function FinalDiagonal({
             >
               <h2 className="text-3xl font-bold mb-4">{title}</h2>
               <p className="text-xl mb-8 text-gray-300">{description}</p>
+              <p className="mb-6 text-sm uppercase tracking-[0.18em] text-[#FF6B35]">
+                Desde {pricing.actual}
+                {pricing.moneda}
+              </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   size="lg"
-                  className="bg-white text-black hover:bg-[#FF6B35] hover:text-white rounded-xl px-8 py-6 text-lg font-semibold w-full sm:w-auto transition-colors"
+                  onClick={openModal}
+                  className="bg-white text-black hover:bg-[#FF6B35] hover:text-white rounded-xl px-8 py-6 text-lg font-semibold w-full sm:w-auto transition-colors cursor-pointer"
                 >
                   {primaryCTA.text}
                 </Button>

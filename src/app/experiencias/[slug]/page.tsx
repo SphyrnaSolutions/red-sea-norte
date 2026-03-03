@@ -15,6 +15,102 @@ interface ExperienciaPageProps {
   }>
 }
 
+type YearSectionData = Extract<ExperienciaSection, { type: "year" }>
+type SplitImmersiveSectionData = Extract<ExperienciaSection, { type: "split_immersive" }>
+type DepthSectionData = Extract<ExperienciaSection, { type: "depth" }>
+type ImageGridSectionData = Extract<ExperienciaSection, { type: "image_grid" }>
+type RequirementsSectionData = Extract<ExperienciaSection, { type: "requirements" }>
+type TextOverlayFullSectionData = Extract<ExperienciaSection, { type: "text_overlay_full" }>
+
+interface RichTextSectionData {
+  type: "rich_text"
+  id: string
+  value: {
+    content: string
+  }
+}
+
+interface HeadingSectionData {
+  type: "heading"
+  id: string
+  value: {
+    level: number
+    text: string
+  }
+}
+
+interface ImageSectionData {
+  type: "image"
+  id: string
+  value: {
+    url: string
+    caption?: string
+    alt?: string
+  }
+}
+
+interface QuoteSectionData {
+  type: "quote"
+  id: string
+  value: {
+    text: string
+    author?: string
+    role?: string
+  }
+}
+
+interface InfoCardsSectionData {
+  type: "info_cards"
+  id: string
+  value: {
+    cards: Array<{
+      icon: string
+      value: string
+      label: string
+      color: string
+    }>
+  }
+}
+
+interface GallerySectionData {
+  type: "gallery"
+  id: string
+  value: {
+    images: Array<{
+      url: string
+      alt?: string
+    }>
+  }
+}
+
+interface TwoColumnSectionData {
+  type: "two_column"
+  id: string
+  value: {
+    leftColumn: {
+      image: string
+      alt?: string
+    }
+    rightColumn: {
+      title: string
+      content: string
+    }
+  }
+}
+
+interface CTASectionData {
+  type: "cta"
+  id: string
+  value: {
+    title: string
+    description: string
+    primaryCTA: {
+      text: string
+      href: string
+    }
+  }
+}
+
 // Add after imports, before generateStaticParams
 export async function generateMetadata({ params }: ExperienciaPageProps): Promise<Metadata> {
   const { slug } = await params
@@ -128,8 +224,8 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
 
       {/* Dynamic Sections */}
       <section className="w-full">
-        {experiencia.sections.map((section, index) => (
-          <SectionRenderer key={section.id} section={section} index={index} />
+        {experiencia.sections.map((section) => (
+          <SectionRenderer key={section.id} section={section} />
         ))}
       </section>
 
@@ -182,7 +278,7 @@ function HeroExperiencia({ experiencia }: { experiencia: ExperienciaData }) {
             fontSize: '120px',
             fontWeight: 800,
             lineHeight: 0.9,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {experiencia.hero.title}
@@ -195,7 +291,7 @@ function HeroExperiencia({ experiencia }: { experiencia: ExperienciaData }) {
             fontWeight: 'normal',
             letterSpacing: '2px',
             opacity: 0.9,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {experiencia.hero.subtitle}
@@ -209,39 +305,39 @@ function HeroExperiencia({ experiencia }: { experiencia: ExperienciaData }) {
    Section Renderer
    =========================== */
 
-function SectionRenderer({ section, index }: { section: ExperienciaSection; index: number }) {
+function SectionRenderer({ section }: { section: ExperienciaSection }) {
   switch (section.type) {
     // Bloques específicos de experiencias
     case 'year':
-      return <YearSection section={section} />
+      return <YearSection section={section as YearSectionData} />
     case 'split_immersive':
-      return <SplitImmersiveSection section={section} />
+      return <SplitImmersiveSection section={section as SplitImmersiveSectionData} />
     case 'depth':
-      return <DepthSection section={section} />
+      return <DepthSection section={section as DepthSectionData} />
     case 'image_grid':
-      return <ImageGridSection section={section} />
+      return <ImageGridSection section={section as ImageGridSectionData} />
     case 'requirements':
-      return <RequirementsSection section={section} />
+      return <RequirementsSection section={section as RequirementsSectionData} />
     case 'text_overlay_full':
-      return <TextOverlayFullSection section={section} />
+      return <TextOverlayFullSection section={section as TextOverlayFullSectionData} />
 
     // Bloques del blog (reutilizados)
     case 'rich_text':
-      return <RichTextBlock section={section} />
+      return <RichTextBlock section={section as RichTextSectionData} />
     case 'heading':
-      return <HeadingBlock section={section} />
+      return <HeadingBlock section={section as HeadingSectionData} />
     case 'image':
-      return <ImageBlock section={section} />
+      return <ImageBlock section={section as ImageSectionData} />
     case 'quote':
-      return <QuoteBlock section={section} />
+      return <QuoteBlock section={section as QuoteSectionData} />
     case 'info_cards':
-      return <InfoCardsBlock section={section} />
+      return <InfoCardsBlock section={section as InfoCardsSectionData} />
     case 'gallery':
-      return <GalleryBlock section={section} />
+      return <GalleryBlock section={section as GallerySectionData} />
     case 'two_column':
-      return <TwoColumnBlock section={section} />
+      return <TwoColumnBlock section={section as TwoColumnSectionData} />
     case 'cta':
-      return <CTABlock section={section} />
+      return <CTABlock section={section as CTASectionData} />
 
     default:
       return null
@@ -252,8 +348,8 @@ function SectionRenderer({ section, index }: { section: ExperienciaSection; inde
    Year Section Component
    =========================== */
 
-function YearSection({ section }: { section: any }) {
-  const { year, title, description, image, backgroundColor = "#0D3A5D" } = section.value
+function YearSection({ section }: { section: YearSectionData }) {
+  const { year, title, image, backgroundColor = "#0D3A5D" } = section.value
 
   return (
     <section className="w-full h-[600px] max-md:h-auto max-md:flex-col flex">
@@ -269,7 +365,7 @@ function YearSection({ section }: { section: any }) {
             fontWeight: 900,
             lineHeight: 0.8,
             color: '#FF6B35',
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {year}
@@ -290,7 +386,7 @@ function YearSection({ section }: { section: any }) {
             fontWeight: 700,
             letterSpacing: '2px',
             lineHeight: 1.3,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {title}
@@ -320,7 +416,7 @@ function YearSection({ section }: { section: any }) {
    Split Immersive Section Component
    =========================== */
 
-function SplitImmersiveSection({ section }: { section: any }) {
+function SplitImmersiveSection({ section }: { section: SplitImmersiveSectionData }) {
   const { layout, image, title, content, ctaButton, backgroundColor = "#000000" } = section.value
   const isImageLeft = layout === "image-left"
 
@@ -347,7 +443,7 @@ function SplitImmersiveSection({ section }: { section: any }) {
             fontSize: '64px',
             fontWeight: 800,
             lineHeight: 1,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {title}
@@ -360,7 +456,7 @@ function SplitImmersiveSection({ section }: { section: any }) {
             fontWeight: 'normal',
             lineHeight: 1.7,
             opacity: 0.9,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {content}
@@ -386,7 +482,7 @@ function SplitImmersiveSection({ section }: { section: any }) {
    Depth Section Component
    =========================== */
 
-function DepthSection({ section }: { section: any }) {
+function DepthSection({ section }: { section: DepthSectionData }) {
   const { depth, unit, subtitle, image, overlayGradient } = section.value
 
   return (
@@ -415,7 +511,7 @@ function DepthSection({ section }: { section: any }) {
             fontSize: '220px',
             fontWeight: 900,
             lineHeight: 0.75,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {depth}
@@ -427,7 +523,7 @@ function DepthSection({ section }: { section: any }) {
             fontSize: '48px',
             fontWeight: 900,
             letterSpacing: '8px',
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {unit}
@@ -439,7 +535,7 @@ function DepthSection({ section }: { section: any }) {
             fontSize: '22px',
             fontWeight: 600,
             opacity: 0.9,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {subtitle}
@@ -453,7 +549,7 @@ function DepthSection({ section }: { section: any }) {
    Image Grid Section Component
    =========================== */
 
-function ImageGridSection({ section }: { section: any }) {
+function ImageGridSection({ section }: { section: ImageGridSectionData }) {
   const { images, layout } = section.value
 
   if (layout === "1-large-2-small") {
@@ -482,7 +578,7 @@ function ImageGridSection({ section }: { section: any }) {
                     style={{
                       fontSize: '38px',
                       fontWeight: 800,
-                      fontFamily: 'Inter, sans-serif'
+                      fontFamily: 'var(--font-sans)'
                     }}
                   >
                     {images[0].overlay.title}
@@ -494,7 +590,7 @@ function ImageGridSection({ section }: { section: any }) {
                     style={{
                       fontSize: '18px',
                       opacity: 0.9,
-                      fontFamily: 'Inter, sans-serif'
+                      fontFamily: 'var(--font-sans)'
                     }}
                   >
                     {images[0].overlay.description}
@@ -507,7 +603,7 @@ function ImageGridSection({ section }: { section: any }) {
 
         {/* Two Small Images */}
         <div className="flex gap-1 max-md:flex-col">
-          {images.slice(1, 3).map((img: any, idx: number) => (
+          {images.slice(1, 3).map((img, idx: number) => (
             <div key={idx} className="relative w-1/2 max-md:w-full h-[400px] max-md:h-[300px]">
               <Image
                 src={img.url}
@@ -530,7 +626,7 @@ function ImageGridSection({ section }: { section: any }) {
                         style={{
                           fontSize: '28px',
                           fontWeight: 700,
-                          fontFamily: 'Inter, sans-serif'
+                          fontFamily: 'var(--font-sans)'
                         }}
                       >
                         {img.overlay.title}
@@ -542,7 +638,7 @@ function ImageGridSection({ section }: { section: any }) {
                         style={{
                           fontSize: '16px',
                           opacity: 0.8,
-                          fontFamily: 'Inter, sans-serif'
+                          fontFamily: 'var(--font-sans)'
                         }}
                       >
                         {img.overlay.description}
@@ -566,7 +662,7 @@ function ImageGridSection({ section }: { section: any }) {
    Requirements Section Component
    =========================== */
 
-function RequirementsSection({ section }: { section: any }) {
+function RequirementsSection({ section }: { section: RequirementsSectionData }) {
   const { title, subtitle, backgroundColor = "#000000" } = section.value
 
   return (
@@ -580,7 +676,7 @@ function RequirementsSection({ section }: { section: any }) {
           fontSize: '52px',
           fontWeight: 900,
           letterSpacing: '2px',
-          fontFamily: 'Inter, sans-serif'
+          fontFamily: 'var(--font-sans)'
         }}
       >
         {title}
@@ -592,7 +688,7 @@ function RequirementsSection({ section }: { section: any }) {
           fontSize: '22px',
           fontWeight: 'normal',
           opacity: 0.8,
-          fontFamily: 'Inter, sans-serif'
+          fontFamily: 'var(--font-sans)'
         }}
       >
         {subtitle}
@@ -605,7 +701,7 @@ function RequirementsSection({ section }: { section: any }) {
    Text Overlay Full Section Component
    =========================== */
 
-function TextOverlayFullSection({ section }: { section: any }) {
+function TextOverlayFullSection({ section }: { section: TextOverlayFullSectionData }) {
   const { image, title, subtitle, alignment = "center", overlayGradient, ctaButton } = section.value
 
   return (
@@ -635,7 +731,7 @@ function TextOverlayFullSection({ section }: { section: any }) {
             fontSize: '64px',
             fontWeight: 900,
             lineHeight: 1.1,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {title}
@@ -647,7 +743,7 @@ function TextOverlayFullSection({ section }: { section: any }) {
             style={{
               fontSize: '24px',
               opacity: 0.9,
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
           >
             {subtitle}
@@ -674,7 +770,7 @@ function TextOverlayFullSection({ section }: { section: any }) {
    Blog Blocks (Reused)
    =========================== */
 
-function RichTextBlock({ section }: { section: any }) {
+function RichTextBlock({ section }: { section: RichTextSectionData }) {
   return (
     <div className="w-full max-w-[800px] px-[24px] mb-10">
       <div
@@ -683,7 +779,7 @@ function RichTextBlock({ section }: { section: any }) {
           color: '#333333',
           fontSize: '20px',
           lineHeight: 1.7,
-          fontFamily: 'Inter, sans-serif'
+          fontFamily: 'var(--font-sans)'
         }}
         dangerouslySetInnerHTML={{ __html: section.value.content }}
       />
@@ -691,7 +787,7 @@ function RichTextBlock({ section }: { section: any }) {
   )
 }
 
-function HeadingBlock({ section }: { section: any }) {
+function HeadingBlock({ section }: { section: HeadingSectionData }) {
   const { level, text } = section.value
   const Tag = `h${level}` as keyof React.JSX.IntrinsicElements
 
@@ -702,7 +798,7 @@ function HeadingBlock({ section }: { section: any }) {
           fontSize: level === 2 ? '36px' : '28px',
           fontWeight: 800,
           color: '#0D3A5D',
-          fontFamily: 'Inter, sans-serif'
+          fontFamily: 'var(--font-sans)'
         }}
       >
         {text}
@@ -711,7 +807,7 @@ function HeadingBlock({ section }: { section: any }) {
   )
 }
 
-function ImageBlock({ section }: { section: any }) {
+function ImageBlock({ section }: { section: ImageSectionData }) {
   const { url, caption, alt } = section.value
 
   return (
@@ -719,7 +815,7 @@ function ImageBlock({ section }: { section: any }) {
       <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
         <Image
           src={url}
-          alt={alt}
+          alt={alt || ""}
           fill
           className="object-cover"
         />
@@ -731,7 +827,7 @@ function ImageBlock({ section }: { section: any }) {
             fontSize: '14px',
             color: '#666666',
             fontStyle: 'italic',
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {caption}
@@ -741,7 +837,7 @@ function ImageBlock({ section }: { section: any }) {
   )
 }
 
-function QuoteBlock({ section }: { section: any }) {
+function QuoteBlock({ section }: { section: QuoteSectionData }) {
   const { text, author, role } = section.value
 
   return (
@@ -754,13 +850,13 @@ function QuoteBlock({ section }: { section: any }) {
           fontSize: '24px',
           lineHeight: 1.6,
           color: '#0D3A5D',
-          fontFamily: 'Inter, sans-serif'
+          fontFamily: 'var(--font-sans)'
         }}
       >
-        "{text}"
+        &quot;{text}&quot;
         {(author || role) && (
           <footer className="mt-4 text-base font-normal not-italic" style={{ color: '#666666' }}>
-            — {author}{role && `, ${role}`}
+            - {author}{role && `, ${role}`}
           </footer>
         )}
       </blockquote>
@@ -768,13 +864,13 @@ function QuoteBlock({ section }: { section: any }) {
   )
 }
 
-function InfoCardsBlock({ section }: { section: any }) {
+function InfoCardsBlock({ section }: { section: InfoCardsSectionData }) {
   const { cards } = section.value
 
   return (
     <div className="w-full max-w-[1000px] px-[24px] mb-12">
       <div className="grid grid-cols-3 max-md:grid-cols-1 gap-6">
-        {cards.map((card: any, idx: number) => (
+        {cards.map((card, idx: number) => (
           <div
             key={idx}
             className="flex flex-col items-center gap-3 p-8 rounded-lg"
@@ -786,7 +882,7 @@ function InfoCardsBlock({ section }: { section: any }) {
                 fontSize: '32px',
                 fontWeight: 800,
                 color: card.color,
-                fontFamily: 'Inter, sans-serif'
+                fontFamily: 'var(--font-sans)'
               }}
             >
               {card.value}
@@ -795,7 +891,7 @@ function InfoCardsBlock({ section }: { section: any }) {
               style={{
                 fontSize: '14px',
                 color: '#666666',
-                fontFamily: 'Inter, sans-serif'
+                fontFamily: 'var(--font-sans)'
               }}
             >
               {card.label}
@@ -807,17 +903,17 @@ function InfoCardsBlock({ section }: { section: any }) {
   )
 }
 
-function GalleryBlock({ section }: { section: any }) {
+function GalleryBlock({ section }: { section: GallerySectionData }) {
   const { images } = section.value
 
   return (
     <div className="w-full max-w-[1200px] px-[24px] mb-12">
       <div className="grid grid-cols-3 max-md:grid-cols-1 gap-4">
-        {images.map((img: any, idx: number) => (
+        {images.map((img, idx: number) => (
           <div key={idx} className="relative w-full h-[300px] rounded-lg overflow-hidden">
             <Image
               src={img.url}
-              alt={img.alt}
+              alt={img.alt || ""}
               fill
               className="object-cover"
             />
@@ -828,7 +924,7 @@ function GalleryBlock({ section }: { section: any }) {
   )
 }
 
-function TwoColumnBlock({ section }: { section: any }) {
+function TwoColumnBlock({ section }: { section: TwoColumnSectionData }) {
   const { leftColumn, rightColumn } = section.value
 
   return (
@@ -837,7 +933,7 @@ function TwoColumnBlock({ section }: { section: any }) {
         <div className="w-1/2 max-md:w-full relative h-[400px] rounded-lg overflow-hidden">
           <Image
             src={leftColumn.image}
-            alt={leftColumn.alt}
+            alt={leftColumn.alt || ""}
             fill
             className="object-cover"
           />
@@ -848,7 +944,7 @@ function TwoColumnBlock({ section }: { section: any }) {
               fontSize: '24px',
               fontWeight: 700,
               color: '#0D3A5D',
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
           >
             {rightColumn.title}
@@ -859,7 +955,7 @@ function TwoColumnBlock({ section }: { section: any }) {
               fontSize: '16px',
               lineHeight: 1.7,
               color: '#333333',
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
             dangerouslySetInnerHTML={{ __html: rightColumn.content }}
           />
@@ -869,7 +965,7 @@ function TwoColumnBlock({ section }: { section: any }) {
   )
 }
 
-function CTABlock({ section }: { section: any }) {
+function CTABlock({ section }: { section: CTASectionData }) {
   const { title, description, primaryCTA } = section.value
 
   return (
@@ -883,7 +979,7 @@ function CTABlock({ section }: { section: any }) {
           style={{
             fontSize: '32px',
             fontWeight: 800,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {title}
@@ -893,7 +989,7 @@ function CTABlock({ section }: { section: any }) {
           style={{
             fontSize: '18px',
             opacity: 0.9,
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'var(--font-sans)'
           }}
         >
           {description}
@@ -912,7 +1008,7 @@ function CTABlock({ section }: { section: any }) {
             className="text-white font-semibold"
             style={{
               fontSize: '16px',
-              fontFamily: 'Inter, sans-serif'
+              fontFamily: 'var(--font-sans)'
             }}
           >
             {primaryCTA.text}
