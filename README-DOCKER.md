@@ -18,7 +18,8 @@ cp .env.example .env
 
 ```env
 NEXT_PUBLIC_WAGTAIL_URL=https://back.redsea.sphyrnasolutions.com
-NEXT_PUBLIC_SITE_HOSTNAME=redsea.sphyrnasolutions.com
+NEXT_PUBLIC_SITE_URL=https://buceoenelmarrojo.com
+NEXT_PUBLIC_SITE_HOSTNAME=buceoenelmarrojo.com
 ```
 
 ## Despliegue
@@ -64,7 +65,7 @@ upstream frontend {
 
 server {
     listen 80;
-    server_name redsea.sphyrnasolutions.com;
+    server_name buceoenelmarrojo.com;
 
     location / {
         proxy_pass http://frontend;
@@ -94,7 +95,8 @@ El contenedor incluye un healthcheck que verifica cada 30 segundos si el servido
 | Variable | Descripción | Ejemplo |
 |----------|-------------|---------|
 | `NEXT_PUBLIC_WAGTAIL_URL` | URL del backend Wagtail | `https://back.redsea.sphyrnasolutions.com` |
-| `NEXT_PUBLIC_SITE_HOSTNAME` | Hostname del site para multi-site | `redsea.sphyrnasolutions.com` |
+| `NEXT_PUBLIC_SITE_URL` | URL pública del site | `https://buceoenelmarrojo.com` |
+| `NEXT_PUBLIC_SITE_HOSTNAME` | Hostname del site para multi-site | `buceoenelmarrojo.com` |
 
 ## Troubleshooting
 

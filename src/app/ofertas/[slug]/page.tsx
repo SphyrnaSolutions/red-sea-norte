@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: OfertaPageProps): Promise<Met
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
   const title = oferta.hero.title || `Oferta ${oferta.badge}`
   const description = oferta.hero.subtitle || `Oferta especial de buceo en el Mar Rojo - ${oferta.badge}`
 
@@ -68,7 +68,7 @@ export default async function OfertaPage({ params }: OfertaPageProps) {
     notFound()
   }
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
   // JSON-LD structured data for Product with Offer schema
   const jsonLd = {

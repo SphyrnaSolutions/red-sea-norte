@@ -16,6 +16,9 @@ interface HeroSectionProps {
   ctas?: Array<{
     text: string
     variant: string
+    actionType?: "scroll" | "modal" | "link"
+    target?: string
+    href?: string
   }>
   trustLine?: string | string[]
 }
@@ -29,6 +32,31 @@ export function HeroSection({
   trustLine,
 }: HeroSectionProps) {
   const { openModal } = useModalStore()
+
+  const handleCTA = (cta: NonNullable<HeroSectionProps["ctas"]>[number]) => {
+    if (cta.actionType === "modal") {
+      openModal()
+      return
+    }
+
+    if (cta.actionType === "scroll" || (!cta.actionType && cta.href?.startsWith("#"))) {
+      const sectionId = cta.target || cta.href?.replace("#", "")
+      if (!sectionId) return
+
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+      return
+    }
+
+    if (cta.actionType === "link" || cta.href) {
+      window.location.assign(cta.href || "#")
+      return
+    }
+
+    openModal()
+  }
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
@@ -118,7 +146,7 @@ export function HeroSection({
               {ctas.map((cta, index) => (
                 <Button
                   key={index}
-                  onClick={openModal}
+                  onClick={() => handleCTA(cta)}
                   variant={cta.variant === "primary" ? "primary" : "outline"}
                   size="lg"
                   className={

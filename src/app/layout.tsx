@@ -14,6 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://buceoenelmarrojo.com"),
   title: "Red Sea Diving - Centro de Buceo Certificado SSI en el Mar Rojo",
   description: "Cursos de buceo SSI, rutas por el Mar Rojo Norte y experiencias únicas de buceo en pecios. Certificación profesional con los mejores instructores.",
   keywords: ["buceo", "Mar Rojo", "SSI", "cursos de buceo", "pecios", "Egipto", "diving"],

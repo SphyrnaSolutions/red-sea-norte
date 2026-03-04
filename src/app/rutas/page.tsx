@@ -5,7 +5,7 @@ import { getAllRutasData } from '@/lib/data'
 import { Calendar, Waves, MapPin, ArrowRight } from 'lucide-react'
 
 // Base URL for SEO
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
 export const metadata: Metadata = {
   title: 'Rutas de Buceo en el Mar Rojo | Red Sea Norte',

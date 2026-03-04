@@ -122,7 +122,7 @@ export async function generateMetadata({ params }: ExperienciaPageProps): Promis
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
   // Use dedicated SEO fields
   const title = experiencia.seo.metaTitle || experiencia.title
@@ -168,7 +168,7 @@ export async function generateStaticParams() {
 export const revalidate = 1800
 
 // Base URL for structured data and canonical URLs
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
 export default async function ExperienciaPage({ params }: ExperienciaPageProps) {
   const { slug } = await params

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: CursoPageProps): Promise<Meta
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
   const title = curso.hero.title || curso.title
   const description = curso.hero.subtitle || `Curso de buceo ${curso.title} - Certificación SSI en el Mar Rojo`
 
@@ -79,7 +79,7 @@ export default async function CursoPage({ params }: CursoPageProps) {
   }
 
   // Base URL for absolute URLs in structured data
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
   // Extract price and duration from infoBars if available
   const priceBar = curso.infoBars.find(bar => bar.label.toLowerCase().includes('precio'))

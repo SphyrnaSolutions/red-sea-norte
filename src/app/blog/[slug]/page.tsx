@@ -88,7 +88,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
   return {
     title: `${post.title} | Red Sea Diving Blog`,
@@ -143,7 +143,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   // Base URL for structured data
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
   // JSON-LD structured data for SEO
   const jsonLd = {

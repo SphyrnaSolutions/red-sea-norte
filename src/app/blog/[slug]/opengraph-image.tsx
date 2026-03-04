@@ -27,7 +27,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
     )
   }
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
   const imageUrl = post.hero?.image
     ? (post.hero.image.startsWith('http') ? post.hero.image : `${BASE_URL}${post.hero.image}`)
     : null

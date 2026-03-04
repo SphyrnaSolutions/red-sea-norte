@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getAllExperienciasData } from '@/lib/data'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
 export const metadata: Metadata = {
   title: 'Experiencias de Buceo | Red Sea Norte',

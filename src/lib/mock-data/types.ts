@@ -6,6 +6,8 @@ export interface CTAButton {
   text: string
   href: string
   variant?: "primary" | "secondary" | "gradient" | "outline"
+  actionType?: "scroll" | "modal" | "link"
+  target?: string
 }
 
 export interface HeroData {
@@ -21,6 +23,9 @@ export interface HeroData {
   ctas?: Array<{
     text: string
     variant: "primary" | "secondary" | "gradient" | "outline"
+    actionType?: "scroll" | "modal" | "link"
+    target?: string
+    href?: string
   }>
   trustLine?: string | string[]
 }
@@ -46,6 +51,16 @@ export interface StatsCardData {
 
 export interface HomepageData {
   hero: HeroData
+  routeValueSection: {
+    title: string
+    subtitle: string
+    cards: Array<{
+      eyebrow?: string
+      title: string
+      description: string
+      image: string
+    }>
+  }
   whySection: {
     title: string
     subtitle: string
@@ -95,6 +110,17 @@ export interface HomepageData {
       highlight: string
     }>
   }
+  journeyOverview: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    highlights: string[]
+    includesTitle: string
+    includes: string[]
+    fitTitle: string
+    fitItems: string[]
+    note: string
+  }
   programSection: {
     title: string
     subtitle: string
@@ -105,6 +131,15 @@ export interface HomepageData {
       perPerson: string
       highlight: string
     }
+  }
+  audienceFit: {
+    title: string
+    subtitle: string
+    profiles: Array<{
+      title: string
+      description: string
+      tone: "good-fit" | "consider" | "not-now"
+    }>
   }
   specSection: {
     sectionLabel: string
@@ -170,6 +205,30 @@ export interface HomepageData {
     submitButton: string
     privacyText: string
     successMessage: string
+  }
+  inlineLead: {
+    sectionId: string
+    eyebrow: string
+    title: string
+    subtitle: string
+    highlights: string[]
+    fields: Array<{
+      name: string
+      type: "text" | "email" | "tel" | "select" | "textarea"
+      placeholder: string
+      required: boolean
+      options?: Array<{ value: string; label: string }>
+    }>
+    submitButton: string
+    privacyText: string
+    successMessage: string
+  }
+  routeTeaser: {
+    eyebrow: string
+    title: string
+    description: string
+    primaryCTA: CTAButton
+    secondaryCTA?: CTAButton
   }
   ctaSection: {
     title: string

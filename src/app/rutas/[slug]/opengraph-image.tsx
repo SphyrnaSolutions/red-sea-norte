@@ -30,7 +30,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
     )
   }
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
   // Get the hero image URL
   const imageUrl = ruta.hero?.backgroundImage

@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Wagtail API Mappers
  *
@@ -63,6 +62,65 @@ interface WagtailImageGridItemValue {
   overlay_description?: string
 }
 
+interface WagtailImageGridValue {
+  images: WagtailImageGridItemValue[]
+  layout: ImageGridSection['value']['layout']
+}
+
+function normalizeBadge(
+  badge: HomepageData['hero']['badge'] | string | undefined
+): HomepageData['hero']['badge'] | undefined {
+  if (!badge) {
+    return undefined
+  }
+
+  if (typeof badge === 'string') {
+    return {
+      text: badge,
+      backgroundColor: '#FF5722',
+    }
+  }
+
+  return badge
+}
+
+function getBlockObjectValue(block: WagtailStreamFieldBlock): Record<string, unknown> {
+  if (!block.value || typeof block.value !== 'object') {
+    return {}
+  }
+
+  return block.value as Record<string, unknown>
+}
+
+function getStringValue(record: Record<string, unknown>, key: string): string {
+  const value = record[key]
+  return typeof value === 'string' ? value : ''
+}
+
+function asLeadField(value: unknown): HomepageData['leadForm']['fields'][number] {
+  return value as HomepageData['leadForm']['fields'][number]
+}
+
+function asWhyTopRow(value: unknown): HomepageData['whySection']['topRow'][number] {
+  return value as HomepageData['whySection']['topRow'][number]
+}
+
+function asWhyBottomRow(value: unknown): HomepageData['whySection']['bottomRow'][number] {
+  return value as HomepageData['whySection']['bottomRow'][number]
+}
+
+function asSpecBigCard(value: unknown): HomepageData['specSection']['bigCard'] {
+  return value as HomepageData['specSection']['bigCard']
+}
+
+function asSpecSpecialtyCard(value: unknown): HomepageData['specSection']['specialtyCards'][number] {
+  return value as HomepageData['specSection']['specialtyCards'][number]
+}
+
+function asSpecNavCard(value: unknown): HomepageData['specSection']['navCards'][number] {
+  return value as HomepageData['specSection']['navCards'][number]
+}
+
 /**
  * Helper: Extraer URL de imagen de Wagtail
  */
@@ -96,6 +154,31 @@ function extractStreamFieldValues(blocks: WagtailStreamFieldBlock[]): string[] {
 // ============================================================================
 
 export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
+  const leadFields = wagtailPage.lead_form_fields.map((field) => asLeadField(field.value))
+  const primaryHeroCta = wagtailPage.hero_primary_cta_text
+    ? {
+        text: wagtailPage.hero_primary_cta_text,
+        variant: 'primary' as const,
+        href: wagtailPage.hero_primary_cta_link || '#lead-form',
+        actionType: wagtailPage.hero_primary_cta_link?.startsWith('#') ? 'scroll' as const : 'link' as const,
+        target: wagtailPage.hero_primary_cta_link?.startsWith('#')
+          ? wagtailPage.hero_primary_cta_link.replace('#', '')
+          : undefined,
+      }
+    : undefined
+
+  const secondaryHeroCta = wagtailPage.hero_secondary_cta_text
+    ? {
+        text: wagtailPage.hero_secondary_cta_text,
+        variant: 'outline' as const,
+        href: wagtailPage.hero_secondary_cta_link || '#',
+        actionType: wagtailPage.hero_secondary_cta_link?.startsWith('#') ? 'scroll' as const : 'link' as const,
+        target: wagtailPage.hero_secondary_cta_link?.startsWith('#')
+          ? wagtailPage.hero_secondary_cta_link.replace('#', '')
+          : undefined,
+      }
+    : undefined
+
   return {
     hero: {
       backgroundImage: getImageUrl(wagtailPage.hero_background_image),
@@ -114,47 +197,73 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
         href: wagtailPage.hero_secondary_cta_link || '#',
       } : undefined,
       ctas: [
-        ...(wagtailPage.hero_primary_cta_text ? [{
-          text: wagtailPage.hero_primary_cta_text,
-          variant: 'primary' as const,
-        }] : []),
-        ...(wagtailPage.hero_secondary_cta_text ? [{
-          text: wagtailPage.hero_secondary_cta_text,
-          variant: 'outline' as const,
-        }] : []),
+        ...(primaryHeroCta ? [primaryHeroCta] : []),
+        ...(secondaryHeroCta ? [secondaryHeroCta] : []),
       ],
       trustLine: wagtailPage.hero_trust_line,
+    },
+    routeValueSection: {
+      title: wagtailPage.why_section_title || 'Por que esta ruta',
+      subtitle: wagtailPage.why_section_subtitle || '',
+      cards: wagtailPage.why_section_cards.slice(0, 4).map((card, index) => {
+        const value = getBlockObjectValue(card)
+        return {
+          eyebrow: index === 0 ? 'PECIOS' : index === 1 ? 'CONDICIONES' : index === 2 ? 'PROGRESION' : 'PRODUCTO',
+          title: getStringValue(value, 'title') || getStringValue(value, 'badge') || `Bloque ${index + 1}`,
+          description:
+            getStringValue(value, 'description') ||
+            getStringValue(value, 'highlight') ||
+            getStringValue(value, 'subtitle'),
+          image: getImageUrl(value.image) || getImageUrl(wagtailPage.hero_background_image),
+        }
+      }),
     },
     whySection: {
       title: wagtailPage.why_section_title,
       subtitle: wagtailPage.why_section_subtitle,
-      topRow: wagtailPage.why_section_cards.slice(0, 2).map(card => card.value) as any[],
-      bottomRow: wagtailPage.why_section_cards.slice(2).map(card => card.value) as any[],
+      topRow: wagtailPage.why_section_cards.slice(0, 2).map((card) => asWhyTopRow(card.value)),
+      bottomRow: wagtailPage.why_section_cards.slice(2).map((card) => asWhyBottomRow(card.value)),
     },
     diveSites: {
       title: wagtailPage.dive_sites_title,
       subtitle: wagtailPage.dive_sites_subtitle,
-      sites: wagtailPage.dive_sites.map((site: any) => {
+      sites: wagtailPage.dive_sites.map((site) => {
+        const value = getBlockObjectValue(site)
         if (site.type === 'dive_site') {
           return {
-            name: site.value.name,
-            image: getImageUrl(site.value.image),
-            depth: site.value.depth,
-            highlight: site.value.highlight,
+            name: getStringValue(value, 'name'),
+            image: getImageUrl(value.image),
+            depth: getStringValue(value, 'depth'),
+            highlight: getStringValue(value, 'highlight'),
           }
         }
-        return site.value
+        return {
+          name: getStringValue(value, 'name'),
+          image: getImageUrl(value.image),
+          depth: getStringValue(value, 'depth'),
+          highlight: getStringValue(value, 'highlight'),
+        }
       }),
+    },
+    journeyOverview: {
+      eyebrow: 'COMO ES EL VIAJE',
+      title: wagtailPage.program_section_title || 'Como es el viaje',
+      subtitle: wagtailPage.program_section_subtitle || '',
+      highlights: extractStreamFieldValues(wagtailPage.program_section_includes).slice(0, 3),
+      includesTitle: 'Que espera el usuario cuando reserva este viaje',
+      includes: extractStreamFieldValues(wagtailPage.program_section_includes).slice(0, 4),
+      fitTitle: 'Como encaja el Advanced dentro de la experiencia',
+      fitItems: [
+        'El viaje sigue siendo el producto principal de la homepage.',
+        'El Advanced funciona como un valor anadido para quien quiere progresar.',
+        'La decision principal debe seguir siendo Ruta Norte + vida a bordo.',
+      ],
+      note: 'Esta home sintetiza la experiencia y deja la profundizacion comercial para el cluster y las landings.',
     },
     programSection: {
       title: wagtailPage.program_section_title,
       subtitle: wagtailPage.program_section_subtitle,
-      includes: wagtailPage.program_section_includes.map((item: any) => {
-        if (item.type === 'text' || item.type === 'list_item') {
-          return item.value
-        }
-        return item.value
-      }),
+      includes: extractStreamFieldValues(wagtailPage.program_section_includes),
       price: {
         amount: wagtailPage.program_section_price_amount,
         badge: wagtailPage.program_section_price_badge,
@@ -162,12 +271,33 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
         highlight: wagtailPage.program_section_price_highlight,
       },
     },
+    audienceFit: {
+      title: 'Esta experiencia encaja contigo si...',
+      subtitle: 'Bloque derivado mientras Wagtail mantiene el esquema anterior de homepage.',
+      profiles: [
+        {
+          title: 'Buscas una ruta comercial clara por el Mar Rojo',
+          description: 'Usuario interesado en vida a bordo, spots conocidos y una propuesta simple de entender.',
+          tone: 'good-fit',
+        },
+        {
+          title: 'Quieres progresar durante la semana',
+          description: 'El Advanced aparece como oportunidad, no como requisito para entender el producto.',
+          tone: 'consider',
+        },
+        {
+          title: 'Solo buscas un curso aislado',
+          description: 'La homepage ya no debe vender exclusivamente certificacion como producto principal.',
+          tone: 'not-now',
+        },
+      ],
+    },
     specSection: {
       sectionLabel: wagtailPage.spec_section_label,
-      bigCard: wagtailPage.spec_big_card.value as any,
-      specialtyCards: wagtailPage.spec_specialty_cards.map((card: any) => card.value),
+      bigCard: asSpecBigCard(wagtailPage.spec_big_card.value),
+      specialtyCards: wagtailPage.spec_specialty_cards.map((card) => asSpecSpecialtyCard(card.value)),
       mainTitle: wagtailPage.spec_main_title,
-      navCards: wagtailPage.spec_nav_cards.map((card: any) => card.value),
+      navCards: wagtailPage.spec_nav_cards.map((card) => asSpecNavCard(card.value)),
       cta: {
         price: wagtailPage.spec_cta_price,
         details: wagtailPage.spec_cta_details,
@@ -177,10 +307,44 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
     leadForm: {
       title: wagtailPage.lead_form_title,
       subtitle: wagtailPage.lead_form_subtitle,
-      fields: wagtailPage.lead_form_fields.map((field: any) => field.value),
+      fields: wagtailPage.lead_form_fields.map((field) => asLeadField(field.value)),
       submitButton: wagtailPage.lead_form_submit_button,
       privacyText: wagtailPage.lead_form_privacy_text,
       successMessage: wagtailPage.lead_form_success_message,
+    },
+    inlineLead: {
+      sectionId: 'inline-lead',
+      eyebrow: 'CONSULTA EL VIAJE',
+      title: wagtailPage.lead_form_title,
+      subtitle: wagtailPage.lead_form_subtitle,
+      highlights: [
+        'Te orientamos segun tu nivel.',
+        'Te contamos si la ruta encaja contigo.',
+        'Te dirigimos al siguiente paso correcto.',
+      ],
+      fields: leadFields.filter((field) => field.name !== 'message'),
+      submitButton: wagtailPage.lead_form_submit_button,
+      privacyText: wagtailPage.lead_form_privacy_text,
+      successMessage: wagtailPage.lead_form_success_message,
+    },
+    routeTeaser: {
+      eyebrow: 'SIGUIENTE PASO',
+      title: wagtailPage.cta_title || 'Explora la Ruta Norte',
+      description: wagtailPage.cta_description || '',
+      primaryCTA: {
+        text: wagtailPage.cta_primary_text,
+        href: wagtailPage.cta_primary_link,
+        actionType: wagtailPage.cta_primary_link?.startsWith('#') ? 'scroll' : 'link',
+        target: wagtailPage.cta_primary_link?.startsWith('#')
+          ? wagtailPage.cta_primary_link.replace('#', '')
+          : undefined,
+      },
+      secondaryCTA: {
+        text: 'Abrir formulario',
+        href: '#inline-lead',
+        actionType: 'scroll',
+        target: 'inline-lead',
+      },
     },
     ctaSection: {
       title: wagtailPage.cta_title,
@@ -233,9 +397,9 @@ export function mapRutaPage(wagtailPage: WagtailRutaPage): RutaData {
     title: wagtailPage.title,
     hero: {
       backgroundImage: getImageUrl(heroBlock.background_image),
-      badge: heroBlock.badge,
+      badge: normalizeBadge(heroBlock.badge),
       title: heroBlock.title || wagtailPage.title,
-      subtitle: heroBlock.subtitle,
+      subtitle: heroBlock.subtitle || '',
       primaryCTA: heroBlock.primary_cta ? {
         text: heroBlock.primary_cta.text,
         href: heroBlock.primary_cta.link,
@@ -252,12 +416,15 @@ export function mapRutaPage(wagtailPage: WagtailRutaPage): RutaData {
       title: wagtailPage.story_intro_title,
       description: wagtailPage.story_intro_description,
     },
-    infoCards: wagtailPage.info_cards.map(card => ({
-      icon: card.value.icon,
-      value: card.value.value,
-      label: card.value.label,
-      color: card.value.color as 'blue' | 'orange' | 'cyan',
-    })),
+    infoCards: wagtailPage.info_cards.map((card) => {
+      const value = getBlockObjectValue(card)
+      return {
+        icon: getStringValue(value, 'icon'),
+        value: getStringValue(value, 'value'),
+        label: getStringValue(value, 'label'),
+        color: (getStringValue(value, 'color') || 'blue') as 'blue' | 'orange' | 'cyan',
+      }
+    }),
     itinerary: {
       title: wagtailPage.itinerary_title,
       days: wagtailPage.itinerary_days.map(day => ({
@@ -344,11 +511,12 @@ export function mapExperienciaPage(wagtailPage: WagtailExperienciaPage): Experie
     }
 
     if (section.type === 'image_grid') {
+      const imageGridValue = section.value as WagtailImageGridValue
       return {
         type: 'image_grid',
         id: section.id,
         value: {
-          images: (section.value as ImageGridSection["value"]).images.map((img: WagtailImageGridItemValue) => ({
+          images: imageGridValue.images.map((img) => ({
             url: getImageUrl(img.image),
             alt: img.alt,
             overlay: img.overlay_title ? {
@@ -356,7 +524,7 @@ export function mapExperienciaPage(wagtailPage: WagtailExperienciaPage): Experie
               description: img.overlay_description,
             } : undefined,
           })),
-          layout: (section.value as ImageGridSection["value"]).layout,
+          layout: imageGridValue.layout,
         },
       }
     }
@@ -405,9 +573,9 @@ export function mapExperienciaPage(wagtailPage: WagtailExperienciaPage): Experie
     description: wagtailPage.description,
     hero: {
       backgroundImage: getImageUrl(heroBlock.background_image),
-      badge: heroBlock.badge,
+      badge: normalizeBadge(heroBlock.badge),
       title: heroBlock.title || wagtailPage.title,
-      subtitle: heroBlock.subtitle,
+      subtitle: heroBlock.subtitle || '',
     },
     sections,
     primaryRoute: wagtailPage.primary_route?.meta?.slug || '',
@@ -445,9 +613,9 @@ export function mapOfertaPage(wagtailPage: WagtailOfertaPage): OfertaData {
     badge: wagtailPage.badge,
     hero: {
       backgroundImage: getImageUrl(heroBlock.background_image),
-      badge: heroBlock.badge,
+      badge: normalizeBadge(heroBlock.badge),
       title: heroBlock.title || wagtailPage.title,
-      subtitle: heroBlock.subtitle,
+      subtitle: heroBlock.subtitle || '',
       primaryCTA: heroBlock.primary_cta ? {
         text: heroBlock.primary_cta.text,
         href: heroBlock.primary_cta.link,
@@ -500,18 +668,24 @@ export function mapCursoPage(wagtailPage: WagtailCursoPage): CursoData {
       title: wagtailPage.hero_title,
       subtitle: wagtailPage.hero_subtitle,
     },
-    infoBars: wagtailPage.info_bars.map(bar => ({
-      label: bar.value.label,
-      value: bar.value.value,
-      color: bar.value.color,
-    })),
+    infoBars: wagtailPage.info_bars.map((bar) => {
+      const value = getBlockObjectValue(bar)
+      return {
+        label: getStringValue(value, 'label'),
+        value: getStringValue(value, 'value'),
+        color: getStringValue(value, 'color'),
+      }
+    }),
     queAprendes: {
       title: wagtailPage.que_aprendes_title,
-      items: wagtailPage.que_aprendes_items.map(item => ({
-        icon: item.value.icon,
-        title: item.value.title,
-        description: item.value.description,
-      })),
+      items: wagtailPage.que_aprendes_items.map((item) => {
+        const value = getBlockObjectValue(item)
+        return {
+          icon: getStringValue(value, 'icon'),
+          title: getStringValue(value, 'title'),
+          description: getStringValue(value, 'description'),
+        }
+      }),
     },
     modulos: {
       title: wagtailPage.modulos_title,
@@ -528,10 +702,13 @@ export function mapCursoPage(wagtailPage: WagtailCursoPage): CursoData {
     },
     incluye: {
       title: wagtailPage.incluye_title,
-      items: wagtailPage.incluye_items.map(item => ({
-        icon: item.value.icon,
-        title: item.value.title,
-      })),
+      items: wagtailPage.incluye_items.map((item) => {
+        const value = getBlockObjectValue(item)
+        return {
+          icon: getStringValue(value, 'icon'),
+          title: getStringValue(value, 'title'),
+        }
+      }),
     },
     cta: {
       title: wagtailPage.cta_title,

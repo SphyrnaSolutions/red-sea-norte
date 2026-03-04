@@ -7,7 +7,7 @@ import type { ItineraryDay, RutaData } from "@/lib/mock-data/types"
 import type { Metadata } from 'next'
 
 // Base URL for absolute URLs in structured data
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
 // ISR configuration: revalidate every 30 minutes (1800 seconds)
 export const revalidate = 1800
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: RutaPageProps): Promise<Metad
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
   const title = ruta.hero.title || ruta.title
   const description = ruta.hero.subtitle || ruta.storyIntro.description
 

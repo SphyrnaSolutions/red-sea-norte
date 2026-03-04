@@ -27,7 +27,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
     )
   }
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://redsea.sphyrnasolutions.com'
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
   const imageUrl = oferta.hero?.backgroundImage
     ? (oferta.hero.backgroundImage.startsWith('http') ? oferta.hero.backgroundImage : `${BASE_URL}${oferta.hero.backgroundImage}`)
     : null
