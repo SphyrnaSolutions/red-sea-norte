@@ -23,6 +23,8 @@ interface InlineLeadSectionProps {
   submitButton: string
   privacyText: string
   successMessage: string
+  showModalCta?: boolean
+  secondaryPrompt?: string
 }
 
 export function InlineLeadSection({
@@ -35,6 +37,8 @@ export function InlineLeadSection({
   submitButton,
   privacyText,
   successMessage,
+  showModalCta = true,
+  secondaryPrompt = "Si aun no quieres enviar el formulario, puedes abrir el modal y dejarnos una duda mas concreta.",
 }: InlineLeadSectionProps) {
   const { openModal } = useModalStore()
   const [formData, setFormData] = useState<Record<string, string>>({})
@@ -86,21 +90,20 @@ export function InlineLeadSection({
               ))}
             </ul>
 
-            <div className="mt-10 rounded-[24px] border border-white/10 bg-white/5 p-6">
-              <p className="text-sm leading-7 text-white/70">
-                Si aun no quieres enviar el formulario, puedes abrir el modal y dejarnos una duda
-                mas concreta.
-              </p>
-              <Button
-                type="button"
-                variant="outline"
-                size="lg"
-                className="mt-5 w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-[#071E2D]"
-                onClick={openModal}
-              >
-                Abrir formulario ampliado
-              </Button>
-            </div>
+            {showModalCta && (
+              <div className="mt-10 rounded-[24px] border border-white/10 bg-white/5 p-6">
+                <p className="text-sm leading-7 text-white/70">{secondaryPrompt}</p>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="lg"
+                  className="mt-5 w-full border-white/30 bg-transparent text-white hover:bg-white hover:text-[#071E2D]"
+                  onClick={openModal}
+                >
+                  Abrir formulario ampliado
+                </Button>
+              </div>
+            )}
           </div>
 
           <div className="rounded-[30px] bg-white p-8 shadow-[0_24px_80px_rgba(10,37,64,0.12)] md:p-10">
@@ -116,8 +119,8 @@ export function InlineLeadSection({
                   {successMessage}
                 </h3>
                 <p className="mt-4 text-base leading-7 text-[#4A5568]">
-                  La home ya cumple su objetivo: captar el lead antes de enviar al usuario a una
-                  landing mas profunda.
+                  Hemos recibido tu consulta. El siguiente paso es orientarte hacia la ruta o
+                  detalle mas adecuado para tu perfil de buceo.
                 </p>
               </div>
             ) : (

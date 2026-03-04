@@ -16,7 +16,7 @@
 import axios, { AxiosInstance } from 'axios'
 
 const WAGTAIL_API_URL = process.env.NEXT_PUBLIC_WAGTAIL_API_URL || 'http://localhost:8000/api/v2'
-const SITE_HOSTNAME = process.env.NEXT_PUBLIC_SITE_HOSTNAME || 'localhost:3000'
+const SITE_HOSTNAME = process.env.NEXT_PUBLIC_SITE_HOSTNAME || 'localhost'
 
 // Configurar instancia de axios
 const wagtailClient: AxiosInstance = axios.create({

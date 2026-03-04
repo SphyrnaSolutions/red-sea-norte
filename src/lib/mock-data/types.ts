@@ -348,6 +348,26 @@ export interface ItineraryDay {
   overlayDirection: "left" | "right"
 }
 
+export interface RouteSpotData {
+  name: string
+  image: string
+  summary: string
+  depth: string
+  tag: string
+}
+
+export interface FAQItem {
+  question: string
+  answer: string
+}
+
+export interface ResourceLinkItem {
+  title: string
+  description: string
+  href: string
+  label: string
+}
+
 export interface RutaData {
   slug: string
   title: string
@@ -374,6 +394,50 @@ export interface RutaData {
     primaryCTA: CTAButton
     secondaryCTA?: CTAButton
   }
+  summarySection?: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    bullets: string[]
+  }
+  spotsSection?: {
+    title: string
+    subtitle: string
+    spots: RouteSpotData[]
+  }
+  audienceFit?: {
+    title: string
+    subtitle: string
+    profiles: Array<{
+      title: string
+      description: string
+      tone: "good-fit" | "consider" | "not-now"
+    }>
+  }
+  practicalInfo?: {
+    title: string
+    subtitle: string
+    includedTitle: string
+    included: string[]
+    extrasTitle: string
+    extras: string[]
+    logisticsTitle: string
+    logistics: string[]
+  }
+  faqSection?: {
+    title: string
+    items: FAQItem[]
+  }
+  resourcesSection?: {
+    title: string
+    subtitle: string
+    items: ResourceLinkItem[]
+  }
+  inlineLead?: HomepageData["inlineLead"] & {
+    showModalCta?: boolean
+    secondaryPrompt?: string
+  }
+  leadForm?: HomepageData["leadForm"]
 }
 
 /**

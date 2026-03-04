@@ -8,18 +8,18 @@ import { Calendar, Waves, MapPin, ArrowRight } from 'lucide-react'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
 export const metadata: Metadata = {
-  title: 'Rutas de Buceo en el Mar Rojo | Red Sea Norte',
-  description: 'Itinerarios de vida a bordo en el Mar Rojo Norte. Rutas de 7 días explorando los mejores sitios de buceo: Thistlegorm, Ras Mohammed, Estrecho de Tiran y más.',
+  title: 'Rutas de Vida a Bordo en el Mar Rojo | Red Sea Norte',
+  description: 'Rutas de vida a bordo en el Mar Rojo desde Hurghada. Itinerarios centrados en Ruta Norte, pecios emblemáticos y experiencias de buceo con intención comercial clara.',
   openGraph: {
-    title: 'Rutas de Buceo en el Mar Rojo | Red Sea Norte',
-    description: 'Itinerarios de vida a bordo en el Mar Rojo Norte. Rutas de 7 días explorando los mejores sitios de buceo.',
+    title: 'Rutas de Vida a Bordo en el Mar Rojo | Red Sea Norte',
+    description: 'Rutas de vida a bordo en el Mar Rojo desde Hurghada con foco en Ruta Norte y pecios.',
     type: 'website',
     url: `${BASE_URL}/rutas`,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rutas de Buceo en el Mar Rojo | Red Sea Norte',
-    description: 'Itinerarios de vida a bordo en el Mar Rojo Norte. Rutas de 7 días explorando los mejores sitios de buceo.',
+    title: 'Rutas de Vida a Bordo en el Mar Rojo | Red Sea Norte',
+    description: 'Rutas de vida a bordo en el Mar Rojo desde Hurghada con foco en Ruta Norte y pecios.',
   },
   alternates: {
     canonical: `${BASE_URL}/rutas`,
@@ -59,7 +59,7 @@ export default async function RutasPage() {
             className="text-[13px] font-bold uppercase mb-4"
             style={{ color: '#00CED1', letterSpacing: '3px' }}
           >
-            LIVEABOARD EXPERIENCES
+            VIDA A BORDO DESDE HURGHADA
           </span>
 
           <h1
@@ -71,7 +71,7 @@ export default async function RutasPage() {
               textShadow: '0 2px 20px rgba(0,0,0,0.3)'
             }}
           >
-            Rutas de Buceo
+            Rutas de Vida a Bordo
           </h1>
 
           <p
@@ -82,8 +82,8 @@ export default async function RutasPage() {
               textShadow: '0 2px 10px rgba(0,0,0,0.3)'
             }}
           >
-            Itinerarios de vida a bordo disenados para explorar los mejores sitios del Mar Rojo Norte.
-            Pecios legendarios, arrecifes pristinos y experiencias inolvidables.
+            Itinerarios pensados para convertir interés en consulta: Ruta Norte, pecios legendarios,
+            arrecifes clásicos y propuestas claras de viaje por el Mar Rojo.
           </p>
         </div>
       </section>
@@ -112,7 +112,7 @@ export default async function RutasPage() {
                 fontFamily: 'var(--font-sans)'
               }}
             >
-              Elige Tu Aventura
+              Elige la Ruta que Mejor Explica tu Viaje
             </h2>
             <p
               className="mt-4 max-w-2xl mx-auto"
@@ -122,8 +122,8 @@ export default async function RutasPage() {
                 lineHeight: 1.6
               }}
             >
-              Cada ruta ha sido disenada para maximizar tu experiencia submarina,
-              combinando los mejores sitios de buceo con descanso y comodidad a bordo.
+              La prioridad ya no es listar rutas sin contexto, sino presentar productos concretos
+              de vida a bordo con un siguiente paso comercial claro.
             </p>
           </div>
 
