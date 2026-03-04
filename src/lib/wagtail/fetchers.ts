@@ -63,11 +63,20 @@ export async function getHomepage(): Promise<HomepageData | null> {
  */
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
-    const pages = await getPages<WagtailBlogPostPage>('blog.BlogPostPage', {
-      order: '-published_at', // Más recientes primero
-    })
+    const pages = await getPages<WagtailBlogPostPage>('blog.BlogPostPage')
 
-    return pages.map(mapBlogPost)
+    return pages
+      .map(mapBlogPost)
+      .sort((a, b) => {
+        const aTime = Date.parse(a.publishedAt || '')
+        const bTime = Date.parse(b.publishedAt || '')
+
+        if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0
+        if (Number.isNaN(aTime)) return 1
+        if (Number.isNaN(bTime)) return -1
+
+        return bTime - aTime
+      })
   } catch (error) {
     console.error('Error fetching blog posts:', error)
     return []

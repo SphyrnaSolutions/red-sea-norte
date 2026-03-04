@@ -68,7 +68,11 @@ interface WagtailImageGridValue {
 }
 
 function normalizeBadge(
-  badge: HomepageData['hero']['badge'] | string | undefined
+  badge:
+    | HomepageData['hero']['badge']
+    | { text: string; background_color: string }
+    | string
+    | undefined
 ): HomepageData['hero']['badge'] | undefined {
   if (!badge) {
     return undefined
@@ -78,6 +82,13 @@ function normalizeBadge(
     return {
       text: badge,
       backgroundColor: '#FF5722',
+    }
+  }
+
+  if ('background_color' in badge) {
+    return {
+      text: badge.text,
+      backgroundColor: badge.background_color,
     }
   }
 
@@ -95,6 +106,14 @@ function getBlockObjectValue(block: WagtailStreamFieldBlock): Record<string, unk
 function getStringValue(record: Record<string, unknown>, key: string): string {
   const value = record[key]
   return typeof value === 'string' ? value : ''
+}
+
+function asArray<T>(value: T[] | undefined | null): T[] {
+  return Array.isArray(value) ? value : []
+}
+
+function getNonEmptyString(value: unknown, fallback = ''): string {
+  return typeof value === 'string' && value.trim().length > 0 ? value : fallback
 }
 
 function asLeadField(value: unknown): HomepageData['leadForm']['fields'][number] {
@@ -154,7 +173,13 @@ function extractStreamFieldValues(blocks: WagtailStreamFieldBlock[]): string[] {
 // ============================================================================
 
 export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
-  const leadFields = wagtailPage.lead_form_fields.map((field) => asLeadField(field.value))
+  const leadFormFields = asArray(wagtailPage.lead_form_fields)
+  const whySectionCards = asArray(wagtailPage.why_section_cards)
+  const diveSiteBlocks = asArray(wagtailPage.dive_sites)
+  const programIncludes = asArray(wagtailPage.program_section_includes)
+  const specSpecialtyCards = asArray(wagtailPage.spec_specialty_cards)
+  const specNavCards = asArray(wagtailPage.spec_nav_cards)
+  const leadFields = leadFormFields.map((field) => asLeadField(field.value))
   const primaryHeroCta = wagtailPage.hero_primary_cta_text
     ? {
         text: wagtailPage.hero_primary_cta_text,
@@ -182,12 +207,12 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
   return {
     hero: {
       backgroundImage: getImageUrl(wagtailPage.hero_background_image),
-      badge: wagtailPage.hero_badge ? {
-        text: wagtailPage.hero_badge.text,
-        backgroundColor: wagtailPage.hero_badge.background_color,
-      } : undefined,
-      title: wagtailPage.hero_title,
-      subtitle: wagtailPage.hero_subtitle,
+      badge: normalizeBadge(wagtailPage.hero_badge),
+      title: getNonEmptyString(wagtailPage.hero_title, 'Descubre el Mar Rojo'),
+      subtitle: getNonEmptyString(
+        wagtailPage.hero_subtitle,
+        'Vida a bordo, pecios y rutas de buceo en el Mar Rojo.'
+      ),
       primaryCTA: wagtailPage.hero_primary_cta_text ? {
         text: wagtailPage.hero_primary_cta_text,
         href: wagtailPage.hero_primary_cta_link || '#',
@@ -205,7 +230,7 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
     routeValueSection: {
       title: wagtailPage.why_section_title || 'Por que esta ruta',
       subtitle: wagtailPage.why_section_subtitle || '',
-      cards: wagtailPage.why_section_cards.slice(0, 4).map((card, index) => {
+      cards: whySectionCards.slice(0, 4).map((card, index) => {
         const value = getBlockObjectValue(card)
         return {
           eyebrow: index === 0 ? 'PECIOS' : index === 1 ? 'CONDICIONES' : index === 2 ? 'PROGRESION' : 'PRODUCTO',
@@ -219,15 +244,15 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
       }),
     },
     whySection: {
-      title: wagtailPage.why_section_title,
-      subtitle: wagtailPage.why_section_subtitle,
-      topRow: wagtailPage.why_section_cards.slice(0, 2).map((card) => asWhyTopRow(card.value)),
-      bottomRow: wagtailPage.why_section_cards.slice(2).map((card) => asWhyBottomRow(card.value)),
+      title: getNonEmptyString(wagtailPage.why_section_title, 'Por que esta ruta'),
+      subtitle: getNonEmptyString(wagtailPage.why_section_subtitle),
+      topRow: whySectionCards.slice(0, 2).map((card) => asWhyTopRow(card.value)),
+      bottomRow: whySectionCards.slice(2).map((card) => asWhyBottomRow(card.value)),
     },
     diveSites: {
-      title: wagtailPage.dive_sites_title,
-      subtitle: wagtailPage.dive_sites_subtitle,
-      sites: wagtailPage.dive_sites.map((site) => {
+      title: getNonEmptyString(wagtailPage.dive_sites_title, 'Puntos de inmersion'),
+      subtitle: getNonEmptyString(wagtailPage.dive_sites_subtitle),
+      sites: diveSiteBlocks.map((site) => {
         const value = getBlockObjectValue(site)
         if (site.type === 'dive_site') {
           return {
@@ -249,9 +274,9 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
       eyebrow: 'COMO ES EL VIAJE',
       title: wagtailPage.program_section_title || 'Como es el viaje',
       subtitle: wagtailPage.program_section_subtitle || '',
-      highlights: extractStreamFieldValues(wagtailPage.program_section_includes).slice(0, 3),
+      highlights: extractStreamFieldValues(programIncludes).slice(0, 3),
       includesTitle: 'Que espera el usuario cuando reserva este viaje',
-      includes: extractStreamFieldValues(wagtailPage.program_section_includes).slice(0, 4),
+      includes: extractStreamFieldValues(programIncludes).slice(0, 4),
       fitTitle: 'Como encaja el Advanced dentro de la experiencia',
       fitItems: [
         'El viaje sigue siendo el producto principal de la homepage.',
@@ -261,14 +286,14 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
       note: 'Esta home sintetiza la experiencia y deja la profundizacion comercial para el cluster y las landings.',
     },
     programSection: {
-      title: wagtailPage.program_section_title,
-      subtitle: wagtailPage.program_section_subtitle,
-      includes: extractStreamFieldValues(wagtailPage.program_section_includes),
+      title: getNonEmptyString(wagtailPage.program_section_title, 'Como es el viaje'),
+      subtitle: getNonEmptyString(wagtailPage.program_section_subtitle),
+      includes: extractStreamFieldValues(programIncludes),
       price: {
-        amount: wagtailPage.program_section_price_amount,
-        badge: wagtailPage.program_section_price_badge,
-        perPerson: wagtailPage.program_section_price_per_person,
-        highlight: wagtailPage.program_section_price_highlight,
+        amount: getNonEmptyString(wagtailPage.program_section_price_amount),
+        badge: getNonEmptyString(wagtailPage.program_section_price_badge),
+        perPerson: getNonEmptyString(wagtailPage.program_section_price_per_person),
+        highlight: getNonEmptyString(wagtailPage.program_section_price_highlight),
       },
     },
     audienceFit: {
@@ -293,39 +318,45 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
       ],
     },
     specSection: {
-      sectionLabel: wagtailPage.spec_section_label,
-      bigCard: asSpecBigCard(wagtailPage.spec_big_card.value),
-      specialtyCards: wagtailPage.spec_specialty_cards.map((card) => asSpecSpecialtyCard(card.value)),
-      mainTitle: wagtailPage.spec_main_title,
-      navCards: wagtailPage.spec_nav_cards.map((card) => asSpecNavCard(card.value)),
+      sectionLabel: getNonEmptyString(wagtailPage.spec_section_label),
+      bigCard: wagtailPage.spec_big_card?.value
+        ? asSpecBigCard(wagtailPage.spec_big_card.value)
+        : {
+            image: getImageUrl(wagtailPage.hero_background_image),
+            title: getNonEmptyString(wagtailPage.program_section_title, 'Experiencia de viaje'),
+            subtitle: getNonEmptyString(wagtailPage.program_section_subtitle),
+          },
+      specialtyCards: specSpecialtyCards.map((card) => asSpecSpecialtyCard(card.value)),
+      mainTitle: getNonEmptyString(wagtailPage.spec_main_title),
+      navCards: specNavCards.map((card) => asSpecNavCard(card.value)),
       cta: {
-        price: wagtailPage.spec_cta_price,
-        details: wagtailPage.spec_cta_details,
-        buttonText: wagtailPage.spec_cta_button_text,
+        price: getNonEmptyString(wagtailPage.spec_cta_price),
+        details: getNonEmptyString(wagtailPage.spec_cta_details),
+        buttonText: getNonEmptyString(wagtailPage.spec_cta_button_text, 'Solicitar informacion'),
       },
     },
     leadForm: {
-      title: wagtailPage.lead_form_title,
-      subtitle: wagtailPage.lead_form_subtitle,
-      fields: wagtailPage.lead_form_fields.map((field) => asLeadField(field.value)),
-      submitButton: wagtailPage.lead_form_submit_button,
-      privacyText: wagtailPage.lead_form_privacy_text,
-      successMessage: wagtailPage.lead_form_success_message,
+      title: getNonEmptyString(wagtailPage.lead_form_title, 'Solicita informacion'),
+      subtitle: getNonEmptyString(wagtailPage.lead_form_subtitle),
+      fields: leadFields,
+      submitButton: getNonEmptyString(wagtailPage.lead_form_submit_button, 'Enviar'),
+      privacyText: getNonEmptyString(wagtailPage.lead_form_privacy_text),
+      successMessage: getNonEmptyString(wagtailPage.lead_form_success_message, 'Gracias por tu consulta.'),
     },
     inlineLead: {
       sectionId: 'inline-lead',
       eyebrow: 'CONSULTA EL VIAJE',
-      title: wagtailPage.lead_form_title,
-      subtitle: wagtailPage.lead_form_subtitle,
+      title: getNonEmptyString(wagtailPage.lead_form_title, 'Solicita informacion'),
+      subtitle: getNonEmptyString(wagtailPage.lead_form_subtitle),
       highlights: [
         'Te orientamos segun tu nivel.',
         'Te contamos si la ruta encaja contigo.',
         'Te dirigimos al siguiente paso correcto.',
       ],
       fields: leadFields.filter((field) => field.name !== 'message'),
-      submitButton: wagtailPage.lead_form_submit_button,
-      privacyText: wagtailPage.lead_form_privacy_text,
-      successMessage: wagtailPage.lead_form_success_message,
+      submitButton: getNonEmptyString(wagtailPage.lead_form_submit_button, 'Enviar'),
+      privacyText: getNonEmptyString(wagtailPage.lead_form_privacy_text),
+      successMessage: getNonEmptyString(wagtailPage.lead_form_success_message, 'Gracias por tu consulta.'),
     },
     routeTeaser: {
       eyebrow: 'SIGUIENTE PASO',
@@ -347,11 +378,11 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
       },
     },
     ctaSection: {
-      title: wagtailPage.cta_title,
-      description: wagtailPage.cta_description,
+      title: getNonEmptyString(wagtailPage.cta_title, 'Explora nuestras rutas'),
+      description: getNonEmptyString(wagtailPage.cta_description),
       primaryCTA: {
-        text: wagtailPage.cta_primary_text,
-        href: wagtailPage.cta_primary_link,
+        text: getNonEmptyString(wagtailPage.cta_primary_text, 'Ver rutas'),
+        href: getNonEmptyString(wagtailPage.cta_primary_link, '/rutas'),
       },
     },
   }
@@ -365,22 +396,22 @@ export function mapBlogPost(wagtailPage: WagtailBlogPostPage): BlogPost {
   return {
     slug: wagtailPage.meta.slug,
     title: wagtailPage.title,
-    excerpt: wagtailPage.excerpt,
-    publishedAt: wagtailPage.published_at,
+    excerpt: getNonEmptyString(wagtailPage.excerpt),
+    publishedAt: getNonEmptyString(wagtailPage.published_at, wagtailPage.meta.first_published_at),
     author: {
-      name: wagtailPage.author.name,
-      avatar: getImageUrl(wagtailPage.author.avatar),
+      name: getNonEmptyString(wagtailPage.author?.name, 'Red Sea Diving'),
+      avatar: getImageUrl(wagtailPage.author?.avatar),
     },
     hero: {
       image: getImageUrl(wagtailPage.hero_image),
-      alt: wagtailPage.hero_alt,
+      alt: getNonEmptyString(wagtailPage.hero_alt, wagtailPage.title),
     },
-    body: mapStreamField(wagtailPage.body),
+    body: mapStreamField(asArray(wagtailPage.body)),
     category: {
-      name: wagtailPage.category.name,
-      color: wagtailPage.category.color,
+      name: getNonEmptyString(wagtailPage.category?.name, 'Blog'),
+      color: getNonEmptyString(wagtailPage.category?.color, '#0066CC'),
     },
-    readTime: wagtailPage.read_time,
+    readTime: getNonEmptyString(wagtailPage.read_time, '5 min'),
   }
 }
 
