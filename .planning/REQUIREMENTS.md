@@ -17,16 +17,16 @@ Requirements for lead capture integration with Odoo CRM.
 
 ### API
 
-- [ ] **API-01**: POST /api/lead recibe datos del form y crea crm.lead en Odoo
-- [ ] **API-02**: Validacion server-side de todos los campos (sanitizacion, formato email/telefono)
-- [ ] **API-03**: Rate limiting para prevenir spam/abuso
+- [x] **API-01**: POST /api/lead recibe datos del form y crea crm.lead en Odoo
+- [x] **API-02**: Validacion server-side de todos los campos (sanitizacion, formato email/telefono)
+- [x] **API-03**: Rate limiting para prevenir spam/abuso
 - [ ] **API-04**: Credenciales Odoo via env vars (ODOO_URL, ODOO_DB, ODOO_API_KEY) sin NEXT_PUBLIC_
 
 ### CRM
 
 - [ ] **CRM-01**: Lead en Odoo incluye: name, contact_name, email_from, phone, description, source_id, medium_id
-- [ ] **CRM-02**: utm.source "Web buceoenelmarrojo.com" creada para tracking
-- [ ] **CRM-03**: Consentimiento WhatsApp + timestamp guardado en el lead
+- [x] **CRM-02**: utm.source "Web buceoenelmarrojo.com" creada para tracking
+- [x] **CRM-03**: Consentimiento WhatsApp + timestamp guardado en el lead
 
 ### Legal
 
@@ -62,13 +62,13 @@ Requirements for lead capture integration with Odoo CRM.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| API-01 | Phase 4 | Pending |
-| API-02 | Phase 4 | Pending |
-| API-03 | Phase 4 | Pending |
+| API-01 | Phase 4 | Complete |
+| API-02 | Phase 4 | Complete |
+| API-03 | Phase 4 | Complete |
 | API-04 | Phase 4 | Pending |
 | CRM-01 | Phase 4 | Pending |
-| CRM-02 | Phase 4 | Pending |
-| CRM-03 | Phase 4 | Pending |
+| CRM-02 | Phase 4 | Complete |
+| CRM-03 | Phase 4 | Complete |
 | FORM-01 | Phase 5 | Pending |
 | FORM-02 | Phase 5 | Pending |
 | FORM-03 | Phase 5 | Pending |

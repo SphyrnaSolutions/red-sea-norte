@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 ## Current Position
 
 Phase: 04-odoo-api-integration
-Plan: 01 complete
+Plan: 02 complete
 Status: Executing phase 04
-Last activity: 2026-03-06 -- Completed 04-01 (Odoo client + lead validation)
+Last activity: 2026-03-06 -- Completed 04-02 (POST /api/lead route with rate limiting and tests)
 
 ## Accumulated Context
 
@@ -28,6 +28,9 @@ Last activity: 2026-03-06 -- Completed 04-01 (Odoo client + lead validation)
 - [v2.0]: API key approach: dedicated Odoo user with CRM-only permissions
 - [v2.0]: Consent text must include: business name, message type, WhatsApp channel, opt-out info
 - [v2.0]: utm.source "Web buceoenelmarrojo.com" for lead tracking
+- [v2.0]: In-memory rate limiter (no Redis) -- sufficient for single-instance deployment
+- [v2.0]: vitest for testing (ESM-native, fast with Next.js)
+- [v2.0]: force-dynamic export on mutation API routes
 
 ### Pending Todos
 
@@ -41,5 +44,5 @@ Last activity: 2026-03-06 -- Completed 04-01 (Odoo client + lead validation)
 ## Session Continuity
 
 Last session: 2026-03-06
-Stopped at: Completed 04-01-PLAN.md
-Resume file: .planning/phases/04-odoo-api-integration/04-01-SUMMARY.md
+Stopped at: Completed 04-02-PLAN.md
+Resume file: .planning/phases/04-odoo-api-integration/04-02-SUMMARY.md
