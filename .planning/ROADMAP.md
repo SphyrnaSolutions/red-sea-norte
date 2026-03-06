@@ -64,6 +64,11 @@ Plans:
 
 **Requirements:** LEGAL-01
 
+**Plans:** 1 plan
+
+Plans:
+- [ ] 06-01-PLAN.md -- Privacy policy page, footer link fix, and Odoo env vars for deployment
+
 **Success criteria:**
 1. /politica-de-privacidad renderiza pagina con tratamiento de datos y WhatsApp marketing
 2. Env vars de Odoo configuradas en Dokploy (hardcoded en Dockerfile o runtime)
@@ -78,4 +83,4 @@ Plans:
 | 3. Page Templates and Homepage | v1.0 | 3/3 | Complete | 2026-03-06 |
 | 4. Odoo API Integration | v2.0 | 0/2 | Planned | - |
 | 5. Form + Consent UX | v2.0 | 0/1 | Planned | - |
-| 6. Legal + Deploy | v2.0 | 0/? | Pending | - |
+| 6. Legal + Deploy | v2.0 | 0/1 | Planned | - |
