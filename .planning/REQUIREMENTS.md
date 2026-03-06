@@ -39,7 +39,7 @@ Requirements for replacing stock content with real product data and images.
 ### Imagenes
 
 - [ ] **IMG-01**: Sustituir URLs Unsplash en images.ts por fotos reales optimizadas en public/images/
-- [ ] **IMG-02**: Copiar y optimizar fotos reales al proyecto con next/image optimization
+- [x] **IMG-02**: Copiar y optimizar fotos reales al proyecto con next/image optimization
 - [ ] **IMG-03**: Alt text SEO descriptivo en espanol con keywords en todas las imagenes
 - [ ] **IMG-04**: Responsive images con srcset/sizes para diferentes viewports
 
@@ -102,7 +102,7 @@ Requirements for replacing stock content with real product data and images.
 | FORM-05 | Phase 5 | Complete |
 | LEGAL-01 | Phase 6 | Complete |
 | IMG-01 | Phase 7 | Pending |
-| IMG-02 | Phase 7 | Pending |
+| IMG-02 | Phase 7 | Complete |
 | IMG-03 | Phase 7 | Pending |
 | IMG-04 | Phase 7 | Pending |
 | DATA-01 | Phase 8 | Pending |

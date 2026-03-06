@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-07)
 ## Current Position
 
 Phase: 7 of 9 (Real Images)
-Plan: 0 of 2 in current phase
-Status: Ready to plan
-Last activity: 2026-03-07 -- Roadmap created for v2.1 Real Content milestone
+Plan: 1 of 2 in current phase
+Status: Executing
+Last activity: 2026-03-07 -- Completed 07-01: Real photos setup
 
-Progress: [##########..] 75% (phases 1-6 complete, 7-9 pending)
+Progress: [##########..] 78% (phases 1-6 complete, phase 7 plan 1/2 done)
 
 ## Accumulated Context
 
@@ -27,6 +27,8 @@ Recent decisions affecting current work:
 - [v2.1]: Datos reales del producto scrapeados de viajeskarlossimon.com como source of truth
 - [v2.0]: Odoo CRM via XML-RPC, in-memory rate limiter, vitest for testing
 - [v2.0]: Privacy page as server component, runtime env vars only
+- [v2.1]: Mapped existing hero/feature keys to most semantically appropriate real photos
+- [v2.1]: Added 33 new semantic keys in images.ts for complete photo coverage
 
 ### Pending Todos
 
@@ -40,5 +42,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Roadmap v2.1 created, ready to plan Phase 7
-Resume file: None
+Stopped at: Completed 07-01-PLAN.md (Real photos setup)
+Resume file: .planning/phases/07-real-images/07-01-SUMMARY.md
