@@ -7,6 +7,28 @@
 import type { WagtailPage } from './client'
 
 // ============================================================================
+// SEO & Cluster Fields
+// ============================================================================
+
+export interface WagtailSEOFields {
+  meta_description?: string
+  meta_keywords?: string
+  social_title?: string
+  social_description?: string
+  social_image?: WagtailImage | null
+}
+
+export interface WagtailClusterFields {
+  cluster_id?: string
+  cluster_role?: 'pillar' | 'satellite'
+  pillar_slug?: string
+  schema_type?: 'TouristTrip' | 'Article' | 'FAQPage'
+  primary_keyword?: string
+}
+
+export type WagtailPageWithSEO = WagtailPage & WagtailSEOFields & WagtailClusterFields
+
+// ============================================================================
 // Common Wagtail Types
 // ============================================================================
 
@@ -28,7 +50,7 @@ export interface WagtailStreamFieldBlock {
 // HomePage (home.HomePage)
 // ============================================================================
 
-export interface WagtailHomePage extends WagtailPage {
+export interface WagtailHomePage extends WagtailPage, WagtailSEOFields, WagtailClusterFields {
   hero_background_image: WagtailImage
   hero_badge?: {
     text: string
@@ -91,7 +113,7 @@ export interface WagtailCategory {
   slug: string
 }
 
-export interface WagtailBlogPostPage extends WagtailPage {
+export interface WagtailBlogPostPage extends WagtailPage, WagtailSEOFields, WagtailClusterFields {
   excerpt: string
   published_at: string
   read_time?: string
@@ -116,7 +138,7 @@ export interface WagtailItineraryDay {
   overlay_direction: 'left' | 'right'
 }
 
-export interface WagtailRutaPage extends WagtailPage {
+export interface WagtailRutaPage extends WagtailPage, WagtailSEOFields, WagtailClusterFields {
   hero: WagtailStreamFieldBlock[]
   story_intro_badge: string
   story_intro_title: string
@@ -137,7 +159,7 @@ export interface WagtailRutaPage extends WagtailPage {
 // ExperienciaPage (experiencias.ExperienciaPage)
 // ============================================================================
 
-export interface WagtailExperienciaPage extends WagtailPage {
+export interface WagtailExperienciaPage extends WagtailPage, WagtailSEOFields, WagtailClusterFields {
   description: string
   hero: WagtailStreamFieldBlock[]
   sections: WagtailStreamFieldBlock[]
@@ -169,7 +191,7 @@ export interface WagtailTestimonio {
   rating: number
 }
 
-export interface WagtailOfertaPage extends WagtailPage {
+export interface WagtailOfertaPage extends WagtailPage, WagtailSEOFields, WagtailClusterFields {
   badge: string
   hero: WagtailStreamFieldBlock[]
   countdown_to: string
@@ -196,7 +218,7 @@ export interface WagtailModulo {
   description: string
 }
 
-export interface WagtailCursoPage extends WagtailPage {
+export interface WagtailCursoPage extends WagtailPage, WagtailSEOFields, WagtailClusterFields {
   badge: string
   hero_image: WagtailImage
   hero_title: string
