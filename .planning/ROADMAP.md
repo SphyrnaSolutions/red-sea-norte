@@ -64,7 +64,7 @@ Plans:
 
 **Requirements:** LEGAL-01
 
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 06-01-PLAN.md -- Privacy policy page, footer link fix, and Odoo env vars for deployment
@@ -83,4 +83,4 @@ Plans:
 | 3. Page Templates and Homepage | v1.0 | 3/3 | Complete | 2026-03-06 |
 | 4. Odoo API Integration | v2.0 | 2/2 | Complete | 2026-03-06 |
 | 5. Form + Consent UX | v2.0 | 1/1 | Complete | 2026-03-06 |
-| 6. Legal + Deploy | v2.0 | 0/1 | Planned | - |
+| 6. Legal + Deploy | 1/1 | Complete   | 2026-03-06 | - |

@@ -30,7 +30,7 @@ Requirements for lead capture integration with Odoo CRM.
 
 ### Legal
 
-- [ ] **LEGAL-01**: Pagina de politica de privacidad con tratamiento de datos y WhatsApp marketing
+- [x] **LEGAL-01**: Pagina de politica de privacidad con tratamiento de datos y WhatsApp marketing
 
 ## Future Requirements
 
@@ -74,7 +74,7 @@ Requirements for lead capture integration with Odoo CRM.
 | FORM-03 | Phase 5 | Complete |
 | FORM-04 | Phase 5 | Complete |
 | FORM-05 | Phase 5 | Complete |
-| LEGAL-01 | Phase 6 | Pending |
+| LEGAL-01 | Phase 6 | Complete |
 
 **Coverage:**
 - v2.0 requirements: 13 total
