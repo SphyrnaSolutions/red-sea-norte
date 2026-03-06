@@ -1,70 +1,36 @@
 /**
  * Wagtail API Client
  *
- * Cliente base para conectar con Wagtail API v2
- *
- * NOTA sobre caching ISR:
- * Al usar axios en lugar de fetch, el caching ISR de Next.js se debe configurar
- * a nivel de página/route con:
- * - export const revalidate = 3600 // para páginas estáticas
- * - unstable_cache() para wrappear funciones específicas
- *
- * Ejemplo en tu página:
- * export const revalidate = 3600 // revalidar cada hora
+ * Native fetch client for Wagtail API v2 with Next.js ISR caching.
+ * Uses fetch() with next.revalidate for per-request caching.
  */
-
-import axios, { AxiosInstance } from 'axios'
 
 const WAGTAIL_API_URL = process.env.NEXT_PUBLIC_WAGTAIL_API_URL || 'http://localhost:8000/api/v2'
 const SITE_HOSTNAME = process.env.NEXT_PUBLIC_SITE_HOSTNAME || 'localhost'
 
-// Configurar instancia de axios
-const wagtailClient: AxiosInstance = axios.create({
-  baseURL: WAGTAIL_API_URL,
-  timeout: 10000, // 10 segundos
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
+// ============================================================================
+// Types
+// ============================================================================
 
-// Interceptor para logging en desarrollo
-if (process.env.NODE_ENV === 'development') {
-  wagtailClient.interceptors.request.use(
-    (config) => {
-      console.log(`[Wagtail API] ${config.method?.toUpperCase()} ${config.url}`)
-      return config
-    },
-    (error) => {
-      console.error('[Wagtail API] Request error:', error)
-      return Promise.reject(error)
-    }
-  )
-
-  wagtailClient.interceptors.response.use(
-    (response) => {
-      console.log(`[Wagtail API] Response ${response.status} from ${response.config.url}`)
-      return response
-    },
-    (error) => {
-      console.error('[Wagtail API] Response error:', error.response?.status, error.message)
-      return Promise.reject(error)
-    }
-  )
+export interface FetchConfig {
+  revalidate?: number | false
+  tags?: string[]
 }
 
-interface WagtailAPIResponse<T> {
+export interface WagtailAPIResponse<T> {
   meta: {
     total_count: number
   }
   items: T[]
 }
 
-interface WagtailPageMeta {
+export interface WagtailPageMeta {
   type: string
   detail_url: string
   html_url: string | null
   slug: string
   first_published_at: string
+  last_published_at?: string
   locale: string
 }
 
@@ -82,180 +48,203 @@ export interface WagtailPage {
   [key: string]: unknown
 }
 
+// ============================================================================
+// Core Fetch
+// ============================================================================
+
+const BATCH_SIZE = 20
+
 /**
- * Fetch múltiples páginas con filtros
+ * Low-level fetch wrapper for Wagtail API.
+ * Every call includes next.revalidate for ISR compatibility.
+ */
+async function wagtailFetch<T>(
+  endpoint: string,
+  params?: Record<string, string>,
+  config: FetchConfig = {}
+): Promise<T> {
+  const url = new URL(`${WAGTAIL_API_URL}${endpoint}`)
+  if (params) {
+    for (const [key, value] of Object.entries(params)) {
+      url.searchParams.set(key, value)
+    }
+  }
+
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`[Wagtail API] GET ${url.pathname}${url.search}`)
+  }
+
+  const response = await fetch(url.toString(), {
+    headers: { 'Content-Type': 'application/json' },
+    signal: AbortSignal.timeout(10000),
+    next: {
+      revalidate: config.revalidate ?? 3600,
+      ...(config.tags?.length ? { tags: config.tags } : {}),
+    },
+  })
+
+  if (!response.ok) {
+    throw new Error(
+      `Wagtail API error: ${response.status} ${response.statusText} for ${endpoint}`
+    )
+  }
+
+  return response.json()
+}
+
+// ============================================================================
+// Public API
+// ============================================================================
+
+/**
+ * Fetch all pages of a given type with offset-based pagination.
+ * Accumulates all items across batches until total_count is reached.
  */
 export async function getPages<T extends WagtailPage>(
   type: string,
-  params?: Record<string, string>
+  params?: Record<string, string>,
+  config?: FetchConfig
 ): Promise<T[]> {
-  try {
-    const response = await wagtailClient.get<WagtailAPIResponse<T>>('/pages/', {
-      params: {
+  let allItems: T[] = []
+  let offset = 0
+
+  while (true) {
+    const response = await wagtailFetch<WagtailAPIResponse<T>>(
+      '/pages/',
+      {
         type,
         site: SITE_HOSTNAME,
         fields: '*',
+        limit: String(BATCH_SIZE),
+        offset: String(offset),
         ...params,
       },
-    })
+      config
+    )
 
-    return response.data.items
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error('Error fetching pages from Wagtail:', {
-        status: error.response?.status,
-        message: error.message,
-        data: error.response?.data,
-      })
-    } else {
-      console.error('Error fetching pages from Wagtail:', error)
+    allItems = [...allItems, ...response.items]
+
+    if (allItems.length >= response.meta.total_count) {
+      break
     }
-    throw error
+    offset += BATCH_SIZE
   }
+
+  return allItems
 }
 
 /**
- * Fetch página específica por ID
+ * Fetch a single page by ID.
+ * Returns null for 404, throws for other errors.
  */
-export async function getPage<T extends WagtailPage>(id: number): Promise<T | null> {
+export async function getPage<T extends WagtailPage>(
+  id: number,
+  config?: FetchConfig
+): Promise<T | null> {
   try {
-    const response = await wagtailClient.get<T>(`/pages/${id}/`, {
-      params: {
+    return await wagtailFetch<T>(
+      `/pages/${id}/`,
+      {
         fields: '*',
         site: SITE_HOSTNAME,
       },
-    })
-
-    return response.data
+      config
+    )
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      if (error.response?.status === 404) {
-        return null
-      }
-      console.error(`Error fetching page ${id} from Wagtail:`, {
-        status: error.response?.status,
-        message: error.message,
-      })
-    } else {
-      console.error(`Error fetching page ${id} from Wagtail:`, error)
+    if (error instanceof Error && error.message.includes('404')) {
+      return null
     }
     throw error
   }
 }
 
 /**
- * Fetch página por slug
+ * Fetch a page by its slug and content type.
+ * Returns null if no matching page found.
  */
 export async function getPageBySlug<T extends WagtailPage>(
   type: string,
-  slug: string
+  slug: string,
+  config?: FetchConfig
 ): Promise<T | null> {
-  try {
-    const response = await wagtailClient.get<WagtailAPIResponse<T>>('/pages/', {
-      params: {
-        type,
-        site: SITE_HOSTNAME,
-        slug,
-        fields: '*',
-      },
-    })
+  const response = await wagtailFetch<WagtailAPIResponse<T>>(
+    '/pages/',
+    {
+      type,
+      site: SITE_HOSTNAME,
+      slug,
+      fields: '*',
+    },
+    config
+  )
 
-    return response.data.items[0] || null
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error(`Error fetching page with slug "${slug}" from Wagtail:`, {
-        status: error.response?.status,
-        message: error.message,
-      })
-    } else {
-      console.error(`Error fetching page with slug "${slug}" from Wagtail:`, error)
-    }
-    return null
-  }
+  return response.items[0] || null
 }
 
 /**
- * Fetch imagen de Wagtail
+ * Fetch an image by ID.
  */
-export async function getImage(id: number): Promise<DownloadableImage | null> {
+export async function getImage(
+  id: number,
+  config?: FetchConfig
+): Promise<DownloadableImage | null> {
   try {
-    const response = await wagtailClient.get<DownloadableImage>(`/images/${id}/`, {
-      params: {
+    return await wagtailFetch<DownloadableImage>(
+      `/images/${id}/`,
+      {
         site: SITE_HOSTNAME,
       },
-    })
-    return response.data
+      config
+    )
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error(`Error fetching image ${id} from Wagtail:`, {
-        status: error.response?.status,
-        message: error.message,
-      })
-    } else {
-      console.error(`Error fetching image ${id} from Wagtail:`, error)
+    if (error instanceof Error && error.message.includes('404')) {
+      return null
     }
-    return null
+    throw error
   }
 }
 
 /**
- * Buscar páginas
+ * Search pages by query string.
  */
 export async function searchPages<T extends WagtailPage>(
   query: string,
-  type?: string
+  type?: string,
+  config?: FetchConfig
 ): Promise<T[]> {
-  try {
-    const response = await wagtailClient.get<WagtailAPIResponse<T>>('/pages/', {
-      params: {
-        search: query,
-        site: SITE_HOSTNAME,
-        fields: '*',
-        ...(type && { type }),
-      },
-    })
+  const response = await wagtailFetch<WagtailAPIResponse<T>>(
+    '/pages/',
+    {
+      search: query,
+      site: SITE_HOSTNAME,
+      fields: '*',
+      ...(type ? { type } : {}),
+    },
+    config
+  )
 
-    return response.data.items
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error('Error searching pages in Wagtail:', {
-        status: error.response?.status,
-        message: error.message,
-      })
-    } else {
-      console.error('Error searching pages in Wagtail:', error)
-    }
-    return []
-  }
+  return response.items
 }
 
 /**
- * Fetch preview content con token
- * Usado por páginas en Draft Mode
+ * Fetch preview content with token.
+ * Used by pages in Draft Mode. Never cached.
  */
 export async function getPreviewPage<T extends WagtailPage>(
   contentType: string,
   token: string
 ): Promise<T | null> {
   try {
-    const response = await wagtailClient.get<T>('/page_preview/', {
-      params: {
+    return await wagtailFetch<T>(
+      '/page_preview/',
+      {
         content_type: contentType,
-        token: token,
+        token,
         site: SITE_HOSTNAME,
       },
-    })
-
-    return response.data
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error('Error fetching preview page:', {
-        status: error.response?.status,
-        message: error.message,
-      })
-    } else {
-      console.error('Error fetching preview page:', error)
-    }
+      { revalidate: 0 }
+    )
+  } catch {
     return null
   }
 }

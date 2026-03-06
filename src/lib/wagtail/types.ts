@@ -4,7 +4,7 @@
  * Tipos que representan las respuestas de Wagtail API v2
  */
 
-import { WagtailPage } from './client'
+import type { WagtailPage } from './client'
 
 // ============================================================================
 // Common Wagtail Types
