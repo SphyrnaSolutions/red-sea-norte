@@ -4,7 +4,7 @@ function getDefaultFallbackMode(): FallbackMode {
   if (process.env.FALLBACK_MODE) {
     return process.env.FALLBACK_MODE as FallbackMode
   }
-  return process.env.NODE_ENV === 'production' ? 'none' : 'full'
+  return process.env.NODE_ENV === 'production' ? 'critical' : 'full'
 }
 
 export const FALLBACK_CONFIG = {
