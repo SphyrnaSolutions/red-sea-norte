@@ -32,6 +32,30 @@ Requirements for lead capture integration with Odoo CRM.
 
 - [x] **LEGAL-01**: Pagina de politica de privacidad con tratamiento de datos y WhatsApp marketing
 
+## v2.1 Requirements
+
+Requirements for replacing stock content with real product data and images.
+
+### Imagenes
+
+- [ ] **IMG-01**: Sustituir URLs Unsplash en images.ts por fotos reales optimizadas en public/images/
+- [ ] **IMG-02**: Copiar y optimizar fotos reales al proyecto con next/image optimization
+- [ ] **IMG-03**: Alt text SEO descriptivo en espanol con keywords en todas las imagenes
+- [ ] **IMG-04**: Responsive images con srcset/sizes para diferentes viewports
+
+### Datos del Producto
+
+- [ ] **DATA-01**: Datos reales del barco M/Y Dolce Vita en homepage (40m, 12 camarotes, 24 pax, 4 cubiertas)
+- [ ] **DATA-02**: 5 rutas reales con nombre, precio desde, spots principales y descripcion
+- [ ] **DATA-03**: Formacion incluida real: Advanced SSI + 4 especialidades gratis, nitrox gratis
+- [ ] **DATA-04**: FAQs reales del producto extraidas de viajeskarlossimon.com
+
+### Audit de Posts
+
+- [ ] **AUDIT-01**: Revisar los 25 blog posts contra data real del producto (barco, rutas, precios)
+- [ ] **AUDIT-02**: Corregir datos incorrectos o inventados en posts existentes
+- [ ] **AUDIT-03**: Identificar posts thin content para reescribir o fusionar
+
 ## Future Requirements
 
 ### Contenido SEO (v3.0)
@@ -47,6 +71,8 @@ Requirements for lead capture integration with Odoo CRM.
 - **TECH-02**: Fix Wagtail 500s durante Docker build
 - **TECH-03**: Core Web Vitals optimization pass
 - **TECH-04**: Monitorizacion de canibalizacion de keywords
+- **TECH-05**: Eliminar draftMode() de fetchers para habilitar ISR real (homepage y blog)
+- **TECH-06**: Self-host fuentes Satoshi/Clash Display con next/font/local (eliminar FOUT)
 
 ## Out of Scope
 
@@ -77,10 +103,9 @@ Requirements for lead capture integration with Odoo CRM.
 | LEGAL-01 | Phase 6 | Complete |
 
 **Coverage:**
-- v2.0 requirements: 13 total
-- Mapped to phases: 13
-- Unmapped: 0
+- v2.0 requirements: 13 total — mapped: 13
+- v2.1 requirements: 11 total — mapped: 0 (pending roadmap)
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-06 after milestone v2.0 definition*
+*Last updated: 2026-03-07 after v2.1 requirements definition*
