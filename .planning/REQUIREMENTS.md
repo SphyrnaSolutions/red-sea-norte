@@ -69,26 +69,26 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TECH-01 | — | Pending |
-| TECH-02 | — | Pending |
-| TECH-03 | — | Pending |
-| TECH-04 | — | Pending |
-| SEO-01 | — | Pending |
-| SEO-02 | — | Pending |
-| SEO-03 | — | Pending |
-| SEO-04 | — | Pending |
-| SEO-05 | — | Pending |
-| SEO-06 | — | Pending |
-| CONT-01 | — | Pending |
-| CONT-02 | — | Pending |
-| CONT-03 | — | Pending |
-| CONT-04 | — | Pending |
+| TECH-01 | Phase 1 | Pending |
+| TECH-02 | Phase 1 | Pending |
+| TECH-03 | Phase 1 | Pending |
+| TECH-04 | Phase 1 | Pending |
+| SEO-01 | Phase 2 | Pending |
+| SEO-02 | Phase 2 | Pending |
+| SEO-03 | Phase 2 | Pending |
+| SEO-04 | Phase 2 | Pending |
+| SEO-05 | Phase 2 | Pending |
+| SEO-06 | Phase 2 | Pending |
+| CONT-01 | Phase 2 | Pending |
+| CONT-02 | Phase 2 | Pending |
+| CONT-03 | Phase 3 | Pending |
+| CONT-04 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 14 total
-- Mapped to phases: 0
-- Unmapped: 14
+- Mapped to phases: 14
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-06 after initial definition*
+*Last updated: 2026-03-06 after roadmap creation*
