@@ -9,10 +9,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Technical Foundation
 
-- [ ] **TECH-01**: Migrate all Wagtail API calls from axios to native fetch for ISR compatibility
-- [ ] **TECH-02**: Generate sitemap XML with real lastmod dates from Wagtail page data
-- [ ] **TECH-03**: Implement pagination for Wagtail API calls to support >20 content items
-- [ ] **TECH-04**: Remove mock data fallback in production — fail explicitly instead of serving fake content
+- [x] **TECH-01**: Migrate all Wagtail API calls from axios to native fetch for ISR compatibility
+- [x] **TECH-02**: Generate sitemap XML with real lastmod dates from Wagtail page data
+- [x] **TECH-03**: Implement pagination for Wagtail API calls to support >20 content items
+- [x] **TECH-04**: Remove mock data fallback in production — fail explicitly instead of serving fake content
 
 ### SEO Infrastructure
 
@@ -69,10 +69,10 @@ Deferred to future release. Tracked but not in current roadmap.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TECH-01 | Phase 1 | Pending |
-| TECH-02 | Phase 1 | Pending |
-| TECH-03 | Phase 1 | Pending |
-| TECH-04 | Phase 1 | Pending |
+| TECH-01 | Phase 1 | Complete |
+| TECH-02 | Phase 1 | Complete |
+| TECH-03 | Phase 1 | Complete |
+| TECH-04 | Phase 1 | Complete |
 | SEO-01 | Phase 2 | Pending |
 | SEO-02 | Phase 2 | Pending |
 | SEO-03 | Phase 2 | Pending |

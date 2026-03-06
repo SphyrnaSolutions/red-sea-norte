@@ -12,7 +12,7 @@ Red Sea Norte is a brownfield Next.js + Wagtail site that needs to evolve from a
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Technical Foundation** - Fix data layer reliability: fetch migration, sitemap accuracy, pagination, production error handling
+- [x] **Phase 1: Technical Foundation** - Fix data layer reliability: fetch migration, sitemap accuracy, pagination, production error handling
 - [ ] **Phase 2: SEO Content Pipeline** - Build cluster-aware SEO infrastructure: Wagtail models, cluster resolver, interlink engine, schema markup, breadcrumbs
 - [ ] **Phase 3: Page Templates and Homepage** - Deliver reusable SEO article template and optimized homepage that consume the pipeline
 
@@ -30,8 +30,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Rewrite Wagtail client (axios to fetch), add pagination, production-safe fallback config
-- [ ] 01-02-PLAN.md -- Simplify data layer (remove unstable_cache), sitemap with real dates, uninstall axios
+- [x] 01-01-PLAN.md -- Rewrite Wagtail client (axios to fetch), add pagination, production-safe fallback config
+- [x] 01-02-PLAN.md -- Simplify data layer (remove unstable_cache), sitemap with real dates, uninstall axios
 
 ### Phase 2: SEO Content Pipeline
 **Goal**: Every page in the site can automatically resolve its cluster relationships, generate structured data, compute interlinks, and render breadcrumbs -- the shared SEO infrastructure that all content pages consume
@@ -71,6 +71,6 @@ Phases execute in numeric order: 1 -> 2 -> 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Technical Foundation | 0/2 | Not started | - |
+| 1. Technical Foundation | 2/2 | Complete | 2026-03-06 |
 | 2. SEO Content Pipeline | 0/3 | Not started | - |
 | 3. Page Templates and Homepage | 0/2 | Not started | - |
