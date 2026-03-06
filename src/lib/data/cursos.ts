@@ -1,16 +1,20 @@
-import { unstable_cache } from 'next/cache'
 import { draftMode } from 'next/headers'
 import { getAllCursos, getCurso } from '@/lib/wagtail/fetchers'
 import { getAllCursos as getAllMockCursos, getCurso as getMockCurso } from '@/lib/mock-data/cursos'
 import { shouldUseFallback, logDataError } from './config'
 
-async function fetchAllCursosInternal() {
+export async function getAllCursosData() {
+  const { isEnabled: isDraft } = await draftMode()
+
   try {
-    const data = await getAllCursos()
+    const data = await getAllCursos({
+      revalidate: isDraft ? 0 : 3600,
+      tags: ['cursos', 'cursos-list'],
+    })
     if (!data || data.length === 0) throw new Error('No cursos received from API')
     return data
   } catch (error) {
-    logDataError(error, 'fetchAllCursos')
+    logDataError(error, 'getAllCursosData')
     if (shouldUseFallback(error, 'cursos')) {
       console.warn('[Data Layer] Using mock data fallback for cursos')
       return getAllMockCursos()
@@ -19,18 +23,22 @@ async function fetchAllCursosInternal() {
   }
 }
 
-async function fetchCursoInternal(slug: string) {
+export async function getCursoData(slug: string) {
+  const { isEnabled: isDraft } = await draftMode()
+
   try {
-    const data = await getCurso(slug)
+    const data = await getCurso(slug, {
+      revalidate: isDraft ? 0 : 3600,
+      tags: ['cursos', `curso-${slug}`],
+    })
     if (!data) {
       const mockCurso = getMockCurso(slug)
-      if (mockCurso) return mockCurso
-      // Return null instead of throwing - let the page handle notFound()
+      if (mockCurso && shouldUseFallback(null, 'cursos')) return mockCurso
       return null
     }
     return data
   } catch (error) {
-    logDataError(error, `fetchCurso(${slug})`)
+    logDataError(error, `getCursoData(${slug})`)
     if (shouldUseFallback(error, 'cursos')) {
       const mockCurso = getMockCurso(slug)
       if (mockCurso) {
@@ -38,39 +46,32 @@ async function fetchCursoInternal(slug: string) {
         return mockCurso
       }
     }
-    // Return null on error instead of throwing
-    return null
+    throw error
   }
 }
 
-export async function getAllCursosData() {
-  const { isEnabled: isDraft } = await draftMode()
-  if (isDraft) return fetchAllCursosInternal()
-
-  const getCachedCursos = unstable_cache(
-    fetchAllCursosInternal,
-    ['cursos'],
-    { tags: ['cursos', 'cursos-list'], revalidate: 3600 }
-  )
-  return getCachedCursos()
-}
-
-export async function getCursoData(slug: string) {
-  const { isEnabled: isDraft } = await draftMode()
-  if (isDraft) return fetchCursoInternal(slug)
-
-  const getCachedCurso = unstable_cache(
-    () => fetchCursoInternal(slug),
-    ['curso', slug],
-    { tags: ['cursos', `curso-${slug}`], revalidate: 3600 }
-  )
-  return getCachedCurso()
-}
-
 /**
- * Get all curso slugs for generateStaticParams
- * This function does NOT use draftMode since it runs at build time
+ * Get all curso slugs with lastModified dates.
+ * Used by generateStaticParams and sitemap.
  */
 export async function getAllCursosSlugsData() {
-  return fetchAllCursosInternal()
+  try {
+    const cursos = await getAllCursos({
+      revalidate: 3600,
+      tags: ['cursos', 'cursos-list'],
+    })
+    return cursos.map(c => ({
+      slug: c.slug,
+      lastModified: undefined as string | undefined,
+    }))
+  } catch (error) {
+    logDataError(error, 'getAllCursosSlugsData')
+    if (shouldUseFallback(error, 'cursos')) {
+      return getAllMockCursos().map(c => ({
+        slug: c.slug,
+        lastModified: undefined as string | undefined,
+      }))
+    }
+    throw error
+  }
 }

@@ -1,16 +1,20 @@
-import { unstable_cache } from 'next/cache'
 import { draftMode } from 'next/headers'
 import { getAllRutas, getRuta } from '@/lib/wagtail/fetchers'
 import { getAllRutas as getAllMockRutas, getRuta as getMockRuta } from '@/lib/mock-data/rutas'
 import { shouldUseFallback, logDataError } from './config'
 
-async function fetchAllRutasInternal() {
+export async function getAllRutasData() {
+  const { isEnabled: isDraft } = await draftMode()
+
   try {
-    const data = await getAllRutas()
+    const data = await getAllRutas({
+      revalidate: isDraft ? 0 : 1800,
+      tags: ['rutas', 'rutas-list'],
+    })
     if (!data || data.length === 0) throw new Error('No rutas received from API')
     return data
   } catch (error) {
-    logDataError(error, 'fetchAllRutas')
+    logDataError(error, 'getAllRutasData')
     if (shouldUseFallback(error, 'rutas')) {
       console.warn('[Data Layer] Using mock data fallback for rutas')
       return getAllMockRutas()
@@ -19,18 +23,22 @@ async function fetchAllRutasInternal() {
   }
 }
 
-async function fetchRutaInternal(slug: string) {
+export async function getRutaData(slug: string) {
+  const { isEnabled: isDraft } = await draftMode()
+
   try {
-    const data = await getRuta(slug)
+    const data = await getRuta(slug, {
+      revalidate: isDraft ? 0 : 1800,
+      tags: ['rutas', `ruta-${slug}`],
+    })
     if (!data) {
       const mockRuta = getMockRuta(slug)
-      if (mockRuta) return mockRuta
-      // Return null instead of throwing - let the page handle notFound()
+      if (mockRuta && shouldUseFallback(null, 'rutas')) return mockRuta
       return null
     }
     return data
   } catch (error) {
-    logDataError(error, `fetchRuta(${slug})`)
+    logDataError(error, `getRutaData(${slug})`)
     if (shouldUseFallback(error, 'rutas')) {
       const mockRuta = getMockRuta(slug)
       if (mockRuta) {
@@ -38,39 +46,32 @@ async function fetchRutaInternal(slug: string) {
         return mockRuta
       }
     }
-    // Return null on error instead of throwing
-    return null
+    throw error
   }
 }
 
-export async function getAllRutasData() {
-  const { isEnabled: isDraft } = await draftMode()
-  if (isDraft) return fetchAllRutasInternal()
-
-  const getCachedRutas = unstable_cache(
-    fetchAllRutasInternal,
-    ['rutas'],
-    { tags: ['rutas', 'rutas-list'], revalidate: 1800 }
-  )
-  return getCachedRutas()
-}
-
-export async function getRutaData(slug: string) {
-  const { isEnabled: isDraft } = await draftMode()
-  if (isDraft) return fetchRutaInternal(slug)
-
-  const getCachedRuta = unstable_cache(
-    () => fetchRutaInternal(slug),
-    ['ruta', slug],
-    { tags: ['rutas', `ruta-${slug}`], revalidate: 1800 }
-  )
-  return getCachedRuta()
-}
-
 /**
- * Get all ruta slugs for generateStaticParams
- * This function does NOT use draftMode since it runs at build time
+ * Get all ruta slugs with lastModified dates.
+ * Used by generateStaticParams and sitemap.
  */
 export async function getAllRutasSlugsData() {
-  return fetchAllRutasInternal()
+  try {
+    const rutas = await getAllRutas({
+      revalidate: 1800,
+      tags: ['rutas', 'rutas-list'],
+    })
+    return rutas.map(r => ({
+      slug: r.slug,
+      lastModified: undefined as string | undefined,
+    }))
+  } catch (error) {
+    logDataError(error, 'getAllRutasSlugsData')
+    if (shouldUseFallback(error, 'rutas')) {
+      return getAllMockRutas().map(r => ({
+        slug: r.slug,
+        lastModified: undefined as string | undefined,
+      }))
+    }
+    throw error
+  }
 }
