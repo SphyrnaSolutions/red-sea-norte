@@ -23,6 +23,9 @@ interface InlineLeadSectionProps {
   submitButton: string
   privacyText: string
   successMessage: string
+  consentText?: string
+  privacyLinkText?: string
+  privacyLinkHref?: string
   showModalCta?: boolean
   secondaryPrompt?: string
 }
@@ -36,24 +39,87 @@ export function InlineLeadSection({
   fields,
   submitButton,
   privacyText,
-  successMessage: _successMessage,
+  successMessage,
+  consentText,
+  privacyLinkText,
+  privacyLinkHref,
   showModalCta = true,
   secondaryPrompt = "Si aun no quieres enviar el formulario, puedes abrir el modal y dejarnos una duda mas concreta.",
 }: InlineLeadSectionProps) {
   const { openModal } = useModalStore()
   const [formData, setFormData] = useState<Record<string, string>>({})
+  const [whatsappConsent, setWhatsappConsent] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [event.target.name]: event.target.value,
-    }))
+    const { name, value } = event.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev }
+        delete next[name]
+        return next
+      })
+    }
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const validateForm = (): boolean => {
+    const newErrors: Record<string, string> = {}
+
+    if (!formData.name?.trim()) {
+      newErrors.name = "El nombre es obligatorio"
+    }
+
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Email no valido"
+    }
+
+    if (!formData.phone || !/^\+?\d{7,15}$/.test(formData.phone)) {
+      newErrors.phone = "Telefono no valido"
+    }
+
+    if (!whatsappConsent) {
+      newErrors.whatsappConsent = "Debes aceptar el consentimiento de WhatsApp"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    // TODO: Connect to a real API endpoint when available
+    setSubmitError(null)
+    if (!validateForm()) return
+
+    setIsSubmitting(true)
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          certification: formData.certification || undefined,
+          preferredMonth: formData.preferredMonth || undefined,
+          whatsappConsent: whatsappConsent,
+        }),
+      })
+      if (!response.ok) {
+        const data = await response.json().catch(() => null)
+        throw new Error(data?.error || "Error al enviar el formulario")
+      }
+      setShowSuccess(true)
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Error inesperado. Intentalo de nuevo.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -98,7 +164,16 @@ export function InlineLeadSection({
           </div>
 
           <div className="rounded-[30px] bg-white p-8 shadow-[0_24px_80px_rgba(10,37,64,0.12)] md:p-10">
-            <form className="space-y-5" onSubmit={handleSubmit}>
+            {showSuccess ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                  <span className="text-3xl text-green-600">&#10003;</span>
+                </div>
+                <p className="text-xl font-bold text-green-800 mb-2">{successMessage}</p>
+                <p className="text-green-700">Nos pondremos en contacto contigo pronto.</p>
+              </div>
+            ) : (
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 {fields.map((field) => (
                   <div key={field.name}>
                     {field.type === "select" ? (
@@ -106,7 +181,6 @@ export function InlineLeadSection({
                         name={field.name}
                         value={formData[field.name] || ""}
                         onChange={handleChange}
-                        required={field.required}
                         className="w-full rounded-[18px] border border-[#D7E8EF] px-5 py-4 text-[#0A2540] outline-none transition focus:border-[#00A8B5] focus:ring-4 focus:ring-[#00A8B5]/10"
                       >
                         <option value="" disabled>
@@ -124,7 +198,6 @@ export function InlineLeadSection({
                         value={formData[field.name] || ""}
                         onChange={handleChange}
                         placeholder={field.placeholder}
-                        required={field.required}
                         rows={4}
                         className="w-full rounded-[18px] border border-[#D7E8EF] px-5 py-4 text-[#0A2540] outline-none transition focus:border-[#00A8B5] focus:ring-4 focus:ring-[#00A8B5]/10"
                       />
@@ -135,25 +208,80 @@ export function InlineLeadSection({
                         value={formData[field.name] || ""}
                         onChange={handleChange}
                         placeholder={field.placeholder}
-                        required={field.required}
                         className="w-full rounded-[18px] border border-[#D7E8EF] px-5 py-4 text-[#0A2540] outline-none transition focus:border-[#00A8B5] focus:ring-4 focus:ring-[#00A8B5]/10"
                       />
+                    )}
+                    {errors[field.name] && (
+                      <p className="text-red-500 text-xs mt-1">{errors[field.name]}</p>
                     )}
                   </div>
                 ))}
 
-                <p className="text-sm leading-7 text-[#4A5568]">{privacyText}</p>
+                {consentText && (
+                  <div>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={whatsappConsent}
+                        onChange={(e) => {
+                          setWhatsappConsent(e.target.checked)
+                          if (errors.whatsappConsent) {
+                            setErrors((prev) => {
+                              const next = { ...prev }
+                              delete next.whatsappConsent
+                              return next
+                            })
+                          }
+                        }}
+                        className="mt-1 h-5 w-5 rounded border-gray-300 accent-current shrink-0"
+                      />
+                      <span className="text-sm leading-6 text-[#4A5568]">
+                        {consentText}{" "}
+                        {privacyLinkHref && privacyLinkText && (
+                          <a
+                            href={privacyLinkHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:no-underline"
+                          >
+                            {privacyLinkText}
+                          </a>
+                        )}
+                      </span>
+                    </label>
+                    {errors.whatsappConsent && (
+                      <p className="text-red-500 text-xs mt-1">{errors.whatsappConsent}</p>
+                    )}
+                  </div>
+                )}
+
+                {privacyText && (
+                  <p className="text-sm leading-7 text-[#4A5568]">{privacyText}</p>
+                )}
+
+                {submitError && (
+                  <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                    {submitError}
+                  </div>
+                )}
 
                 <Button
                   type="submit"
                   size="lg"
                   className="w-full bg-[#F57415] text-white hover:bg-[#DA630C]"
-                  disabled
-                  title="Proximamente"
+                  disabled={isSubmitting}
                 >
-                  {submitButton} (proximamente)
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <span className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                      Enviando...
+                    </span>
+                  ) : (
+                    submitButton
+                  )}
                 </Button>
               </form>
+            )}
           </div>
         </div>
       </div>

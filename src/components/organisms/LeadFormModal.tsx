@@ -20,6 +20,9 @@ interface LeadFormModalProps {
   submitButton: string
   privacyText: string
   successMessage: string
+  consentText?: string
+  privacyLinkText?: string
+  privacyLinkHref?: string
 }
 
 export function LeadFormModal({
@@ -29,9 +32,15 @@ export function LeadFormModal({
   submitButton,
   privacyText,
   successMessage,
+  consentText,
+  privacyLinkText,
+  privacyLinkHref,
 }: LeadFormModalProps) {
   const { isOpen, closeModal } = useModalStore()
   const [formData, setFormData] = useState<Record<string, string>>({})
+  const [whatsappConsent, setWhatsappConsent] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -43,6 +52,9 @@ export function LeadFormModal({
     }
 
     setFormData({})
+    setWhatsappConsent(false)
+    setErrors({})
+    setSubmitError(null)
     setShowSuccess(false)
     setIsSubmitting(false)
     closeModal()
@@ -68,30 +80,78 @@ export function LeadFormModal({
     }
   }, [])
 
+  const validateForm = (): boolean => {
+    const newErrors: Record<string, string> = {}
+
+    if (!formData.name?.trim()) {
+      newErrors.name = "El nombre es obligatorio"
+    }
+
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Email no valido"
+    }
+
+    if (!formData.phone || !/^\+?\d{7,15}$/.test(formData.phone)) {
+      newErrors.phone = "Telefono no valido"
+    }
+
+    if (!whatsappConsent) {
+      newErrors.whatsappConsent = "Debes aceptar el consentimiento de WhatsApp"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setSubmitError(null)
+    if (!validateForm()) return
+
     setIsSubmitting(true)
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          certification: formData.certification || undefined,
+          preferredMonth: formData.preferredMonth || undefined,
+          message: formData.message || undefined,
+          whatsappConsent: whatsappConsent,
+        }),
+      })
+      if (!response.ok) {
+        const data = await response.json().catch(() => null)
+        throw new Error(data?.error || "Error al enviar el formulario")
+      }
+      setShowSuccess(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    console.log("Form submitted:", formData)
-    setIsSubmitting(false)
-    setShowSuccess(true)
-
-    // Close modal after 2 seconds
-    closeTimeoutRef.current = setTimeout(() => {
-      handleClose()
-    }, 2000)
+      // Close modal after 3 seconds
+      closeTimeoutRef.current = setTimeout(() => {
+        handleClose()
+      }, 3000)
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Error inesperado. Intentalo de nuevo.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev }
+        delete next[name]
+        return next
+      })
+    }
   }
 
   // Close on escape key
@@ -140,7 +200,7 @@ export function LeadFormModal({
 
               {/* Badge */}
               <div className="inline-block bg-[#FF5722]/10 text-[#FF5722] px-4 py-2 rounded-full text-sm font-bold mb-6">
-                🔥 Plazas Limitadas
+                Plazas Limitadas
               </div>
 
               {/* Title */}
@@ -161,7 +221,7 @@ export function LeadFormModal({
                   animate={{ scale: 1, opacity: 1 }}
                   className="bg-green-50 border-2 border-green-500 rounded-xl p-8 text-center"
                 >
-                  <div className="text-5xl mb-4">✓</div>
+                  <div className="text-5xl mb-4">&#10003;</div>
                   <p className="text-xl font-bold text-green-800 mb-2">
                     {successMessage}
                   </p>
@@ -179,7 +239,6 @@ export function LeadFormModal({
                           name={field.name}
                           value={formData[field.name] || ""}
                           onChange={handleChange}
-                          required={field.required}
                           className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#FF5722] focus:ring-2 focus:ring-[#FF5722]/20 outline-none transition-all text-[#2C3E50] bg-white"
                         >
                           <option value="" disabled>
@@ -197,7 +256,6 @@ export function LeadFormModal({
                           value={formData[field.name] || ""}
                           onChange={handleChange}
                           placeholder={field.placeholder}
-                          required={field.required}
                           rows={4}
                           className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#FF5722] focus:ring-2 focus:ring-[#FF5722]/20 outline-none transition-all text-[#2C3E50] resize-none"
                         />
@@ -208,15 +266,65 @@ export function LeadFormModal({
                           value={formData[field.name] || ""}
                           onChange={handleChange}
                           placeholder={field.placeholder}
-                          required={field.required}
                           className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#FF5722] focus:ring-2 focus:ring-[#FF5722]/20 outline-none transition-all text-[#2C3E50]"
                         />
+                      )}
+                      {errors[field.name] && (
+                        <p className="text-red-500 text-xs mt-1">{errors[field.name]}</p>
                       )}
                     </div>
                   ))}
 
-                  {/* Privacy Text */}
-                  <p className="text-sm text-gray-600">{privacyText}</p>
+                  {/* WhatsApp Consent Checkbox */}
+                  {consentText && (
+                    <div>
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={whatsappConsent}
+                          onChange={(e) => {
+                            setWhatsappConsent(e.target.checked)
+                            if (errors.whatsappConsent) {
+                              setErrors((prev) => {
+                                const next = { ...prev }
+                                delete next.whatsappConsent
+                                return next
+                              })
+                            }
+                          }}
+                          className="mt-1 h-5 w-5 rounded border-gray-300 accent-current shrink-0"
+                        />
+                        <span className="text-sm leading-6 text-gray-600">
+                          {consentText}{" "}
+                          {privacyLinkHref && privacyLinkText && (
+                            <a
+                              href={privacyLinkHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline hover:no-underline"
+                            >
+                              {privacyLinkText}
+                            </a>
+                          )}
+                        </span>
+                      </label>
+                      {errors.whatsappConsent && (
+                        <p className="text-red-500 text-xs mt-1">{errors.whatsappConsent}</p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Privacy Text (legacy fallback) */}
+                  {privacyText && (
+                    <p className="text-sm text-gray-600">{privacyText}</p>
+                  )}
+
+                  {/* Submit Error */}
+                  {submitError && (
+                    <div className="rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                      {submitError}
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <button
@@ -224,7 +332,14 @@ export function LeadFormModal({
                     disabled={isSubmitting}
                     className="w-full bg-[#FF5722] text-white py-4 px-8 rounded-lg font-bold text-lg hover:bg-[#F4511E] hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Enviando..." : submitButton}
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                        Enviando...
+                      </span>
+                    ) : (
+                      submitButton
+                    )}
                   </button>
                 </form>
               )}
