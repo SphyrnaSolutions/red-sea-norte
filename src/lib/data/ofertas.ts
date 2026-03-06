@@ -57,6 +57,7 @@ export async function getOfertaData(slug: string) {
 /**
  * Get all oferta slugs with lastModified dates.
  * Used by generateStaticParams and sitemap.
+ * Returns empty array on error (never throws) so builds succeed without Wagtail.
  */
 export async function getAllOfertasSlugsData() {
   try {
@@ -76,6 +77,6 @@ export async function getAllOfertasSlugsData() {
         lastModified: undefined as string | undefined,
       }) : null).filter(Boolean) as { slug: string; lastModified: string | undefined }[]
     }
-    throw error
+    return []
   }
 }

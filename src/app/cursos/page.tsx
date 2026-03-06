@@ -19,7 +19,8 @@ export const metadata: Metadata = {
   },
 }
 
-export const revalidate = 3600 // 1 hour ISR
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'
 
 export default async function CursosPage() {
   const cursos = await getAllCursosData()

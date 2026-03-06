@@ -53,6 +53,7 @@ export async function getRutaData(slug: string) {
 /**
  * Get all ruta slugs with lastModified dates.
  * Used by generateStaticParams and sitemap.
+ * Returns empty array on error (never throws) so builds succeed without Wagtail.
  */
 export async function getAllRutasSlugsData() {
   try {
@@ -72,6 +73,6 @@ export async function getAllRutasSlugsData() {
         lastModified: undefined as string | undefined,
       }))
     }
-    throw error
+    return []
   }
 }

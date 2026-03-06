@@ -291,5 +291,5 @@ export default async function CursoPage({ params }: CursoPageProps) {
   )
 }
 
-// ISR: Revalidar cada hora (3600 segundos)
-export const revalidate = 3600
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'

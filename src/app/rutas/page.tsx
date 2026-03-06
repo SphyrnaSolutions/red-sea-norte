@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
 }
 
-// ISR configuration: revalidate every 30 minutes
-export const revalidate = 1800
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'
 
 export default async function RutasPage() {
   const rutas = await getAllRutasData()

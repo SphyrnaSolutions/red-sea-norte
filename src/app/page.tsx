@@ -9,7 +9,8 @@ import { RouteTeaserSection } from "@/components/organisms/RouteTeaserSection"
 import { LeadFormModal } from "@/components/organisms/LeadFormModal"
 import { getHomePageData } from "@/lib/data"
 
-export const revalidate = 600
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 

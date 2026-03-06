@@ -53,6 +53,7 @@ export async function getExperienciaData(slug: string) {
 /**
  * Get all experiencia slugs with lastModified dates.
  * Used by generateStaticParams and sitemap.
+ * Returns empty array on error (never throws) so builds succeed without Wagtail.
  */
 export async function getAllExperienciasSlugsData() {
   try {
@@ -72,6 +73,6 @@ export async function getAllExperienciasSlugsData() {
         lastModified: undefined as string | undefined,
       }))
     }
-    throw error
+    return []
   }
 }

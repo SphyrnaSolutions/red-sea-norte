@@ -163,5 +163,5 @@ export async function generateStaticParams() {
     .map((oferta) => ({ slug: oferta.slug }))
 }
 
-// ISR: Revalidar cada 15 minutos
-export const revalidate = 900
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'

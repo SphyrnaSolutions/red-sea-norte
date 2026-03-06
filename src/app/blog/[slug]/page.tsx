@@ -129,7 +129,8 @@ export async function generateStaticParams() {
 }
 
 // ISR Configuration - revalidate every hour
-export const revalidate = 3600
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params

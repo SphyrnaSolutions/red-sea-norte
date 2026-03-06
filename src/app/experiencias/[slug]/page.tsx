@@ -164,8 +164,8 @@ export async function generateStaticParams() {
   return experiencias.map((exp) => ({ slug: exp.slug }))
 }
 
-// ISR configuration: revalidate every 30 minutes
-export const revalidate = 1800
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'
 
 // Base URL for structured data and canonical URLs
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'

@@ -53,6 +53,7 @@ export async function getCursoData(slug: string) {
 /**
  * Get all curso slugs with lastModified dates.
  * Used by generateStaticParams and sitemap.
+ * Returns empty array on error (never throws) so builds succeed without Wagtail.
  */
 export async function getAllCursosSlugsData() {
   try {
@@ -72,6 +73,6 @@ export async function getAllCursosSlugsData() {
         lastModified: undefined as string | undefined,
       }))
     }
-    throw error
+    return []
   }
 }

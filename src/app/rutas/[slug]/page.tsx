@@ -12,8 +12,8 @@ import type { Metadata } from 'next'
 // Base URL for absolute URLs in structured data
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
-// ISR configuration: revalidate every 30 minutes (1800 seconds)
-export const revalidate = 1800
+// Render on demand, fetch-level caching in client.ts handles ISR
+export const dynamic = 'force-dynamic'
 
 interface RutaPageProps {
   params: Promise<{

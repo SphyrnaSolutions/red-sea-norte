@@ -55,6 +55,7 @@ export async function getBlogPostData(slug: string) {
 /**
  * Get all blog post slugs with lastModified dates.
  * Used by generateStaticParams and sitemap.
+ * Returns empty array on error (never throws) so builds succeed without Wagtail.
  */
 export async function getAllBlogPostSlugsData() {
   try {
@@ -74,6 +75,6 @@ export async function getAllBlogPostSlugsData() {
         lastModified: p.publishedAt || undefined,
       }))
     }
-    throw error
+    return []
   }
 }
