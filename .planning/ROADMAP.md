@@ -27,11 +27,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The XML sitemap reflects real lastmod dates from Wagtail page data, not hardcoded `new Date()`
   3. Pages with more than 20 content items load all items correctly via paginated API calls
   4. In production mode, a missing Wagtail response returns an error page -- never silently serves mock/fallback data
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Rewrite Wagtail client (axios to fetch), add pagination, production-safe fallback config
+- [ ] 01-02-PLAN.md -- Simplify data layer (remove unstable_cache), sitemap with real dates, uninstall axios
 
 ### Phase 2: SEO Content Pipeline
 **Goal**: Every page in the site can automatically resolve its cluster relationships, generate structured data, compute interlinks, and render breadcrumbs -- the shared SEO infrastructure that all content pages consume
