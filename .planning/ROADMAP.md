@@ -3,7 +3,8 @@
 ## Milestones
 
 - v1.0 SEO Infrastructure -- Phases 1-3 (shipped 2026-03-06)
-- v2.0 Lead Capture -- Phases 4-6
+- v2.0 Lead Capture -- Phases 4-6 (shipped 2026-03-06)
+- v2.1 Real Content -- Phases 7-9 (in progress)
 
 ## Phases
 
@@ -18,61 +19,64 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 </details>
 
-### v2.0 Lead Capture
+<details>
+<summary>v2.0 Lead Capture (Phases 4-6) -- SHIPPED 2026-03-06</summary>
 
-#### Phase 4: Odoo API Integration
+- [x] Phase 4: Odoo API Integration (2/2 plans) -- completed 2026-03-06
+- [x] Phase 5: Form + Consent UX (1/1 plans) -- completed 2026-03-06
+- [x] Phase 6: Legal + Deploy (1/1 plans) -- completed 2026-03-06
 
-**Goal:** Backend que conecta Next.js con Odoo CRM para crear leads desde el formulario web.
+</details>
 
-**Requirements:** API-01, API-02, API-03, API-04, CRM-01, CRM-02, CRM-03
+### v2.1 Real Content
 
-**Plans:** 2 plans
+- [ ] **Phase 7: Real Images** - Sustituir todas las imagenes stock por fotos reales optimizadas del barco y buceo
+- [ ] **Phase 8: Real Product Data** - Integrar datos reales del producto en homepage y componentes
+- [ ] **Phase 9: Blog Audit** - Auditar y corregir los 25 blog posts contra data real del producto
 
-Plans:
-- [x] 04-01-PLAN.md -- Odoo XML-RPC client, types, config, and lead validation schema
-- [x] 04-02-PLAN.md -- POST /api/lead route with rate limiting, validation, and Odoo integration
+## Phase Details
 
-**Success criteria:**
-1. POST /api/lead con datos validos crea un crm.lead en Odoo con todos los campos mapeados
-2. Datos invalidos devuelven error 400 con mensaje descriptivo
-3. Rate limiting bloquea mas de 5 requests/minuto por IP
-4. Credenciales Odoo en env vars server-side (ODOO_URL, ODOO_DB, ODOO_API_KEY)
-5. utm.source "Web buceoenelmarrojo.com" creada en Odoo
-6. Consentimiento WhatsApp + timestamp guardado en el lead
-
-#### Phase 5: Form + Consent UX
-
-**Goal:** Formulario de la homepage completo con validacion, consent WhatsApp y feedback visual.
-
-**Requirements:** FORM-01, FORM-02, FORM-03, FORM-04, FORM-05
-
-**Plans:** 1 plan
+### Phase 7: Real Images
+**Goal**: La web muestra fotos reales del barco M/Y Dolce Vita, cabinas, vida marina y spots de buceo en lugar de stock de Unsplash
+**Depends on**: Nothing (first phase of v2.1)
+**Requirements**: IMG-01, IMG-02, IMG-03, IMG-04
+**Success Criteria** (what must be TRUE):
+  1. Todas las URLs de Unsplash en images.ts y componentes estan sustituidas por rutas locales a fotos reales en public/images/
+  2. Las 33 fotos reales estan copiadas en el proyecto y servidas via next/image con optimizacion automatica (WebP/AVIF, resize)
+  3. Cada imagen tiene alt text descriptivo en espanol con keywords relevantes (ej: "Camarote doble del M/Y Dolce Vita con ventana al mar")
+  4. Las imagenes se cargan con srcset/sizes responsivos y lazy loading en viewports movil, tablet y desktop
+**Plans**: TBD
 
 Plans:
-- [x] 05-01-PLAN.md -- Update forms with consent, validation, API integration and visual feedback
+- [ ] 07-01: Copy, organize and optimize real photos into public/images/ with next/image config
+- [ ] 07-02: Replace all Unsplash references with real image paths, add SEO alt text, configure responsive sizes
 
-**Success criteria:**
-1. Form muestra: nombre, email, telefono, certificacion, mes preferido
-2. Checkbox consent WhatsApp con texto Meta + GDPR compliant
-3. Link a politica de privacidad visible junto al checkbox
-4. Validacion client-side impide envio sin campos obligatorios
-5. Estados visuales: idle, loading (spinner), success (mensaje), error (mensaje)
-
-#### Phase 6: Legal + Deploy
-
-**Goal:** Pagina de politica de privacidad y verificacion del flujo completo en produccion.
-
-**Requirements:** LEGAL-01
-
-**Plans:** 1/1 plans complete
+### Phase 8: Real Product Data
+**Goal**: Homepage y componentes muestran datos reales y verificados del barco, rutas, precios, formacion y FAQs
+**Depends on**: Nothing (independent of Phase 7)
+**Requirements**: DATA-01, DATA-02, DATA-03, DATA-04
+**Success Criteria** (what must be TRUE):
+  1. Homepage muestra datos reales del barco M/Y Dolce Vita: 40m eslora, 12 camarotes, 24 buceadores, 4 cubiertas, Divers Fleet
+  2. Las 5 rutas reales aparecen con nombre correcto, precio "desde X EUR", spots principales y descripcion verificada
+  3. Seccion de formacion muestra Advanced SSI + 4 especialidades gratis + nitrox gratis (datos reales, no inventados)
+  4. FAQs del producto extraidas de viajeskarlossimon.com reemplazan cualquier FAQ placeholder o inventada
+**Plans**: TBD
 
 Plans:
-- [ ] 06-01-PLAN.md -- Privacy policy page, footer link fix, and Odoo env vars for deployment
+- [ ] 08-01: Update constants, data files and components with real product data (barco, rutas, precios, formacion, FAQs)
 
-**Success criteria:**
-1. /politica-de-privacidad renderiza pagina con tratamiento de datos y WhatsApp marketing
-2. Env vars de Odoo configuradas en Dokploy (hardcoded en Dockerfile o runtime)
-3. Flujo E2E funciona en buceoenelmarrojo.com: form -> API -> lead aparece en Odoo
+### Phase 9: Blog Audit
+**Goal**: Los 25 blog posts existentes son precisos respecto a los datos reales del producto y no contienen informacion inventada o contradictoria
+**Depends on**: Phase 7 (images available), Phase 8 (real data established as source of truth)
+**Requirements**: AUDIT-01, AUDIT-02, AUDIT-03
+**Success Criteria** (what must be TRUE):
+  1. Los 25 posts han sido revisados contra PRODUCT-DATA.md y cada dato mencionado (barco, rutas, precios, formacion) coincide con la realidad
+  2. Datos incorrectos o inventados en posts existentes estan corregidos (nombres de rutas, precios, especificaciones del barco, spots)
+  3. Posts identificados como thin content (<800 palabras o sin valor diferencial) estan marcados con recomendacion: reescribir, fusionar o eliminar
+**Plans**: TBD
+
+Plans:
+- [ ] 09-01: Audit all 25 blog posts against PRODUCT-DATA.md, fix inaccuracies, flag thin content
 
 ## Progress
 
@@ -83,4 +87,7 @@ Plans:
 | 3. Page Templates and Homepage | v1.0 | 3/3 | Complete | 2026-03-06 |
 | 4. Odoo API Integration | v2.0 | 2/2 | Complete | 2026-03-06 |
 | 5. Form + Consent UX | v2.0 | 1/1 | Complete | 2026-03-06 |
-| 6. Legal + Deploy | 1/1 | Complete   | 2026-03-06 | - |
+| 6. Legal + Deploy | v2.0 | 1/1 | Complete | 2026-03-06 |
+| 7. Real Images | v2.1 | 0/2 | Not started | - |
+| 8. Real Product Data | v2.1 | 0/1 | Not started | - |
+| 9. Blog Audit | v2.1 | 0/1 | Not started | - |

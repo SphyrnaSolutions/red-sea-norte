@@ -101,11 +101,22 @@ Requirements for replacing stock content with real product data and images.
 | FORM-04 | Phase 5 | Complete |
 | FORM-05 | Phase 5 | Complete |
 | LEGAL-01 | Phase 6 | Complete |
+| IMG-01 | Phase 7 | Pending |
+| IMG-02 | Phase 7 | Pending |
+| IMG-03 | Phase 7 | Pending |
+| IMG-04 | Phase 7 | Pending |
+| DATA-01 | Phase 8 | Pending |
+| DATA-02 | Phase 8 | Pending |
+| DATA-03 | Phase 8 | Pending |
+| DATA-04 | Phase 8 | Pending |
+| AUDIT-01 | Phase 9 | Pending |
+| AUDIT-02 | Phase 9 | Pending |
+| AUDIT-03 | Phase 9 | Pending |
 
 **Coverage:**
-- v2.0 requirements: 13 total — mapped: 13
-- v2.1 requirements: 11 total — mapped: 0 (pending roadmap)
+- v2.0 requirements: 13 total -- mapped: 13
+- v2.1 requirements: 11 total -- mapped: 11
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-07 after v2.1 requirements definition*
+*Last updated: 2026-03-07 after v2.1 roadmap creation*

@@ -2,52 +2,43 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-06)
+See: .planning/PROJECT.md (updated 2026-03-07)
 
-**Core value:** Convertir trafico SEO en leads cualificados para safaris de buceo via Odoo CRM.
-**Current focus:** v2.1 Real Content — defining requirements
+**Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
+**Current focus:** Phase 7 - Real Images (v2.1 Real Content)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: --
-Status: Defining requirements
-Last activity: 2026-03-07 -- Milestone v2.1 started
+Phase: 7 of 9 (Real Images)
+Plan: 0 of 2 in current phase
+Status: Ready to plan
+Last activity: 2026-03-07 -- Roadmap created for v2.1 Real Content milestone
+
+Progress: [##########..] 75% (phases 1-6 complete, 7-9 pending)
 
 ## Accumulated Context
 
 ### Decisions
 
-- [v1.0]: Native fetch with ISR, force-dynamic pages, fetch-level caching
-- [v1.0]: schema-dts for compile-time JSON-LD validation
-- [v1.0]: ClusterMixin in Wagtail for DB-level keyword uniqueness
-- [v1.0]: Production fallback mode 'critical' (homepage/blog use mock data if Wagtail down)
-- [v1.0]: NEXT_PUBLIC_* vars hardcoded in Dockerfile (Dokploy no build args)
-- [v2.0]: Odoo CRM is a DIFFERENT instance from the MCP-connected Odoo
-- [v2.0]: WhatsApp marketing consent required (Meta opt-in + GDPR)
-- [v2.0]: API key approach: dedicated Odoo user with CRM-only permissions
-- [v2.0]: Consent text must include: business name, message type, WhatsApp channel, opt-out info
-- [v2.0]: utm.source "Web buceoenelmarrojo.com" for lead tracking
-- [v2.0]: In-memory rate limiter (no Redis) -- sufficient for single-instance deployment
-- [v2.0]: vitest for testing (ESM-native, fast with Next.js)
-- [v2.0]: force-dynamic export on mutation API routes
-- [v2.0]: Consent fields optional on HomepageData types (shared by RutaData/mappers)
-- [v2.0]: Form field names aligned with API Zod schema enums (certification, preferredMonth)
-- [v2.0]: Custom validateForm() over HTML required attrs for consistent error UX
-- [v2.0]: Privacy page as server component (static, no client JS)
-- [v2.0]: All 4 Odoo vars (URL, DB, LOGIN, API_KEY) as runtime env vars only (not build args)
+Decisions are logged in PROJECT.md Key Decisions table.
+Recent decisions affecting current work:
+
+- [v2.1]: Fotos reales antes de escalar contenido (credibilidad y E-E-A-T)
+- [v2.1]: Datos reales del producto scrapeados de viajeskarlossimon.com como source of truth
+- [v2.0]: Odoo CRM via XML-RPC, in-memory rate limiter, vitest for testing
+- [v2.0]: Privacy page as server component, runtime env vars only
 
 ### Pending Todos
 
-- User will provide Odoo connection details (URL, DB, API key) before execution
+None yet.
 
 ### Blockers/Concerns
 
-- Odoo credentials not yet available -- needed before API route can be tested
-- Wagtail returns 500 during Docker build (non-blocking, fallback handles it)
+- 33 fotos reales en /home/mandycs/Proyectos/Clientes/Karlos/imagenes_k/ -- verificar cobertura por categoria
+- Unsplash URLs dispersas en 9+ archivos -- necesitan mapeo completo antes de sustituir
 
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Defining v2.1 requirements
-Resume file: .planning/PROJECT.md
+Stopped at: Roadmap v2.1 created, ready to plan Phase 7
+Resume file: None
