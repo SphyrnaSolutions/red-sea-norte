@@ -625,9 +625,9 @@ export function mapExperienciaPage(wagtailPage: WagtailExperienciaPage): Experie
       successMessage: wagtailPage.lead_form_success_message,
     },
     seo: {
-      metaTitle: wagtailPage.seo_meta_title,
-      metaDescription: wagtailPage.seo_meta_description,
-      keywords: wagtailPage.seo_keywords.split(',').map(k => k.trim()),
+      metaTitle: wagtailPage.seo_meta_title ?? '',
+      metaDescription: wagtailPage.seo_meta_description ?? '',
+      keywords: (wagtailPage.seo_keywords ?? '').split(',').map(k => k.trim()).filter(Boolean),
     },
   }
 }

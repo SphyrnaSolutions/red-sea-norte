@@ -105,10 +105,11 @@ export async function getPages<T extends WagtailPage>(
   params?: Record<string, string>,
   config?: FetchConfig
 ): Promise<T[]> {
+  const MAX_ITERATIONS = 50
   let allItems: T[] = []
   let offset = 0
 
-  while (true) {
+  for (let iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
     const response = await wagtailFetch<WagtailAPIResponse<T>>(
       '/pages/',
       {
@@ -124,7 +125,7 @@ export async function getPages<T extends WagtailPage>(
 
     allItems = [...allItems, ...response.items]
 
-    if (allItems.length >= response.meta.total_count) {
+    if (response.items.length === 0 || allItems.length >= response.meta.total_count) {
       break
     }
     offset += BATCH_SIZE
@@ -244,7 +245,10 @@ export async function getPreviewPage<T extends WagtailPage>(
       },
       { revalidate: 0 }
     )
-  } catch {
+  } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[Wagtail Preview] Error:', error)
+    }
     return null
   }
 }
