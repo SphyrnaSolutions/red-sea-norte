@@ -23,9 +23,16 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - v1.0: Plantilla SEO article reutilizable con H1/H2/H3, ToC, interlinks
 - v1.0: Homepage optimizada: H1 con keywords, CTA above fold, route-first
 
-### Active
+### Active — v2.0 Lead Capture
 
-- [ ] Captacion de leads conectada a Odoo CRM (formularios de contacto/reserva)
+- [ ] Formulario de contacto con campos: nombre, email, telefono, certificacion, mes
+- [ ] Consentimiento WhatsApp marketing (Meta + GDPR compliant)
+- [ ] API route POST /api/lead con validacion y rate limiting
+- [ ] Integracion Odoo CRM: crear crm.lead con source tracking
+- [ ] Pagina de politica de privacidad
+
+### Backlog
+
 - [ ] 30 primeras paginas de contenido SEO (clusters: vida a bordo, rutas, pecios, destinos, logistica)
 - [ ] Contenido por pecio/spot con profundidad experta (Thistlegorm, Abu Nuhas, Ras Mohammed)
 - [ ] Comparativas de rutas (Norte vs Brothers, Hurghada vs Sharm)
@@ -66,8 +73,9 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 | schema-dts para JSON-LD | Type-safe schema.org en compile time | v1.0 Good |
 | ClusterMixin en Wagtail | DB-level unique constraint en primary_keyword | v1.0 Good |
 | force-dynamic + fetch-level ISR | Simplifica caching, evita conflictos con unstable_cache | v1.0 Good |
-| Odoo CRM para leads | Ya disponible en infraestructura del cliente | -- Pending (v2) |
-| 30 paginas como primer lanzamiento | Cubrir nicho base sin canibalizacion | -- Pending (v2) |
+| Odoo CRM para leads | Ya disponible en infraestructura del cliente | -- Active (v2.0) |
+| WhatsApp consent en form | Meta requiere opt-in explicito para marketing | -- Active (v2.0) |
+| 30 paginas como primer lanzamiento | Cubrir nicho base sin canibalizacion | -- Pending (v3) |
 
 ## Constraints
 
@@ -77,4 +85,15 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - **Leads**: Formularios deben conectar con Odoo CRM via API
 
 ---
-*Last updated: 2026-03-06 after v1.0 milestone*
+## Current Milestone: v2.0 Lead Capture
+
+**Goal:** Conectar el formulario de la web con Odoo CRM para capturar leads cualificados, con consentimiento WhatsApp marketing compliant con Meta y GDPR.
+
+**Target features:**
+- Formulario completo con telefono + consent WhatsApp
+- API route server-side con validacion y rate limiting
+- Creacion automatica de crm.lead en Odoo con source tracking
+- Politica de privacidad
+
+---
+*Last updated: 2026-03-06 after v2.0 milestone start*
