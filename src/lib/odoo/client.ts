@@ -92,7 +92,7 @@ export async function createLead(data: LeadCreateData): Promise<number> {
   const config = getOdooConfig()
   const uid = await authenticate(config)
 
-  const result = await executeKw(config, uid, "crm.lead", "create", [[data]])
+  const result = await executeKw(config, uid, "crm.lead", "create", [data])
 
   if (typeof result !== "number") {
     throw new Error("[Odoo API] createLead: unexpected response from Odoo")
@@ -124,7 +124,7 @@ export async function searchOrCreateUtmSource(
     uid,
     "utm.source",
     "create",
-    [[{ name }]]
+    [{ name }]
   )
 
   if (typeof createResult !== "number") {
