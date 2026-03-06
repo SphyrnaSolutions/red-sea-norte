@@ -4,6 +4,11 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
 import { getAllBlogPostSlugsData, getBlogPostData } from "@/lib/data"
+import { JsonLd } from "@/components/seo/JsonLd"
+import { Breadcrumbs, buildBreadcrumbItems } from "@/components/seo/Breadcrumbs"
+import { RelatedContent } from "@/components/seo/RelatedContent"
+import { resolveCluster, computeInterlinks } from "@/lib/seo"
+import { getRawPageBySlug } from "@/lib/wagtail/fetchers"
 import type { Block } from "@/lib/mock-data/types"
 import type { Metadata } from 'next'
 
@@ -173,13 +178,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
   }
 
+  // Resolve cluster for interlinks
+  const rawPage = await getRawPageBySlug('blog.BlogPostPage', slug, {
+    tags: ['blog', `blog-${slug}`],
+  })
+  const cluster = rawPage ? await resolveCluster(rawPage) : null
+  const interlinks = computeInterlinks(cluster, slug)
+
   return (
     <div className="pt-20">
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd as Record<string, unknown>} />
       {/* Draft Mode Banner */}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
@@ -194,6 +202,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
       )}
+
+      <Breadcrumbs items={buildBreadcrumbItems('blog', post.title)} />
 
       {/* Hero Section */}
       <section className="relative h-[600px] max-md:h-[500px] w-full">
@@ -267,6 +277,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
       </section>
+
+      <RelatedContent interlinks={interlinks} />
     </div>
   )
 }

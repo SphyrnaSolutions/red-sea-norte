@@ -5,6 +5,11 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { draftMode } from "next/headers"
 import { getAllExperienciasSlugsData, getExperienciaData } from "@/lib/data"
+import { JsonLd } from "@/components/seo/JsonLd"
+import { Breadcrumbs, buildBreadcrumbItems } from "@/components/seo/Breadcrumbs"
+import { RelatedContent } from "@/components/seo/RelatedContent"
+import { resolveCluster, computeInterlinks } from "@/lib/seo"
+import { getRawPageBySlug } from "@/lib/wagtail/fetchers"
 import type { ExperienciaData, ExperienciaSection } from "@/lib/mock-data/types"
 import { LeadFormModal } from "@/components/organisms/LeadFormModal"
 import { CTAButton } from "./CTAButton"
@@ -197,13 +202,16 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
     url: `${BASE_URL}/experiencias/${experiencia.slug}`,
   }
 
+  // Resolve cluster for interlinks
+  const rawPage = await getRawPageBySlug('experiencias.ExperienciaPage', slug, {
+    tags: ['experiencias', `experiencia-${slug}`],
+  })
+  const cluster = rawPage ? await resolveCluster(rawPage) : null
+  const interlinks = computeInterlinks(cluster, slug)
+
   return (
     <div className="pt-20">
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd as Record<string, unknown>} />
       {/* Draft Mode Banner */}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
@@ -219,6 +227,8 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
         </div>
       )}
 
+      <Breadcrumbs items={buildBreadcrumbItems('experiencias', experiencia.title)} />
+
       {/* Hero Section */}
       <HeroExperiencia experiencia={experiencia} />
 
@@ -228,6 +238,8 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
           <SectionRenderer key={section.id} section={section} />
         ))}
       </section>
+
+      <RelatedContent interlinks={interlinks} />
 
       {/* Lead Form Modal */}
       <LeadFormModal {...experiencia.leadForm} />

@@ -22,6 +22,7 @@ import type {
   WagtailExperienciaPage,
   WagtailOfertaPage,
   WagtailCursoPage,
+  WagtailPageWithSEO,
 } from './types'
 import type {
   HomepageData,
@@ -225,4 +226,21 @@ export async function getCurso(slug: string, config?: FetchConfig): Promise<Curs
 export async function getAllCursoSlugs(config?: FetchConfig): Promise<string[]> {
   const pages = await getPages<WagtailCursoPage>('cursos.CursoPage', undefined, config)
   return pages.map(page => page.meta.slug)
+}
+
+// ============================================================================
+// Raw Page Fetchers (for SEO/cluster resolution)
+// ============================================================================
+
+/**
+ * Fetch raw Wagtail page by slug and type for cluster resolution.
+ * Returns the unprocessed page with cluster fields intact.
+ */
+export async function getRawPageBySlug(
+  type: string,
+  slug: string,
+  config?: FetchConfig
+): Promise<WagtailPageWithSEO | null> {
+  const page = await getPageBySlug<WagtailPageWithSEO>(type, slug, config)
+  return page || null
 }

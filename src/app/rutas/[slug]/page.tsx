@@ -6,6 +6,11 @@ import { getAllRutasSlugsData, getRutaData } from "@/lib/data"
 import { AudienceFitSection } from "@/components/organisms/AudienceFitSection"
 import { InlineLeadSection } from "@/components/organisms/InlineLeadSection"
 import { LeadFormModal } from "@/components/organisms/LeadFormModal"
+import { JsonLd } from "@/components/seo/JsonLd"
+import { Breadcrumbs, buildBreadcrumbItems } from "@/components/seo/Breadcrumbs"
+import { RelatedContent } from "@/components/seo/RelatedContent"
+import { resolveCluster, computeInterlinks, buildFAQPageSchema } from "@/lib/seo"
+import { getRawPageBySlug } from "@/lib/wagtail/fetchers"
 import type { ItineraryDay, ResourceLinkItem, RouteSpotData, RutaData } from "@/lib/mock-data/types"
 import type { Metadata } from 'next'
 
@@ -128,12 +133,24 @@ export default async function RutaPage({ params }: RutaPageProps) {
   // Generate JSON-LD structured data
   const jsonLd = generateJsonLd(ruta)
 
+  // FAQ schema if FAQ section exists
+  const faqSchema = ruta.faqSection?.items
+    ? buildFAQPageSchema(ruta.faqSection.items, `${BASE_URL}/rutas/${slug}`)
+    : null
+
+  // Resolve cluster for interlinks (uses raw Wagtail page data)
+  const rawPage = await getRawPageBySlug('rutas.RutaPage', slug, {
+    tags: ['rutas', `ruta-${slug}`],
+  })
+  const cluster = rawPage ? await resolveCluster(rawPage) : null
+  const interlinks = computeInterlinks(cluster, slug)
+
   return (
     <div className="pt-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd as unknown as Record<string, unknown>} />
+      {faqSchema && (
+        <JsonLd data={faqSchema as unknown as Record<string, unknown>} />
+      )}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
           <div className="flex items-center justify-center gap-3">
@@ -147,6 +164,7 @@ export default async function RutaPage({ params }: RutaPageProps) {
           </div>
         </div>
       )}
+      <Breadcrumbs items={buildBreadcrumbItems('rutas', ruta.hero.title || ruta.title)} />
       <HeroRuta ruta={ruta} />
       <StoryIntro ruta={ruta} />
       <SummarySection ruta={ruta} />
@@ -158,6 +176,7 @@ export default async function RutaPage({ params }: RutaPageProps) {
       <ResourcesSection ruta={ruta} />
       {ruta.inlineLead && <InlineLeadSection {...ruta.inlineLead} />}
       <IncludesSection ruta={ruta} />
+      <RelatedContent interlinks={interlinks} />
       <CTAFinal ruta={ruta} />
       {ruta.leadForm && <LeadFormModal {...ruta.leadForm} />}
     </div>
