@@ -45,11 +45,11 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
   2. Las 33 fotos reales estan copiadas en el proyecto y servidas via next/image con optimizacion automatica (WebP/AVIF, resize)
   3. Cada imagen tiene alt text descriptivo en espanol con keywords relevantes (ej: "Camarote doble del M/Y Dolce Vita con ventana al mar")
   4. Las imagenes se cargan con srcset/sizes responsivos y lazy loading en viewports movil, tablet y desktop
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: Copy, organize and optimize real photos into public/images/ with next/image config
-- [ ] 07-02: Replace all Unsplash references with real image paths, add SEO alt text, configure responsive sizes
+- [ ] 07-01-PLAN.md -- Copy and organize 33 real photos into public/images/, update images.ts with local paths, clean next.config.ts
+- [ ] 07-02-PLAN.md -- Replace all Unsplash URLs with real image paths, add SEO alt text, configure responsive sizes
 
 ### Phase 8: Real Product Data
 **Goal**: Homepage y componentes muestran datos reales y verificados del barco, rutas, precios, formacion y FAQs
