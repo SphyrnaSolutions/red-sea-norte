@@ -13,7 +13,7 @@ Red Sea Norte is a brownfield Next.js + Wagtail site that needs to evolve from a
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Technical Foundation** - Fix data layer reliability: fetch migration, sitemap accuracy, pagination, production error handling
-- [ ] **Phase 2: SEO Content Pipeline** - Build cluster-aware SEO infrastructure: Wagtail models, cluster resolver, interlink engine, schema markup, breadcrumbs
+- [x] **Phase 2: SEO Content Pipeline** - Build cluster-aware SEO infrastructure: Wagtail models, cluster resolver, interlink engine, schema markup, breadcrumbs
 - [ ] **Phase 3: Page Templates and Homepage** - Deliver reusable SEO article template and optimized homepage that consume the pipeline
 
 ## Phase Details
@@ -46,10 +46,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- Wagtail ClusterMixin + model extensions + TypeScript type updates
-- [ ] 02-02-PLAN.md -- JSON-LD schema generators (schema-dts) + shared metadata helper + JsonLd component
-- [ ] 02-03-PLAN.md -- Cluster resolver + Breadcrumbs component with BreadcrumbList schema
-- [ ] 02-04-PLAN.md -- Interlink engine + keyword map + refactor pages to consume shared SEO utilities
+- [x] 02-01-PLAN.md -- Wagtail ClusterMixin + model extensions + TypeScript type updates
+- [x] 02-02-PLAN.md -- JSON-LD schema generators (schema-dts) + shared metadata helper + JsonLd component
+- [x] 02-03-PLAN.md -- Cluster resolver + Breadcrumbs component with BreadcrumbList schema
+- [x] 02-04-PLAN.md -- Interlink engine + keyword map + refactor pages to consume shared SEO utilities
 
 ### Phase 3: Page Templates and Homepage
 **Goal**: A reusable SEO article template and an optimized homepage are ready so that content production (v2) can begin immediately without per-page engineering work
@@ -74,5 +74,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Technical Foundation | 2/2 | Complete | 2026-03-06 |
-| 2. SEO Content Pipeline | 0/4 | Not started | - |
+| 2. SEO Content Pipeline | 4/4 | Complete | 2026-03-06 |
 | 3. Page Templates and Homepage | 0/3 | Not started | - |

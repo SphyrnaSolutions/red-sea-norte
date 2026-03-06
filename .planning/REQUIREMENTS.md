@@ -16,17 +16,17 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### SEO Infrastructure
 
-- [ ] **SEO-01**: Generate page-specific JSON-LD schema markup (TouristTrip, Article, FAQPage, BreadcrumbList) via schema-dts
-- [ ] **SEO-02**: Build cluster resolver that maps pages to pillar-satellite relationships and generates cluster navigation
-- [ ] **SEO-03**: Build interlink engine that computes related content blocks and contextual links from cluster topology
-- [ ] **SEO-04**: Create and enforce keyword-to-URL map to prevent cannibalization across all pages
-- [ ] **SEO-05**: Implement dynamic meta tags via generateMetadata() with canonical URLs and Open Graph
-- [ ] **SEO-06**: Implement breadcrumbs component with BreadcrumbList schema markup
+- [x] **SEO-01**: Generate page-specific JSON-LD schema markup (TouristTrip, Article, FAQPage, BreadcrumbList) via schema-dts
+- [x] **SEO-02**: Build cluster resolver that maps pages to pillar-satellite relationships and generates cluster navigation
+- [x] **SEO-03**: Build interlink engine that computes related content blocks and contextual links from cluster topology
+- [x] **SEO-04**: Create and enforce keyword-to-URL map to prevent cannibalization across all pages
+- [x] **SEO-05**: Implement dynamic meta tags via generateMetadata() with canonical URLs and Open Graph
+- [x] **SEO-06**: Implement breadcrumbs component with BreadcrumbList schema markup
 
 ### Content Architecture
 
-- [ ] **CONT-01**: Extend Wagtail page models for specific content types: routes, wrecks, dive spots, guides, comparison pages
-- [ ] **CONT-02**: Add cluster metadata fields to Wagtail models (cluster_id, role, pillar_slug, schema_type, related_pages)
+- [x] **CONT-01**: Extend Wagtail page models for specific content types: routes, wrecks, dive spots, guides, comparison pages
+- [x] **CONT-02**: Add cluster metadata fields to Wagtail models (cluster_id, role, pillar_slug, schema_type, related_pages)
 - [ ] **CONT-03**: Build reusable SEO article template with standard H1/H2/H3 structure, meta fields, and interlink slots
 - [ ] **CONT-04**: Redesign homepage for SEO optimization (H1 with target keywords, visible lead capture CTA, route-first positioning)
 
@@ -73,14 +73,14 @@ Deferred to future release. Tracked but not in current roadmap.
 | TECH-02 | Phase 1 | Complete |
 | TECH-03 | Phase 1 | Complete |
 | TECH-04 | Phase 1 | Complete |
-| SEO-01 | Phase 2 | Pending |
-| SEO-02 | Phase 2 | Pending |
-| SEO-03 | Phase 2 | Pending |
-| SEO-04 | Phase 2 | Pending |
-| SEO-05 | Phase 2 | Pending |
-| SEO-06 | Phase 2 | Pending |
-| CONT-01 | Phase 2 | Pending |
-| CONT-02 | Phase 2 | Pending |
+| SEO-01 | Phase 2 | Complete |
+| SEO-02 | Phase 2 | Complete |
+| SEO-03 | Phase 2 | Complete |
+| SEO-04 | Phase 2 | Complete |
+| SEO-05 | Phase 2 | Complete |
+| SEO-06 | Phase 2 | Complete |
+| CONT-01 | Phase 2 | Complete |
+| CONT-02 | Phase 2 | Complete |
 | CONT-03 | Phase 3 | Pending |
 | CONT-04 | Phase 3 | Pending |
 
@@ -91,4 +91,4 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-06 after roadmap creation*
+*Last updated: 2026-03-06 after Phase 2 completion*
