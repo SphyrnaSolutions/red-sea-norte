@@ -79,13 +79,26 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
+
+      {/* Server-rendered H1 with target SEO keywords -- visible to crawlers, hidden visually */}
+      <h1 className="sr-only">
+        Vida a Bordo en el Mar Rojo: Buceo y Rutas desde Hurghada
+      </h1>
+
       <HeroSection {...homepageData.hero} />
+
+      {/* Lead capture CTA -- promoted above the fold, right after hero */}
+      <InlineLeadSection {...homepageData.inlineLead} />
+
+      {/* Route-first content positioning: core product before supporting sections */}
+      <RouteTeaserSection {...homepageData.routeTeaser} />
       <RouteValueSection {...homepageData.routeValueSection} />
       <DiveSitesSection {...homepageData.diveSites} />
+
+      {/* Supporting content */}
       <JourneyOverviewSection {...homepageData.journeyOverview} />
       <AudienceFitSection {...homepageData.audienceFit} />
-      <InlineLeadSection {...homepageData.inlineLead} />
-      <RouteTeaserSection {...homepageData.routeTeaser} />
+
       <LeadFormModal {...homepageData.leadForm} />
     </>
   )

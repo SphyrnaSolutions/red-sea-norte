@@ -116,8 +116,10 @@ export function HeroSection({
             </div>
           )}
 
-          {/* Title - Bebas Neue, 96px desktop / 56px mobile, text-shadow-lg */}
-          <h1
+          {/* Visual title - decorative, H1 is server-rendered in page.tsx for SEO */}
+          <p
+            aria-hidden="true"
+            role="presentation"
             className="text-white text-[56px] md:text-[96px] leading-[0.95] text-center animate-fadeInUp delay-100 tracking-tight"
             style={{
               fontFamily: 'var(--font-display)',
@@ -127,7 +129,7 @@ export function HeroSection({
             }}
           >
             {title}
-          </h1>
+          </p>
 
           {/* Subtitle - 24px, white/90, max-width 800px */}
           <p
