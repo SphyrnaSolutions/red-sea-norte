@@ -134,7 +134,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
             <p>© 2026 Red Sea Diving. Todos los derechos reservados.</p>
             <div className="flex gap-6">
-              <Link href="/privacidad" className="hover:text-white transition-colors">
+              <Link href="/politica-de-privacidad" className="hover:text-white transition-colors">
                 Política de Privacidad
               </Link>
               <Link href="/terminos" className="hover:text-white transition-colors">
