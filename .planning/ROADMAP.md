@@ -40,6 +40,11 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 **Requirements:** FORM-01, FORM-02, FORM-03, FORM-04, FORM-05
 
+**Plans:** 1 plan
+
+Plans:
+- [ ] 05-01-PLAN.md -- Update forms with consent, validation, API integration and visual feedback
+
 **Success criteria:**
 1. Form muestra: nombre, email, telefono, certificacion, mes preferido
 2. Checkbox consent WhatsApp con texto Meta + GDPR compliant
@@ -66,5 +71,5 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 | 2. SEO Content Pipeline | v1.0 | 4/4 | Complete | 2026-03-06 |
 | 3. Page Templates and Homepage | v1.0 | 3/3 | Complete | 2026-03-06 |
 | 4. Odoo API Integration | v2.0 | 0/? | Pending | - |
-| 5. Form + Consent UX | v2.0 | 0/? | Pending | - |
+| 5. Form + Consent UX | v2.0 | 0/1 | Planned | - |
 | 6. Legal + Deploy | v2.0 | 0/? | Pending | - |
