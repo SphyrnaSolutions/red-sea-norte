@@ -205,6 +205,9 @@ export interface HomepageData {
     submitButton: string
     privacyText: string
     successMessage: string
+    consentText?: string
+    privacyLinkText?: string
+    privacyLinkHref?: string
   }
   inlineLead: {
     sectionId: string
@@ -222,6 +225,9 @@ export interface HomepageData {
     submitButton: string
     privacyText: string
     successMessage: string
+    consentText?: string
+    privacyLinkText?: string
+    privacyLinkHref?: string
   }
   routeTeaser: {
     eyebrow: string
@@ -608,6 +614,9 @@ export interface ExperienciaData {
     submitButton: string
     privacyText: string
     successMessage: string
+    consentText?: string
+    privacyLinkText?: string
+    privacyLinkHref?: string
   }
   // SEO
   seo: {
