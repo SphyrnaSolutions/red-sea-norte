@@ -172,11 +172,11 @@ export default function CountdownAsym({
           className="relative overflow-hidden"
         >
           <Image
-            src="https://images.unsplash.com/photo-1648453211847-d81535749d8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Red Sea diving experience"
+            src="/images/deck/sundeck-jacuzzi-sea-view.jpg"
+            alt="Jacuzzi en la cubierta del M/Y Dolce Vita con vista al Mar Rojo"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
-            priority
           />
 
           {/* Darker Overlay */}

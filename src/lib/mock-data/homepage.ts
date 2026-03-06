@@ -57,7 +57,7 @@ const baseLeadFields: HomepageData["leadForm"]["fields"] = [
 
 export const homepageData: HomepageData = {
   hero: {
-    backgroundImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=80",
+    backgroundImage: "/images/underwater/underwater-diver-pink-soft-coral.jpg",
     badge: {
       text: "RUTA NORTE 2026 · HURGHADA",
       backgroundColor: "#00CED144",
@@ -96,28 +96,32 @@ export const homepageData: HomepageData = {
         title: "Thistlegorm, Abu Nuhas y Dunraven en una sola semana",
         description:
           "La Ruta Norte concentra algunos de los pecios mas buscados del Mar Rojo y los combina con inmersiones de arrecife que equilibran intensidad y disfrute.",
-        image: "https://images.unsplash.com/photo-1622070978659-2a27e7cb254c?w=1200&q=80",
+        image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
+        alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
       },
       {
         eyebrow: "ARRECIFES Y VIDA",
         title: "Ras Mohammed y fondos llenos de vida marina",
         description:
           "No es solo una ruta de pecios. Tambien incluye paredes, jardines de coral y puntos en los que la visibilidad convierte cada inmersion en un argumento de venta por si mismo.",
-        image: "https://images.unsplash.com/photo-1758968523032-110415132be0?w=1200&q=80",
+        image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
+        alt: "Arrecife de coral con peces anthias en la Ruta Norte del Mar Rojo",
       },
       {
         eyebrow: "LOGISTICA SIMPLE",
         title: "Salida desde Hurghada con un producto facil de entender",
         description:
           "La ruta conecta mejor con la intencion comercial del usuario: quiere saber que se bucea, como es la semana y si encaja con su nivel sin navegar por veinte paginas.",
-        image: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=1200&q=80",
+        image: "/images/boat/boat-exterior-side-profile.jpg",
+        alt: "M/Y Dolce Vita navegando en el Mar Rojo vista de perfil",
       },
       {
         eyebrow: "VALOR ANADIDO",
         title: "Advanced SSI como extra, no como barrera",
         description:
           "El Advanced aparece como una forma de aprovechar mejor el viaje, no como el unico motivo para venir. Eso alinea la home con la estrategia marcada en Odoo.",
-        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80",
+        image: "/images/deck/deck-dive-station-gear-rack.jpg",
+        alt: "Cubierta de buceo del M/Y Dolce Vita con equipo preparado",
       },
     ],
   },
@@ -128,13 +132,13 @@ export const homepageData: HomepageData = {
     topRow: [
       {
         type: "image-large",
-        image: "https://images.unsplash.com/photo-1622070978659-2a27e7cb254c?w=1200&q=80",
+        image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
         title: "Pecios que justifican el viaje",
         description: "Thistlegorm y Abu Nuhas convierten esta ruta en un clasico comercial.",
       },
       {
         type: "conditions-image",
-        image: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=1200&q=80",
+        image: "/images/underwater/underwater-sea-turtle-fish-school.jpg",
         badge: "VISIBILIDAD Y MAR",
         title: "Condiciones que ayudan a vender",
         highlight: "+30m visibilidad • agua templada • semana tipo clara",
@@ -149,13 +153,13 @@ export const homepageData: HomepageData = {
       },
       {
         type: "image-small",
-        image: "https://images.unsplash.com/photo-1762717563074-23757e64cb0e?w=800&q=80",
+        image: "/images/underwater/underwater-dolphins-pod-reef.jpg",
         badge: "RUTA COMPLETA",
         title: "Pecios + arrecifes + vida marina",
       },
       {
         type: "equipment",
-        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
+        image: "/images/deck/deck-swim-platform-sea-access.jpg",
         badge: "MENOS FRICCION",
         title: "Producto facil de explicar y de reservar",
       },
@@ -169,25 +173,29 @@ export const homepageData: HomepageData = {
     sites: [
       {
         name: "Thistlegorm",
-        image: "https://images.unsplash.com/photo-1622070978659-2a27e7cb254c?w=800&q=80",
+        image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
+        alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
         depth: "16-32m",
         highlight: "El pecio iconico del Mar Rojo",
       },
       {
         name: "Abu Nuhas",
-        image: "https://images.unsplash.com/photo-1649809014061-5f0f5d894e0d?w=800&q=80",
+        image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
+        alt: "Proa de pecio hundido en Abu Nuhas, cementerio de barcos del Mar Rojo",
         depth: "4-26m",
         highlight: "Cementerio de barcos y ruta clasica",
       },
       {
         name: "Ras Mohammed",
-        image: "https://images.unsplash.com/photo-1758968523032-110415132be0?w=800&q=80",
+        image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
+        alt: "Arrecife de coral con peces anthias en Ras Mohammed, Mar Rojo",
         depth: "10-35m",
         highlight: "Arrecifes, paredes y vida marina",
       },
       {
         name: "Dunraven",
-        image: "https://images.unsplash.com/photo-1762717563074-23757e64cb0e?w=800&q=80",
+        image: "/images/underwater/underwater-blue-spotted-stingray.jpg",
+        alt: "Raya de puntos azules en el pecio Dunraven del Mar Rojo",
         depth: "18-28m",
         highlight: "Pecio historico ideal para enriquecer la semana",
       },
@@ -265,21 +273,24 @@ export const homepageData: HomepageData = {
   specSection: {
     sectionLabel: "EXPERIENCIA DE VIAJE",
     bigCard: {
-      image: "https://images.unsplash.com/photo-1622070978659-2a27e7cb254c?w=1920&q=80",
+      image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
+      alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
       title: "Ruta Norte y Pecios",
       subtitle: "Pecios legendarios y arrecifes iconicos",
     },
     specialtyCards: [
       {
         type: "depth",
-        image: "https://images.unsplash.com/photo-1680197116011-5d2a49060f24?w=1080&q=80",
+        image: "/images/boat/boat-aerial-anchored-reef.jpg",
+        alt: "Vista aerea del M/Y Dolce Vita anclado en arrecife del Mar Rojo",
         label: "RUTA",
         value: "7D",
         description: "Semana tipo de vida a bordo con foco comercial claro",
       },
       {
         type: "nitrox",
-        image: "https://images.unsplash.com/photo-1553602455-f00e641c03c0?w=1080&q=80",
+        image: "/images/deck/deck-dive-station-gear-rack.jpg",
+        alt: "Cubierta de buceo del M/Y Dolce Vita con equipo preparado",
         title: "Advanced a bordo",
         description: "Valor adicional para quien quiere aprovechar mas la semana",
       },
@@ -288,20 +299,23 @@ export const homepageData: HomepageData = {
     navCards: [
       {
         type: "icon",
-        image: "https://images.unsplash.com/photo-1573691257226-667997763983?w=1080&q=80",
+        image: "/images/deck/deck-aft-lounge-divers-fleet-flag.jpg",
+        alt: "Cubierta de popa del M/Y Dolce Vita con bandera de flota de buceo",
         icon: "🧭",
         title: "Ruta clara",
         description: "Mensaje alineado con Hurghada, pecios y vida a bordo",
       },
       {
         type: "image",
-        image: "https://images.unsplash.com/photo-1726088828431-30b5b70411c5?w=1920&q=80",
+        image: "/images/deck/sundeck-loungers-glass-railing.jpg",
+        alt: "Solarium del M/Y Dolce Vita con tumbonas y barandilla de cristal",
         title: "Menos ambiguedad",
         description: "La home deja de parecer una landing de curso generica",
       },
       {
         type: "stat",
-        image: "https://images.unsplash.com/photo-1637308113747-a4b60a2f7f52?w=1080&q=80",
+        image: "/images/underwater/underwater-hammerhead-sharks-pair.jpg",
+        alt: "Pareja de tiburones martillo en aguas del Mar Rojo",
         number: "4",
         label: "Bloques que preparan la conversion",
         sublabel: "valor, spots, encaje y lead",

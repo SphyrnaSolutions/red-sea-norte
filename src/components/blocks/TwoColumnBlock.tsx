@@ -15,6 +15,7 @@ export function TwoColumnBlock({ block }: { block: Block }) {
             src={value.leftColumn.image}
             alt={value.leftColumn.alt || ''}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
         </div>

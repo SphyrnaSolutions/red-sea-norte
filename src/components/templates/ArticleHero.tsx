@@ -31,6 +31,7 @@ export function ArticleHero({
           alt={heroAlt}
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         <div

@@ -27,6 +27,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
           src={images.heroBlogListing}
           alt="Blog de Buceo - Mar Rojo"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />

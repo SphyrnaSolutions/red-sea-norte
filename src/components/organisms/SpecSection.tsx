@@ -265,6 +265,7 @@ function BigImageCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 1024px) 100vw, 850px"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -328,6 +329,7 @@ function DepthCard({
         src={image}
         alt={value}
         fill
+        sizes="(max-width: 1024px) 100vw, 33vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -384,6 +386,7 @@ function NitroxCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 1024px) 100vw, 33vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -433,6 +436,7 @@ function CompassCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 768px) 100vw, 380px"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -481,6 +485,7 @@ function ControlImageCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -530,6 +535,7 @@ function SpecialtyStatCard({
         src={image}
         alt={label}
         fill
+        sizes="(max-width: 768px) 100vw, 320px"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",

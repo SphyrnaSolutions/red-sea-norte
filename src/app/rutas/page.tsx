@@ -38,9 +38,10 @@ export default async function RutasPage() {
       <section className="relative w-full h-[500px] max-md:h-[400px] overflow-hidden">
         {/* Background Image */}
         <Image
-          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&h=900&fit=crop&q=80"
-          alt="Rutas de Buceo Mar Rojo"
+          src="/images/boat/boat-aerial-anchored-reef.jpg"
+          alt="Vista aerea del M/Y Dolce Vita anclado en arrecife del Mar Rojo"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -148,6 +149,7 @@ export default async function RutasPage() {
                         src={ruta.hero?.backgroundImage || '/placeholder.jpg'}
                         alt={ruta.title}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       {/* Badge */}
@@ -356,9 +358,10 @@ export default async function RutasPage() {
       <section className="relative w-full h-[450px] max-md:h-[400px] overflow-hidden">
         {/* Background Image */}
         <Image
-          src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=1600&h=900&fit=crop&q=80"
-          alt="Mar Rojo Diving"
+          src="/images/underwater/underwater-coral-reef-anthias-fish.jpg"
+          alt="Arrecife de coral con peces anthias en el Mar Rojo"
           fill
+          sizes="100vw"
           className="object-cover"
         />
 

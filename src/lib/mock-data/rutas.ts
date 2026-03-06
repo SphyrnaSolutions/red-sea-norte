@@ -55,7 +55,7 @@ export const rutasData: Record<string, RutaData> = {
     slug: "norte-7-dias",
     title: "Ruta Norte y Pecios del Mar Rojo desde Hurghada",
     hero: {
-      backgroundImage: "https://images.unsplash.com/photo-1667852976428-3b6f59f0db4f?w=1600&h=900&fit=crop&q=80",
+      backgroundImage: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
       badge: { text: "RUTA NORTE · HURGHADA", backgroundColor: "#00CED1" },
       title: "Ruta Norte y Pecios del Mar Rojo desde Hurghada",
       subtitle:
@@ -124,7 +124,8 @@ export const rutasData: Record<string, RutaData> = {
       spots: [
         {
           name: "SS Thistlegorm",
-          image: "https://images.unsplash.com/photo-1758792742999-1b954043f06c?w=1200&q=80",
+          image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
+          alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
           summary:
             "El pecio más famoso del Mar Rojo y uno de los grandes argumentos de venta para cualquier liveaboard en esta zona.",
           depth: "16-32m",
@@ -132,7 +133,8 @@ export const rutasData: Record<string, RutaData> = {
         },
         {
           name: "Abu Nuhas",
-          image: "https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=1200&q=80",
+          image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
+          alt: "Proa de pecio hundido en Abu Nuhas, cementerio de barcos del Mar Rojo",
           summary:
             "Un hub de pecios que permite explicar variedad, historia marítima y repetición de inmersiones memorables dentro de la misma semana.",
           depth: "4-26m",
@@ -140,7 +142,8 @@ export const rutasData: Record<string, RutaData> = {
         },
         {
           name: "Ras Mohammed",
-          image: "https://images.unsplash.com/photo-1530213446452-ab94043c4862?w=1200&q=80",
+          image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
+          alt: "Arrecife de coral con peces anthias en Ras Mohammed, Mar Rojo",
           summary:
             "El bloque arrecife de la ruta: paredes, corrientes y vida marina para equilibrar la narrativa de pecios.",
           depth: "10-35m",
@@ -148,7 +151,8 @@ export const rutasData: Record<string, RutaData> = {
         },
         {
           name: "Dunraven y Rosalie Moller",
-          image: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=1200&q=80",
+          image: "/images/underwater/underwater-blue-spotted-stingray.jpg",
+          alt: "Raya de puntos azules en los pecios Dunraven y Rosalie Moller del Mar Rojo",
           summary:
             "Profundizan el discurso de la ruta y permiten segmentar mejor al usuario por nivel, experiencia y expectativas.",
           depth: "18-40m",
@@ -166,7 +170,8 @@ export const rutasData: Record<string, RutaData> = {
             "La semana arranca con una lógica operativa clara: embarque, briefing, adaptación al barco y primeras inmersiones para ordenar ritmo, nivel y expectativas.",
           dives: ["Check dive", "Primer arrecife del norte"],
           highlights: ["Embarque", "Inicio de semana", "Ajuste de nivel"],
-          image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1600&h=900&fit=crop&q=80",
+          image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
+          alt: "Arrecife de coral con peces anthias en la primera inmersion de la Ruta Norte",
           overlayDirection: "left",
         },
         {
@@ -176,7 +181,8 @@ export const rutasData: Record<string, RutaData> = {
             "El día de Thistlegorm es una de las razones por las que esta ruta convierte. La página debe tratarlo como el gran imán comercial del itinerario.",
           dives: ["SS Thistlegorm", "Sha'ab Ali"],
           highlights: ["Pecio iconico", "Doble inmersion", "Fotografia"],
-          image: "https://images.unsplash.com/photo-1758792742999-1b954043f06c?w=1600&h=900&fit=crop&q=80",
+          image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
+          alt: "Motocicleta BSA dentro del pecio SS Thistlegorm, iman comercial de la Ruta Norte",
           overlayDirection: "right",
         },
         {
@@ -186,7 +192,8 @@ export const rutasData: Record<string, RutaData> = {
             "La ruta gana riqueza cuando no se queda en un solo pecio famoso. Este bloque explica mejor para quién es la semana y cómo cambia según experiencia.",
           dives: ["Rosalie Moller", "Dunraven"],
           highlights: ["Mas nivel", "Pecios historicos", "Decision por experiencia"],
-          image: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=1600&h=900&fit=crop&q=80",
+          image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
+          alt: "Proa de pecio hundido Rosalie Moller y Dunraven en el Mar Rojo",
           overlayDirection: "left",
         },
         {
@@ -196,7 +203,8 @@ export const rutasData: Record<string, RutaData> = {
             "No toda la semana es penetracion y hierro. Ras Mohammed justifica el equilibrio entre aventura, paisaje submarino y vida marina.",
           dives: ["Shark Reef", "Yolanda Reef"],
           highlights: ["Arrecife top", "Corrientes", "Vida marina"],
-          image: "https://images.unsplash.com/photo-1530213446452-ab94043c4862?w=1600&h=900&fit=crop&q=80",
+          image: "/images/underwater/underwater-sea-turtle-fish-school.jpg",
+          alt: "Tortuga marina con banco de peces en Ras Mohammed, Mar Rojo",
           overlayDirection: "right",
         },
         {
@@ -206,7 +214,8 @@ export const rutasData: Record<string, RutaData> = {
             "Abu Nuhas permite explicar variedad, densidad de pecios y por qué esta ruta es tan buscada por usuarios con intención comercial real.",
           dives: ["Giannis D", "Carnatic", "Chrisoula K"],
           highlights: ["Abu Nuhas", "Varios pecios", "Historia maritima"],
-          image: "https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=1600&h=900&fit=crop&q=80",
+          image: "/images/underwater/underwater-blue-spotted-stingray.jpg",
+          alt: "Raya de puntos azules en Abu Nuhas, cementerio de barcos del Mar Rojo",
           overlayDirection: "left",
         },
         {
@@ -216,7 +225,8 @@ export const rutasData: Record<string, RutaData> = {
             "El usuario necesita entender que el viaje no es una sucesion caotica de spots, sino una progresion con momentos fuertes y otros mas descansados.",
           dives: ["Gubal", "Arrecife tranquilo"],
           highlights: ["Ritmo de viaje", "Mas reef", "Semana equilibrada"],
-          image: "https://images.unsplash.com/photo-1682687220499-d9c06c131190?w=1600&h=900&fit=crop&q=80",
+          image: "/images/underwater/underwater-dolphins-pod-reef.jpg",
+          alt: "Grupo de delfines sobre arrecife en la zona de Gubal, Mar Rojo",
           overlayDirection: "right",
         },
         {
@@ -226,7 +236,8 @@ export const rutasData: Record<string, RutaData> = {
             "La semana termina con una ultima capa de experiencia y la transicion hacia el desembarque, dejando claro el formato real del viaje.",
           dives: ["Ultima inmersion", "Regreso a puerto"],
           highlights: ["Cierre", "Check-out", "Fin de semana"],
-          image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&h=900&fit=crop&q=80",
+          image: "/images/deck/sundeck-loungers-glass-railing.jpg",
+          alt: "Solarium del M/Y Dolce Vita con tumbonas al final de la semana de buceo",
           overlayDirection: "left",
         },
       ],
@@ -521,7 +532,7 @@ export const rutasData: Record<string, RutaData> = {
       title: "Haz de la Ruta Norte la primera conversación comercial de esta web",
       description:
         "La home abre el interés. Esta landing lo convierte en una consulta cualificada sobre vida a bordo, pecios, nivel y salida desde Hurghada.",
-      backgroundImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&h=900&fit=crop&q=80",
+      backgroundImage: "/images/boat/boat-aerial-anchored-reef.jpg",
       primaryCTA: {
         text: "Ir al formulario",
         href: "#ruta-lead",

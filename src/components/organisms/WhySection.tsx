@@ -197,6 +197,7 @@ function ImageLargeCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -248,6 +249,7 @@ function ConditionsImageCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -304,9 +306,10 @@ function CertificationCard({
     >
       {/* Background Image */}
       <Image
-        src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80"
+        src="/images/underwater/underwater-diver-pink-soft-coral.jpg"
         alt={title}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -368,6 +371,7 @@ function ImageSmallCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",
@@ -417,6 +421,7 @@ function EquipmentCard({
         src={image}
         alt={title}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover"
         style={{
           transform: isHovered ? "scale(1.05)" : "scale(1)",

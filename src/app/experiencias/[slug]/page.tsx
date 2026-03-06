@@ -259,6 +259,7 @@ function HeroExperiencia({ experiencia }: { experiencia: ExperienciaData }) {
         src={experiencia.hero.backgroundImage}
         alt={experiencia.title}
         fill
+        sizes="100vw"
         className="object-cover"
         priority
       />
@@ -411,6 +412,7 @@ function YearSection({ section }: { section: YearSectionData }) {
           src={image}
           alt={`Year ${year}`}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
         />
 
@@ -440,6 +442,7 @@ function SplitImmersiveSection({ section }: { section: SplitImmersiveSectionData
           src={image}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
         />
       </div>
@@ -504,6 +507,7 @@ function DepthSection({ section }: { section: DepthSectionData }) {
         src={image}
         alt={`${depth} ${unit}`}
         fill
+        sizes="100vw"
         className="object-cover"
       />
 
@@ -573,6 +577,7 @@ function ImageGridSection({ section }: { section: ImageGridSectionData }) {
             src={images[0].url}
             alt={images[0].alt}
             fill
+            sizes="100vw"
             className="object-cover"
           />
 
@@ -621,6 +626,7 @@ function ImageGridSection({ section }: { section: ImageGridSectionData }) {
                 src={img.url}
                 alt={img.alt}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
 
@@ -722,6 +728,7 @@ function TextOverlayFullSection({ section }: { section: TextOverlayFullSectionDa
         src={image}
         alt={title}
         fill
+        sizes="100vw"
         className="object-cover"
       />
 
@@ -829,6 +836,7 @@ function ImageBlock({ section }: { section: ImageSectionData }) {
           src={url}
           alt={alt || ""}
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>
@@ -927,6 +935,7 @@ function GalleryBlock({ section }: { section: GallerySectionData }) {
               src={img.url}
               alt={img.alt || ""}
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
           </div>
@@ -947,6 +956,7 @@ function TwoColumnBlock({ section }: { section: TwoColumnSectionData }) {
             src={leftColumn.image}
             alt={leftColumn.alt || ""}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
         </div>

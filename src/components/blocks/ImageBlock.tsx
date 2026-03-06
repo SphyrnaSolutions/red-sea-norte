@@ -12,6 +12,7 @@ export function ImageBlock({ block }: { block: Block }) {
           src={value.url}
           alt={value.alt || ''}
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>

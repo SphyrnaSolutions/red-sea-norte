@@ -251,6 +251,7 @@ function HeroRuta({ ruta }: { ruta: RutaData }) {
           src={ruta.hero.backgroundImage}
           alt={ruta.hero.title}
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -514,7 +515,7 @@ function SpotCard({ spot }: { spot: RouteSpotData }) {
   return (
     <article className="overflow-hidden rounded-[26px] border border-[#D7E8EF] bg-[#FBFDFF] shadow-[0_16px_48px_rgba(10,37,64,0.08)]">
       <div className="relative h-[280px]">
-        <Image src={spot.image} alt={spot.name} fill className="object-cover" />
+        <Image src={spot.image} alt={spot.name} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#06111E]/85 via-[#06111E]/25 to-transparent" />
         <span className="absolute left-6 top-6 rounded-full bg-[#FF6B35] px-4 py-2 text-[11px] font-bold uppercase tracking-[3px] text-white">
           {spot.tag}
@@ -597,6 +598,7 @@ function ItineraryDaySection({ day }: { day: ItineraryDay }) {
         src={day.image}
         alt={day.title}
         fill
+        sizes="100vw"
         className="object-cover"
       />
 
@@ -962,6 +964,7 @@ function CTAFinal({ ruta }: { ruta: RutaData }) {
         src={ruta.cta.backgroundImage || ruta.hero.backgroundImage}
         alt={ruta.cta.title}
         fill
+        sizes="100vw"
         className="object-cover"
       />
 

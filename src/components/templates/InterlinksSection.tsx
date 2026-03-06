@@ -51,6 +51,7 @@ export function InterlinksSection({
                 src={page.heroImage}
                 alt={page.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

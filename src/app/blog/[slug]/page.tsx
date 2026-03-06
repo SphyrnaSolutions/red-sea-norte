@@ -145,6 +145,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           src={post.hero.image}
           alt={post.hero.alt}
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />

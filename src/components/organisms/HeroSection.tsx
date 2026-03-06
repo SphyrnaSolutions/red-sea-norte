@@ -67,6 +67,7 @@ export function HeroSection({
           alt={title}
           fill
           priority
+          sizes="100vw"
           className="object-cover"
           quality={90}
         />

@@ -6,7 +6,7 @@ export const experienciasData: Record<string, ExperienciaData> = {
     title: "Pecios de la Segunda Guerra Mundial",
     description: "Bucea en los pecios más famosos del Mar Rojo. Historia viva bajo el agua a 30-50 metros de profundidad.",
     hero: {
-      backgroundImage: "https://images.unsplash.com/photo-1769007168623-ba1a417c3114?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI2NDN8&ixlib=rb-4.1.0&q=80&w=1080",
+      backgroundImage: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
       title: "TOCA\nHISTORIA",
       subtitle: "Pecios de la Segunda Guerra Mundial • 30-50m",
     },
@@ -19,7 +19,7 @@ export const experienciasData: Record<string, ExperienciaData> = {
           year: "1941",
           title: "BOMBARDEADO\nEN EL MAR ROJO",
           description: "El SS Thistlegorm fue hundido por bombarderos alemanes mientras transportaba suministros militares para las fuerzas británicas en África. Hoy yace intacto a 30 metros de profundidad.",
-          image: "https://images.unsplash.com/photo-1766502715596-d5fe6d94123b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI3ODl8&ixlib=rb-4.1.0&q=80&w=1080",
+          image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
           backgroundColor: "#0D3A5D",
         },
       },
@@ -30,7 +30,7 @@ export const experienciasData: Record<string, ExperienciaData> = {
         id: "split-30m",
         value: {
           layout: "image-left",
-          image: "https://images.unsplash.com/photo-1645792243445-9c10fa8deb3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI2NDR8&ixlib=rb-4.1.0&q=80&w=1080",
+          image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
           title: "30 metros.\nOscuridad.\nHistoria.",
           content: "No es solo un pecio. Es un museo bajo el agua. Entras por bodegas de carga, ves motocicletas BSA de 1941, pasas entre proyectiles sin explotar.\n\nLos peces loro duermen en los camarotes. Las morenas viven en las cocinas.",
           ctaButton: {
@@ -50,24 +50,24 @@ export const experienciasData: Record<string, ExperienciaData> = {
           layout: "1-large-2-small",
           images: [
             {
-              url: "https://images.unsplash.com/photo-1768851720385-dabc5e25cb9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI2ODJ8&ixlib=rb-4.1.0&q=80&w=1080",
-              alt: "Interior del SS Thistlegorm",
+              url: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
+              alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
               overlay: {
                 title: "SS Thistlegorm",
                 description: "El pecio más famoso del Mar Rojo",
               },
             },
             {
-              url: "https://images.unsplash.com/photo-1632505535813-b052662e9560?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI2ODN8&ixlib=rb-4.1.0&q=80&w=1080",
-              alt: "Rosalie Moller",
+              url: "/images/underwater/underwater-oceanic-whitetip-shark-pilotfish.jpg",
+              alt: "Tiburon oceanic whitetip con peces piloto en el Mar Rojo",
               overlay: {
                 title: "Rosalie Moller",
                 description: "Hundido días antes que el Thistlegorm",
               },
             },
             {
-              url: "https://images.unsplash.com/photo-1674801664581-b431ab58fe83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI2ODN8&ixlib=rb-4.1.0&q=80&w=1080",
-              alt: "Dunraven",
+              url: "/images/underwater/underwater-blue-spotted-stingray.jpg",
+              alt: "Raya de puntos azules en el pecio Dunraven del Mar Rojo",
               overlay: {
                 title: "Dunraven",
                 description: "Pecio del siglo XIX",
@@ -85,7 +85,7 @@ export const experienciasData: Record<string, ExperienciaData> = {
           depth: 50,
           unit: "METROS",
           subtitle: "Donde los recreativos no llegan",
-          image: "https://images.unsplash.com/photo-1619324221911-f3695259df01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI3OTB8&ixlib=rb-4.1.0&q=80&w=1080",
+          image: "/images/underwater/underwater-diver-pink-soft-coral.jpg",
           overlayGradient: "linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,107,53,0.9) 100%)",
         },
       },
@@ -106,7 +106,7 @@ export const experienciasData: Record<string, ExperienciaData> = {
         type: "text_overlay_full",
         id: "cta-final",
         value: {
-          image: "https://images.unsplash.com/photo-1605456739713-25e87d4a23c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk1MzI2ODR8&ixlib=rb-4.1.0&q=80&w=1080",
+          image: "/images/underwater/underwater-hammerhead-sharks-pair.jpg",
           title: "7 DÍAS BUCEANDO HISTORIA",
           subtitle: "Desde 1.400€ • Incluye Advanced Open Water",
           alignment: "center",
