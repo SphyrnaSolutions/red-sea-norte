@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 
 ## Current Position
 
-Phase: 04-odoo-api-integration
-Plan: 02 complete
-Status: Executing phase 04
-Last activity: 2026-03-06 -- Completed 04-02 (POST /api/lead route with rate limiting and tests)
+Phase: 05-form-consent-ux
+Plan: 01 complete
+Status: Executing phase 05
+Last activity: 2026-03-06 -- Completed 05-01 (Lead forms with consent, validation, and API integration)
 
 ## Accumulated Context
 
@@ -31,6 +31,9 @@ Last activity: 2026-03-06 -- Completed 04-02 (POST /api/lead route with rate lim
 - [v2.0]: In-memory rate limiter (no Redis) -- sufficient for single-instance deployment
 - [v2.0]: vitest for testing (ESM-native, fast with Next.js)
 - [v2.0]: force-dynamic export on mutation API routes
+- [v2.0]: Consent fields optional on HomepageData types (shared by RutaData/mappers)
+- [v2.0]: Form field names aligned with API Zod schema enums (certification, preferredMonth)
+- [v2.0]: Custom validateForm() over HTML required attrs for consistent error UX
 
 ### Pending Todos
 
@@ -44,5 +47,5 @@ Last activity: 2026-03-06 -- Completed 04-02 (POST /api/lead route with rate lim
 ## Session Continuity
 
 Last session: 2026-03-06
-Stopped at: Completed 04-02-PLAN.md
-Resume file: .planning/phases/04-odoo-api-integration/04-02-SUMMARY.md
+Stopped at: Completed 05-01-PLAN.md
+Resume file: .planning/phases/05-form-consent-ux/05-01-SUMMARY.md

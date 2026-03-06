@@ -9,11 +9,11 @@ Requirements for lead capture integration with Odoo CRM.
 
 ### Formulario
 
-- [ ] **FORM-01**: Formulario muestra campos: nombre, email, telefono, certificacion, mes preferido
-- [ ] **FORM-02**: Checkbox de consentimiento WhatsApp con texto legal compliant con Meta + GDPR
-- [ ] **FORM-03**: Link a politica de privacidad visible junto al checkbox
-- [ ] **FORM-04**: Validacion client-side de campos obligatorios (nombre, email, telefono, consent)
-- [ ] **FORM-05**: Feedback visual al usuario: loading, exito, error
+- [x] **FORM-01**: Formulario muestra campos: nombre, email, telefono, certificacion, mes preferido
+- [x] **FORM-02**: Checkbox de consentimiento WhatsApp con texto legal compliant con Meta + GDPR
+- [x] **FORM-03**: Link a politica de privacidad visible junto al checkbox
+- [x] **FORM-04**: Validacion client-side de campos obligatorios (nombre, email, telefono, consent)
+- [x] **FORM-05**: Feedback visual al usuario: loading, exito, error
 
 ### API
 
@@ -69,11 +69,11 @@ Requirements for lead capture integration with Odoo CRM.
 | CRM-01 | Phase 4 | Pending |
 | CRM-02 | Phase 4 | Complete |
 | CRM-03 | Phase 4 | Complete |
-| FORM-01 | Phase 5 | Pending |
-| FORM-02 | Phase 5 | Pending |
-| FORM-03 | Phase 5 | Pending |
-| FORM-04 | Phase 5 | Pending |
-| FORM-05 | Phase 5 | Pending |
+| FORM-01 | Phase 5 | Complete |
+| FORM-02 | Phase 5 | Complete |
+| FORM-03 | Phase 5 | Complete |
+| FORM-04 | Phase 5 | Complete |
+| FORM-05 | Phase 5 | Complete |
 | LEGAL-01 | Phase 6 | Pending |
 
 **Coverage:**

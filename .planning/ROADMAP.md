@@ -29,8 +29,8 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 **Plans:** 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- Odoo XML-RPC client, types, config, and lead validation schema
-- [ ] 04-02-PLAN.md -- POST /api/lead route with rate limiting, validation, and Odoo integration
+- [x] 04-01-PLAN.md -- Odoo XML-RPC client, types, config, and lead validation schema
+- [x] 04-02-PLAN.md -- POST /api/lead route with rate limiting, validation, and Odoo integration
 
 **Success criteria:**
 1. POST /api/lead con datos validos crea un crm.lead en Odoo con todos los campos mapeados
@@ -49,7 +49,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 05-01-PLAN.md -- Update forms with consent, validation, API integration and visual feedback
+- [x] 05-01-PLAN.md -- Update forms with consent, validation, API integration and visual feedback
 
 **Success criteria:**
 1. Form muestra: nombre, email, telefono, certificacion, mes preferido
@@ -81,6 +81,6 @@ Plans:
 | 1. Technical Foundation | v1.0 | 2/2 | Complete | 2026-03-06 |
 | 2. SEO Content Pipeline | v1.0 | 4/4 | Complete | 2026-03-06 |
 | 3. Page Templates and Homepage | v1.0 | 3/3 | Complete | 2026-03-06 |
-| 4. Odoo API Integration | v2.0 | 0/2 | Planned | - |
-| 5. Form + Consent UX | v2.0 | 0/1 | Planned | - |
+| 4. Odoo API Integration | v2.0 | 2/2 | Complete | 2026-03-06 |
+| 5. Form + Consent UX | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 6. Legal + Deploy | v2.0 | 0/1 | Planned | - |
