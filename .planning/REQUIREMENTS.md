@@ -62,24 +62,24 @@ Requirements for lead capture integration with Odoo CRM.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FORM-01 | - | Pending |
-| FORM-02 | - | Pending |
-| FORM-03 | - | Pending |
-| FORM-04 | - | Pending |
-| FORM-05 | - | Pending |
-| API-01 | - | Pending |
-| API-02 | - | Pending |
-| API-03 | - | Pending |
-| API-04 | - | Pending |
-| CRM-01 | - | Pending |
-| CRM-02 | - | Pending |
-| CRM-03 | - | Pending |
-| LEGAL-01 | - | Pending |
+| API-01 | Phase 4 | Pending |
+| API-02 | Phase 4 | Pending |
+| API-03 | Phase 4 | Pending |
+| API-04 | Phase 4 | Pending |
+| CRM-01 | Phase 4 | Pending |
+| CRM-02 | Phase 4 | Pending |
+| CRM-03 | Phase 4 | Pending |
+| FORM-01 | Phase 5 | Pending |
+| FORM-02 | Phase 5 | Pending |
+| FORM-03 | Phase 5 | Pending |
+| FORM-04 | Phase 5 | Pending |
+| FORM-05 | Phase 5 | Pending |
+| LEGAL-01 | Phase 6 | Pending |
 
 **Coverage:**
 - v2.0 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-06*
