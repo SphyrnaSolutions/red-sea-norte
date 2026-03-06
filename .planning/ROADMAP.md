@@ -59,11 +59,12 @@ Plans:
   1. The SEO article template enforces standard H1/H2/H3 structure with meta fields and interlink slots -- new content pages inherit SEO best practices automatically
   2. The homepage displays an H1 containing target keywords, a visible lead capture CTA above the fold, and route-first content positioning
   3. A new content page can be created in Wagtail and rendered on the frontend using the template with zero custom frontend code
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- Extract block components from blog page into shared src/components/blocks/
+- [ ] 03-02-PLAN.md -- Build SEOArticleTemplate with heading hierarchy, interlink slots, and Phase 2 integration
+- [ ] 03-03-PLAN.md -- Redesign homepage for SEO (server-rendered H1, above-fold CTA, route-first positioning)
 
 ## Progress
 
@@ -74,4 +75,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Technical Foundation | 2/2 | Complete | 2026-03-06 |
 | 2. SEO Content Pipeline | 0/4 | Not started | - |
-| 3. Page Templates and Homepage | 0/2 | Not started | - |
+| 3. Page Templates and Homepage | 0/3 | Not started | - |
