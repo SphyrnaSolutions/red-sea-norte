@@ -1,11 +1,12 @@
 /**
  * Wagtail Content Fetchers
  *
- * Funciones específicas para obtener cada tipo de contenido desde Wagtail API
- * Estas funciones reemplazan las de mock-data
+ * Content-type-specific functions that call the low-level client.
+ * Errors propagate to the data layer which handles fallback logic.
  */
 
 import { getPages, getPageBySlug } from './client'
+import type { FetchConfig } from './client'
 import {
   mapHomePage,
   mapBlogPost,
@@ -38,20 +39,15 @@ import type {
 /**
  * Obtener datos de la homepage
  */
-export async function getHomepage(): Promise<HomepageData | null> {
-  try {
-    const pages = await getPages<WagtailHomePage>('home.HomePage')
+export async function getHomepage(config?: FetchConfig): Promise<HomepageData | null> {
+  const pages = await getPages<WagtailHomePage>('home.HomePage', undefined, config)
 
-    if (pages.length === 0) {
-      console.warn('No homepage found in Wagtail')
-      return null
-    }
-
-    return mapHomePage(pages[0])
-  } catch (error) {
-    console.error('Error fetching homepage:', error)
+  if (pages.length === 0) {
+    console.warn('No homepage found in Wagtail')
     return null
   }
+
+  return mapHomePage(pages[0])
 }
 
 // ============================================================================
@@ -61,57 +57,42 @@ export async function getHomepage(): Promise<HomepageData | null> {
 /**
  * Obtener todos los posts del blog
  */
-export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  try {
-    const pages = await getPages<WagtailBlogPostPage>('blog.BlogPostPage')
+export async function getAllBlogPosts(config?: FetchConfig): Promise<BlogPost[]> {
+  const pages = await getPages<WagtailBlogPostPage>('blog.BlogPostPage', undefined, config)
 
-    return pages
-      .map(mapBlogPost)
-      .sort((a, b) => {
-        const aTime = Date.parse(a.publishedAt || '')
-        const bTime = Date.parse(b.publishedAt || '')
+  return pages
+    .map(mapBlogPost)
+    .sort((a, b) => {
+      const aTime = Date.parse(a.publishedAt || '')
+      const bTime = Date.parse(b.publishedAt || '')
 
-        if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0
-        if (Number.isNaN(aTime)) return 1
-        if (Number.isNaN(bTime)) return -1
+      if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0
+      if (Number.isNaN(aTime)) return 1
+      if (Number.isNaN(bTime)) return -1
 
-        return bTime - aTime
-      })
-  } catch (error) {
-    console.error('Error fetching blog posts:', error)
-    return []
-  }
+      return bTime - aTime
+    })
 }
 
 /**
- * Obtener un post específico por slug
+ * Obtener un post especifico por slug
  */
-export async function getBlogPost(slug: string): Promise<BlogPost | null> {
-  try {
-    const page = await getPageBySlug<WagtailBlogPostPage>('blog.BlogPostPage', slug)
+export async function getBlogPost(slug: string, config?: FetchConfig): Promise<BlogPost | null> {
+  const page = await getPageBySlug<WagtailBlogPostPage>('blog.BlogPostPage', slug, config)
 
-    if (!page) {
-      return null
-    }
-
-    return mapBlogPost(page)
-  } catch (error) {
-    console.error(`Error fetching blog post "${slug}":`, error)
+  if (!page) {
     return null
   }
+
+  return mapBlogPost(page)
 }
 
 /**
  * Obtener slugs de todos los posts (para generateStaticParams)
  */
-export async function getAllBlogPostSlugs(): Promise<string[]> {
-  try {
-    const pages = await getPages<WagtailBlogPostPage>('blog.BlogPostPage')
-    return pages.map(page => page.meta.slug)
-  } catch (error) {
-    console.error('Error fetching blog post slugs:', error)
-    return []
-  }
+export async function getAllBlogPostSlugs(config?: FetchConfig): Promise<string[]> {
+  const pages = await getPages<WagtailBlogPostPage>('blog.BlogPostPage', undefined, config)
+  return pages.map(page => page.meta.slug)
 }
 
 // ============================================================================
@@ -121,45 +102,30 @@ export async function getAllBlogPostSlugs(): Promise<string[]> {
 /**
  * Obtener todas las rutas
  */
-export async function getAllRutas(): Promise<RutaData[]> {
-  try {
-    const pages = await getPages<WagtailRutaPage>('rutas.RutaPage')
-    return pages.map(mapRutaPage)
-  } catch (error) {
-    console.error('Error fetching rutas:', error)
-    return []
-  }
+export async function getAllRutas(config?: FetchConfig): Promise<RutaData[]> {
+  const pages = await getPages<WagtailRutaPage>('rutas.RutaPage', undefined, config)
+  return pages.map(mapRutaPage)
 }
 
 /**
- * Obtener una ruta específica por slug
+ * Obtener una ruta especifica por slug
  */
-export async function getRuta(slug: string): Promise<RutaData | null> {
-  try {
-    const page = await getPageBySlug<WagtailRutaPage>('rutas.RutaPage', slug)
+export async function getRuta(slug: string, config?: FetchConfig): Promise<RutaData | null> {
+  const page = await getPageBySlug<WagtailRutaPage>('rutas.RutaPage', slug, config)
 
-    if (!page) {
-      return null
-    }
-
-    return mapRutaPage(page)
-  } catch (error) {
-    console.error(`Error fetching ruta "${slug}":`, error)
+  if (!page) {
     return null
   }
+
+  return mapRutaPage(page)
 }
 
 /**
  * Obtener slugs de todas las rutas (para generateStaticParams)
  */
-export async function getAllRutaSlugs(): Promise<string[]> {
-  try {
-    const pages = await getPages<WagtailRutaPage>('rutas.RutaPage')
-    return pages.map(page => page.meta.slug)
-  } catch (error) {
-    console.error('Error fetching ruta slugs:', error)
-    return []
-  }
+export async function getAllRutaSlugs(config?: FetchConfig): Promise<string[]> {
+  const pages = await getPages<WagtailRutaPage>('rutas.RutaPage', undefined, config)
+  return pages.map(page => page.meta.slug)
 }
 
 // ============================================================================
@@ -169,45 +135,30 @@ export async function getAllRutaSlugs(): Promise<string[]> {
 /**
  * Obtener todas las experiencias
  */
-export async function getAllExperiencias(): Promise<ExperienciaData[]> {
-  try {
-    const pages = await getPages<WagtailExperienciaPage>('experiencias.ExperienciaPage')
-    return pages.map(mapExperienciaPage)
-  } catch (error) {
-    console.error('Error fetching experiencias:', error)
-    return []
-  }
+export async function getAllExperiencias(config?: FetchConfig): Promise<ExperienciaData[]> {
+  const pages = await getPages<WagtailExperienciaPage>('experiencias.ExperienciaPage', undefined, config)
+  return pages.map(mapExperienciaPage)
 }
 
 /**
- * Obtener una experiencia específica por slug
+ * Obtener una experiencia especifica por slug
  */
-export async function getExperiencia(slug: string): Promise<ExperienciaData | null> {
-  try {
-    const page = await getPageBySlug<WagtailExperienciaPage>('experiencias.ExperienciaPage', slug)
+export async function getExperiencia(slug: string, config?: FetchConfig): Promise<ExperienciaData | null> {
+  const page = await getPageBySlug<WagtailExperienciaPage>('experiencias.ExperienciaPage', slug, config)
 
-    if (!page) {
-      return null
-    }
-
-    return mapExperienciaPage(page)
-  } catch (error) {
-    console.error(`Error fetching experiencia "${slug}":`, error)
+  if (!page) {
     return null
   }
+
+  return mapExperienciaPage(page)
 }
 
 /**
  * Obtener slugs de todas las experiencias (para generateStaticParams)
  */
-export async function getAllExperienciaSlugs(): Promise<string[]> {
-  try {
-    const pages = await getPages<WagtailExperienciaPage>('experiencias.ExperienciaPage')
-    return pages.map(page => page.meta.slug)
-  } catch (error) {
-    console.error('Error fetching experiencia slugs:', error)
-    return []
-  }
+export async function getAllExperienciaSlugs(config?: FetchConfig): Promise<string[]> {
+  const pages = await getPages<WagtailExperienciaPage>('experiencias.ExperienciaPage', undefined, config)
+  return pages.map(page => page.meta.slug)
 }
 
 // ============================================================================
@@ -217,45 +168,30 @@ export async function getAllExperienciaSlugs(): Promise<string[]> {
 /**
  * Obtener todas las ofertas
  */
-export async function getAllOfertas(): Promise<OfertaData[]> {
-  try {
-    const pages = await getPages<WagtailOfertaPage>('ofertas.OfertaPage')
-    return pages.map(mapOfertaPage)
-  } catch (error) {
-    console.error('Error fetching ofertas:', error)
-    return []
-  }
+export async function getAllOfertas(config?: FetchConfig): Promise<OfertaData[]> {
+  const pages = await getPages<WagtailOfertaPage>('ofertas.OfertaPage', undefined, config)
+  return pages.map(mapOfertaPage)
 }
 
 /**
- * Obtener una oferta específica por slug
+ * Obtener una oferta especifica por slug
  */
-export async function getOferta(slug: string): Promise<OfertaData | null> {
-  try {
-    const page = await getPageBySlug<WagtailOfertaPage>('ofertas.OfertaPage', slug)
+export async function getOferta(slug: string, config?: FetchConfig): Promise<OfertaData | null> {
+  const page = await getPageBySlug<WagtailOfertaPage>('ofertas.OfertaPage', slug, config)
 
-    if (!page) {
-      return null
-    }
-
-    return mapOfertaPage(page)
-  } catch (error) {
-    console.error(`Error fetching oferta "${slug}":`, error)
+  if (!page) {
     return null
   }
+
+  return mapOfertaPage(page)
 }
 
 /**
  * Obtener slugs de todas las ofertas (para generateStaticParams)
  */
-export async function getAllOfertaSlugs(): Promise<string[]> {
-  try {
-    const pages = await getPages<WagtailOfertaPage>('ofertas.OfertaPage')
-    return pages.map(page => page.meta.slug)
-  } catch (error) {
-    console.error('Error fetching oferta slugs:', error)
-    return []
-  }
+export async function getAllOfertaSlugs(config?: FetchConfig): Promise<string[]> {
+  const pages = await getPages<WagtailOfertaPage>('ofertas.OfertaPage', undefined, config)
+  return pages.map(page => page.meta.slug)
 }
 
 // ============================================================================
@@ -265,43 +201,28 @@ export async function getAllOfertaSlugs(): Promise<string[]> {
 /**
  * Obtener todos los cursos
  */
-export async function getAllCursos(): Promise<CursoData[]> {
-  try {
-    const pages = await getPages<WagtailCursoPage>('cursos.CursoPage')
-    return pages.map(mapCursoPage)
-  } catch (error) {
-    console.error('Error fetching cursos:', error)
-    return []
-  }
+export async function getAllCursos(config?: FetchConfig): Promise<CursoData[]> {
+  const pages = await getPages<WagtailCursoPage>('cursos.CursoPage', undefined, config)
+  return pages.map(mapCursoPage)
 }
 
 /**
- * Obtener un curso específico por slug
+ * Obtener un curso especifico por slug
  */
-export async function getCurso(slug: string): Promise<CursoData | null> {
-  try {
-    const page = await getPageBySlug<WagtailCursoPage>('cursos.CursoPage', slug)
+export async function getCurso(slug: string, config?: FetchConfig): Promise<CursoData | null> {
+  const page = await getPageBySlug<WagtailCursoPage>('cursos.CursoPage', slug, config)
 
-    if (!page) {
-      return null
-    }
-
-    return mapCursoPage(page)
-  } catch (error) {
-    console.error(`Error fetching curso "${slug}":`, error)
+  if (!page) {
     return null
   }
+
+  return mapCursoPage(page)
 }
 
 /**
  * Obtener slugs de todos los cursos (para generateStaticParams)
  */
-export async function getAllCursoSlugs(): Promise<string[]> {
-  try {
-    const pages = await getPages<WagtailCursoPage>('cursos.CursoPage')
-    return pages.map(page => page.meta.slug)
-  } catch (error) {
-    console.error('Error fetching curso slugs:', error)
-    return []
-  }
+export async function getAllCursoSlugs(config?: FetchConfig): Promise<string[]> {
+  const pages = await getPages<WagtailCursoPage>('cursos.CursoPage', undefined, config)
+  return pages.map(page => page.meta.slug)
 }
