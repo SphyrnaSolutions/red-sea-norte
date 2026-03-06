@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-03-06)
 
 **Core value:** Posicionar la web como referencia SEO en español para buceo en el Mar Rojo y convertir tráfico en leads para safaris desde Hurghada.
-**Current focus:** Phase 2: SEO Content Pipeline
+**Current focus:** Phase 3: Page Templates and Homepage (COMPLETE)
 
 ## Current Position
 
-Phase: 2 of 3 (SEO Content Pipeline)
-Plan: 4 of 4 in current phase
-Status: Phase 2 complete
-Last activity: 2026-03-06 -- Phase 2 executed: ClusterMixin, schema generators, cluster resolver, breadcrumbs, interlinks, page refactoring
+Phase: 3 of 3 (Page Templates and Homepage)
+Plan: 3 of 3 in current phase
+Status: Phase 3 complete -- all phases done
+Last activity: 2026-03-06 -- Phase 3 executed: block extraction, SEO article template, homepage SEO redesign
 
-Progress: [██████░░░░] 67%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 9
 - Average duration: 3 min
-- Total execution time: 0.30 hours
+- Total execution time: 0.40 hours
 
 **By Phase:**
 
@@ -29,9 +29,10 @@ Progress: [██████░░░░] 67%
 |-------|-------|-------|----------|
 | 1. Technical Foundation | 2/2 | 8 min | 4 min |
 | 2. SEO Content Pipeline | 4/4 | 10 min | 2.5 min |
+| 3. Page Templates and Homepage | 3/3 | 6 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (4m), 02-01 (3m), 02-02 (2m), 02-03 (2m), 02-04 (3m)
+- Last 5 plans: 02-03 (2m), 02-04 (3m), 03-01 (2m), 03-02 (3m), 03-03 (1m)
 - Trend: Accelerating
 
 *Updated after each plan completion*
@@ -57,6 +58,10 @@ Recent decisions affecting current work:
 - [Phase 2]: Cluster resolver fetches all pages client-side (site <100 pages, ISR-cached)
 - [Phase 2]: Breadcrumbs always pair visual nav with BreadcrumbList JSON-LD
 - [Phase 2]: Existing generateMetadata kept (data layer transforms types), JsonLd replaces inline script
+- [Phase 3]: Design tokens (CSS variables) used in extracted blocks instead of raw hex
+- [Phase 3]: HeadingBlock clamps level to 2-4, preventing H1 in body content
+- [Phase 3]: Option B for homepage H1: sr-only H1 in page.tsx + aria-hidden visual title in HeroSection
+- [Phase 3]: ClusterNavigation renders placeholder shell; connect when cluster resolver API ready
 
 ### Pending Todos
 
@@ -70,5 +75,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-06
-Stopped at: Completed Phase 2 (02-01 through 02-04). Ready for Phase 3.
+Stopped at: Completed Phase 3 (03-01 through 03-03). All v1 phases complete.
 Resume file: None

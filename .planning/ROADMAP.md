@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Technical Foundation** - Fix data layer reliability: fetch migration, sitemap accuracy, pagination, production error handling
 - [x] **Phase 2: SEO Content Pipeline** - Build cluster-aware SEO infrastructure: Wagtail models, cluster resolver, interlink engine, schema markup, breadcrumbs
-- [ ] **Phase 3: Page Templates and Homepage** - Deliver reusable SEO article template and optimized homepage that consume the pipeline
+- [x] **Phase 3: Page Templates and Homepage** - Deliver reusable SEO article template and optimized homepage that consume the pipeline
 
 ## Phase Details
 
@@ -62,9 +62,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- Extract block components from blog page into shared src/components/blocks/
-- [ ] 03-02-PLAN.md -- Build SEOArticleTemplate with heading hierarchy, interlink slots, and Phase 2 integration
-- [ ] 03-03-PLAN.md -- Redesign homepage for SEO (server-rendered H1, above-fold CTA, route-first positioning)
+- [x] 03-01-PLAN.md -- Extract block components from blog page into shared src/components/blocks/
+- [x] 03-02-PLAN.md -- Build SEOArticleTemplate with heading hierarchy, interlink slots, and Phase 2 integration
+- [x] 03-03-PLAN.md -- Redesign homepage for SEO (server-rendered H1, above-fold CTA, route-first positioning)
 
 ## Progress
 
@@ -75,4 +75,4 @@ Phases execute in numeric order: 1 -> 2 -> 3
 |-------|----------------|--------|-----------|
 | 1. Technical Foundation | 2/2 | Complete | 2026-03-06 |
 | 2. SEO Content Pipeline | 4/4 | Complete | 2026-03-06 |
-| 3. Page Templates and Homepage | 0/3 | Not started | - |
+| 3. Page Templates and Homepage | 3/3 | Complete | 2026-03-06 |

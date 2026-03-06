@@ -27,8 +27,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **CONT-01**: Extend Wagtail page models for specific content types: routes, wrecks, dive spots, guides, comparison pages
 - [x] **CONT-02**: Add cluster metadata fields to Wagtail models (cluster_id, role, pillar_slug, schema_type, related_pages)
-- [ ] **CONT-03**: Build reusable SEO article template with standard H1/H2/H3 structure, meta fields, and interlink slots
-- [ ] **CONT-04**: Redesign homepage for SEO optimization (H1 with target keywords, visible lead capture CTA, route-first positioning)
+- [x] **CONT-03**: Build reusable SEO article template with standard H1/H2/H3 structure, meta fields, and interlink slots
+- [x] **CONT-04**: Redesign homepage for SEO optimization (H1 with target keywords, visible lead capture CTA, route-first positioning)
 
 ## v2 Requirements
 
@@ -81,8 +81,8 @@ Deferred to future release. Tracked but not in current roadmap.
 | SEO-06 | Phase 2 | Complete |
 | CONT-01 | Phase 2 | Complete |
 | CONT-02 | Phase 2 | Complete |
-| CONT-03 | Phase 3 | Pending |
-| CONT-04 | Phase 3 | Pending |
+| CONT-03 | Phase 3 | Complete |
+| CONT-04 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 14 total
@@ -91,4 +91,4 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-06 after Phase 2 completion*
+*Last updated: 2026-03-06 after Phase 3 completion -- all v1 requirements complete*
