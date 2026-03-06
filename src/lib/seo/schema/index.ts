@@ -1,15 +1,15 @@
-import type { TouristTrip, Article, FAQPage, WithContext } from 'schema-dts'
+import type { TouristTrip, Article, WithContext } from 'schema-dts'
 import type { WagtailPageWithSEO, WagtailBlogPostPage } from '@/lib/wagtail/types'
 import { buildTouristTripSchema } from './tourist-trip'
 import { buildArticleSchema } from './article'
-import { buildFAQPageSchema } from './faq-page'
 
 export { buildTouristTripSchema } from './tourist-trip'
 export { buildArticleSchema } from './article'
+// FAQPage schemas should call buildFAQPageSchema directly with their FAQ items
 export { buildFAQPageSchema } from './faq-page'
 export { buildBreadcrumbSchema } from './breadcrumb'
 
-export type SchemaType = 'TouristTrip' | 'Article' | 'FAQPage'
+export type SchemaType = 'TouristTrip' | 'Article'
 
 interface SchemaInput {
   type: SchemaType
@@ -19,7 +19,7 @@ interface SchemaInput {
 
 export function generateSchema(
   input: SchemaInput
-): WithContext<TouristTrip | Article | FAQPage> | null {
+): WithContext<TouristTrip | Article> | null {
   switch (input.type) {
     case 'TouristTrip':
       return buildTouristTripSchema(input.page, input.baseUrl)
@@ -28,10 +28,6 @@ export function generateSchema(
         input.page as WagtailBlogPostPage,
         input.baseUrl
       )
-    case 'FAQPage':
-      // FAQPage requires explicit FAQ items, not a page object
-      // Use buildFAQPageSchema directly for FAQPage
-      return null
     default:
       return null
   }

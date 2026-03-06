@@ -1,10 +1,9 @@
 import type { WagtailPageWithSEO } from '@/lib/wagtail/types'
 import type { WagtailPage, WagtailAPIResponse, FetchConfig } from '@/lib/wagtail/client'
+import { wagtailFetch } from '@/lib/wagtail/client'
 
-const WAGTAIL_API_URL =
-  process.env.NEXT_PUBLIC_WAGTAIL_API_URL || 'http://localhost:8000/api/v2'
-const SITE_HOSTNAME =
-  process.env.NEXT_PUBLIC_SITE_HOSTNAME || 'localhost'
+const BATCH_SIZE = 20
+const MAX_ITERATIONS = 50
 
 export interface ClusterContext {
   clusterId: string
@@ -15,35 +14,36 @@ export interface ClusterContext {
 
 /**
  * Fetch all pages with cluster fields from Wagtail API.
- * Uses a direct fetch without type filter to get pages across all content types.
+ * Uses paginated wagtailFetch across all content types.
  */
 async function getClusterPages(
   config: FetchConfig = {}
 ): Promise<WagtailPageWithSEO[]> {
-  const url = new URL(`${WAGTAIL_API_URL}/pages/`)
-  url.searchParams.set('site', SITE_HOSTNAME)
-  url.searchParams.set(
-    'fields',
-    'title,cluster_id,cluster_role,pillar_slug,schema_type,primary_keyword'
-  )
-  url.searchParams.set('limit', '100')
+  const fields = 'title,cluster_id,cluster_role,pillar_slug,schema_type,primary_keyword'
+  let allItems: WagtailPage[] = []
+  let offset = 0
 
   try {
-    const response = await fetch(url.toString(), {
-      headers: { 'Content-Type': 'application/json' },
-      signal: AbortSignal.timeout(10000),
-      next: {
-        revalidate: config.revalidate ?? 3600,
-        ...(config.tags?.length ? { tags: config.tags } : {}),
-      },
-    })
+    for (let iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
+      const response = await wagtailFetch<WagtailAPIResponse<WagtailPage>>(
+        '/pages/',
+        {
+          fields,
+          limit: String(BATCH_SIZE),
+          offset: String(offset),
+        },
+        config
+      )
 
-    if (!response.ok) {
-      return []
+      allItems = [...allItems, ...response.items]
+
+      if (response.items.length === 0 || allItems.length >= response.meta.total_count) {
+        break
+      }
+      offset += BATCH_SIZE
     }
 
-    const data: WagtailAPIResponse<WagtailPage> = await response.json()
-    return data.items as WagtailPageWithSEO[]
+    return allItems as WagtailPageWithSEO[]
   } catch {
     return []
   }

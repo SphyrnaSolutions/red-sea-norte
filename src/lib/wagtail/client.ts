@@ -58,7 +58,7 @@ const BATCH_SIZE = 20
  * Low-level fetch wrapper for Wagtail API.
  * Every call includes next.revalidate for ISR compatibility.
  */
-async function wagtailFetch<T>(
+export async function wagtailFetch<T>(
   endpoint: string,
   params?: Record<string, string>,
   config: FetchConfig = {}

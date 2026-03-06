@@ -18,17 +18,22 @@ const CONTENT_TYPE_LABELS: Record<string, string> = {
 /**
  * Build breadcrumb items for a content page.
  * Always starts with Inicio, then content type, then current page.
+ * The last item carries the page URL for schema accuracy but is rendered non-clickable.
  */
 export function buildBreadcrumbItems(
   contentType: string,
-  pageTitle: string
+  pageTitle: string,
+  pageSlug?: string
 ): Array<{ name: string; href: string }> {
   const displayName = CONTENT_TYPE_LABELS[contentType] || contentType
+  const pageHref = pageSlug
+    ? `/${contentType}/${pageSlug}`
+    : `/${contentType}`
 
   return [
     { name: 'Inicio', href: '/' },
     { name: displayName, href: `/${contentType}` },
-    { name: pageTitle, href: '' },
+    { name: pageTitle, href: pageHref },
   ]
 }
 
@@ -46,11 +51,9 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
     .filter((item) => item.name)
     .map((item) => ({
       name: item.name,
-      url: item.href
-        ? item.href.startsWith('http')
-          ? item.href
-          : `${BASE_URL}${item.href}`
-        : BASE_URL,
+      url: item.href.startsWith('http')
+        ? item.href
+        : `${BASE_URL}${item.href || '/'}`,
     }))
 
   const breadcrumbSchema = buildBreadcrumbSchema(schemaItems)
@@ -98,7 +101,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           })}
         </ol>
       </nav>
-      <JsonLd data={breadcrumbSchema as unknown as Record<string, unknown>} />
+      <JsonLd data={breadcrumbSchema} />
     </>
   )
 }

@@ -211,7 +211,7 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
 
   return (
     <div className="pt-20">
-      <JsonLd data={jsonLd as Record<string, unknown>} />
+      <JsonLd data={jsonLd} />
       {/* Draft Mode Banner */}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
@@ -227,7 +227,7 @@ export default async function ExperienciaPage({ params }: ExperienciaPageProps) 
         </div>
       )}
 
-      <Breadcrumbs items={buildBreadcrumbItems('experiencias', experiencia.title)} />
+      <Breadcrumbs items={buildBreadcrumbItems('experiencias', experiencia.title, slug)} />
 
       {/* Hero Section */}
       <HeroExperiencia experiencia={experiencia} />

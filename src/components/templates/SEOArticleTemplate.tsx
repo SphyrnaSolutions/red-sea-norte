@@ -101,11 +101,11 @@ export function SEOArticleTemplate({ page }: { page: SEOArticlePageData }) {
 
   return (
     <article className="pt-20">
-      <JsonLd data={jsonLd as Record<string, unknown>} />
+      <JsonLd data={jsonLd} />
 
       {/* Breadcrumbs */}
       <Breadcrumbs
-        items={buildBreadcrumbItems(page.contentType, page.title)}
+        items={buildBreadcrumbItems(page.contentType, page.title, page.slug)}
       />
 
       {/* Hero with server-rendered H1 */}

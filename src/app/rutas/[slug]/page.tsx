@@ -147,9 +147,9 @@ export default async function RutaPage({ params }: RutaPageProps) {
 
   return (
     <div className="pt-20">
-      <JsonLd data={jsonLd as unknown as Record<string, unknown>} />
+      <JsonLd data={jsonLd} />
       {faqSchema && (
-        <JsonLd data={faqSchema as unknown as Record<string, unknown>} />
+        <JsonLd data={faqSchema} />
       )}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
@@ -164,7 +164,7 @@ export default async function RutaPage({ params }: RutaPageProps) {
           </div>
         </div>
       )}
-      <Breadcrumbs items={buildBreadcrumbItems('rutas', ruta.hero.title || ruta.title)} />
+      <Breadcrumbs items={buildBreadcrumbItems('rutas', ruta.hero.title || ruta.title, slug)} />
       <HeroRuta ruta={ruta} />
       <StoryIntro ruta={ruta} />
       <SummarySection ruta={ruta} />
