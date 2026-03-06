@@ -1,7 +1,8 @@
 import type { Block, InfoCardsValue } from './types'
 
 export function InfoCardsBlock({ block }: { block: Block }) {
-  const value = block.value as InfoCardsValue
+  const value = block.value as Partial<InfoCardsValue>
+  if (!value?.cards?.length) return null
 
   return (
     <div className="w-full flex justify-center my-10">

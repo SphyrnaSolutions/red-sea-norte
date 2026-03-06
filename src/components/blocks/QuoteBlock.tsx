@@ -1,7 +1,8 @@
 import type { Block, QuoteValue } from './types'
 
 export function QuoteBlock({ block }: { block: Block }) {
-  const value = block.value as QuoteValue
+  const value = block.value as Partial<QuoteValue>
+  if (!value?.text || !value?.author) return null
 
   return (
     <div className="w-full max-w-[900px] my-10">

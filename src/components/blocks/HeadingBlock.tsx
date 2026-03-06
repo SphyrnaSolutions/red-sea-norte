@@ -6,7 +6,8 @@ import type { Block, HeadingValue } from './types'
  * in body blocks.
  */
 export function HeadingBlock({ block }: { block: Block }) {
-  const value = block.value as HeadingValue
+  const value = block.value as Partial<HeadingValue>
+  if (!value?.text || !value?.level) return null
 
   // Safety: clamp heading level to 2-4 (no H1 in body content)
   const safeLevel = Math.max(2, Math.min(4, value.level))

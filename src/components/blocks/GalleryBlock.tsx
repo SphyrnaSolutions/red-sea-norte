@@ -2,7 +2,8 @@ import Image from 'next/image'
 import type { Block, GalleryValue } from './types'
 
 export function GalleryBlock({ block }: { block: Block }) {
-  const value = block.value as GalleryValue
+  const value = block.value as Partial<GalleryValue>
+  if (!value?.images?.length) return null
 
   return (
     <div className="w-full max-w-[1200px] my-20 max-md:my-10">

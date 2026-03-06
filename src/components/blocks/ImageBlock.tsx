@@ -2,7 +2,8 @@ import Image from 'next/image'
 import type { Block, ImageValue } from './types'
 
 export function ImageBlock({ block }: { block: Block }) {
-  const value = block.value as ImageValue
+  const value = block.value as Partial<ImageValue>
+  if (!value?.url) return null
 
   return (
     <div className="w-full max-w-[1200px] mb-10">

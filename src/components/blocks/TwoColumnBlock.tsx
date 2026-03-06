@@ -1,8 +1,10 @@
+import DOMPurify from 'isomorphic-dompurify'
 import Image from 'next/image'
 import type { Block, TwoColumnValue } from './types'
 
 export function TwoColumnBlock({ block }: { block: Block }) {
-  const value = block.value as TwoColumnValue
+  const value = block.value as Partial<TwoColumnValue>
+  if (!value?.leftColumn?.image || !value?.rightColumn?.content) return null
 
   return (
     <div className="w-full max-w-[1200px] my-20 max-md:my-10">
@@ -39,7 +41,7 @@ export function TwoColumnBlock({ block }: { block: Block }) {
               lineHeight: 1.7,
               fontFamily: 'var(--font-sans)',
             }}
-            dangerouslySetInnerHTML={{ __html: value.rightColumn.content }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(value.rightColumn.content) }}
           />
         </div>
       </div>

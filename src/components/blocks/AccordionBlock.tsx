@@ -1,7 +1,9 @@
+import DOMPurify from 'isomorphic-dompurify'
 import type { Block, AccordionValue } from './types'
 
 export function AccordionBlock({ block }: { block: Block }) {
-  const value = block.value as AccordionValue
+  const value = block.value as Partial<AccordionValue>
+  if (!value?.items?.length) return null
 
   return (
     <div className="w-full max-w-[900px] my-20 max-md:my-10">
@@ -23,7 +25,7 @@ export function AccordionBlock({ block }: { block: Block }) {
             <div
               className="prose prose-lg mt-4 max-w-none"
               style={{ color: 'var(--color-text-secondary)' }}
-              dangerouslySetInnerHTML={{ __html: item.content }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.content) }}
             />
           </details>
         ))}

@@ -1,8 +1,23 @@
 import Link from 'next/link'
 import type { Block, CTAValue } from './types'
 
+function isSafeHref(href: string): boolean {
+  if (href.startsWith('/') || href.startsWith('#')) return true
+  try {
+    const url = new URL(href)
+    return ['https:', 'http:'].includes(url.protocol)
+  } catch {
+    return false
+  }
+}
+
 export function CTABlock({ block }: { block: Block }) {
-  const value = block.value as CTAValue
+  const value = block.value as Partial<CTAValue>
+  if (!value?.title || !value?.primaryCTA?.text) return null
+
+  const safeHref = value.primaryCTA.href && isSafeHref(value.primaryCTA.href)
+    ? value.primaryCTA.href
+    : '/'
 
   return (
     <div className="w-full max-w-[1000px] my-20 max-md:my-10">
@@ -41,7 +56,7 @@ export function CTABlock({ block }: { block: Block }) {
 
         {/* CTA Button */}
         <Link
-          href={value.primaryCTA.href}
+          href={safeHref}
           className="flex items-center justify-center rounded-[30px] transition-all duration-300 hover:scale-105"
           style={{
             backgroundColor: 'var(--color-coral-fire)',
