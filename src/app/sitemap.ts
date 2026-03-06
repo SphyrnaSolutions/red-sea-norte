@@ -10,16 +10,7 @@ import {
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Fetch all dynamic content in parallel
-  const [blogPosts, ofertas, rutas, cursos, experiencias] = await Promise.all([
-    getAllBlogPostSlugsData(),
-    getAllOfertasSlugsData(),
-    getAllRutasSlugsData(),
-    getAllCursosSlugsData(),
-    getAllExperienciasSlugsData(),
-  ])
-
-  // Static pages
+  // Static pages -- use new Date() since these are dynamically rendered
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
@@ -35,54 +26,67 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  // Blog posts
-  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+  try {
+    // Fetch all dynamic content in parallel
+    const [blogPosts, ofertas, rutas, cursos, experiencias] = await Promise.all([
+      getAllBlogPostSlugsData(),
+      getAllOfertasSlugsData(),
+      getAllRutasSlugsData(),
+      getAllCursosSlugsData(),
+      getAllExperienciasSlugsData(),
+    ])
 
-  // Ofertas
-  const ofertasUrls: MetadataRoute.Sitemap = ofertas
-    .filter((oferta): oferta is NonNullable<typeof oferta> => oferta !== null)
-    .map((oferta) => ({
+    // Blog posts -- use real publishedAt dates from Wagtail
+    const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      ...(post.lastModified ? { lastModified: new Date(post.lastModified) } : {}),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
+
+    // Ofertas
+    const ofertasUrls: MetadataRoute.Sitemap = ofertas.map((oferta) => ({
       url: `${BASE_URL}/ofertas/${oferta.slug}`,
-      lastModified: new Date(),
+      ...(oferta.lastModified ? { lastModified: new Date(oferta.lastModified) } : {}),
       changeFrequency: 'daily' as const,
       priority: 0.9,
     }))
 
-  // Rutas
-  const rutasUrls: MetadataRoute.Sitemap = rutas.map((ruta) => ({
-    url: `${BASE_URL}/rutas/${ruta.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+    // Rutas
+    const rutasUrls: MetadataRoute.Sitemap = rutas.map((ruta) => ({
+      url: `${BASE_URL}/rutas/${ruta.slug}`,
+      ...(ruta.lastModified ? { lastModified: new Date(ruta.lastModified) } : {}),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
 
-  // Cursos
-  const cursosUrls: MetadataRoute.Sitemap = cursos.map((curso) => ({
-    url: `${BASE_URL}/cursos/${curso.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+    // Cursos
+    const cursosUrls: MetadataRoute.Sitemap = cursos.map((curso) => ({
+      url: `${BASE_URL}/cursos/${curso.slug}`,
+      ...(curso.lastModified ? { lastModified: new Date(curso.lastModified) } : {}),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
 
-  // Experiencias
-  const experienciasUrls: MetadataRoute.Sitemap = experiencias.map((exp) => ({
-    url: `${BASE_URL}/experiencias/${exp.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+    // Experiencias
+    const experienciasUrls: MetadataRoute.Sitemap = experiencias.map((exp) => ({
+      url: `${BASE_URL}/experiencias/${exp.slug}`,
+      ...(exp.lastModified ? { lastModified: new Date(exp.lastModified) } : {}),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
 
-  return [
-    ...staticPages,
-    ...blogUrls,
-    ...ofertasUrls,
-    ...rutasUrls,
-    ...cursosUrls,
-    ...experienciasUrls,
-  ]
+    return [
+      ...staticPages,
+      ...blogUrls,
+      ...ofertasUrls,
+      ...rutasUrls,
+      ...cursosUrls,
+      ...experienciasUrls,
+    ]
+  } catch (error) {
+    // If Wagtail is down, return only static pages so sitemap.xml always resolves
+    console.error('[Sitemap] Error fetching dynamic content:', error)
+    return staticPages
+  }
 }
