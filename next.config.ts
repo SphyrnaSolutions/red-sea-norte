@@ -29,6 +29,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   output: 'standalone', // Para Docker
+  serverExternalPackages: ['xmlrpc'],
   async headers() {
     return [
       {
