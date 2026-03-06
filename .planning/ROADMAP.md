@@ -43,12 +43,13 @@ Plans:
   3. Each page displays a "related content" block and contextual interlinks computed from cluster topology, not hardcoded
   4. A keyword-to-URL map exists and is enforced -- creating a page with a duplicate primary keyword is caught before publish
   5. Every page renders dynamic meta tags (title, description, canonical URL, Open Graph) via generateMetadata() and visual breadcrumbs with BreadcrumbList schema
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md -- Wagtail ClusterMixin + model extensions + TypeScript type updates
+- [ ] 02-02-PLAN.md -- JSON-LD schema generators (schema-dts) + shared metadata helper + JsonLd component
+- [ ] 02-03-PLAN.md -- Cluster resolver + Breadcrumbs component with BreadcrumbList schema
+- [ ] 02-04-PLAN.md -- Interlink engine + keyword map + refactor pages to consume shared SEO utilities
 
 ### Phase 3: Page Templates and Homepage
 **Goal**: A reusable SEO article template and an optimized homepage are ready so that content production (v2) can begin immediately without per-page engineering work
@@ -72,5 +73,5 @@ Phases execute in numeric order: 1 -> 2 -> 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Technical Foundation | 2/2 | Complete | 2026-03-06 |
-| 2. SEO Content Pipeline | 0/3 | Not started | - |
+| 2. SEO Content Pipeline | 0/4 | Not started | - |
 | 3. Page Templates and Homepage | 0/2 | Not started | - |
