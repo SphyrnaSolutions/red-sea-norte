@@ -59,15 +59,17 @@ export function ClusterNavigation({
       )}
 
       {/* Placeholder for sibling pages -- populated when cluster resolver is connected */}
-      <p
-        className="mt-4 text-sm"
-        style={{
-          color: 'var(--color-text-muted)',
-          fontFamily: 'var(--font-mono)',
-        }}
-      >
-        Cluster: {clusterId} | Rol: {clusterRole} | Slug: {currentSlug}
-      </p>
+      {process.env.NODE_ENV === 'development' && (
+        <p
+          className="mt-4 text-sm"
+          style={{
+            color: 'var(--color-text-muted)',
+            fontFamily: 'var(--font-mono)',
+          }}
+        >
+          Cluster: {clusterId} | Rol: {clusterRole} | Slug: {currentSlug}
+        </p>
+      )}
     </nav>
   )
 }

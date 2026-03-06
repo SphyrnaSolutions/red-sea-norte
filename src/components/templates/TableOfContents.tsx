@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import type { Block } from '@/components/blocks/types'
+import { slugify } from '@/lib/utils'
 
 interface TableOfContentsProps {
   blocks: Block[]
@@ -11,18 +12,6 @@ interface TocEntry {
   id: string
   text: string
   level: number
-}
-
-/**
- * Slugify a heading text into a URL-safe anchor id.
- */
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
 }
 
 /**

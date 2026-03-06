@@ -36,15 +36,12 @@ export function InlineLeadSection({
   fields,
   submitButton,
   privacyText,
-  successMessage,
+  successMessage: _successMessage,
   showModalCta = true,
   secondaryPrompt = "Si aun no quieres enviar el formulario, puedes abrir el modal y dejarnos una duda mas concreta.",
 }: InlineLeadSectionProps) {
   const { openModal } = useModalStore()
   const [formData, setFormData] = useState<Record<string, string>>({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [showSuccess, setShowSuccess] = useState(false)
-
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -54,15 +51,9 @@ export function InlineLeadSection({
     }))
   }
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setIsSubmitting(true)
-
-    await new Promise((resolve) => setTimeout(resolve, 1200))
-
-    console.log("Inline lead submitted:", formData)
-    setIsSubmitting(false)
-    setShowSuccess(true)
+    // TODO: Connect to a real API endpoint when available
   }
 
   return (
@@ -107,24 +98,7 @@ export function InlineLeadSection({
           </div>
 
           <div className="rounded-[30px] bg-white p-8 shadow-[0_24px_80px_rgba(10,37,64,0.12)] md:p-10">
-            {showSuccess ? (
-              <div className="rounded-[22px] border border-[#0F8C62]/20 bg-[#0F8C62]/8 p-8 text-center">
-                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#0F8C62]">
-                  Enviado
-                </p>
-                <h3
-                  className="mt-4 text-3xl font-bold text-[#0A2540]"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {successMessage}
-                </h3>
-                <p className="mt-4 text-base leading-7 text-[#4A5568]">
-                  Hemos recibido tu consulta. El siguiente paso es orientarte hacia la ruta o
-                  detalle mas adecuado para tu perfil de buceo.
-                </p>
-              </div>
-            ) : (
-              <form className="space-y-5" onSubmit={handleSubmit}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
                 {fields.map((field) => (
                   <div key={field.name}>
                     {field.type === "select" ? (
@@ -174,12 +148,12 @@ export function InlineLeadSection({
                   type="submit"
                   size="lg"
                   className="w-full bg-[#F57415] text-white hover:bg-[#DA630C]"
-                  disabled={isSubmitting}
+                  disabled
+                  title="Proximamente"
                 >
-                  {isSubmitting ? "Enviando..." : submitButton}
+                  {submitButton} (proximamente)
                 </Button>
               </form>
-            )}
           </div>
         </div>
       </div>

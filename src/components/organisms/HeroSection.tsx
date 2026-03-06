@@ -116,10 +116,8 @@ export function HeroSection({
             </div>
           )}
 
-          {/* Visual title - decorative, H1 is server-rendered in page.tsx for SEO */}
-          <p
-            aria-hidden="true"
-            role="presentation"
+          {/* Visual H1 - primary page heading for SEO and accessibility */}
+          <h1
             className="text-white text-[56px] md:text-[96px] leading-[0.95] text-center animate-fadeInUp delay-100 tracking-tight"
             style={{
               fontFamily: 'var(--font-display)',
@@ -129,7 +127,7 @@ export function HeroSection({
             }}
           >
             {title}
-          </p>
+          </h1>
 
           {/* Subtitle - 24px, white/90, max-width 800px */}
           <p

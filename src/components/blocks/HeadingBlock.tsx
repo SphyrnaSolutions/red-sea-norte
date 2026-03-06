@@ -1,4 +1,5 @@
 import type { Block, HeadingValue } from './types'
+import { slugify } from '@/lib/utils'
 
 /**
  * Renders a heading block. Enforces heading hierarchy by clamping level
@@ -16,6 +17,7 @@ export function HeadingBlock({ block }: { block: Block }) {
   return (
     <div className="w-full max-w-[800px] py-10 max-md:py-8">
       <HeadingTag
+        id={slugify(value.text)}
         style={{
           color: 'var(--color-ocean-midnight)',
           fontSize: safeLevel === 2 ? 'var(--font-size-h3)' : 'var(--font-size-h4)',

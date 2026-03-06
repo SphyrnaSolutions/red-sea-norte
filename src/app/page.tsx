@@ -59,11 +59,6 @@ const websiteJsonLd = {
   name: 'Red Sea Norte',
   url: BASE_URL,
   description: 'Vida a bordo en el Mar Rojo desde Hurghada, Ruta Norte y Pecios',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${BASE_URL}/search?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 export default async function HomePage() {
@@ -79,11 +74,6 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
-
-      {/* Server-rendered H1 with target SEO keywords -- visible to crawlers, hidden visually */}
-      <h1 className="sr-only">
-        Vida a Bordo en el Mar Rojo: Buceo y Rutas desde Hurghada
-      </h1>
 
       <HeroSection {...homepageData.hero} />
 
