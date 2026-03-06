@@ -23,13 +23,20 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - v1.0: Plantilla SEO article reutilizable con H1/H2/H3, ToC, interlinks
 - v1.0: Homepage optimizada: H1 con keywords, CTA above fold, route-first
 
-### Active — v2.0 Lead Capture
+### Validated — v2.0 Lead Capture
 
-- [ ] Formulario de contacto con campos: nombre, email, telefono, certificacion, mes
-- [ ] Consentimiento WhatsApp marketing (Meta + GDPR compliant)
-- [ ] API route POST /api/lead con validacion y rate limiting
-- [ ] Integracion Odoo CRM: crear crm.lead con source tracking
-- [ ] Pagina de politica de privacidad
+- v2.0: Formulario de contacto con campos: nombre, email, telefono, certificacion, mes
+- v2.0: Consentimiento WhatsApp marketing (Meta + GDPR compliant)
+- v2.0: API route POST /api/lead con validacion y rate limiting
+- v2.0: Integracion Odoo CRM: crear crm.lead con source tracking
+- v2.0: Pagina de politica de privacidad
+
+### Active — v2.1 Real Content
+
+- [ ] Sustituir imagenes stock (Unsplash) por fotos reales del barco y buceo
+- [ ] Integrar datos reales del producto: barco M/Y Dolce Vita, 5 rutas, precios, itinerarios
+- [ ] Auditar y actualizar los 25 blog posts existentes contra data real
+- [ ] Optimizar imagenes para web (responsive, lazy load, alt text SEO)
 
 ### Backlog
 
@@ -51,13 +58,20 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 
 ## Context
 
-**Current state (post-v1.0):**
-- 59 files, ~2600 LOC en src/ modificados
+**Current state (post-v2.0):**
 - Stack: Next.js 16 + React 19 + Tailwind CSS 4 + TypeScript + Wagtail headless
-- SEO infrastructure completa y funcional
-- 10 shared block components, SEO article template listo para produccion de contenido
-- Wagtail models extended con ClusterMixin (cluster_id, role, pillar_slug, primary_keyword)
-- Odoo project: Karlos-Redsea (ID 18) -- 4 tareas completadas, 3 en backlog (v2)
+- SEO infrastructure completa y funcional (schema, clusters, interlinks)
+- Lead capture form conectado a Odoo CRM via XML-RPC
+- 25 blog posts en Wagtail (pendientes de audit contra data real)
+- Imagenes actualmente stock (Unsplash) -- 33 fotos reales de Karlos disponibles
+- Datos reales scrapeados: 5 rutas, barco M/Y Dolce Vita, precios, itinerarios
+
+**Producto real (via viajeskarlossimon.com):**
+- Barco: M/Y Dolce Vita (40m, 12 camarotes, 24 pax, Divers Fleet)
+- 5 rutas Mar Rojo desde 1.190-1.290 EUR, 8 dias/7 noches
+- Incluye: Advanced SSI + 4 especialidades gratis, nitrox gratis, pension completa
+- Open Water minimo, todas las rutas aptas
+- 73 resenas Google 5 estrellas, CICMA 4375
 
 **Competencia analizada**: Karlos Simon (buena landing sin profundidad SEO), SunyTravel (floja en contenido experto), Liveaboard.com (marketplace). Huecos claros en contenido experto por pecio, comparativas, contenido de friccion.
 
@@ -73,8 +87,10 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 | schema-dts para JSON-LD | Type-safe schema.org en compile time | v1.0 Good |
 | ClusterMixin en Wagtail | DB-level unique constraint en primary_keyword | v1.0 Good |
 | force-dynamic + fetch-level ISR | Simplifica caching, evita conflictos con unstable_cache | v1.0 Good |
-| Odoo CRM para leads | Ya disponible en infraestructura del cliente | -- Active (v2.0) |
-| WhatsApp consent en form | Meta requiere opt-in explicito para marketing | -- Active (v2.0) |
+| Odoo CRM para leads | Ya disponible en infraestructura del cliente | v2.0 Good |
+| WhatsApp consent en form | Meta requiere opt-in explicito para marketing | v2.0 Good |
+| Fotos reales antes de escalar contenido | Credibilidad y E-E-A-T antes de producir 30+ paginas | -- Active (v2.1) |
+| Datos reales del producto en la web | Data scrapeada de viajeskarlossimon.com, 5 rutas verificadas | -- Active (v2.1) |
 | 30 paginas como primer lanzamiento | Cubrir nicho base sin canibalizacion | -- Pending (v3) |
 
 ## Constraints
@@ -85,15 +101,15 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - **Leads**: Formularios deben conectar con Odoo CRM via API
 
 ---
-## Current Milestone: v2.0 Lead Capture
+## Current Milestone: v2.1 Real Content
 
-**Goal:** Conectar el formulario de la web con Odoo CRM para capturar leads cualificados, con consentimiento WhatsApp marketing compliant con Meta y GDPR.
+**Goal:** Sustituir todo el contenido stock/placeholder de la web por datos y fotos reales del producto, para que la web sea credible y util antes de escalar a 30+ paginas de contenido SEO.
 
 **Target features:**
-- Formulario completo con telefono + consent WhatsApp
-- API route server-side con validacion y rate limiting
-- Creacion automatica de crm.lead en Odoo con source tracking
-- Politica de privacidad
+- Fotos reales del barco, buceo y vida marina (33 fotos de Karlos)
+- Datos reales: barco M/Y Dolce Vita, 5 rutas con itinerarios y precios
+- Audit de los 25 blog posts existentes contra la data real del producto
+- Imagenes optimizadas para web con alt text SEO descriptivo
 
 ---
-*Last updated: 2026-03-06 after v2.0 milestone start*
+*Last updated: 2026-03-07 after v2.1 milestone start*

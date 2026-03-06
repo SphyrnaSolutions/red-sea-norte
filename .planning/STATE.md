@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-06)
 
 **Core value:** Convertir trafico SEO en leads cualificados para safaris de buceo via Odoo CRM.
-**Current focus:** v2.0 Lead Capture — defining roadmap
+**Current focus:** v2.1 Real Content — defining requirements
 
 ## Current Position
 
-Phase: 06-legal-deploy
-Plan: 01 complete
-Status: Executing phase 06
-Last activity: 2026-03-06 -- Completed 06-01 (Privacy policy page and Odoo deploy config)
+Phase: Not started (defining requirements)
+Plan: --
+Status: Defining requirements
+Last activity: 2026-03-07 -- Milestone v2.1 started
 
 ## Accumulated Context
 
@@ -48,6 +48,6 @@ Last activity: 2026-03-06 -- Completed 06-01 (Privacy policy page and Odoo deplo
 
 ## Session Continuity
 
-Last session: 2026-03-06
-Stopped at: Completed 06-01-PLAN.md
-Resume file: .planning/phases/06-legal-deploy/06-01-SUMMARY.md
+Last session: 2026-03-07
+Stopped at: Defining v2.1 requirements
+Resume file: .planning/PROJECT.md
