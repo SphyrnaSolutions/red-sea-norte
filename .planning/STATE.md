@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-07)
 ## Current Position
 
 Phase: 8 of 9 (Wagtail CMS Migration)
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Executing phase 8
-Last activity: 2026-03-07 -- Plan 08-01 complete (RutaPage model expansion + real product data)
+Last activity: 2026-03-07 -- Plan 08-02 complete (5 real routes populated in Wagtail CMS)
 
-Progress: [###########.] 86% (phases 1-7 complete, phase 8 plan 1/3 done)
+Progress: [############] 89% (phases 1-7 complete, phase 8 plan 2/3 done)
 
 ## Accumulated Context
 
@@ -36,6 +36,9 @@ Recent decisions affecting current work:
 - [v2.1]: Flat CTA fields added alongside legacy StreamField for backward compat in RutaPage
 - [v2.1]: All new RutaPage sections use StreamField StructBlocks for repeatable content
 - [v2.1]: Mock-data values replaced with real data from PRODUCT-DATA.md, structure preserved
+- [v2.1]: Use Site.root_page for multisite-aware page creation in Wagtail management commands
+- [v2.1]: 5 rutas reales publicadas en Wagtail CMS via populate_rutas management command
+- [v2.1]: Delete-and-recreate strategy for re-runnable CMS population commands
 
 ### Pending Todos
 
@@ -43,10 +46,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- Wagtail API /pages/ devuelve 500 en rutas/[slug] — investigar en fase 8
+- ~~Wagtail API /pages/ devuelve 500 en rutas/[slug]~~ RESOLVED: 5 routes now return correctly via API
 
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 08-01-PLAN.md
-Resume file: .planning/phases/08-wagtail-cms-migration/08-02-PLAN.md
+Stopped at: Completed 08-02-PLAN.md
+Resume file: .planning/phases/08-wagtail-cms-migration/08-03-PLAN.md

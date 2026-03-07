@@ -46,9 +46,9 @@ Requirements for replacing stock content with real product data and images.
 ### Datos del Producto
 
 - [x] **DATA-01**: Datos reales del barco M/Y Dolce Vita en homepage (40m, 12 camarotes, 24 pax, 4 cubiertas)
-- [ ] **DATA-02**: 5 rutas reales con nombre, precio desde, spots principales y descripcion
+- [x] **DATA-02**: 5 rutas reales con nombre, precio desde, spots principales y descripcion
 - [x] **DATA-03**: Formacion incluida real: Advanced SSI + 4 especialidades gratis, nitrox gratis
-- [ ] **DATA-04**: FAQs reales del producto extraidas de viajeskarlossimon.com
+- [x] **DATA-04**: FAQs reales del producto extraidas de viajeskarlossimon.com
 
 ### CMS Integration
 
@@ -110,9 +110,9 @@ Requirements for replacing stock content with real product data and images.
 | IMG-03 | Phase 7 | Pending |
 | IMG-04 | Phase 7 | Pending |
 | DATA-01 | Phase 8 | Complete |
-| DATA-02 | Phase 8 | Pending |
+| DATA-02 | Phase 8 | Complete |
 | DATA-03 | Phase 8 | Complete |
-| DATA-04 | Phase 8 | Pending |
+| DATA-04 | Phase 8 | Complete |
 | CMS-01 | Phase 8 | Pending |
 | AUDIT-01 | Phase 9 | Pending |
 | AUDIT-02 | Phase 9 | Pending |

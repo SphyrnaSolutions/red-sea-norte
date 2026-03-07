@@ -92,5 +92,5 @@ Plans:
 | 5. Form + Consent UX | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 6. Legal + Deploy | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
-| 8. Wagtail CMS Migration | v2.1 | 0/3 | Planning | - |
+| 8. Wagtail CMS Migration | v2.1 | 2/3 | In Progress | - |
 | 9. Blog Audit | v2.1 | 0/1 | Not started | - |
