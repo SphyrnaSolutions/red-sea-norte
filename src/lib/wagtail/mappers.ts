@@ -149,7 +149,12 @@ function getImageUrl(wagtailImage: unknown): string {
   if (!wagtailImage || typeof wagtailImage !== 'object') return ''
 
   const image = wagtailImage as WagtailImageSource
-  return image.url || image.meta?.download_url || ''
+  const url = image.url || image.meta?.download_url || ''
+  if (url && url.startsWith('/')) {
+    const baseUrl = process.env.NEXT_PUBLIC_WAGTAIL_URL || 'https://back.redsea.sphyrnasolutions.com'
+    return `${baseUrl}${url}`
+  }
+  return url
 }
 
 /**
