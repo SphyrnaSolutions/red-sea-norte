@@ -46,7 +46,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-None yet.
+- [ ] Preguntar a Karlos: ¿hay wifi en el M/Y Dolce Vita? (para actualizar blog post como-es-vida-a-bordo)
 
 ### Blockers/Concerns
 
