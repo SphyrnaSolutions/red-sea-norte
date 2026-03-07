@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-07)
 ## Current Position
 
 Phase: 8 of 9 (Wagtail CMS Migration)
-Plan: Planning
-Status: Planning phase 8
-Last activity: 2026-03-07 -- Phase 7 complete, 33 images uploaded to Wagtail, planning phase 8
+Plan: 2 of 3
+Status: Executing phase 8
+Last activity: 2026-03-07 -- Plan 08-01 complete (RutaPage model expansion + real product data)
 
-Progress: [###########.] 83% (phases 1-7 complete, phase 8 planning)
+Progress: [###########.] 86% (phases 1-7 complete, phase 8 plan 1/3 done)
 
 ## Accumulated Context
 
@@ -33,6 +33,9 @@ Recent decisions affecting current work:
 - [v2.1]: Fase 8 replanificada: migrar mock-data a Wagtail CMS con datos reales (evita hacer trabajo doble)
 - [v2.1]: Endpoint de images upload creado en Wagtail content API (/api/v2/content/images/)
 - [v2.1]: /cursos sera informativa (certificaciones incluidas en viaje), no transaccional
+- [v2.1]: Flat CTA fields added alongside legacy StreamField for backward compat in RutaPage
+- [v2.1]: All new RutaPage sections use StreamField StructBlocks for repeatable content
+- [v2.1]: Mock-data values replaced with real data from PRODUCT-DATA.md, structure preserved
 
 ### Pending Todos
 
@@ -45,5 +48,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Planning phase 8 (Wagtail CMS Migration)
-Resume file: .planning/ROADMAP.md
+Stopped at: Completed 08-01-PLAN.md
+Resume file: .planning/phases/08-wagtail-cms-migration/08-02-PLAN.md
