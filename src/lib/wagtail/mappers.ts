@@ -19,6 +19,8 @@ import type {
   SplitImmersiveSection,
   TextOverlayFullSection,
   YearSection,
+  HeroData,
+  StoryIntro,
 } from '../mock-data/types'
 
 import type {
@@ -420,67 +422,179 @@ export function mapBlogPost(wagtailPage: WagtailBlogPostPage): BlogPost {
 // ============================================================================
 
 export function mapRutaPage(wagtailPage: WagtailRutaPage): RutaData {
-  // Extraer hero del StreamField (primer bloque)
-  const heroBlock = (wagtailPage.hero[0]?.value as WagtailHeroValue | undefined) || {}
+  // Hero uses FLAT fields (not StreamField blocks)
+  const hero: HeroData = {
+    backgroundImage: getImageUrl(wagtailPage.hero_background_image),
+    badge: normalizeBadge(wagtailPage.hero_badge),
+    title: wagtailPage.hero_title || wagtailPage.title,
+    subtitle: wagtailPage.hero_subtitle || '',
+  }
+
+  // Story intro uses "story_intro_content" (not "story_intro_description")
+  const storyIntro: StoryIntro = {
+    badge: wagtailPage.story_intro_badge || '',
+    title: wagtailPage.story_intro_title || '',
+    description: wagtailPage.story_intro_content || '',  // Map content -> description
+  }
+
+  // Info cards: API returns [{type: "info_cards", value: {cards: [...]}}]
+  // Each block wraps a cards array from InfoCardsBlock
+  const infoCards = asArray(wagtailPage.info_cards).flatMap((block) => {
+    const blockValue = getBlockObjectValue(block)
+    const cards = Array.isArray(blockValue.cards) ? blockValue.cards as Record<string, unknown>[] : []
+    return cards.map((card) => ({
+      icon: typeof card.icon === 'string' ? card.icon : '',
+      value: typeof card.title === 'string' ? card.title : (typeof card.value === 'string' ? card.value : ''),
+      label: typeof card.description === 'string' ? card.description : (typeof card.label === 'string' ? card.label : ''),
+      color: (typeof card.color === 'string' ? card.color : 'blue') as 'blue' | 'orange' | 'cyan',
+    }))
+  })
+
+  // Itinerary
+  const itinerary = {
+    title: wagtailPage.itinerary_title || 'Itinerario',
+    days: asArray(wagtailPage.itinerary_days).map(day => ({
+      day: day.day,
+      title: day.title,
+      description: day.description,
+      dives: extractStreamFieldValues(asArray(day.dives)),
+      highlights: extractStreamFieldValues(asArray(day.highlights)),
+      image: getImageUrl(day.image),
+      overlayDirection: day.overlay_direction || 'left',
+    })),
+  }
+
+  // Incluye
+  const incluye = {
+    title: wagtailPage.incluye_title || 'Que incluye',
+    items: extractStreamFieldValues(asArray(wagtailPage.incluye_items)),
+  }
+
+  // CTA uses FLAT fields (not StreamField)
+  const cta = {
+    title: wagtailPage.cta_title || '',
+    description: wagtailPage.cta_description || '',
+    backgroundImage: getImageUrl(wagtailPage.cta_background_image),
+    primaryCTA: {
+      text: wagtailPage.cta_primary_text || 'Consultar',
+      href: wagtailPage.cta_primary_link || '#',
+    },
+  }
+
+  // Summary section (optional)
+  const summaryBlock = asArray(wagtailPage.summary_section)?.[0]
+  const summaryValue = summaryBlock ? getBlockObjectValue(summaryBlock) : null
+  const summarySection = summaryValue ? {
+    eyebrow: getStringValue(summaryValue, 'eyebrow'),
+    title: getStringValue(summaryValue, 'title'),
+    subtitle: getStringValue(summaryValue, 'subtitle'),
+    bullets: Array.isArray(summaryValue.bullets) ? (summaryValue.bullets as string[]) : [],
+  } : undefined
+
+  // Spots section (optional)
+  const spotsData = asArray(wagtailPage.spots)
+  const spotsSection = spotsData.length > 0 ? {
+    title: wagtailPage.spots_title || 'Principales puntos de inmersion',
+    subtitle: wagtailPage.spots_subtitle || '',
+    spots: spotsData.map(spot => {
+      const v = getBlockObjectValue(spot)
+      return {
+        name: getStringValue(v, 'name'),
+        image: getImageUrl(v.image),
+        alt: getStringValue(v, 'alt'),
+        summary: getStringValue(v, 'summary'),
+        depth: getStringValue(v, 'depth'),
+        tag: getStringValue(v, 'tag'),
+      }
+    }),
+  } : undefined
+
+  // Audience fit (optional)
+  const profilesData = asArray(wagtailPage.audience_fit_profiles)
+  const audienceFit = profilesData.length > 0 ? {
+    title: wagtailPage.audience_fit_title || '',
+    subtitle: wagtailPage.audience_fit_subtitle || '',
+    profiles: profilesData.map(p => {
+      const v = getBlockObjectValue(p)
+      return {
+        title: getStringValue(v, 'title'),
+        description: getStringValue(v, 'description'),
+        tone: getStringValue(v, 'tone') as 'good-fit' | 'consider' | 'not-now',
+      }
+    }),
+  } : undefined
+
+  // Practical info (optional)
+  const practicalIncluded = asArray(wagtailPage.practical_info_included)
+  const practicalInfo = practicalIncluded.length > 0 ? {
+    title: wagtailPage.practical_info_title || '',
+    subtitle: wagtailPage.practical_info_subtitle || '',
+    includedTitle: wagtailPage.practical_info_included_title || 'Incluido',
+    included: extractStreamFieldValues(practicalIncluded),
+    extrasTitle: wagtailPage.practical_info_extras_title || 'Extras',
+    extras: extractStreamFieldValues(asArray(wagtailPage.practical_info_extras)),
+    logisticsTitle: wagtailPage.practical_info_logistics_title || 'Logistica',
+    logistics: extractStreamFieldValues(asArray(wagtailPage.practical_info_logistics)),
+  } : undefined
+
+  // FAQ section (optional)
+  const faqData = asArray(wagtailPage.faq_section)
+  const faqSection = faqData.length > 0 ? {
+    title: wagtailPage.faq_title || 'Preguntas frecuentes',
+    items: faqData.map(faq => {
+      const v = getBlockObjectValue(faq)
+      return {
+        question: getStringValue(v, 'question'),
+        answer: getStringValue(v, 'answer'),
+      }
+    }),
+  } : undefined
+
+  // Resources section (optional)
+  const resourcesData = asArray(wagtailPage.resources_items)
+  const resourcesSection = resourcesData.length > 0 ? {
+    title: wagtailPage.resources_title || '',
+    subtitle: wagtailPage.resources_subtitle || '',
+    items: resourcesData.map(r => {
+      const v = getBlockObjectValue(r)
+      return {
+        title: getStringValue(v, 'title'),
+        description: getStringValue(v, 'description'),
+        href: getStringValue(v, 'href'),
+        label: getStringValue(v, 'label'),
+      }
+    }),
+  } : undefined
+
+  // Inline lead (optional)
+  const inlineLead = wagtailPage.inline_lead_title ? {
+    sectionId: wagtailPage.inline_lead_section_id || 'ruta-lead',
+    eyebrow: wagtailPage.inline_lead_eyebrow || '',
+    title: wagtailPage.inline_lead_title || '',
+    subtitle: wagtailPage.inline_lead_subtitle || '',
+    highlights: [],
+    fields: [] as HomepageData['inlineLead']['fields'],
+    submitButton: 'Recibir informacion',
+    privacyText: '',
+    successMessage: 'Gracias. Te contactaremos.',
+  } : undefined
 
   return {
     slug: wagtailPage.meta.slug,
     title: wagtailPage.title,
-    hero: {
-      backgroundImage: getImageUrl(heroBlock.background_image),
-      badge: normalizeBadge(heroBlock.badge),
-      title: heroBlock.title || wagtailPage.title,
-      subtitle: heroBlock.subtitle || '',
-      primaryCTA: heroBlock.primary_cta ? {
-        text: heroBlock.primary_cta.text,
-        href: heroBlock.primary_cta.link,
-        variant: heroBlock.primary_cta.variant,
-      } : undefined,
-      secondaryCTA: heroBlock.secondary_cta ? {
-        text: heroBlock.secondary_cta.text,
-        href: heroBlock.secondary_cta.link,
-        variant: heroBlock.secondary_cta.variant,
-      } : undefined,
-    },
-    storyIntro: {
-      badge: wagtailPage.story_intro_badge,
-      title: wagtailPage.story_intro_title,
-      description: wagtailPage.story_intro_description,
-    },
-    infoCards: wagtailPage.info_cards.map((card) => {
-      const value = getBlockObjectValue(card)
-      return {
-        icon: getStringValue(value, 'icon'),
-        value: getStringValue(value, 'value'),
-        label: getStringValue(value, 'label'),
-        color: (getStringValue(value, 'color') || 'blue') as 'blue' | 'orange' | 'cyan',
-      }
-    }),
-    itinerary: {
-      title: wagtailPage.itinerary_title,
-      days: wagtailPage.itinerary_days.map(day => ({
-        day: day.day,
-        title: day.title,
-        description: day.description,
-        dives: extractStreamFieldValues(day.dives),
-        highlights: extractStreamFieldValues(day.highlights),
-        image: getImageUrl(day.image),
-        overlayDirection: day.overlay_direction,
-      })),
-    },
-    incluye: {
-      title: wagtailPage.incluye_title,
-      items: extractStreamFieldValues(wagtailPage.incluye_items),
-    },
-    cta: {
-      title: wagtailPage.cta_title,
-      description: wagtailPage.cta_description,
-      backgroundImage: getImageUrl(wagtailPage.cta_background_image),
-      primaryCTA: {
-        text: wagtailPage.cta_primary_text,
-        href: wagtailPage.cta_primary_link,
-      },
-    },
+    hero,
+    storyIntro,
+    infoCards,
+    itinerary,
+    incluye,
+    cta,
+    summarySection,
+    spotsSection,
+    audienceFit,
+    practicalInfo,
+    faqSection,
+    resourcesSection,
+    inlineLead,
   }
 }
 

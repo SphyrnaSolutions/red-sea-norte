@@ -139,20 +139,75 @@ export interface WagtailItineraryDay {
 }
 
 export interface WagtailRutaPage extends WagtailPage, WagtailSEOFields, WagtailClusterFields {
-  hero: WagtailStreamFieldBlock[]
+  // Hero Section (FLAT fields, NOT StreamField)
+  hero_background_image: WagtailImage | null
+  hero_title: string
+  hero_subtitle: string
+  hero_badge: string
+
+  // Story Intro
   story_intro_badge: string
   story_intro_title: string
-  story_intro_description: string
+  story_intro_content: string  // NOTE: model uses "content" not "description"
+
+  // Info Cards (StreamField)
   info_cards: WagtailStreamFieldBlock[]
+
+  // Itinerary
   itinerary_title: string
   itinerary_days: WagtailItineraryDay[]
+
+  // Incluye
   incluye_title: string
   incluye_items: WagtailStreamFieldBlock[]
+
+  // CTA (FLAT fields)
   cta_title: string
   cta_description: string
-  cta_background_image?: WagtailImage
+  cta_background_image: WagtailImage | null
   cta_primary_text: string
   cta_primary_link: string
+
+  // Summary Section (StreamField, optional)
+  summary_section?: WagtailStreamFieldBlock[]
+
+  // Spots Section
+  spots_title?: string
+  spots_subtitle?: string
+  spots?: WagtailStreamFieldBlock[]
+
+  // Audience Fit
+  audience_fit_title?: string
+  audience_fit_subtitle?: string
+  audience_fit_profiles?: WagtailStreamFieldBlock[]
+
+  // Practical Info
+  practical_info_title?: string
+  practical_info_subtitle?: string
+  practical_info_included_title?: string
+  practical_info_included?: WagtailStreamFieldBlock[]
+  practical_info_extras_title?: string
+  practical_info_extras?: WagtailStreamFieldBlock[]
+  practical_info_logistics_title?: string
+  practical_info_logistics?: WagtailStreamFieldBlock[]
+
+  // FAQ Section
+  faq_title?: string
+  faq_section?: WagtailStreamFieldBlock[]
+
+  // Resources Section
+  resources_title?: string
+  resources_subtitle?: string
+  resources_items?: WagtailStreamFieldBlock[]
+
+  // Inline Lead
+  inline_lead_section_id?: string
+  inline_lead_eyebrow?: string
+  inline_lead_title?: string
+  inline_lead_subtitle?: string
+
+  // Legacy StreamField CTA (keep for backward compat)
+  cta_section?: WagtailStreamFieldBlock[]
 }
 
 // ============================================================================
