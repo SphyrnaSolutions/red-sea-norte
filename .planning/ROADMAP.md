@@ -61,7 +61,12 @@ Plans:
   3. Frontend consume datos de la API de Wagtail en vez de mock-data files para todas las paginas de contenido
   4. Las 33 imagenes en Wagtail referenciadas correctamente desde las paginas CMS
   5. Mock-data files eliminados o convertidos en fallback para desarrollo sin CMS
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 08-01-PLAN.md -- Expand RutaPage model with missing fields, update mock-data with real product data
+- [ ] 08-02-PLAN.md -- Create management command to populate 5 real routes in Wagtail CMS
+- [ ] 08-03-PLAN.md -- Fix frontend mappers/types to match actual Wagtail model, enable CMS-first data loading
 
 ### Phase 9: Blog Audit
 **Goal**: Los 25 blog posts existentes son precisos respecto a los datos reales del producto y no contienen informacion inventada o contradictoria
@@ -87,5 +92,5 @@ Plans:
 | 5. Form + Consent UX | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 6. Legal + Deploy | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
-| 8. Wagtail CMS Migration | v2.1 | 0/? | Not started | - |
+| 8. Wagtail CMS Migration | v2.1 | 0/3 | Planning | - |
 | 9. Blog Audit | v2.1 | 0/1 | Not started | - |
