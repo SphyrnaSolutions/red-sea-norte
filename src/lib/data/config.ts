@@ -22,7 +22,7 @@ export function shouldUseFallback(error: unknown, contentType: string): boolean 
   if (mode === 'none') return false
   if (mode === 'emergency') return true
   if (mode === 'critical') {
-    return ['homepage', 'blog', 'rutas'].includes(contentType)
+    return ['homepage', 'blog', 'rutas', 'cursos', 'experiencias', 'ofertas'].includes(contentType)
   }
   return true // mode === 'full'
 }
