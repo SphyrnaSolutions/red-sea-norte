@@ -56,11 +56,11 @@ Plans:
 **Depends on**: Phase 7 (images uploaded to Wagtail)
 **Requirements**: DATA-01, DATA-02, DATA-03, DATA-04, CMS-01
 **Success Criteria** (what must be TRUE):
-  1. Modelos Wagtail creados para HomePage, RutaPage, ExperienciaPage, CursoPage (informativa), OfertaPage con todos los campos necesarios
-  2. Contenido real del producto migrado a Wagtail: datos verificados del barco, rutas con precios, spots, formacion, FAQs
-  3. Frontend consume datos de la API de Wagtail en vez de mock-data files para todas las paginas de contenido
-  4. Las 33 imagenes en Wagtail referenciadas correctamente desde las paginas CMS
-  5. Mock-data files eliminados o convertidos en fallback para desarrollo sin CMS
+  1. Modelo RutaPage en Wagtail expandido con todos los campos necesarios (precios, spots, itinerario, FAQs, galeria)
+  2. Contenido real del producto migrado a Wagtail: 5 rutas con datos verificados (precios, spots, formacion incluida)
+  3. Frontend consume datos de la API de Wagtail para paginas de rutas; mock-data se mantiene para homepage y otras paginas (enfoque hibrido)
+  4. Las 33 imagenes en Wagtail referenciadas correctamente desde las paginas de rutas
+  5. Mock-data de rutas actualizado con datos reales del producto como fallback para desarrollo sin CMS
 **Plans**: 3 plans
 
 Plans:

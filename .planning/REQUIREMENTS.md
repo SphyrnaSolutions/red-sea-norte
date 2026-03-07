@@ -50,6 +50,10 @@ Requirements for replacing stock content with real product data and images.
 - [ ] **DATA-03**: Formacion incluida real: Advanced SSI + 4 especialidades gratis, nitrox gratis
 - [ ] **DATA-04**: FAQs reales del producto extraidas de viajeskarlossimon.com
 
+### CMS Integration
+
+- [ ] **CMS-01**: Frontend carga rutas desde API Wagtail (CMS-first) con fallback a mock-data para desarrollo local
+
 ### Audit de Posts
 
 - [ ] **AUDIT-01**: Revisar los 25 blog posts contra data real del producto (barco, rutas, precios)
@@ -109,13 +113,14 @@ Requirements for replacing stock content with real product data and images.
 | DATA-02 | Phase 8 | Pending |
 | DATA-03 | Phase 8 | Pending |
 | DATA-04 | Phase 8 | Pending |
+| CMS-01 | Phase 8 | Pending |
 | AUDIT-01 | Phase 9 | Pending |
 | AUDIT-02 | Phase 9 | Pending |
 | AUDIT-03 | Phase 9 | Pending |
 
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13
-- v2.1 requirements: 11 total -- mapped: 11
+- v2.1 requirements: 12 total -- mapped: 12
 
 ---
 *Requirements defined: 2026-03-06*
