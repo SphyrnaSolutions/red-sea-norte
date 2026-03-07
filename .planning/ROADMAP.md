@@ -30,8 +30,8 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 ### v2.1 Real Content
 
-- [ ] **Phase 7: Real Images** - Sustituir todas las imagenes stock por fotos reales optimizadas del barco y buceo
-- [ ] **Phase 8: Real Product Data** - Integrar datos reales del producto en homepage y componentes
+- [x] **Phase 7: Real Images** - Sustituir todas las imagenes stock por fotos reales optimizadas del barco y buceo
+- [ ] **Phase 8: Wagtail CMS Migration** - Migrar contenido de mock-data a Wagtail CMS con datos reales del producto
 - [ ] **Phase 9: Blog Audit** - Auditar y corregir los 25 blog posts contra data real del producto
 
 ## Phase Details
@@ -51,19 +51,17 @@ Plans:
 - [ ] 07-01-PLAN.md -- Copy and organize 33 real photos into public/images/, update images.ts with local paths, clean next.config.ts
 - [ ] 07-02-PLAN.md -- Replace all Unsplash URLs with real image paths, add SEO alt text, configure responsive sizes
 
-### Phase 8: Real Product Data
-**Goal**: Homepage y componentes muestran datos reales y verificados del barco, rutas, precios, formacion y FAQs
-**Depends on**: Nothing (independent of Phase 7)
-**Requirements**: DATA-01, DATA-02, DATA-03, DATA-04
+### Phase 8: Wagtail CMS Migration
+**Goal**: Migrar todo el contenido de mock-data al CMS Wagtail con datos reales del producto, y conectar el frontend a la API de Wagtail
+**Depends on**: Phase 7 (images uploaded to Wagtail)
+**Requirements**: DATA-01, DATA-02, DATA-03, DATA-04, CMS-01
 **Success Criteria** (what must be TRUE):
-  1. Homepage muestra datos reales del barco M/Y Dolce Vita: 40m eslora, 12 camarotes, 24 buceadores, 4 cubiertas, Divers Fleet
-  2. Las 5 rutas reales aparecen con nombre correcto, precio "desde X EUR", spots principales y descripcion verificada
-  3. Seccion de formacion muestra Advanced SSI + 4 especialidades gratis + nitrox gratis (datos reales, no inventados)
-  4. FAQs del producto extraidas de viajeskarlossimon.com reemplazan cualquier FAQ placeholder o inventada
+  1. Modelos Wagtail creados para HomePage, RutaPage, ExperienciaPage, CursoPage (informativa), OfertaPage con todos los campos necesarios
+  2. Contenido real del producto migrado a Wagtail: datos verificados del barco, rutas con precios, spots, formacion, FAQs
+  3. Frontend consume datos de la API de Wagtail en vez de mock-data files para todas las paginas de contenido
+  4. Las 33 imagenes en Wagtail referenciadas correctamente desde las paginas CMS
+  5. Mock-data files eliminados o convertidos en fallback para desarrollo sin CMS
 **Plans**: TBD
-
-Plans:
-- [ ] 08-01: Update constants, data files and components with real product data (barco, rutas, precios, formacion, FAQs)
 
 ### Phase 9: Blog Audit
 **Goal**: Los 25 blog posts existentes son precisos respecto a los datos reales del producto y no contienen informacion inventada o contradictoria
@@ -88,6 +86,6 @@ Plans:
 | 4. Odoo API Integration | v2.0 | 2/2 | Complete | 2026-03-06 |
 | 5. Form + Consent UX | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 6. Legal + Deploy | v2.0 | 1/1 | Complete | 2026-03-06 |
-| 7. Real Images | v2.1 | 0/2 | Not started | - |
-| 8. Real Product Data | v2.1 | 0/1 | Not started | - |
+| 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
+| 8. Wagtail CMS Migration | v2.1 | 0/? | Not started | - |
 | 9. Blog Audit | v2.1 | 0/1 | Not started | - |
