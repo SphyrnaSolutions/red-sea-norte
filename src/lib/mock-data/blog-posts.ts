@@ -320,7 +320,7 @@ export const blogPosts: BlogPost[] = [
           rightColumn: {
             title: "Si no contemplas esto desde el principio, comparar precios te servirá de poco.",
             content:
-              "<ul><li>tasas o fees operativos</li><li>propinas</li><li>Nitrox o alquiler de equipo si aplica</li><li>seguro de buceo</li><li>vuelo y llegada a Hurghada</li><li>noche previa o posterior, según operativa</li></ul><p>Esto no es un problema: es simplemente la forma correcta de presentar el viaje a alguien que quiere decidir en serio.</p>",
+              "<ul><li>tasas o fees operativos</li><li>propinas</li><li>alquiler de equipo si no llevas el tuyo</li><li>seguro de cancelación</li><li>vuelo y llegada a Hurghada</li><li>noche previa o posterior, según operativa</li></ul><p>Esto no es un problema: es simplemente la forma correcta de presentar el viaje a alguien que quiere decidir en serio.</p>",
           },
         },
       },
@@ -442,7 +442,7 @@ export const blogPosts: BlogPost[] = [
           rightColumn: {
             title: "Aquí es donde se gana o se pierde confianza comercial.",
             content:
-              "<ul><li>tasas y fees de operador</li><li>propinas</li><li>Nitrox</li><li>alquiler de equipo</li><li>seguros</li><li>traslados o noches de hotel si aplican</li></ul><p>Explicarlo bien reduce fricción, evita leads basura y deja el terreno listo para una conversación más madura.</p>",
+              "<ul><li>tasas y fees de operador</li><li>propinas</li><li>alquiler de equipo</li><li>seguro de cancelación</li></ul><p>Explicarlo bien reduce fricción, evita leads basura y deja el terreno listo para una conversación más madura.</p>",
           },
         },
       },
@@ -2161,7 +2161,7 @@ export const blogPosts: BlogPost[] = [
         id: "11",
         value: {
           title: "¿Listo para explorar el Thistlegorm?",
-          description: "Únete a nuestra ruta Norte de 7 días que incluye 2 inmersiones en este pecio legendario",
+          description: "Únete a nuestra ruta Norte de 7 días que incluye inmersiones en este pecio legendario",
           primaryCTA: {
             text: "Ver Ruta Norte",
             href: "/rutas/norte-7-dias",
@@ -2176,7 +2176,7 @@ export const blogPosts: BlogPost[] = [
           items: [
             {
               title: "¿Qué certificación necesitas?",
-              content: "<p>Recomendamos al menos Advanced Open Water o equivalente, con experiencia reciente en profundidad y pecios.</p>",
+              content: "<p>La certificación mínima es Open Water Diver (de cualquier certificadora). Si no tienes el Advanced, puedes obtenerlo gratis a bordo con el Curso Avanzado SSI incluido en el viaje.</p>",
             },
             {
               title: "¿Cuál es la mejor época?",
