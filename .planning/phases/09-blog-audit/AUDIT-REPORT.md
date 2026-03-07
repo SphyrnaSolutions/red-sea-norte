@@ -132,19 +132,35 @@
 
 ## 5. Key Findings
 
-1. **Severe thin content problem:** 20 of 25 posts are under 300 words. 14 are under 150 words. Most satellite posts are meta-commentary about what the page *should* do rather than actual content that delivers on the title's promise.
+1. **Severe thin content problem:** 19 of 25 posts are under 400 words. 7 posts are under 100 words. Most satellite posts (10-22) are meta-commentary about what the page *should* do rather than actual content that delivers on the title's promise.
 
-2. **Two empty posts:** `ras-mohammed-guia-completa` and `seguridad-buceo-mar-rojo` have `body: []` - completely empty.
+2. **Two empty posts:** `ras-mohammed-guia-completa` and `seguridad-buceo-mar-rojo` have `body: []` -- completely empty, no renderable content.
 
-3. **Duplicate topic clusters:** Several posts cover overlapping ground without differentiation:
-   - Abu Nuhas wrecks: 4 separate posts (#8, #9, #10, #18) that could be one strong piece
-   - Life aboard: 3 posts (#15, #16, #13) covering cabin/food/routine with no actual content
-   - Spot pages: (#19, #20) extremely thin with no dive data
+3. **Duplicate topic clusters that should be consolidated:**
+   - **Abu Nuhas wrecks:** 4 separate posts (#8 abu-nuhas, #9 giannis-d, #10 dunraven, #18 carnatic) that could be one strong 1500+ word piece with actual dive data from route files.
+   - **Life aboard:** 3 posts (#13 checklist, #15 como-es, #16 camarotes) covering cabin/food/routine with no actual M/Y Dolce Vita content.
+   - **Ras Mohammed:** #19 shark-yolanda should merge into #24 ras-mohammed when rewritten.
 
-4. **Only 3 posts have substantive content:** Posts #1 (requisitos), #2 (precio), and #23 (thistlegorm) are the only ones with enough depth to rank.
+4. **Only 7 posts are viable as-is:** Posts #1 (requisitos), #2 (precio), #3 (que-incluye), #4 (como-llegar), #5 (primer-liveaboard), #6 (norte-vs-sur), and #23 (thistlegorm). These have enough structure and unique angles to function, though all except #1 would benefit from expansion.
 
-5. **No factual errors in batch 2:** The thin content lacks enough specific claims to be factually wrong - it's mostly editorial framing with no data.
+5. **Error pattern -- inclusions/exclusions confusion:** Both corrections in batch 1 involved incorrectly listing included items (nitrox, transfers, travel insurance) as extras. This suggests the content was written without consulting the route files' "Incluido en el precio" sections.
+
+6. **Error pattern -- certification requirements:** The Thistlegorm post incorrectly required Advanced, when all routes accept Open Water minimum. This is a critical error since it could deter qualified leads.
 
 ---
 
-*Report compiled: 2026-03-07. All 3 batches complete.*
+## 6. Merge Plan (5 posts to consolidate)
+
+| Post to Merge | Target Post | Rationale |
+|---------------|-------------|-----------|
+| #9 giannis-d-abu-nuhas | #8 abu-nuhas-cementerio-de-barcos | Giannis D is one of the Abu Nuhas wrecks; add as dedicated section with dive data (10-27m, 1983) |
+| #10 dunraven-mar-rojo | #8 abu-nuhas-cementerio-de-barcos | Dunraven is nearby wreck; add as section (5-28m, 1876) |
+| #18 carnatic-abu-nuhas | #8 abu-nuhas-cementerio-de-barcos | Carnatic is one of the Abu Nuhas wrecks; add as section (18-25m, 1869) |
+| #16 camarotes-comida-wifi-liveaboard | #15 como-es-un-vida-a-bordo-mar-rojo | Same topic (life aboard); merge cabin/food/wifi into the daily life post |
+| #19 shark-yolanda-reef-mar-rojo | #24 ras-mohammed-guia-completa | Shark/Yolanda Reef is within Ras Mohammed; natural section when #24 is rewritten |
+
+After merges, the blog would go from 25 to 20 posts, with stronger consolidated pieces instead of thin stubs.
+
+---
+
+*Report compiled: 2026-03-07. All 3 audit batches complete. All corrections applied directly in `src/lib/mock-data/blog-posts.ts` by the respective auditors.*

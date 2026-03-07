@@ -877,9 +877,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "hurghada-vs-sharm-liveaboard",
-    title: "Hurghada vs Sharm para un liveaboard: qué cambia de verdad para el usuario",
+    title: "Hurghada vs Sharm el Sheikh para un Liveaboard: Que Cambia de Verdad",
     excerpt:
-      "Comparativa práctica entre Hurghada y Sharm para orientar mejor la decisión de un viaje de vida a bordo en el Mar Rojo.",
+      "Vuelos desde Espana, que rutas salen de cada puerto, logistica de transfers y por que Hurghada es el punto de salida de nuestras 5 rutas.",
     publishedAt: "2026-03-04",
     readTime: "8 min",
     author: {
@@ -895,78 +895,24 @@ export const blogPosts: BlogPost[] = [
       color: "#7C3AED",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "hs-1",
-        value: {
-          content:
-            "<p>Otra comparativa que aparece cuando el usuario ya está avanzando es <strong>Hurghada vs Sharm para un liveaboard</strong>. En la práctica, no siempre está buscando un debate geográfico. Muchas veces está buscando reducir fricción logística y entender qué propuesta de viaje encaja mejor con lo que le estás vendiendo.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "hs-2",
-        value: {
-          level: 2,
-          text: "En esta web el foco está puesto en Hurghada por una razón comercial",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "hs-3",
-        value: {
-          content:
-            "<p>No es solo una elección operativa. Es una elección de claridad. <strong>Hurghada</strong> se usa aquí como punto de salida que simplifica el mensaje, ordena la logística y refuerza la propuesta de <a href=\"/rutas/norte-7-dias\">Ruta Norte y Pecios</a>.</p>",
-        },
-      },
-      {
-        type: "quote",
-        id: "hs-4",
-        value: {
-          text: "La mejor salida no es la que permite decir más cosas, sino la que deja la propuesta más clara para el usuario correcto.",
-          author: "Criterio de producto",
-          role: "Ruta Norte desde Hurghada",
-        },
-      },
-      {
-        type: "heading",
-        id: "hs-5",
-        value: {
-          level: 2,
-          text: "Qué cambia realmente cuando el usuario compara ambos puntos",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "hs-6",
-        value: {
-          content:
-            "<ul><li>cómo imagina la llegada y el embarque</li><li>cómo percibe la complejidad del viaje</li><li>qué tan alineada ve la salida con la ruta que le estás proponiendo</li><li>si siente que el producto es concreto o demasiado disperso</li></ul>",
-        },
-      },
-      {
-        type: "cta",
-        id: "hs-7",
-        value: {
-          title: "Si buscas una propuesta clara, vuelve a la Ruta Norte desde Hurghada",
-          description:
-            "La landing principal ya toma partido por esa claridad y la convierte en producto.",
-          primaryCTA: {
-            text: "Ir a la Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "hs-1", value: { content: "<p>Hurghada o Sharm el Sheikh? La respuesta corta: depende de la ruta. Nuestras 5 rutas salen de Hurghada.</p>" } },
+      { type: "heading", id: "hs-2", value: { level: 2, text: "Dos puertos, dos logicas" } },
+      { type: "rich_text", id: "hs-3", value: { content: "<p><strong>Hurghada:</strong> costa continental, puerto mas versatil. Acceso a rutas norte y sur. <strong>Sharm:</strong> punta del Sinai, limitada para rutas sur.</p><p>Nuestras 5 rutas: Norte y Tiran (1.190 EUR), Norte y Pecios (1.190 EUR), Tiran y Blue Hole (1.230 EUR), Norte y Brothers (1.230 EUR) y Sur BDE (1.290 EUR). Todas desde Hurghada.</p>" } },
+      { type: "heading", id: "hs-4", value: { level: 2, text: "Vuelos desde Espana" } },
+      { type: "rich_text", id: "hs-5", value: { content: "<p><strong>A Hurghada (HRG):</strong> vuelos directos desde Madrid y Barcelona con Pegasus (4-5 h). Conexiones via Estambul, El Cairo o Frankfurt. Desde 120-200 EUR ida y vuelta.</p><p><strong>A Sharm (SSH):</strong> menos vuelos directos, mas escalas. Volar a Hurghada es mas directo, barato y frecuente.</p>" } },
+      { type: "heading", id: "hs-6", value: { level: 2, text: "Por que Hurghada" } },
+      { type: "rich_text", id: "hs-7", value: { content: "<ol><li>Acceso a las 5 rutas desde un mismo punto</li><li>Vuelos mas directos y baratos desde Espana</li><li>Transfer incluido aeropuerto-barco (15-20 min)</li></ol>" } },
+      { type: "rich_text", id: "hs-8", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/como-llegar-a-hurghada-liveaboard">Como llegar a Hurghada</a> | <a href="/blog/temporada-ruta-norte-mar-rojo">Mejor temporada</a></p>' } },
+      { type: "cta", id: "hs-9", value: { title: "5 rutas desde Hurghada", description: "Transfer aeropuerto-barco incluido.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
     slug: "abu-nuhas-cementerio-de-barcos",
-    title: "Abu Nuhas: el cementerio de barcos que hace irresistible la Ruta Norte",
+    title: "Abu Nuhas: el cementerio de barcos del Mar Rojo que tienes que bucear",
     excerpt:
-      "Por qué Abu Nuhas es uno de los grandes argumentos de venta de la Ruta Norte y cómo usarlo para atraer tráfico de intención específica.",
+      "Cuatro pecios historicos en un solo arrecife: Giannis D, Carnatic, Chrisoula K y Kimon M. Todo lo que necesitas saber para bucear en Abu Nuhas.",
     publishedAt: "2026-03-04",
-    readTime: "7 min",
+    readTime: "10 min",
     author: {
       name: "Ana López",
       avatar: "https://i.pravatar.cc/150?img=5",
@@ -981,65 +927,114 @@ export const blogPosts: BlogPost[] = [
     },
     body: [
       {
-        type: "rich_text",
+        type: "heading",
         id: "abu-1",
+        value: { level: 2, text: "Un arrecife, cuatro naufragios" },
+      },
+      {
+        type: "rich_text",
+        id: "abu-2",
         value: {
           content:
-            "<p><strong>Abu Nuhas</strong> tiene algo que lo convierte en una pieza satélite perfecta del cluster: quien busca ese nombre no está en fase de descubrimiento superficial. Ya está entrando en el detalle que mueve la decisión.</p><p>Por eso esta página existe para reforzar la <a href=\"/rutas/norte-7-dias\">Ruta Norte y Pecios</a>, no para quedarse como guía aislada.</p>",
+            '<p>Abu Nuhas es un arrecife triangular semi-sumergido en el Estrecho de Gubal, al norte del Mar Rojo. Su posicion en una de las rutas de navegacion mas transitadas hacia el Canal de Suez lo convirtio, durante mas de un siglo, en una trampa para los barcos que pasaban demasiado cerca. El resultado: cuatro pecios accesibles a profundidades recreativas, concentrados en un mismo punto.</p><p>Lo llaman el cementerio de barcos del Mar Rojo y no es exagerado. En una sola jornada de inmersiones puedes explorar restos que van desde 1869 hasta 1983. Abu Nuhas forma parte de la <a href="/rutas/norte-pecios">Ruta Norte y Pecios</a> y de la <a href="/rutas/norte-tiran">Ruta Norte y Tiran</a>, donde se le dedica un dia completo de inmersiones.</p>',
         },
       },
       {
         type: "heading",
-        id: "abu-2",
+        id: "abu-3",
+        value: { level: 2, text: "Giannis D: el carguero griego que se partio en tres" },
+      },
+      {
+        type: "rich_text",
+        id: "abu-4",
         value: {
-          level: 2,
-          text: "Por qué Abu Nuhas vende tanto dentro de la Ruta Norte",
+          content:
+            "<p>El Giannis D es probablemente el pecio mas popular de Abu Nuhas. Este carguero de 99,5 metros fue construido en Japon en 1969 y navegaba bajo bandera griega cuando choco contra el arrecife el 19 de abril de 1983. Transportaba madera desde Croacia hacia Arabia Saudi.</p><p>El impacto partio el barco en tres secciones. Hoy descansa entre 5 y 27 metros de profundidad, con una inclinacion dramatica hacia babor. La sala de maquinas es uno de los puntos mas visitados: se puede penetrar con relativa facilidad.</p><p><strong>Profundidad:</strong> 5-27 m | <strong>Eslora:</strong> 99,5 m | <strong>Hundimiento:</strong> 1983<br><strong>Nivel:</strong> accesible desde Advanced Open Water. Zonas poco profundas aptas para Open Water con guia.</p>",
+        },
+      },
+      {
+        type: "heading",
+        id: "abu-5",
+        value: { level: 2, text: "Carnatic: el mas antiguo y el mas bello" },
+      },
+      {
+        type: "rich_text",
+        id: "abu-6",
+        value: {
+          content:
+            "<p>El SS Carnatic es el pecio con mas historia de Abu Nuhas. Este clipper de vapor y vela de 90 metros zarpo de Suez rumbo a India el 12 de septiembre de 1869, cargado con algodon, planchas de cobre y 40.000 libras esterlinas en oro. Choco contra el arrecife y, tras 34 horas varado, se partio en dos.</p><p>Lo que queda es un esqueleto metalico espectacular, colonizado por mas de 150 anos de crecimiento coralino. La luz que se filtra a traves de la estructura crea un efecto visual unico.</p><p><strong>Profundidad:</strong> 16-27 m | <strong>Eslora:</strong> 90 m | <strong>Hundimiento:</strong> 1869<br><strong>Nivel:</strong> Advanced Open Water recomendado. Ideal para fotografia submarina.</p>",
+        },
+      },
+      {
+        type: "heading",
+        id: "abu-7",
+        value: { level: 2, text: "Chrisoula K: el pecio de los azulejos" },
+      },
+      {
+        type: "rich_text",
+        id: "abu-8",
+        value: {
+          content:
+            "<p>El Chrisoula K era un carguero griego de 98 metros que se hundio en 1981 transportando 3.700 toneladas de azulejos italianos. Los azulejos siguen ahi, apilados dentro de las bodegas. El barco descansa con la popa a 26 metros y la proa a solo 3 metros, lo que lo convierte en un pecio muy versatil.</p><p><strong>Profundidad:</strong> 3-26 m | <strong>Eslora:</strong> 98 m | <strong>Hundimiento:</strong> 1981<br><strong>Nivel:</strong> zonas poco profundas aptas desde Open Water. Penetracion para Advanced.</p>",
+        },
+      },
+      {
+        type: "heading",
+        id: "abu-9",
+        value: { level: 2, text: "Kimon M: el pecio de las lentejas" },
+      },
+      {
+        type: "rich_text",
+        id: "abu-10",
+        value: {
+          content:
+            "<p>El menos visitado de los cuatro. El Kimon M era un carguero aleman de 106 metros que choco contra Abu Nuhas en 1978. Transportaba 4.500 toneladas de lentejas. Descansa sobre su costado de estribor, con la popa a 32 metros y la proa a solo 4 metros.</p><p><strong>Profundidad:</strong> 4-32 m | <strong>Eslora:</strong> 106 m | <strong>Hundimiento:</strong> 1978<br><strong>Nivel:</strong> Advanced Open Water para la zona profunda. La proa es accesible para todos.</p>",
+        },
+      },
+      {
+        type: "heading",
+        id: "abu-11",
+        value: { level: 2, text: "Dunraven: el pecio invertido cerca de Ras Mohammed" },
+      },
+      {
+        type: "rich_text",
+        id: "abu-12",
+        value: {
+          content:
+            "<p>Aunque no esta en Abu Nuhas sino cerca de Ras Mohammed, el Dunraven se visita en la misma ruta. Este buque britanico de 1873 se hundio boca abajo en 1876. La quilla apunta hacia arriba y el casco forma un tunel natural que los buceadores pueden recorrer.</p><p><strong>Profundidad:</strong> 15-29 m | <strong>Hundimiento:</strong> 1876<br><strong>Nivel:</strong> Advanced Open Water recomendado para penetracion.</p>",
+        },
+      },
+      {
+        type: "heading",
+        id: "abu-13",
+        value: { level: 2, text: "Como bucear Abu Nuhas" },
+      },
+      {
+        type: "rich_text",
+        id: "abu-14",
+        value: {
+          content:
+            '<p>Abu Nuhas no tiene acceso desde tierra: solo se llega en barco. En la <a href="/rutas/norte-pecios">Ruta Norte y Pecios</a> se le dedica un dia completo con 3-4 inmersiones. La certificacion minima es Open Water, aunque para penetraciones conviene tener el Advanced. Si no lo tienes, puedes sacarlo gratis a bordo del M/Y Dolce Vita. La ruta sale desde Hurghada, dura 8 dias, incluye 16-18 inmersiones, nitrox y pension completa, desde 1.190 EUR.</p>',
         },
       },
       {
         type: "rich_text",
-        id: "abu-3",
+        id: "abu-15",
         value: {
           content:
-            "<p>Porque concentra en un solo nombre varias cosas que un usuario valora mucho: historia marítima, variedad de pecios, narrativa muy reconocible y capacidad de imaginar una semana que merece el viaje.</p>",
-        },
-      },
-      {
-        type: "info_cards",
-        id: "abu-4",
-        value: {
-          cards: [
-            {
-              icon: "⚓",
-              value: "Pecios",
-              label: "Varios en un mismo entorno",
-              color: "#FF6B35",
-            },
-            {
-              icon: "🗺️",
-              value: "Ruta Norte",
-              label: "Encaje perfecto",
-              color: "#0066CC",
-            },
-            {
-              icon: "🔎",
-              value: "Long tail",
-              label: "Búsqueda con intención",
-              color: "#0F8C62",
-            },
-          ],
+            '<p><strong>Te puede interesar:</strong> <a href="/blog/rosalie-moller-mar-rojo">Rosalie Moller</a> | <a href="/blog/ss-thistlegorm-guia-completa">SS Thistlegorm</a> | <a href="/rutas/norte-pecios">Ruta Norte y Pecios</a></p>',
         },
       },
       {
         type: "cta",
-        id: "abu-5",
+        id: "abu-16",
         value: {
-          title: "Abu Nuhas no se vende solo: se entiende dentro de la Ruta Norte",
+          title: "Bucea los pecios de Abu Nuhas en la Ruta Norte",
           description:
-            "Usa este spot como puerta de entrada hacia la landing principal del viaje.",
+            "Un dia completo explorando cuatro naufragios historicos. Desde 1.190 EUR.",
           primaryCTA: {
-            text: "Ver Ruta Norte",
-            href: "/rutas/norte-7-dias",
+            text: "Ver Ruta Norte y Pecios",
+            href: "/rutas/norte-pecios",
             variant: "gradient",
           },
         },
@@ -1071,37 +1066,7 @@ export const blogPosts: BlogPost[] = [
         id: "gia-1",
         value: {
           content:
-            "<p><strong>Giannis D</strong> es el tipo de nombre que permite al cluster ganar profundidad. No todo el mundo lo buscará, pero quien lo hace ya está muy cerca de una intención útil: quiere detalles, spots concretos y razones para elegir esta ruta.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "gia-2",
-        value: {
-          level: 2,
-          text: "Qué aporta Giannis D al discurso comercial de la Ruta Norte",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "gia-3",
-        value: {
-          content:
-            "<p>Aporta especificidad. Hace que el producto deje de sonar a “ruta bonita por el Mar Rojo” y empiece a sonar a una semana que quienes saben del tema reconocen como seria y deseable.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "gia-4",
-        value: {
-          title: "Si Giannis D te interesa, la Ruta Norte es el contexto correcto",
-          description:
-            "Pasa de la curiosidad por un pecio a la decisión sobre el viaje completo.",
-          primaryCTA: {
-            text: "Ir a la Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
+            '<p>Este contenido se ha integrado en nuestra <a href="/blog/abu-nuhas-cementerio-de-barcos">guia completa de Abu Nuhas</a>, donde encontraras toda la informacion sobre el Giannis D, el Carnatic, el Chrisoula K y el Kimon M en un solo articulo.</p>',
         },
       },
     ],
@@ -1131,48 +1096,18 @@ export const blogPosts: BlogPost[] = [
         id: "dun-1",
         value: {
           content:
-            "<p><strong>Dunraven</strong> funciona muy bien como satélite porque ayuda a explicar que la Ruta Norte no vive solo de un nombre como Thistlegorm. El itinerario gana riqueza cuando el usuario entiende que hay varios hitos que hacen la semana más completa.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "dun-2",
-        value: {
-          level: 2,
-          text: "Por qué este pecio importa dentro de una landing comercial",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "dun-3",
-        value: {
-          content:
-            "<p>Porque añade profundidad narrativa, refuerza la idea de variedad dentro de la ruta y permite segmentar mejor a usuarios que ya están comparando experiencias con más detalle.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "dun-4",
-        value: {
-          title: "Usa Dunraven como una razón más para entender la Ruta Norte completa",
-          description:
-            "La decisión buena no es elegir un pecio suelto, sino ver cómo encaja dentro del viaje.",
-          primaryCTA: {
-            text: "Ver la Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
+            '<p>Este contenido se ha integrado en nuestra <a href="/blog/abu-nuhas-cementerio-de-barcos">guia completa de Abu Nuhas</a>, donde encontraras toda la informacion sobre el Dunraven y los pecios del norte del Mar Rojo en un solo articulo.</p>',
         },
       },
     ],
   },
   {
     slug: "advanced-a-bordo-mar-rojo",
-    title: "Advanced a bordo en el Mar Rojo: cuándo aporta valor y cuándo no",
+    title: "Curso Advanced SSI a bordo en el Mar Rojo: que incluye y por que te interesa",
     excerpt:
-      "Cómo plantear el Advanced a bordo como mejora real de la experiencia en Ruta Norte, sin usarlo como promesa vacía para vender a cualquiera.",
+      "Todo lo que necesitas saber sobre el curso Advanced Open Water SSI incluido gratis en tu vida a bordo: especialidades, inmersiones y como te cambia la semana.",
     publishedAt: "2026-03-04",
-    readTime: "7 min",
+    readTime: "8 min",
     author: {
       name: "Ana López",
       avatar: "https://i.pravatar.cc/150?img=5",
@@ -1186,95 +1121,27 @@ export const blogPosts: BlogPost[] = [
       color: "#0F8C62",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "advb-1",
-        value: {
-          content:
-            "<p>En esta web el <strong>producto principal</strong> es la <a href=\"/rutas/norte-7-dias\">Ruta Norte y Pecios desde Hurghada</a>. El <strong>Advanced a bordo</strong> no debe competir con esa promesa, sino reforzarla cuando tiene sentido para un perfil concreto.</p><p>Eso significa algo muy simple: usar el curso como valor adicional para aprovechar mejor la semana, no como atajo comercial para esquivar objeciones reales de nivel.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "advb-2",
-        value: {
-          level: 2,
-          text: "Cuándo sí tiene sentido plantearlo",
-        },
-      },
-      {
-        type: "info_cards",
-        id: "advb-3",
-        value: {
-          cards: [
-            {
-              icon: "🎯",
-              value: "Mejor encaje",
-              label: "Perfil que quiere progresar",
-              color: "#0F8C62",
-            },
-            {
-              icon: "🤿",
-              value: "Más contexto",
-              label: "Profundidad, control y confianza",
-              color: "#0066CC",
-            },
-            {
-              icon: "⚠️",
-              value: "No es magia",
-              label: "No sustituye experiencia base",
-              color: "#FF6B35",
-            },
-          ],
-        },
-      },
-      {
-        type: "rich_text",
-        id: "advb-4",
-        value: {
-          content:
-            "<ul><li>si el buceador ya encaja razonablemente con la ruta</li><li>si quiere ganar comodidad en profundidad y ritmo de liveaboard</li><li>si entiende que el viaje sigue siendo la prioridad y el curso lo complementa</li></ul><p>Planteado así, el Advanced aporta claridad y mejora la percepción del producto sin deformarlo.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "advb-5",
-        value: {
-          level: 2,
-          text: "Cuándo usarlo como argumento principal es un error",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "advb-6",
-        value: {
-          content:
-            "<p>Cuando el usuario todavía no encaja bien con la ruta, vender el Advanced como solución universal suele generar expectativas pobres y leads peor cualificados. Una landing seria deja claro que primero se evalúa el viaje y luego se decide si la parte formativa suma o no.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "advb-7",
-        value: {
-          title: "Primero decide la ruta. Luego valora si el Advanced te aporta.",
-          description:
-            "La landing principal de Ruta Norte está planteada justo con ese orden de decisión.",
-          primaryCTA: {
-            text: "Ver Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "advb-1", value: { content: "<p>El Advanced Open Water es el salto mas importante como buceador. Pasas de 18 a 30 metros, lo que en el Mar Rojo significa explorar el Thistlegorm completo, meterte en las bodegas del Giannis D o bajar al Rosalie Moller. En todas las rutas con Karlos Simon, el Advanced SSI viene incluido gratis.</p>" } },
+      { type: "heading", id: "advb-2", value: { level: 2, text: "Que incluye el curso" } },
+      { type: "rich_text", id: "advb-3", value: { content: "<p>4 especialidades con briefing teorico e inmersion practica:</p><ul><li><strong>Deep Diving:</strong> inmersiones hasta 30 m con seguridad</li><li><strong>Navegacion Subacuatica:</strong> orientacion con brujula y referencias naturales</li><li><strong>Perfect Buoyancy:</strong> control fino de flotabilidad</li><li><strong>Night Diving:</strong> inmersion nocturna con linterna</li></ul>" } },
+      { type: "heading", id: "advb-4", value: { level: 2, text: "Como funciona a bordo" } },
+      { type: "rich_text", id: "advb-5", value: { content: "<p>No pierdes inmersiones. Las especialidades se integran en el itinerario: tu inmersion de Deep Diving puede ser la bajada al Thistlegorm. El instructor evalua durante la inmersion que ibas a hacer igualmente. Para el final de la semana tienes la certificacion completada.</p>" } },
+      { type: "heading", id: "advb-6", value: { level: 2, text: "Da igual tu certificadora" } },
+      { type: "rich_text", id: "advb-7", value: { content: "<p>Se certifica con SSI, pero si eres PADI, ACUC, FEDAS o cualquier otra, puedes hacerlo sin problema. Las certificadoras se reconocen entre si. Tu titulo de Advanced es valido en todo el mundo.</p>" } },
+      { type: "heading", id: "advb-8", value: { level: 2, text: "De 18 a 30 metros: que cambia" } },
+      { type: "rich_text", id: "advb-9", value: { content: "<p>Con Open Water (18 m) te pierdes las bodegas del Thistlegorm (20-30 m), el Rosalie Moller (empieza a 30 m) y las paredes mas espectaculares de Ras Mohammed. Con el Advanced, disfrutas de verdad.</p>" } },
+      { type: "rich_text", id: "advb-10", value: { content: "<p>Incluido gratis en todas las rutas. Desde 1.190 EUR con ruta, alojamiento, pension completa y formacion. Sin costes ocultos.</p>" } },
+      { type: "rich_text", id: "advb-11", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/nitrox-a-bordo-mar-rojo">Nitrox en el Mar Rojo</a> | <a href="/blog/requisitos-ruta-norte-mar-rojo">Requisitos Ruta Norte</a> | <a href="/rutas/norte-pecios">Ruta Norte y Pecios</a></p>' } },
+      { type: "cta", id: "advb-12", value: { title: "Da el salto a Advanced mientras buceas el Mar Rojo", description: "Curso incluido gratis. Desde 1.190 EUR con pension completa y nitrox.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
     slug: "visado-egipto-hurghada",
-    title: "Visado para Egipto y llegada a Hurghada: lo que conviene tener claro antes del liveaboard",
+    title: "Visado para Egipto desde Espana: como tramitarlo antes de tu vida a bordo en Hurghada",
     excerpt:
-      "Una guía de logística para reducir fricción antes de reservar: visado, documentación básica y cómo encaja con una salida de vida a bordo desde Hurghada.",
+      "Guia practica del e-visa egipcio para ciudadanos espanoles y europeos: coste, proceso online, tiempos y como encaja con la logistica del liveaboard.",
     publishedAt: "2026-03-04",
-    readTime: "6 min",
+    readTime: "8 min",
     author: {
       name: "Carlos Martínez",
       avatar: "https://i.pravatar.cc/150?img=12",
@@ -1288,62 +1155,24 @@ export const blogPosts: BlogPost[] = [
       color: "#3DABC2",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "visa-1",
-        value: {
-          content:
-            "<p>La pregunta sobre el <strong>visado para Egipto</strong> no suele aparecer al principio del funnel, pero sí en el momento en que el viaje empieza a verse real. Ahí es donde una buena página de logística gana valor: no por repetir trámites genéricos, sino por quitar fricción a la decisión.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "visa-2",
-        value: {
-          level: 2,
-          text: "Qué debería resolver esta página dentro del proyecto",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "visa-3",
-        value: {
-          content:
-            "<ul><li>que el usuario entienda que la documentación es una parte manejable del viaje</li><li>que relacione el trámite con una salida clara desde Hurghada</li><li>que pase de la duda operativa a la <a href=\"/rutas/norte-7-dias\">landing de Ruta Norte</a> sin sensación de caos</li></ul>",
-        },
-      },
-      {
-        type: "quote",
-        id: "visa-4",
-        value: {
-          text: "La logística buena no distrae del producto: lo hace más fácil de comprar.",
-          author: "Criterio del cluster",
-          role: "Hurghada y Ruta Norte",
-        },
-      },
-      {
-        type: "cta",
-        id: "visa-5",
-        value: {
-          title: "Con la logística más clara, toca decidir la ruta",
-          description:
-            "Vuelve a la página principal de Ruta Norte y revisa si este viaje encaja contigo.",
-          primaryCTA: {
-            text: "Ir a Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "visa-1", value: { content: "<p>El visado para Egipto es uno de esos tramites que parecen mas complicados de lo que son. Si vas a hacer un vida a bordo desde Hurghada, esto es todo lo que necesitas saber.</p>" } },
+      { type: "heading", id: "visa-2", value: { level: 2, text: "E-visa online (recomendada)" } },
+      { type: "rich_text", id: "visa-3", value: { content: "<ul><li><strong>Web oficial:</strong> visa2egypt.gov.eg</li><li><strong>Coste:</strong> 25 USD (~23-25 EUR)</li><li><strong>Validez:</strong> 30 dias, entrada unica</li><li><strong>Procesamiento:</strong> 3-7 dias laborables</li><li><strong>Requisitos:</strong> pasaporte con 6 meses validez, foto digital del pasaporte, tarjeta de credito</li></ul><p>Alternativa: visa on arrival en el aeropuerto por 25 USD en efectivo, pero puede haber colas.</p>" } },
+      { type: "heading", id: "visa-4", value: { level: 2, text: "Llegada al aeropuerto de Hurghada" } },
+      { type: "rich_text", id: "visa-5", value: { content: "<p>El traslado aeropuerto-barco esta incluido. Un representante te espera a la salida. El proceso completo desde que aterrizas hasta que estas en el barco: 1-2 horas. Embarque a partir de las 16:00.</p>" } },
+      { type: "heading", id: "visa-6", value: { level: 2, text: "Consejos practicos" } },
+      { type: "rich_text", id: "visa-7", value: { content: "<ul><li>Tramita el e-visa al menos 10 dias antes</li><li>Lleva copia impresa y digital</li><li>Ten 25 USD/EUR en efectivo por si acaso</li><li>Revisa la caducidad del pasaporte (minimo 6 meses)</li></ul><p>La agencia te asesora con el tramite. Coste del visado (~30 EUR) no incluido en el precio del viaje.</p>" } },
+      { type: "rich_text", id: "visa-8", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/como-llegar-a-hurghada-liveaboard">Como llegar a Hurghada</a> | <a href="/blog/checklist-vida-a-bordo-mar-rojo">Checklist</a></p>' } },
+      { type: "cta", id: "visa-9", value: { title: "Con el visado resuelto, solo falta elegir ruta", description: "Ruta Norte y Pecios desde 1.190 EUR.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
     slug: "checklist-vida-a-bordo-mar-rojo",
-    title: "Checklist para un vida a bordo en el Mar Rojo: qué llevar y qué no olvidar",
+    title: "Checklist para un vida a bordo en el Mar Rojo: que llevar y que no olvidar",
     excerpt:
-      "La página de apoyo que baja ansiedad pre-viaje y refuerza la sensación de control antes de reservar una Ruta Norte desde Hurghada.",
+      "Lista practica de todo lo que necesitas para tu semana de liveaboard en el Mar Rojo, organizada por categorias y con consejos de buceadores experimentados.",
     publishedAt: "2026-03-04",
-    readTime: "7 min",
+    readTime: "9 min",
     author: {
       name: "Miguel Fernández",
       avatar: "https://i.pravatar.cc/150?img=8",
@@ -1357,79 +1186,26 @@ export const blogPosts: BlogPost[] = [
       color: "#FF6B35",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "chk-1",
-        value: {
-          content:
-            "<p>Una buena <strong>checklist para un vida a bordo</strong> no es solo una lista útil. También es una pieza comercial. Hace que el viaje parezca más concreto, más preparable y menos intimidante para quien todavía está valorando si dar el paso.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "chk-2",
-        value: {
-          level: 2,
-          text: "Los tres bloques que de verdad importan",
-        },
-      },
-      {
-        type: "info_cards",
-        id: "chk-3",
-        value: {
-          cards: [
-            {
-              icon: "🤿",
-              value: "Buceo",
-              label: "Equipo y documentación",
-              color: "#0066CC",
-            },
-            {
-              icon: "🧳",
-              value: "Viaje",
-              label: "Ropa, medicación y básicos",
-              color: "#FF6B35",
-            },
-            {
-              icon: "📋",
-              value: "Operativa",
-              label: "Lo que conviene confirmar antes",
-              color: "#0F8C62",
-            },
-          ],
-        },
-      },
-      {
-        type: "rich_text",
-        id: "chk-4",
-        value: {
-          content:
-            "<ul><li>equipo personal y material de buceo si aplica</li><li>documentación, seguro y certificaciones</li><li>ropa cómoda para una semana a bordo</li><li>pequeños extras que ahorran problemas en barco</li></ul><p>El objetivo no es parecer exhaustivo sin fin. Es ayudar al usuario a imaginar que puede llegar preparado y disfrutar mejor la ruta.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "chk-5",
-        value: {
-          title: "Si ya piensas en la checklist, estás cerca de decidir el viaje",
-          description:
-            "Pasa ahora a la Ruta Norte y revisa si el itinerario y el nivel encajan contigo.",
-          primaryCTA: {
-            text: "Consultar Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "chk-1", value: { content: "<p>Tienes la reserva confirmada (o casi) y ahora viene la pregunta inevitable: que llevo? Esta checklist esta pensada para una semana de vida a bordo en el Mar Rojo a bordo del M/Y Dolce Vita.</p>" } },
+      { type: "heading", id: "chk-2", value: { level: 2, text: "Documentacion imprescindible" } },
+      { type: "rich_text", id: "chk-3", value: { content: "<ul><li><strong>Pasaporte</strong> (minimo 6 meses validez)</li><li><strong>Visado electronico</strong> (e-visa, unos 30 EUR)</li><li><strong>Certificacion de buceo</strong> (tarjeta fisica o digital)</li><li><strong>Logbook</strong> (fisico o digital)</li><li><strong>Seguro de viaje</strong> (incluido)</li><li><strong>Seguro DAN</strong> (recomendable, ~60 EUR/ano)</li><li>Comprobante de reserva</li></ul>" } },
+      { type: "heading", id: "chk-4", value: { level: 2, text: "Equipo de buceo" } },
+      { type: "rich_text", id: "chk-5", value: { content: "<p><strong>Incluido:</strong> botella 12L, plomos, nitrox 28%.</p><p><strong>Alquilar:</strong> regulador, BCD, traje, ordenador, aletas, mascara.</p><p><strong>Llevar propio:</strong> mascara, ordenador de buceo, boya SMB y carrete, linterna de buceo, protector antivaho.</p><p><strong>NO llevar:</strong> botellas, plomos, traje seco (agua a 24-29 grados).</p>" } },
+      { type: "heading", id: "chk-6", value: { level: 2, text: "Ropa, salud y electronica" } },
+      { type: "rich_text", id: "chk-7", value: { content: "<p><strong>Ropa:</strong> 3-4 banadores, rashguard, ropa ligera, sudadera fina, chanclas, gorra, gafas de sol.</p><p><strong>Salud:</strong> protector solar reef-safe SPF 50, medicacion personal, pastillas mareo, ibuprofeno, gotas oidos.</p><p><strong>Electronica:</strong> camara submarina/GoPro, powerbank, adaptador enchufe (tipo C/F), bolsa estanca, linterna frontal.</p>" } },
+      { type: "heading", id: "chk-8", value: { level: 2, text: "Dinero en efectivo (euros)" } },
+      { type: "rich_text", id: "chk-9", value: { content: "<ul><li>Tasas: 120-220 EUR</li><li>Propina tripulacion: 75 EUR</li><li>Propina guias: 25 EUR</li><li>Botella 15L (opcional): 40 EUR</li><li>Alquiler equipo y bebidas extra</li></ul>" } },
+      { type: "rich_text", id: "chk-10", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/como-es-un-vida-a-bordo-mar-rojo">Como es un vida a bordo</a> | <a href="/blog/visado-egipto-hurghada">Visado para Egipto</a> | <a href="/blog/seguro-buceo-dan-egipto">Seguro DAN</a></p>' } },
+      { type: "cta", id: "chk-11", value: { title: "Con la maleta lista, solo falta elegir ruta", description: "Desde 1.190 EUR, pension completa, 16-18 inmersiones y Advanced SSI incluido.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
     slug: "pecios-vs-tiburones-mar-rojo",
-    title: "Pecios vs tiburones en el Mar Rojo: qué experiencia estás buscando de verdad",
+    title: "Pecios vs Tiburones en el Mar Rojo: Que Ruta Encaja Mejor Contigo",
     excerpt:
-      "Comparativa para usuarios que dudan entre una ruta cargada de pecios emblemáticos y una experiencia más guiada por fauna grande.",
+      "Ruta Norte y Pecios o Ruta Sur BDE? Comparamos precios, inmersiones, fauna y dificultad para que elijas la experiencia que realmente buscas.",
     publishedAt: "2026-03-04",
-    readTime: "7 min",
+    readTime: "8 min",
     author: {
       name: "Ana López",
       avatar: "https://i.pravatar.cc/150?img=5",
@@ -1443,69 +1219,24 @@ export const blogPosts: BlogPost[] = [
       color: "#7C3AED",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "pvt-1",
-        value: {
-          content:
-            "<p>Hay usuarios que no están comparando operadores: están comparando <strong>tipos de viaje</strong>. Cuando aparece la duda entre <strong>pecios vs tiburones en el Mar Rojo</strong>, la web debe ayudar a entender qué emoción, qué ritmo y qué narrativa de inmersiones quiere realmente esa persona.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "pvt-2",
-        value: {
-          level: 2,
-          text: "Cuándo gana la Ruta Norte",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "pvt-3",
-        value: {
-          content:
-            "<p>Gana cuando el usuario quiere un producto muy reconocible, con nombres míticos, historia marítima y una semana que se explica sola. Ese es exactamente el fuerte de la <a href=\"/rutas/norte-7-dias\">Ruta Norte y Pecios</a>.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "pvt-4",
-        value: {
-          level: 2,
-          text: "Cuándo puede mirar hacia otros viajes",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "pvt-5",
-        value: {
-          content:
-            "<p>Cuando prioriza encuentros concretos de fauna grande por encima de la narrativa de itinerario, los pecios o la combinación clásica del norte. La función de esta comparativa es filtrar mejor, no intentar vender la misma ruta a cualquiera.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "pvt-6",
-        value: {
-          title: "Si lo tuyo son pecios icónicos y una ruta clara, empieza por el Norte",
-          description:
-            "La landing principal está pensada para convertir esa preferencia en una consulta real.",
-          primaryCTA: {
-            text: "Ver Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "pvt-1", value: { content: "<p>La gran duda de quien quiere un vida a bordo en el Mar Rojo: pecios historicos o tiburones oceanicos? Las dos experiencias son brutales pero muy diferentes.</p>" } },
+      { type: "heading", id: "pvt-2", value: { level: 2, text: "Ruta Norte y Pecios (desde 1.190 EUR)" } },
+      { type: "rich_text", id: "pvt-3", value: { content: "<p>Viaje en el tiempo: SS Thistlegorm (motos, camiones, locomotoras, 14-30 m), Giannis D (Abu Nuhas, 10-27 m), Carnatic (1869, cubierto de coral), Rosalie Moller (WWII, 30-50 m). Mas un dia en Ras Mohammed. Corrientes suaves a moderadas, 10-30 m.</p><p><strong>Perfil ideal:</strong> historia maritima, fotografia de pecios, primer o segundo liveaboard.</p>" } },
+      { type: "heading", id: "pvt-4", value: { level: 2, text: "Ruta Sur BDE (desde 1.290 EUR)" } },
+      { type: "rich_text", id: "pvt-5", value: { content: "<p>Brothers Islands (tiburones longimanus, grises, martillos), Daedalus Reef (bancos de martillos, delfines), Elphinstone Reef (longimanus, gorgonias). Corrientes moderadas a fuertes, 15-40+ m.</p><p><strong>Perfil ideal:</strong> fauna grande, corrientes fuertes, experiencia en mar abierto.</p>" } },
+      { type: "heading", id: "pvt-6", value: { level: 2, text: "Y si quieres las dos cosas?" } },
+      { type: "rich_text", id: "pvt-7", value: { content: "<p><strong>Ruta Norte y Brothers</strong> (desde 1.230 EUR): pecios del norte + 2 dias en Brothers. Ambas incluyen pension completa, Advanced SSI gratis, nitrox 28%, 16-18 inmersiones, Tour Leader y seguro.</p>" } },
+      { type: "rich_text", id: "pvt-8", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/abu-nuhas-cementerio-de-barcos">Abu Nuhas</a> | <a href="/blog/ras-mohammed-guia-completa">Ras Mohammed</a> | <a href="/rutas/norte-pecios">Norte y Pecios</a> | <a href="/rutas/sur-bde">Sur BDE</a></p>' } },
+      { type: "cta", id: "pvt-9", value: { title: "Elige tu experiencia en el Mar Rojo", description: "Pecios desde 1.190 EUR o tiburones desde 1.290 EUR.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
     slug: "como-es-un-vida-a-bordo-mar-rojo",
-    title: "Cómo es un vida a bordo en el Mar Rojo: la semana que el usuario necesita imaginar",
+    title: "Como es un vida a bordo en el Mar Rojo: tu semana a bordo del M/Y Dolce Vita",
     excerpt:
-      "Una guía para explicar ritmo, convivencia y lógica del viaje a quien todavía no ha hecho un liveaboard y necesita visualizarlo bien.",
+      "Asi es una semana real en un liveaboard en el Mar Rojo: desde el primer briefing hasta la ultima inmersion nocturna, pasando por camarotes, comidas y convivencia a bordo del M/Y Dolce Vita.",
     publishedAt: "2026-03-04",
-    readTime: "8 min",
+    readTime: "10 min",
     author: {
       name: "Carlos Martínez",
       avatar: "https://i.pravatar.cc/150?img=12",
@@ -1519,59 +1250,21 @@ export const blogPosts: BlogPost[] = [
       color: "#0066CC",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "vab-1",
-        value: {
-          content:
-            "<p>La pregunta <strong>cómo es un vida a bordo en el Mar Rojo</strong> aparece cuando el usuario ya no solo quiere spots. Quiere entender la forma del viaje: cómo se duerme, cómo se bucea, cómo se organiza el día y si esa experiencia le resulta atractiva o demasiado intensa.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "vab-2",
-        value: {
-          level: 2,
-          text: "Lo que una buena página debe explicar",
-        },
-      },
-      {
-        type: "two_column",
-        id: "vab-3",
-        value: {
-          leftColumn: {
-            image: images.heroSSI,
-            alt: "Cubierta de barco y vida diaria en un liveaboard",
-          },
-          rightColumn: {
-            title: "No se trata de romantizar el barco. Se trata de hacer el viaje entendible.",
-            content:
-              "<ul><li>ritmo de varias inmersiones al día</li><li>convivencia y descanso a bordo</li><li>briefings, comidas y tiempos muertos</li><li>cómo cambia la experiencia frente a un hotel con salidas diarias</li></ul>",
-          },
-        },
-      },
-      {
-        type: "rich_text",
-        id: "vab-4",
-        value: {
-          content:
-            "<p>Cuando esta página está bien resuelta, el usuario deja de preguntarse si un liveaboard es “demasiado raro” y empieza a valorar si la <a href=\"/rutas/norte-7-dias\">Ruta Norte</a> es su mejor siguiente viaje.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "vab-5",
-        value: {
-          title: "Ya imaginas la semana. Ahora mira la ruta concreta.",
-          description:
-            "Lleva esa idea general a la landing principal de Ruta Norte y Pecios.",
-          primaryCTA: {
-            text: "Ir a Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "vab-1", value: { content: "<p>Si estas pensando en hacer un vida a bordo en el Mar Rojo pero no terminas de visualizar como es realmente la experiencia, este articulo es para ti. Vamos a recorrer una semana tipica a bordo del M/Y Dolce Vita, el barco de 40 metros en el que navegamos nuestras rutas. Sin romantizar, sin omitir nada.</p>" } },
+      { type: "heading", id: "vab-2", value: { level: 2, text: "El barco: M/Y Dolce Vita" } },
+      { type: "rich_text", id: "vab-3", value: { content: "<p>Yate de 40 metros de eslora y 8,5 metros de manga, operado por Divers Fleet. 4 cubiertas, 12 camarotes y capacidad para 24 buceadores. Cada camarote tiene aire acondicionado individual, bano privado y espacio para equipo personal. Zonas comunes: comedor interior, salon con bar, cubierta superior con relax al aire libre y solarium.</p>" } },
+      { type: "heading", id: "vab-4", value: { level: 2, text: "Un dia tipico a bordo" } },
+      { type: "rich_text", id: "vab-5", value: { content: "<p><strong>6:30-7:00</strong> Despierta y desayuno ligero. <strong>7:30</strong> Briefing de primera inmersion (si haces el Advanced SSI, aqui se integra). <strong>8:00</strong> Primera inmersion. <strong>9:00-9:30</strong> Desayuno completo. <strong>10:30-11:00</strong> Segunda inmersion. <strong>12:00-13:00</strong> Almuerzo (pension completa). <strong>14:00-14:30</strong> Tercera inmersion. <strong>16:00-17:00</strong> Tiempo libre en cubierta. <strong>17:30-18:00</strong> Cuarta inmersion o nocturna. <strong>19:30-20:00</strong> Cena. <strong>21:00+</strong> Tertulia bajo las estrellas.</p><p>16-18 inmersiones en la semana. 3-4 diarias, ritmo intenso pero manejable. Si un dia prefieres saltarte una, es completamente normal.</p>" } },
+      { type: "heading", id: "vab-6", value: { level: 2, text: "Los camarotes" } },
+      { type: "rich_text", id: "vab-7", value: { content: "<p>Camarotes dobles con camas individuales o doble, bano privado, aire acondicionado regulable. No esperes una suite de hotel: es tu espacio para dormir, ducharte y guardar cosas. Consejo: lleva tapones para los oidos.</p>" } },
+      { type: "heading", id: "vab-8", value: { level: 2, text: "La comida: pension completa real" } },
+      { type: "rich_text", id: "vab-9", value: { content: "<p>Desayuno, almuerzo, cena, snacks, agua, refrescos, te, cafe y 2 cervezas por persona y dia incluidos. Cocina egipcia e internacional. Si tienes alergias o restricciones, comunicalas con antelacion.</p>" } },
+      { type: "heading", id: "vab-10", value: { level: 2, text: "Wifi y conectividad" } },
+      { type: "rich_text", id: "vab-11", value: { content: "<p>No cuentes con wifi fiable. La cobertura es limitada o nula en alta mar. La mayoria de buceadores lo consideran una ventaja: una semana desconectado es parte de la experiencia.</p>" } },
+      { type: "heading", id: "vab-12", value: { level: 2, text: "Liveaboard vs bucear desde hotel" } },
+      { type: "rich_text", id: "vab-13", value: { content: "<ul><li><strong>Buceas mas:</strong> 16-18 inmersiones en vez de 8-10 desde tierra.</li><li><strong>Buceas mejor:</strong> llegas a los spots antes que los barcos de dia.</li><li><strong>Sitios remotos:</strong> Thistlegorm, Ras Mohammed, solo accesibles en liveaboard.</li><li><strong>Nocturnas:</strong> desde un hotel no suelen ofrecerse. A bordo, son rutina.</li></ul>" } },
+      { type: "rich_text", id: "vab-14", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/checklist-vida-a-bordo-mar-rojo">Checklist</a> | <a href="/blog/advanced-a-bordo-mar-rojo">Advanced SSI a bordo</a> | <a href="/blog/nitrox-a-bordo-mar-rojo">Nitrox</a></p>' } },
+      { type: "cta", id: "vab-15", value: { title: "Quieres ver la ruta concreta?", description: "Consulta la Ruta Norte y Pecios y elige tu semana.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
@@ -1599,66 +1292,18 @@ export const blogPosts: BlogPost[] = [
         id: "cab-1",
         value: {
           content:
-            "<p>Hay dudas que parecen secundarias, pero bloquean conversiones: <strong>cómo son los camarotes</strong>, si se come bien, si habrá wifi o qué nivel de comodidad esperar a bordo. Resolverlas bien mejora la calidad del lead porque baja ansiedad sin sobredimensionar el producto.</p>",
-        },
-      },
-      {
-        type: "info_cards",
-        id: "cab-2",
-        value: {
-          cards: [
-            {
-              icon: "🛏️",
-              value: "Camarotes",
-              label: "Descanso y espacio",
-              color: "#0066CC",
-            },
-            {
-              icon: "🍽️",
-              value: "Comida",
-              label: "Ritmo y energía",
-              color: "#FF6B35",
-            },
-            {
-              icon: "📶",
-              value: "Wifi",
-              label: "Expectativas realistas",
-              color: "#0F8C62",
-            },
-          ],
-        },
-      },
-      {
-        type: "rich_text",
-        id: "cab-3",
-        value: {
-          content:
-            "<p>La clave aquí no es prometer lujo. Es explicar que la experiencia gira alrededor del viaje y del buceo, y que estas comodidades importan porque hacen la semana más llevadera y más fácil de imaginar.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "cab-4",
-        value: {
-          title: "Con las micro-dudas resueltas, la decisión vuelve a la ruta",
-          description:
-            "Revisa la Ruta Norte y decide si esta semana de vida a bordo encaja contigo.",
-          primaryCTA: {
-            text: "Ver Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
+            '<p>Este contenido se ha integrado en nuestra <a href="/blog/como-es-un-vida-a-bordo-mar-rojo">guia completa sobre como es un vida a bordo en el Mar Rojo</a>, donde encontraras toda la informacion sobre camarotes, comida, wifi y convivencia a bordo del M/Y Dolce Vita.</p>',
         },
       },
     ],
   },
   {
     slug: "nitrox-a-bordo-mar-rojo",
-    title: "Nitrox a bordo en el Mar Rojo: por qué importa en una semana de varias inmersiones",
+    title: "Nitrox en el Mar Rojo: que es el EANx 28% y por que esta incluido en tu vida a bordo",
     excerpt:
-      "Guía breve para resolver una objeción técnica frecuente y conectar mejor con usuarios que ya comparan detalle operativo de la ruta.",
+      "Que es el Nitrox, como funciona el EANx 28%, que ventajas reales tiene para 16-18 inmersiones en una semana y por que lo llevas incluido gratis.",
     publishedAt: "2026-03-04",
-    readTime: "6 min",
+    readTime: "8 min",
     author: {
       name: "Ana López",
       avatar: "https://i.pravatar.cc/150?img=5",
@@ -1672,44 +1317,15 @@ export const blogPosts: BlogPost[] = [
       color: "#0F8C62",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "nit-1",
-        value: {
-          content:
-            "<p>La duda sobre el <strong>Nitrox a bordo</strong> aparece en un punto interesante del funnel: cuando el usuario ya no solo está soñando con el viaje, sino revisando cómo quiere bucearlo. Eso la convierte en una pieza de soporte útil para la Ruta Norte.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "nit-2",
-        value: {
-          level: 2,
-          text: "Qué aporta esta página dentro del cluster",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "nit-3",
-        value: {
-          content:
-            "<ul><li>responder una objeción operativa frecuente</li><li>mejorar la percepción de claridad técnica del proyecto</li><li>enviar tráfico cualificado de vuelta a la <a href=\"/rutas/norte-7-dias\">Ruta Norte</a></li></ul>",
-        },
-      },
-      {
-        type: "cta",
-        id: "nit-4",
-        value: {
-          title: "Si ya preguntas por Nitrox, ya estás mirando el viaje en serio",
-          description:
-            "Vuelve a la landing principal y revisa el itinerario completo de Ruta Norte.",
-          primaryCTA: {
-            text: "Ir a la Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "nit-1", value: { content: "<p>El aire normal tiene 21% oxigeno. El Nitrox (EANx) tiene mas oxigeno y menos nitrogeno. En nuestras rutas, las botellas llevan EANx 28%. Esa diferencia cambia bastante la experiencia cuando haces 16-18 inmersiones en una semana.</p>" } },
+      { type: "heading", id: "nit-2", value: { level: 2, text: "Ventajas reales del EANx 28%" } },
+      { type: "rich_text", id: "nit-3", value: { content: "<ul><li><strong>Tiempos de no-deco mas largos:</strong> mas minutos explorando el Thistlegorm o el Carnatic sin prisa.</li><li><strong>Intervalos de superficie mas cortos:</strong> vuelves al agua antes, critico con 3-4 inmersiones al dia.</li><li><strong>Menos fatiga acumulada:</strong> despues de 4-5 dias de buceo intensivo, la diferencia se nota.</li><li><strong>Mas margen de seguridad:</strong> colchon extra en inmersiones repetitivas.</li></ul>" } },
+      { type: "heading", id: "nit-4", value: { level: 2, text: "Profundidad maxima operativa (MOD)" } },
+      { type: "rich_text", id: "nit-5", value: { content: "<p>Para EANx 28%: <strong>MOD = 40 metros</strong>. Como el buceo recreativo con Advanced tiene limite de 30 metros, el EANx 28% da margen mas que suficiente para cualquier inmersion del itinerario.</p>" } },
+      { type: "heading", id: "nit-6", value: { level: 2, text: "Como funciona a bordo" } },
+      { type: "rich_text", id: "nit-7", value: { content: "<p>El M/Y Dolce Vita lleva sistema de carga de Nitrox. Todas las botellas de 12L se cargan con EANx 28% de serie. No pagas suplemento. La especialidad SSI Enriched Air Nitrox tambien esta incluida gratis. La mayoria la completan en la primera o segunda inmersion.</p>" } },
+      { type: "rich_text", id: "nit-8", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/advanced-a-bordo-mar-rojo">Advanced SSI a bordo</a> | <a href="/blog/como-es-un-vida-a-bordo-mar-rojo">Como es un vida a bordo</a></p>' } },
+      { type: "cta", id: "nit-9", value: { title: "Nitrox incluido en todas las rutas", description: "Desde 1.190 EUR con pension completa, formacion SSI y EANx 28% de serie.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
@@ -1737,29 +1353,7 @@ export const blogPosts: BlogPost[] = [
         id: "car-1",
         value: {
           content:
-            "<p><strong>Carnatic</strong> sirve para profundizar el cluster de Abu Nuhas y demostrar que la Ruta Norte no depende de un solo nombre famoso. Cuando el usuario entra en este nivel de detalle, está mostrando una intención muy valiosa.</p>",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "car-2",
-        value: {
-          content:
-            "<p>La función de esta URL no es competir con la landing principal, sino apoyarla: añadir especificidad, reforzar el atractivo de Abu Nuhas y devolver la conversación al viaje completo.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "car-3",
-        value: {
-          title: "Carnatic se entiende mejor dentro de toda la Ruta Norte",
-          description:
-            "Pasa del detalle de un pecio al itinerario completo que le da sentido.",
-          primaryCTA: {
-            text: "Ver la ruta",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
+            '<p>Este contenido se ha integrado en nuestra <a href="/blog/abu-nuhas-cementerio-de-barcos">guia completa de Abu Nuhas</a>, donde encontraras toda la informacion sobre el Carnatic, el Giannis D, el Chrisoula K y el Kimon M en un solo articulo.</p>',
         },
       },
     ],
@@ -1789,40 +1383,18 @@ export const blogPosts: BlogPost[] = [
         id: "syr-1",
         value: {
           content:
-            "<p><strong>Shark y Yolanda Reef</strong> son claves para que la Ruta Norte no se lea como una suma de pecios sin contraste. Este bloque de arrecife aporta variedad, energía visual y una idea más completa de lo que significa una semana bien diseñada en el Mar Rojo.</p>",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "syr-2",
-        value: {
-          content:
-            "<p>Como satélite, esta página tiene una misión muy concreta: captar búsquedas de spot y explicar por qué Ras Mohammed mejora el atractivo de la <a href=\"/rutas/norte-7-dias\">Ruta Norte</a>.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "syr-3",
-        value: {
-          title: "Ras Mohammed cobra sentido cuando ves la ruta completa",
-          description:
-            "Vuelve a la landing principal y revisa cómo encaja este tramo dentro del itinerario.",
-          primaryCTA: {
-            text: "Ir a Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
+            '<p>Este contenido se ha integrado en nuestra <a href="/blog/ras-mohammed-guia-completa">guia completa de Ras Mohammed</a>, donde encontraras toda la informacion sobre Shark Reef, Yolanda Reef y Anemone City en un solo articulo.</p>',
         },
       },
     ],
   },
   {
     slug: "rosalie-moller-mar-rojo",
-    title: "Rosalie Moller en el Mar Rojo: el pecio que segmenta mejor por nivel",
+    title: "Rosalie Moller: la inmersion profunda que completa la Ruta Norte del Mar Rojo",
     excerpt:
-      "Guía satélite para usuarios que buscan detalle técnico y para reforzar el discurso honesto sobre nivel en la Ruta Norte.",
+      "Un pecio de la Segunda Guerra Mundial a 50 metros de profundidad, hundido la misma semana que el Thistlegorm. Historia, datos y lo que necesitas para bucearlo.",
     publishedAt: "2026-03-04",
-    readTime: "7 min",
+    readTime: "8 min",
     author: {
       name: "Miguel Fernández",
       avatar: "https://i.pravatar.cc/150?img=8",
@@ -1837,52 +1409,96 @@ export const blogPosts: BlogPost[] = [
     },
     body: [
       {
-        type: "rich_text",
+        type: "heading",
         id: "ros-1",
+        value: { level: 2, text: "La hermana olvidada del Thistlegorm" },
+      },
+      {
+        type: "rich_text",
+        id: "ros-2",
         value: {
           content:
-            "<p><strong>Rosalie Moller</strong> es una de esas páginas que ayudan a elevar el nivel editorial del cluster. No porque vaya a atraer el mayor volumen, sino porque fuerza a la web a hablar con más honestidad sobre profundidad, perfil de buceador y expectativas de la ruta.</p>",
+            '<p>Si el SS Thistlegorm es el pecio mas famoso del Mar Rojo, el Rosalie Moller es su version menos conocida pero igual de fascinante. Ambos fueron hundidos por bombarderos alemanes en octubre de 1941, con solo 48 horas de diferencia. Pero mientras el Thistlegorm fue redescubierto por Cousteau en los 50, el Rosalie Moller no fue encontrado hasta 1998.</p><p>Esa diferencia en fama tiene una ventaja: es un pecio mucho menos frecuentado, en mejor estado de conservacion y con una atmosfera submarina sobrecogedora.</p>',
         },
       },
       {
         type: "heading",
-        id: "ros-2",
+        id: "ros-3",
+        value: { level: 2, text: "Historia del naufragio" },
+      },
+      {
+        type: "rich_text",
+        id: "ros-4",
         value: {
-          level: 2,
-          text: "Por qué esta URL mejora el discurso comercial",
+          content:
+            "<p>Construido en 1910 en Glasgow, con 108 metros de eslora. Originalmente llamado Francis, fue rebautizado como Rosalie Moller en 1931. Requisado por la Royal Navy en la WWII para transportar carbon gales. La noche del 8 de octubre de 1941, una bomba de un Heinkel He 111 impacto de lleno y el barco se hundio en menos de una hora.</p>",
+        },
+      },
+      {
+        type: "heading",
+        id: "ros-5",
+        value: { level: 2, text: "El pecio hoy: que vas a ver" },
+      },
+      {
+        type: "rich_text",
+        id: "ros-6",
+        value: {
+          content:
+            "<p>Descansa en posicion vertical, practicamente intacto. Cubierta a 30 metros, quilla a 50 metros. Mastiles cubiertos de corales blandos hasta los 18-20 metros. Bodegas llenas de carbon, ollas y sartenes en la cocina, ojos de buey con cristal intacto. Vida marina espectacular: peces murcielago, barracudas, peces cristal y tiburones de arrecife.</p>",
+        },
+      },
+      {
+        type: "heading",
+        id: "ros-7",
+        value: { level: 2, text: "Requisitos y nivel" },
+      },
+      {
+        type: "rich_text",
+        id: "ros-8",
+        value: {
+          content:
+            "<p>Inmersion seria. Se recomienda:</p><ul><li><strong>Certificacion:</strong> Advanced Open Water (imprescindible)</li><li><strong>Experiencia:</strong> al menos 50 inmersiones registradas</li><li><strong>Gas:</strong> nitrox altamente recomendado</li><li><strong>Profundidad habitual:</strong> 40-45 m</li></ul>",
+        },
+      },
+      {
+        type: "heading",
+        id: "ros-9",
+        value: { level: 2, text: "Como llegar al Rosalie Moller" },
+      },
+      {
+        type: "rich_text",
+        id: "ros-10",
+        value: {
+          content:
+            '<p>Solo se llega en vida a bordo. En la <a href="/rutas/norte-pecios">Ruta Norte y Pecios</a> se visita normalmente en el dia 6. La ruta sale desde Hurghada, incluye 16-18 inmersiones, nitrox, pension completa y formacion SSI gratuita, desde 1.190 EUR.</p>',
         },
       },
       {
         type: "rich_text",
-        id: "ros-3",
+        id: "ros-11",
         value: {
           content:
-            "<p>Porque convierte el mensaje “Ruta Norte para muchos perfiles” en algo más preciso. Explicar spots como Rosalie Moller obliga a segmentar mejor y hace más creíble la <a href=\"/rutas/norte-7-dias\">landing principal</a>.</p>",
+            '<p><strong>Te puede interesar:</strong> <a href="/blog/abu-nuhas-cementerio-de-barcos">Abu Nuhas</a> | <a href="/blog/ss-thistlegorm-guia-completa">SS Thistlegorm</a> | <a href="/rutas/norte-pecios">Ruta Norte y Pecios</a></p>',
         },
       },
       {
         type: "cta",
-        id: "ros-4",
+        id: "ros-12",
         value: {
-          title: "Si te interesa Rosalie Moller, necesitas ver la ruta completa con contexto",
-          description:
-            "Pasa al pilar principal para entender cómo encaja este pecio en la semana.",
-          primaryCTA: {
-            text: "Ver Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
+          title: "Bucea el Rosalie Moller en la Ruta Norte",
+          description: "Desde 1.190 EUR, con pension completa, nitrox y formacion SSI incluida.",
+          primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" },
         },
       },
     ],
   },
   {
     slug: "temporada-ruta-norte-mar-rojo",
-    title: "Mejor temporada para la Ruta Norte del Mar Rojo: cómo pensar junio a diciembre",
+    title: "Mejor Temporada para Bucear en el Mar Rojo: Guia Mes a Mes para tu Vida a Bordo",
     excerpt:
-      "Página de apoyo para búsquedas de temporada y fechas, enfocada en ayudar a decidir cuándo encaja mejor una Ruta Norte desde Hurghada.",
+      "Temperatura del agua, visibilidad, vientos y que fauna esperar en cada epoca. Todo lo que necesitas para elegir las mejores fechas.",
     publishedAt: "2026-03-04",
-    readTime: "7 min",
+    readTime: "9 min",
     author: {
       name: "Carlos Martínez",
       avatar: "https://i.pravatar.cc/150?img=12",
@@ -1896,71 +1512,24 @@ export const blogPosts: BlogPost[] = [
       color: "#FF6B35",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "tmp-1",
-        value: {
-          content:
-            "<p>La búsqueda de <strong>mejor temporada para la Ruta Norte</strong> suele esconder una intención comercial muy fuerte: el usuario ya se imagina en el viaje, pero necesita decidir <em>cuándo</em>. Esta página existe para ordenar esa decisión sin convertirla en meteorología genérica.</p>",
-        },
-      },
-      {
-        type: "info_cards",
-        id: "tmp-2",
-        value: {
-          cards: [
-            {
-              icon: "☀️",
-              value: "Verano",
-              label: "Temperatura y ritmo",
-              color: "#FF6B35",
-            },
-            {
-              icon: "🍂",
-              value: "Otoño",
-              label: "Equilibrio muy atractivo",
-              color: "#0F8C62",
-            },
-            {
-              icon: "📅",
-              value: "Fechas",
-              label: "Pensar disponibilidad real",
-              color: "#0066CC",
-            },
-          ],
-        },
-      },
-      {
-        type: "rich_text",
-        id: "tmp-3",
-        value: {
-          content:
-            "<p>Más que vender un mes “perfecto”, la página debe ayudar a que el usuario pase de la curiosidad estacional a una consulta útil sobre su ventana de viaje y su encaje con la <a href=\"/rutas/norte-7-dias\">Ruta Norte</a>.</p>",
-        },
-      },
-      {
-        type: "cta",
-        id: "tmp-4",
-        value: {
-          title: "Si ya piensas en temporada, el siguiente paso es consultar la ruta",
-          description:
-            "Ve al pilar principal y cuéntanos qué ventana de viaje te interesa.",
-          primaryCTA: {
-            text: "Consultar Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "tmp-1", value: { content: "<p>El Mar Rojo se puede bucear todo el ano. No hay temporada mala, pero si temporadas diferentes. Saber que esperar te ayuda a elegir las mejores fechas.</p>" } },
+      { type: "heading", id: "tmp-2", value: { level: 2, text: "Temperatura del agua" } },
+      { type: "rich_text", id: "tmp-3", value: { content: "<ul><li><strong>Ene-Feb:</strong> 21-23 C (semiseco o 7 mm)</li><li><strong>Mar-Abr:</strong> 22-25 C (5 mm)</li><li><strong>May-Jun:</strong> 25-28 C (3-5 mm)</li><li><strong>Jul-Ago:</strong> 28-30 C (3 mm)</li><li><strong>Sep-Oct:</strong> 26-28 C (3-5 mm)</li><li><strong>Nov-Dic:</strong> 23-26 C (5 mm)</li></ul>" } },
+      { type: "heading", id: "tmp-4", value: { level: 2, text: "Fauna por epoca" } },
+      { type: "rich_text", id: "tmp-5", value: { content: "<p><strong>Invierno (dic-feb):</strong> mejor visibilidad, longimanus en Brothers. Ideal para pecios.</p><p><strong>Primavera (mar-may):</strong> visibilidad maxima, martillos desde mayo.</p><p><strong>Verano (jun-sep):</strong> agua calida, pico pelagico, tiburon zorro en Brothers.</p><p><strong>Otono (oct-nov):</strong> posiblemente la mejor epoca general. Equilibrio perfecto de temperatura, fauna y tranquilidad.</p>" } },
+      { type: "heading", id: "tmp-6", value: { level: 2, text: "Resumen rapido" } },
+      { type: "rich_text", id: "tmp-7", value: { content: "<ul><li>Pecios + visibilidad: oct-feb (Norte y Pecios, 1.190 EUR)</li><li>Martillos: may-jul (Sur BDE, 1.290 EUR)</li><li>Agua calida: jun-sep (cualquier ruta)</li><li>Menos turismo: oct-nov</li></ul>" } },
+      { type: "rich_text", id: "tmp-8", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/pecios-vs-tiburones-mar-rojo">Pecios vs tiburones</a> | <a href="/blog/hurghada-vs-sharm-liveaboard">Hurghada vs Sharm</a></p>' } },
+      { type: "cta", id: "tmp-9", value: { title: "Elige tu fecha, nosotros ponemos la ruta", description: "Salidas todo el ano desde Hurghada. Pension completa, nitrox y formacion incluidos.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
     slug: "seguro-buceo-dan-egipto",
-    title: "Seguro de buceo para Egipto: por qué esta duda importa antes de un liveaboard",
+    title: "Seguro de buceo DAN para el Mar Rojo: que cubre, cuanto cuesta y por que merece la pena",
     excerpt:
-      "Guía de soporte para resolver una objeción logística real y mejorar la percepción de seguridad antes de reservar una vida a bordo en el Mar Rojo.",
+      "Tu vida a bordo incluye seguro de viaje, pero el seguro DAN cubre lo que los seguros generales no cubren: camara hiperbarica, evacuacion y accidentes de buceo.",
     publishedAt: "2026-03-04",
-    readTime: "6 min",
+    readTime: "8 min",
     author: {
       name: "Ana López",
       avatar: "https://i.pravatar.cc/150?img=5",
@@ -1974,44 +1543,15 @@ export const blogPosts: BlogPost[] = [
       color: "#0066CC",
     },
     body: [
-      {
-        type: "rich_text",
-        id: "seg-1",
-        value: {
-          content:
-            "<p>El <strong>seguro de buceo para Egipto</strong> aparece como objeción en una fase avanzada: el usuario ya está valorando el viaje y quiere confirmar que no está pasando por alto una parte importante de seguridad y operativa.</p>",
-        },
-      },
-      {
-        type: "heading",
-        id: "seg-2",
-        value: {
-          level: 2,
-          text: "Qué aporta esta página al cluster",
-        },
-      },
-      {
-        type: "rich_text",
-        id: "seg-3",
-        value: {
-          content:
-            "<ul><li>refuerza una percepción de viaje serio y bien explicado</li><li>reduce fricción en perfiles que revisan requisitos con detalle</li><li>prepara mejor la conversación de reserva en <a href=\"/rutas/norte-7-dias\">Ruta Norte</a></li></ul>",
-        },
-      },
-      {
-        type: "cta",
-        id: "seg-4",
-        value: {
-          title: "Con la parte de seguridad ordenada, vuelve a la ruta principal",
-          description:
-            "Consulta la Ruta Norte y revisa si el viaje encaja contigo y con tu nivel actual.",
-          primaryCTA: {
-            text: "Ver Ruta Norte",
-            href: "/rutas/norte-7-dias",
-            variant: "gradient",
-          },
-        },
-      },
+      { type: "rich_text", id: "seg-1", value: { content: "<p>Todas las rutas incluyen seguro de viaje. Pero si vas a hacer 16-18 inmersiones en una semana con profundidades de hasta 30 metros, hay un tipo de cobertura que los seguros generales no incluyen: el tratamiento especifico de accidentes de buceo. Ahi entra el seguro DAN.</p>" } },
+      { type: "heading", id: "seg-2", value: { level: 2, text: "Que cubre DAN que tu seguro de viaje no cubre" } },
+      { type: "rich_text", id: "seg-3", value: { content: "<ul><li><strong>Camara hiperbarica:</strong> sesiones de 330-1.000 EUR/hora. DAN lo cubre (hasta 50.000 EUR en plan Bronze).</li><li><strong>Evacuacion medica:</strong> embarcacion rapida, ambulancia, ambulancia aerea desde mitad del Mar Rojo.</li><li><strong>Tratamiento especializado:</strong> barotraumas, toxicidad por oxigeno, lesiones de oido.</li></ul>" } },
+      { type: "heading", id: "seg-4", value: { level: 2, text: "Cuanto cuesta" } },
+      { type: "rich_text", id: "seg-5", value: { content: "<p><strong>Plan Bronze: ~60 EUR/ano.</strong> Mas que suficiente para buceo recreativo. Por ponerlo en perspectiva: menos de lo que cuesta una cena en el aeropuerto.</p>" } },
+      { type: "heading", id: "seg-6", value: { level: 2, text: "Como contratar" } },
+      { type: "rich_text", id: "seg-7", value: { content: "<p>Entra en daneurope.org, crea cuenta, elige plan Bronze, paga online. 5 minutos. Hazlo al menos unos dias antes del viaje.</p><p><strong>La combinacion correcta:</strong> seguro de viaje (incluido) + DAN. Son complementarios.</p>" } },
+      { type: "rich_text", id: "seg-8", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/seguridad-buceo-mar-rojo">Seguridad en el buceo</a> | <a href="/blog/checklist-vida-a-bordo-mar-rojo">Checklist</a></p>' } },
+      { type: "cta", id: "seg-9", value: { title: "Con el seguro cubierto, toca elegir ruta", description: "Desde 1.190 EUR con seguro de viaje incluido.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
     ],
   },
   {
@@ -2198,10 +1738,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "ras-mohammed-guia-completa",
-    title: "Ras Mohammed: El Parque Nacional Submarino Más Espectacular",
-    excerpt: "Explora uno de los mejores sitios de buceo del mundo con arrecifes de coral prístinos y vida marina abundante.",
+    title: "Ras Mohammed: Guia Completa del Mejor Parque Nacional Submarino del Mar Rojo",
+    excerpt: "Shark Reef, Yolanda Reef, Anemone City... Descubre por que Ras Mohammed es parada obligatoria en cualquier vida a bordo por el norte del Mar Rojo.",
     publishedAt: "2026-01-10",
-    readTime: "6 min",
+    readTime: "10 min",
     author: {
       name: "Ana López",
       avatar: "https://i.pravatar.cc/150?img=5",
@@ -2214,14 +1754,26 @@ export const blogPosts: BlogPost[] = [
       name: "Arrecifes",
       color: "#3DABC2",
     },
-    body: [],
+    body: [
+      { type: "rich_text", id: "rasm-1", value: { content: "<p>Si hay un lugar que resume todo lo que hace grande al buceo en el Mar Rojo, es Ras Mohammed. Situado en el extremo sur del Sinai, este parque nacional protegido es el punto donde el Golfo de Suez se encuentra con el Golfo de Aqaba. Corrientes ricas en nutrientes, paredes verticales y una concentracion de vida marina que quita el aliento.</p>" } },
+      { type: "heading", id: "rasm-2", value: { level: 2, text: "Shark Reef y Yolanda Reef: la inmersion estrella" } },
+      { type: "rich_text", id: "rasm-3", value: { content: "<p><strong>Shark Reef:</strong> pared vertical que cae a mas de 700 metros. Corales blandos y duros, tiburones grises, barracudas, jureles, atunes y delfines.</p><p><strong>Yolanda Reef:</strong> meseta a 14-20 metros con los restos del carguero Jolanda (1980). Baneras, inodoros, tuberias e incluso un BMW sumergido, todo colonizado por coral. Surrealista e inolvidable.</p><p>Se hace como <strong>drift dive</strong>. Visibilidad 30-40+ metros. Corrientes impredecibles.</p><p><strong>Profundidad:</strong> 5-40+ m | <strong>Nivel:</strong> intermedio-avanzado</p>" } },
+      { type: "heading", id: "rasm-4", value: { level: 2, text: "Anemone City" } },
+      { type: "rich_text", id: "rasm-5", value: { content: "<p>Meseta entre 5 y 25 metros tapizada de anemonas con peces payaso. Corales de mesa, coral brocoli y fauna de arrecife variada. Ideal para fotografia macro. <strong>Nivel:</strong> todos (con guia).</p>" } },
+      { type: "heading", id: "rasm-6", value: { level: 2, text: "Vida marina" } },
+      { type: "rich_text", id: "rasm-7", value: { content: "<ul><li><strong>Pelagicos:</strong> barracudas, jureles, atunes, pargos Bohar</li><li><strong>Tiburones:</strong> grises, puntas blancas, ocasionalmente martillos</li><li><strong>Tortugas:</strong> carey y verde</li><li><strong>Arrecife:</strong> peces payaso, napoleon, meros, morenas, peces leon, nudibranquios</li><li><strong>Ocasionales:</strong> mantas, delfines, aguilas de mar</li></ul>" } },
+      { type: "heading", id: "rasm-8", value: { level: 2, text: "En que rutas se incluye" } },
+      { type: "rich_text", id: "rasm-9", value: { content: "<p>Ras Mohammed aparece en 4 de las 5 rutas: Norte y Tiran (1.190 EUR), Norte y Pecios (1.190 EUR), Tiran y Blue Hole (1.230 EUR) y Norte y Brothers (1.230 EUR). Todas incluyen dia completo aqui con 2-3 inmersiones.</p>" } },
+      { type: "rich_text", id: "rasm-10", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/abu-nuhas-cementerio-de-barcos">Abu Nuhas</a> | <a href="/blog/temporada-ruta-norte-mar-rojo">Mejor temporada</a> | <a href="/rutas/norte-tiran">Ruta Norte y Tiran</a></p>' } },
+      { type: "cta", id: "rasm-11", value: { title: "Bucea Ras Mohammed en tu vida a bordo", description: "Shark Reef, Yolanda Reef y Anemone City. Desde 1.190 EUR.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
+    ],
   },
   {
     slug: "seguridad-buceo-mar-rojo",
-    title: "Guía de Seguridad para Bucear en el Mar Rojo",
-    excerpt: "Todo lo que necesitas saber sobre seguridad, corrientes y vida marina en el Mar Rojo.",
+    title: "Seguridad en el Buceo en el Mar Rojo: Guia Practica para tu Vida a Bordo",
+    excerpt: "Corrientes, vida marina, camaras hiperbaricas y protocolos de emergencia: todo lo que necesitas saber para bucear seguro en el Mar Rojo.",
     publishedAt: "2026-01-05",
-    readTime: "10 min",
+    readTime: "8 min",
     author: {
       name: "Miguel Fernández",
       avatar: "https://i.pravatar.cc/150?img=8",
@@ -2234,7 +1786,17 @@ export const blogPosts: BlogPost[] = [
       name: "Seguridad",
       color: "#0066CC",
     },
-    body: [],
+    body: [
+      { type: "rich_text", id: "safe-1", value: { content: "<p>El Mar Rojo es uno de los destinos de buceo mas seguros del mundo. Aguas calidas, visibilidad excelente e infraestructura consolidada. Pero hay cosas que conviene conocer. Esta guia pretende que llegues informado y disfrutes mas.</p>" } },
+      { type: "heading", id: "safe-2", value: { level: 2, text: "Corrientes: la variable mas importante" } },
+      { type: "rich_text", id: "safe-3", value: { content: "<ul><li><strong>Drift diving</strong> es la tecnica habitual. Te dejas llevar y el barco te recoge.</li><li>Lleva siempre <strong>boya SMB</strong> y silbato (obligatorios).</li><li>Si la corriente te arrastra, desciende: suele ser mas suave cerca del arrecife.</li><li>Nunca luches contra una corriente fuerte.</li></ul><p>Los dos primeros dias incluyen inmersiones de chequeo.</p>" } },
+      { type: "heading", id: "safe-4", value: { level: 2, text: "Vida marina: que respetar" } },
+      { type: "rich_text", id: "safe-5", value: { content: "<ul><li><strong>Pez leon:</strong> espinas venenosas, no tocar</li><li><strong>Coral de fuego:</strong> quemazon al contacto</li><li><strong>Pez piedra:</strong> camuflado, no apoyar manos en el fondo</li><li><strong>Erizos:</strong> espinas finas</li><li><strong>Morenas:</strong> no meter manos en grietas</li></ul><p><strong>Regla general:</strong> buena flotabilidad, no tocar nada, no perseguir fauna.</p>" } },
+      { type: "heading", id: "safe-6", value: { level: 2, text: "Profundidad y camaras hiperbaricas" } },
+      { type: "rich_text", id: "safe-7", value: { content: "<p>Inmersiones entre 5-30 m. Nitrox 28% incluido. El Mar Rojo tiene camaras hiperbaricas en Sharm, Hurghada (dos), El Gouna y Marsa Alam. Los barcos llevan oxigeno de emergencia.</p>" } },
+      { type: "rich_text", id: "safe-8", value: { content: '<p><strong>Te puede interesar:</strong> <a href="/blog/seguro-buceo-dan-egipto">Seguro DAN</a> | <a href="/blog/como-es-un-vida-a-bordo-mar-rojo">Como es un vida a bordo</a></p>' } },
+      { type: "cta", id: "safe-9", value: { title: "Bucear seguro es bucear informado", description: "Guias locales, seguro incluido y formacion gratuita. Desde 1.190 EUR.", primaryCTA: { text: "Ver Ruta Norte y Pecios", href: "/rutas/norte-pecios", variant: "gradient" } } },
+    ],
   },
 ]
 
