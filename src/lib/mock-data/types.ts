@@ -59,6 +59,7 @@ export interface HomepageData {
       title: string
       description: string
       image: string
+      alt?: string
     }>
   }
   whySection: {
@@ -106,6 +107,7 @@ export interface HomepageData {
     sites: Array<{
       name: string
       image: string
+      alt?: string
       depth: string
       highlight: string
     }>
@@ -145,6 +147,7 @@ export interface HomepageData {
     sectionLabel: string
     bigCard: {
       image: string
+      alt?: string
       title: string
       subtitle: string
     }
@@ -152,6 +155,7 @@ export interface HomepageData {
       | {
           type: "depth"
           image: string
+          alt?: string
           label: string
           value: string
           description: string
@@ -159,6 +163,7 @@ export interface HomepageData {
       | {
           type: "nitrox"
           image: string
+          alt?: string
           title: string
           description: string
         }
@@ -168,6 +173,7 @@ export interface HomepageData {
       | {
           type: "icon"
           image: string
+          alt?: string
           icon: string
           title: string
           description: string
@@ -175,12 +181,14 @@ export interface HomepageData {
       | {
           type: "image"
           image: string
+          alt?: string
           title: string
           description: string
         }
       | {
           type: "stat"
           image: string
+          alt?: string
           number: string
           label: string
           sublabel: string
@@ -351,12 +359,14 @@ export interface ItineraryDay {
   dives: string[]
   highlights: string[]
   image: string
+  alt?: string
   overlayDirection: "left" | "right"
 }
 
 export interface RouteSpotData {
   name: string
   image: string
+  alt?: string
   summary: string
   depth: string
   tag: string
