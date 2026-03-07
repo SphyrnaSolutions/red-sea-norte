@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-07)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** Phase 8 - Wagtail CMS Migration (v2.1 Real Content)
+**Current focus:** Phase 9 - Blog Audit (v2.1 Real Content)
 
 ## Current Position
 
-Phase: 8 of 9 (Wagtail CMS Migration)
-Plan: 3 of 3
-Status: Executing phase 8
-Last activity: 2026-03-07 -- Plan 08-02 complete (5 real routes populated in Wagtail CMS)
+Phase: 9 of 9 (Blog Audit)
+Plan: 1 of 1
+Status: Ready for phase 9
+Last activity: 2026-03-07 -- Plan 08-03 complete (frontend CMS integration for rutas verified)
 
-Progress: [############] 89% (phases 1-7 complete, phase 8 plan 2/3 done)
+Progress: [##############] 94% (phases 1-8 complete, phase 9 pending)
 
 ## Accumulated Context
 
@@ -39,6 +39,9 @@ Recent decisions affecting current work:
 - [v2.1]: Use Site.root_page for multisite-aware page creation in Wagtail management commands
 - [v2.1]: 5 rutas reales publicadas en Wagtail CMS via populate_rutas management command
 - [v2.1]: Delete-and-recreate strategy for re-runnable CMS population commands
+- [v2.1]: Flat hero fields in TypeScript type (not StreamField) to match actual Django model
+- [v2.1]: All content types added to critical fallback list for production resilience
+- [v2.1]: Frontend CMS-first loading for rutas verified live at buceoenelmarrojo.com
 
 ### Pending Todos
 
@@ -51,5 +54,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 08-02-PLAN.md
-Resume file: .planning/phases/08-wagtail-cms-migration/08-03-PLAN.md
+Stopped at: Completed 08-03-PLAN.md (Phase 8 complete)
+Resume file: .planning/phases/09-blog-audit/09-01-PLAN.md

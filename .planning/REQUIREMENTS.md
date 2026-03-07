@@ -52,7 +52,7 @@ Requirements for replacing stock content with real product data and images.
 
 ### CMS Integration
 
-- [ ] **CMS-01**: Frontend carga rutas desde API Wagtail (CMS-first) con fallback a mock-data para desarrollo local
+- [x] **CMS-01**: Frontend carga rutas desde API Wagtail (CMS-first) con fallback a mock-data para desarrollo local
 
 ### Audit de Posts
 
@@ -113,7 +113,7 @@ Requirements for replacing stock content with real product data and images.
 | DATA-02 | Phase 8 | Complete |
 | DATA-03 | Phase 8 | Complete |
 | DATA-04 | Phase 8 | Complete |
-| CMS-01 | Phase 8 | Pending |
+| CMS-01 | Phase 8 | Complete |
 | AUDIT-01 | Phase 9 | Pending |
 | AUDIT-02 | Phase 9 | Pending |
 | AUDIT-03 | Phase 9 | Pending |

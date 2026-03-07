@@ -31,7 +31,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 ### v2.1 Real Content
 
 - [x] **Phase 7: Real Images** - Sustituir todas las imagenes stock por fotos reales optimizadas del barco y buceo
-- [ ] **Phase 8: Wagtail CMS Migration** - Migrar contenido de mock-data a Wagtail CMS con datos reales del producto
+- [x] **Phase 8: Wagtail CMS Migration** - Migrar contenido de mock-data a Wagtail CMS con datos reales del producto
 - [ ] **Phase 9: Blog Audit** - Auditar y corregir los 25 blog posts contra data real del producto
 
 ## Phase Details
@@ -92,5 +92,5 @@ Plans:
 | 5. Form + Consent UX | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 6. Legal + Deploy | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
-| 8. Wagtail CMS Migration | v2.1 | 2/3 | In Progress | - |
+| 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
 | 9. Blog Audit | v2.1 | 0/1 | Not started | - |
