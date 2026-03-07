@@ -76,10 +76,10 @@ Plans:
   1. Los 25 posts han sido revisados contra PRODUCT-DATA.md y cada dato mencionado (barco, rutas, precios, formacion) coincide con la realidad
   2. Datos incorrectos o inventados en posts existentes estan corregidos (nombres de rutas, precios, especificaciones del barco, spots)
   3. Posts identificados como thin content (<800 palabras o sin valor diferencial) estan marcados con recomendacion: reescribir, fusionar o eliminar
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 09-01: Audit all 25 blog posts against PRODUCT-DATA.md, fix inaccuracies, flag thin content
+- [ ] 09-01-PLAN.md -- Audit all 25 blog posts against PRODUCT-DATA.md, fix inaccuracies, create audit report with thin content flags
 
 ## Progress
 
