@@ -83,31 +83,31 @@
 
 | # | Slug | ~Words | Differential Value | Recommendation | Reason |
 |---|------|--------|--------------------|----------------|--------|
-| 1 | requisitos-ruta-norte-mar-rojo | ~550 | High | OK | Strong pillar content: OW vs AOW segmentation, accordion FAQ, good internal linking. Addresses core purchase objection. |
-| 2 | precio-vida-a-bordo-mar-rojo | ~450 | High | OK | Addresses top-of-funnel price objection with cost breakdown framework. Good commercial intent capture. |
-| 3 | que-incluye-vida-a-bordo-mar-rojo | ~350 | Medium | OK | Resolves "todo incluido" confusion. Complements price post without duplicating it. |
-| 4 | como-llegar-a-hurghada-liveaboard | ~300 | Medium | OK | Reduces logistics friction. Unique angle (Hurghada-specific arrival). |
-| 5 | primer-liveaboard-open-water-mar-rojo | ~350 | Medium-High | OK | Strong emotional funnel piece for OW divers considering first liveaboard. Distinct from #1 (level-focused vs experience-focused). |
-| 6 | ruta-norte-vs-ruta-sur-mar-rojo | ~300 | Medium | OK | Useful comparativa for route decision. Captures comparison search intent. |
-| 7 | hurghada-vs-sharm-liveaboard | ~180 | Low | rewrite | Too thin (~180 words). Valid search intent but almost no substantive content. Needs actual comparison data (flights, logistics, routes available from each). |
-| 8 | abu-nuhas-cementerio-de-barcos | ~150 | Low-Medium | rewrite | Valid long-tail target but too thin. Needs wreck names, depths, what makes it special vs generic description. |
-| 9 | giannis-d-abu-nuhas | ~100 | Low | merge with abu-nuhas-cementerio-de-barcos | Extremely thin (~100 words). No factual dive data (depth, year, features). Better as a section within abu-nuhas post. |
-| 10 | dunraven-mar-rojo | ~120 | Low | merge with abu-nuhas-cementerio-de-barcos | Extremely thin. No depth, history, or dive details. Better as section in a consolidated wrecks post or abu-nuhas post. |
-| 11 | advanced-a-bordo-mar-rojo | ~180 | Medium | rewrite | Good angle (when Advanced adds value vs not) but too thin. Needs concrete SSI course details, what 4 specialties, how it works aboard. |
-| 12 | visado-egipto-hurghada | ~110 | Low | rewrite | Valid search intent but zero actual visa information (cost 30EUR, process, timeline). Currently just meta-commentary about why the page should exist. |
-| 13 | checklist-vida-a-bordo-mar-rojo | ~130 | Low | rewrite | Claims to be a checklist but contains no actual checklist items. Just meta-commentary about what a checklist should do. |
-| 14 | pecios-vs-tiburones-mar-rojo | ~140 | Low-Medium | rewrite | Good comparison angle but no actual data. Needs route names, what each offers, price comparison. |
-| 15 | como-es-un-vida-a-bordo-mar-rojo | ~150 | Medium | rewrite | Good search intent but only meta-commentary. Needs actual daily schedule, meal times, dive briefing flow, cabin details. |
-| 16 | camarotes-comida-wifi-liveaboard | ~100 | Low | merge with como-es-un-vida-a-bordo-mar-rojo | Extremely thin. Same topic (life aboard) with zero actual information about cabins, food quality, or wifi. |
-| 17 | nitrox-a-bordo-mar-rojo | ~90 | Low | rewrite | Valid technical topic but zero actual nitrox information. Needs: 28% included free, how certification works aboard, benefits for repetitive diving. |
-| 18 | carnatic-abu-nuhas | ~80 | Low | merge with abu-nuhas-cementerio-de-barcos | Extremely thin. No dive data. Better as section in consolidated Abu Nuhas/wrecks post. |
-| 19 | shark-yolanda-reef-mar-rojo | ~80 | Low | merge with ras-mohammed-guia-completa | Extremely thin. No actual spot data. Shark/Yolanda is part of Ras Mohammed - merge there. |
-| 20 | rosalie-moller-mar-rojo | ~100 | Low | rewrite | Valid long-tail but no depth, history, or dive details. Needs factual content from route files (30-50m depth, WWII). |
-| 21 | temporada-ruta-norte-mar-rojo | ~100 | Low | rewrite | Valid commercial intent but no actual season data. Needs water temps by month, visibility patterns, crowd levels. |
-| 22 | seguro-buceo-dan-egipto | ~80 | Low | rewrite | Valid objection-handling topic but zero actual insurance information. Needs: travel insurance included, DAN recommendation, what's covered. |
-| 23 | ss-thistlegorm-guia-completa | ~450 | High | OK | Best content post in the blog. Actual historical data, dive details, depth, cargo inventory, Cousteau quote. Solid pillar content. |
-| 24 | ras-mohammed-guia-completa | 0 | None | rewrite | Empty body (body: []). Only has title/excerpt. Needs full content with dive sites, depths, marine life. |
-| 25 | seguridad-buceo-mar-rojo | 0 | None | rewrite | Empty body (body: []). Only has title/excerpt. Needs full safety guide content. |
+| 1 | requisitos-ruta-norte-mar-rojo | 850 | High | OK | Only post above 800 words. Strong pillar: OW vs AOW segmentation, accordion FAQ, good internal linking. Addresses core purchase objection. |
+| 2 | precio-vida-a-bordo-mar-rojo | 650 | High | OK | Addresses top-of-funnel price objection with cost breakdown framework. Good commercial intent capture. Second longest post. |
+| 3 | que-incluye-vida-a-bordo-mar-rojo | 500 | Medium | OK | Resolves "todo incluido" confusion. Complements price post without duplicating it. |
+| 4 | como-llegar-a-hurghada-liveaboard | 400 | Medium | OK | Reduces logistics friction. Unique angle (Hurghada-specific arrival). |
+| 5 | primer-liveaboard-open-water-mar-rojo | 500 | Medium-High | OK | Strong emotional funnel piece for OW divers considering first liveaboard. Distinct from #1 (level-focused vs experience-focused). |
+| 6 | ruta-norte-vs-ruta-sur-mar-rojo | 500 | Medium | OK | Useful comparativa for route decision. Captures comparison search intent. |
+| 7 | hurghada-vs-sharm-liveaboard | 350 | Low | rewrite | Valid search intent but thin on substance. Needs actual comparison data: flights, logistics, routes from each port, price differences. |
+| 8 | abu-nuhas-cementerio-de-barcos | 250 | Low-Medium | rewrite | Valid long-tail target but too thin. Needs wreck names with depths, years, what makes each special. Data available in route files. |
+| 9 | giannis-d-abu-nuhas | 150 | Low | merge with abu-nuhas-cementerio-de-barcos | Extremely thin. No factual dive data (depth 10-27m, year 1983, features). Better as section within abu-nuhas post. |
+| 10 | dunraven-mar-rojo | 120 | Low | merge with abu-nuhas-cementerio-de-barcos | Extremely thin. No depth (5-28m), history (1876), or dive details. Better as section in consolidated wrecks post. |
+| 11 | advanced-a-bordo-mar-rojo | 180 | Medium | rewrite | Good angle (when Advanced adds value vs not) but too thin. Needs concrete SSI course details, what 4 specialties include, how certification works aboard. |
+| 12 | visado-egipto-hurghada | 110 | Low | rewrite | Valid search intent but zero actual visa info. Needs: online visa 30 EUR, process, timeline, how it connects to Hurghada arrival. |
+| 13 | checklist-vida-a-bordo-mar-rojo | 130 | Low | rewrite | Claims to be a checklist but contains no actual checklist items. Just meta-commentary about what a checklist should do. Needs real packing list. |
+| 14 | pecios-vs-tiburones-mar-rojo | 140 | Low-Medium | rewrite | Good comparison angle but no actual data. Needs route names (Norte y Pecios vs Sur BDE), what each offers, price from/to. |
+| 15 | como-es-un-vida-a-bordo-mar-rojo | 150 | Medium | rewrite | Good search intent but only meta-commentary. Needs actual daily schedule, meal times, dive briefing flow, M/Y Dolce Vita cabin details. |
+| 16 | camarotes-comida-wifi-liveaboard | 100 | Low | merge with como-es-un-vida-a-bordo-mar-rojo | Extremely thin. Same topic (life aboard) with zero actual info about M/Y Dolce Vita cabins, food, or wifi. |
+| 17 | nitrox-a-bordo-mar-rojo | 90 | Low | rewrite | Valid technical topic but zero actual nitrox info. Needs: 28% included free, how SSI certification works aboard, benefits for repetitive diving. |
+| 18 | carnatic-abu-nuhas | 100 | Low | merge with abu-nuhas-cementerio-de-barcos | Extremely thin. No dive data (depth 18-25m, year 1869). Better as section in consolidated Abu Nuhas post. |
+| 19 | shark-yolanda-reef-mar-rojo | 80 | Low | merge with ras-mohammed-guia-completa | Extremely thin. No actual spot data. Shark/Yolanda is part of Ras Mohammed -- merge there when that post is rewritten. |
+| 20 | rosalie-moller-mar-rojo | 100 | Low | rewrite | Valid long-tail but no depth (30-50m), history (WWII), or dive details. Factual content available in ruta-norte-pecios route file. |
+| 21 | temporada-ruta-norte-mar-rojo | 90 | Low | rewrite | Valid commercial intent but no actual season data. Needs water temps by month (22-30C), visibility patterns, crowd levels. |
+| 22 | seguro-buceo-dan-egipto | 95 | Low | rewrite | Valid objection-handling topic but zero actual insurance info. Needs: travel insurance included in price, cancellation insurance 47.75 EUR optional, DAN recommendation. |
+| 23 | ss-thistlegorm-guia-completa | 450 | High | OK | Best content post in the blog. Actual historical data (1941, Sunderland), dive details (30m depth), cargo inventory, Cousteau quote. Solid pillar. |
+| 24 | ras-mohammed-guia-completa | 20 | None | rewrite | Empty body (`body: []`). Only has title/excerpt. Needs full content: dive sites (Shark/Yolanda Reef), depths (5-40m+), marine life. |
+| 25 | seguridad-buceo-mar-rojo | 20 | None | rewrite | Empty body (`body: []`). Only has title/excerpt. Needs full safety guide: currents, depths, emergency procedures, DAN/insurance. |
 
 ---
 
@@ -116,15 +116,17 @@
 | Metric | Value |
 |--------|-------|
 | Total posts audited | 25 |
-| Posts with factual corrections | 4 (2 in precio/que-incluye, 2 in thistlegorm) |
+| Posts with factual corrections | 3 posts / 4 individual fixes |
 | Posts verified clean (no errors) | 21 |
 | Posts rated OK (no action needed) | 7 |
 | Posts needing rewrite | 12 |
-| Posts to merge into others | 4 |
+| Posts to merge into others | 5 (#9, #10, #16, #18, #19) |
 | Posts to delete | 0 |
 | Empty body posts | 2 (#24, #25) |
-| Posts under 150 words | 14 |
-| Posts over 400 words | 3 (#1, #2, #23) |
+| Posts >= 800 words | 1 (#1) |
+| Posts 400-799 words | 5 (#2, #3, #5, #6, #23) |
+| Posts 100-399 words | 12 (#4, #7-#15, #17, #20) |
+| Posts < 100 words | 7 (#16, #18, #19, #21, #22, #24, #25) |
 
 ---
 

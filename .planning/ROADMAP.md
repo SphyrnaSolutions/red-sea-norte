@@ -4,7 +4,7 @@
 
 - v1.0 SEO Infrastructure -- Phases 1-3 (shipped 2026-03-06)
 - v2.0 Lead Capture -- Phases 4-6 (shipped 2026-03-06)
-- v2.1 Real Content -- Phases 7-9 (in progress)
+- v2.1 Real Content -- Phases 7-9 (shipped 2026-03-07)
 
 ## Phases
 
@@ -32,7 +32,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 - [x] **Phase 7: Real Images** - Sustituir todas las imagenes stock por fotos reales optimizadas del barco y buceo
 - [x] **Phase 8: Wagtail CMS Migration** - Migrar contenido de mock-data a Wagtail CMS con datos reales del producto
-- [ ] **Phase 9: Blog Audit** - Auditar y corregir los 25 blog posts contra data real del producto
+- [x] **Phase 9: Blog Audit** - Auditar y corregir los 25 blog posts contra data real del producto
 
 ## Phase Details
 
@@ -79,7 +79,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 09-01-PLAN.md -- Audit all 25 blog posts against PRODUCT-DATA.md, fix inaccuracies, create audit report with thin content flags
+- [x] 09-01-PLAN.md -- Audit all 25 blog posts against PRODUCT-DATA.md, fix inaccuracies, create audit report with thin content flags
 
 ## Progress
 
@@ -93,4 +93,4 @@ Plans:
 | 6. Legal + Deploy | v2.0 | 1/1 | Complete | 2026-03-06 |
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
 | 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
-| 9. Blog Audit | v2.1 | 0/1 | Not started | - |
+| 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |

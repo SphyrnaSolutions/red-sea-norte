@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-07)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** Phase 9 - Blog Audit (v2.1 Real Content)
+**Current focus:** v2.1 Real Content COMPLETE — all milestones shipped
 
 ## Current Position
 
-Phase: 9 of 9 (Blog Audit)
-Plan: 1 of 1
-Status: Ready for phase 9
-Last activity: 2026-03-07 -- Plan 08-03 complete (frontend CMS integration for rutas verified)
+Phase: 9 of 9 (Blog Audit) — COMPLETE
+Plan: 1 of 1 — COMPLETE
+Status: v2.1 milestone shipped
+Last activity: 2026-03-07 -- Phase 9 complete (25 blog posts audited, 4 factual errors fixed, thin content flagged)
 
-Progress: [##############] 94% (phases 1-8 complete, phase 9 pending)
+Progress: [################] 100% (all 9 phases complete, v1.0 + v2.0 + v2.1 shipped)
 
 ## Accumulated Context
 
@@ -42,6 +42,7 @@ Recent decisions affecting current work:
 - [v2.1]: Flat hero fields in TypeScript type (not StreamField) to match actual Django model
 - [v2.1]: All content types added to critical fallback list for production resilience
 - [v2.1]: Frontend CMS-first loading for rutas verified live at buceoenelmarrojo.com
+- [v2.1]: 25 blog posts audited against PRODUCT-DATA.md: 4 factual errors fixed, 20/25 posts flagged as thin content
 
 ### Pending Todos
 
@@ -54,5 +55,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 08-03-PLAN.md (Phase 8 complete)
-Resume file: .planning/phases/09-blog-audit/09-01-PLAN.md
+Stopped at: Phase 9 complete — v2.1 milestone shipped
+Resume file: N/A — milestone complete, ready for v3.0 planning
