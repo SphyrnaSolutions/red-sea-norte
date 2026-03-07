@@ -64,7 +64,7 @@ export const homepageData: HomepageData = {
     },
     title: "Vida a Bordo en el Mar Rojo: Ruta Norte y Pecios desde Hurghada",
     subtitle:
-      "Safari de buceo de 7 dias entre pecios legendarios, arrecifes iconicos y la opcion de completar tu Advanced SSI a bordo.",
+      "Safari de buceo de 7 noches en el M/Y Dolce Vita entre pecios legendarios, arrecifes iconicos y formacion Advanced SSI gratuita a bordo. Desde 1.190 EUR.",
     ctas: [
       {
         text: "Consultar viaje",
@@ -175,28 +175,28 @@ export const homepageData: HomepageData = {
         name: "Thistlegorm",
         image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
         alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
-        depth: "16-32m",
+        depth: "14-30m",
         highlight: "El pecio iconico del Mar Rojo",
       },
       {
         name: "Abu Nuhas",
         image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
         alt: "Proa de pecio hundido en Abu Nuhas, cementerio de barcos del Mar Rojo",
-        depth: "4-26m",
+        depth: "10-27m",
         highlight: "Cementerio de barcos y ruta clasica",
       },
       {
         name: "Ras Mohammed",
         image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
         alt: "Arrecife de coral con peces anthias en Ras Mohammed, Mar Rojo",
-        depth: "10-35m",
+        depth: "5-40m",
         highlight: "Arrecifes, paredes y vida marina",
       },
       {
         name: "Dunraven",
         image: "/images/underwater/underwater-blue-spotted-stingray.jpg",
         alt: "Raya de puntos azules en el pecio Dunraven del Mar Rojo",
-        depth: "18-28m",
+        depth: "5-28m",
         highlight: "Pecio historico ideal para enriquecer la semana",
       },
     ],
@@ -208,15 +208,15 @@ export const homepageData: HomepageData = {
     subtitle:
       "Esta seccion sustituye el bloque antiguo de especialidades. Su funcion es explicar la experiencia real del viaje y resolver objeciones antes del formulario.",
     highlights: [
-      "Semana tipo de 7 noches con varias inmersiones al dia",
-      "Ruta centrada en pecios y puntos clasicos del norte",
-      "Salida desde Hurghada y dinamica clara de vida a bordo",
+      "7 noches a bordo del M/Y Dolce Vita (40m, 12 camarotes, 24 buceadores)",
+      "16-18 inmersiones en pecios legendarios y arrecifes",
+      "Salida desde Hurghada, traslados incluidos",
     ],
     includesTitle: "Que espera el usuario cuando reserva este viaje",
     includes: [
-      "Ritmo de inmersiones alto, con briefing y logica de semana bien definidos",
-      "Combinacion de spots legendarios con dias de arrecife para equilibrar la experiencia",
-      "Contexto suficiente para decidir si la ruta encaja antes de pasar a una landing mas profunda",
+      "Pension completa con refrescos, te, cafe y 2 cervezas/dia",
+      "Advanced SSI + 4 especialidades + seminarios gratuitos a bordo",
+      "Botella 12L, plomos y Nitrox (28%) incluidos",
     ],
     fitTitle: "Como presentamos el Advanced dentro del viaje",
     fitItems: [
@@ -232,15 +232,20 @@ export const homepageData: HomepageData = {
     title: "Programa del viaje",
     subtitle: "Bloque legado mantenido por compatibilidad de datos",
     includes: [
-      "Ruta Norte y Pecios",
-      "Vida a bordo desde Hurghada",
-      "Opcion de Advanced a bordo",
+      "7 noches de vida a bordo en el M/Y Dolce Vita",
+      "16-18 inmersiones con guias profesionales",
+      "Pension completa, refrescos, te y cafe",
+      "Advanced Open Water SSI gratuito a bordo",
+      "4 especialidades SSI incluidas",
+      "Nitrox (28%) incluido",
+      "Traslados aeropuerto-barco-aeropuerto",
+      "Seguro de viaje",
     ],
     price: {
-      amount: "Consultar",
-      badge: "FASE 1",
-      perPerson: "segun salida",
-      highlight: "Se definira cuando haya operativa real",
+      amount: "Desde 1.190 EUR",
+      badge: "MEJOR PRECIO",
+      perPerson: "por persona",
+      highlight: "Advanced SSI + 4 especialidades + Nitrox incluidos",
     },
   },
 
@@ -276,7 +281,7 @@ export const homepageData: HomepageData = {
       image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
       alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
       title: "Ruta Norte y Pecios",
-      subtitle: "Pecios legendarios y arrecifes iconicos",
+      subtitle: "7 noches desde 1.190 EUR | Advanced + 4 especialidades SSI gratis",
     },
     specialtyCards: [
       {
