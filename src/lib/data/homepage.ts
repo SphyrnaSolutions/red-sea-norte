@@ -1,24 +1,10 @@
-import { draftMode } from 'next/headers'
-import { getHomepage } from '@/lib/wagtail/fetchers'
 import { homepageData as mockData } from '@/lib/mock-data/homepage'
-import { shouldUseFallback, logDataError } from './config'
 
+/**
+ * Homepage uses mock-data directly (hybrid approach).
+ * Mock-data contains real verified product data (updated in phase 08-01).
+ * CMS homepage content is generic — will be migrated in a future phase.
+ */
 export async function getHomePageData() {
-  const { isEnabled: isDraft } = await draftMode()
-
-  try {
-    const data = await getHomepage({
-      revalidate: isDraft ? 0 : 600,
-      tags: ['homepage'],
-    })
-    if (!data) throw new Error('No homepage data received from API')
-    return data
-  } catch (error) {
-    logDataError(error, 'getHomePageData')
-    if (shouldUseFallback(error, 'homepage')) {
-      console.warn('[Data Layer] Using mock data fallback for homepage')
-      return mockData
-    }
-    throw error
-  }
+  return mockData
 }
