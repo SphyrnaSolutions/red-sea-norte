@@ -64,25 +64,25 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - v3.1: AVIF habilitado, HeroSection server component
 - v3.1: Cache /_next/image en Cloudflare edge
 
-### Active — v3.2 SEO Audit Fixes II
+### Validated — v3.2 SEO Audit Fixes II
 
-- [ ] Blog body content renderiza server-side (SSR completo, no solo headings)
-- [ ] /contacto funcional (no 404)
-- [ ] Blog schema URL usa slug de URL, no slug de CMS
-- [ ] URLs con tildes en slugs corregidas (redirect o fix en CMS)
-- [ ] Blog listing optimizado (~50KB en vez de 451KB)
-- [ ] /rutas sin force-dynamic, cacheable con ISR
-- [ ] Schema JSON-LD en listing pages (/blog/, /rutas/)
-- [ ] /blog canonical, title y description correctos
-- [ ] BlogPosting schema con image property
-- [ ] Footer links rotos eliminados (/ofertas, /terminos)
-- [ ] Schema builders reutilizados en vez de inline
-- [ ] Autor estandarizado en todos los posts
-- [ ] Lastmod en sitemaps de rutas y pages
-- [ ] Notas internas de marketing eliminadas del contenido publico
-- [ ] robots.txt User-agent blocks deduplicados
+- v3.2: Blog body content renderiza server-side (SSR completo)
+- v3.2: /contacto funcional con formulario de contacto
+- v3.2: Blog schema URL usa slug de URL, no slug de CMS
+- v3.2: URLs con tildes en slugs corregidas (301 redirects)
+- v3.2: Blog listing optimizado (451KB → 122KB)
+- v3.2: /rutas cacheable con ISR (sin force-dynamic)
+- v3.2: Schema JSON-LD en listing pages (/blog/, /rutas/)
+- v3.2: /blog canonical, title y description correctos
+- v3.2: BlogPosting schema con image y datePublished/dateModified
+- v3.2: Footer links rotos eliminados, cookie management button agregado
+- v3.2: Schema builders centralizados en todas las paginas
+- v3.2: Autor estandarizado (Karlos Simon) en todos los posts
+- v3.2: Lastmod en sitemaps de rutas y pages
+- v3.2: Notas internas de marketing eliminadas
+- v3.2: GA4 measurement ID como build ARG en Dockerfile
 
-### Backlog
+### Active — v4.0 Content SEO
 
 - [ ] 30 primeras paginas de contenido SEO (clusters: vida a bordo, rutas, pecios, destinos, logistica)
 - [ ] Contenido por pecio/spot con profundidad experta (Thistlegorm, Abu Nuhas, Ras Mohammed)
@@ -144,17 +144,16 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - **Leads**: Formularios deben conectar con Odoo CRM via API
 
 ---
-## Current Milestone: v3.2 SEO Audit Fixes II
+## Current Milestone: v4.0 Content SEO
 
-**Goal:** Corregir todos los issues P0-P2 del segundo audit SEO (2026-03-08, score 57/100): blog SSR roto, /contacto 404, schema bugs, performance, y cleanup general.
+**Goal:** Producir las primeras 30 paginas de contenido SEO por clusters tematicos para posicionar la web como referencia en espanol sobre buceo en el Mar Rojo, incluyendo contenido experto por pecio, comparativas de rutas, y contenido de friccion que capture trafico informacional.
 
 **Target features:**
-- Blog body content renderiza en SSR (P0 — todo el SEO de blog es cero sin esto)
-- /contacto funcional, schema URL mismatch fix, slugs con tildes fix
-- Blog listing optimizado (451KB → ~50KB), /rutas cacheable
-- Schema en listings, builders reutilizados, BlogPosting con image
-- /blog meta tags correctos, footer links limpios, robots.txt deduplicado
-- Lastmod en sitemaps, notas internas eliminadas, autor estandarizado
+- 30 paginas de contenido SEO organizadas en clusters (vida a bordo, rutas, pecios, destinos, logistica)
+- Contenido experto por pecio/spot (Thistlegorm, Abu Nuhas, Ras Mohammed, etc.)
+- Comparativas de rutas (Norte vs Brothers, Hurghada vs Sharm)
+- Contenido de friccion (que llevar, requisitos, certificaciones, seguridad)
+- Monitorizacion de canibalizacion de keywords
 
 ---
-*Last updated: 2026-03-08 after v3.2 milestone start*
+*Last updated: 2026-03-08 after v4.0 milestone start*

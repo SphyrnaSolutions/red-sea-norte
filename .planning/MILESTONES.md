@@ -67,15 +67,17 @@
 
 ---
 
-## v3.2 SEO Audit Fixes II (In Progress)
+## v3.2 SEO Audit Fixes II (Shipped: 2026-03-08)
 
-**Phases planned:** 5 phases (18-22)
-**Audit score:** 57/100 (pre-fix)
-**Target:**
-1. Blog SSR fix (P0) -- body content invisible in server HTML
-2. /contacto 404 fix (P1) -- main conversion page broken
-3. Schema consolidation -- use existing builders, add listings schema
-4. Performance -- /rutas ISR, /blog meta tags
-5. Cleanup -- internal notes, robots.txt, lastmod
+**Phases completed:** 5 phases (18-22)
+**Audit score:** 57/100 → ~79/100
+**Key accomplishments:**
+1. Blog SSR fix -- body content now renders in server HTML (rich_text normalization in mapStreamField)
+2. /contacto page created with InlineLeadSection, accented slug 301 redirects
+3. Schema consolidation -- all pages use centralized builders, BlogPosting with image/dates
+4. Performance -- /rutas ISR (removed force-dynamic), /blog metadata + canonical
+5. Cleanup -- internal marketing notes removed, lastmod in sitemaps, robots.txt documented
+6. GA4 Dockerfile fix -- NEXT_PUBLIC_GA_MEASUREMENT_ID as build ARG
+7. Cookie management button in footer (GDPR compliance)
 
 ---
