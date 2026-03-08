@@ -163,36 +163,40 @@ Plans:
 ### Phase 24: Wreck & Spot Content
 **Goal**: Los usuarios encuentran contenido experto y detallado sobre cada pecio y spot de buceo principal del Mar Rojo, con informacion que no existe en la competencia en espanol
 **Depends on**: Phase 23 (necesita keyword map y cluster assignments)
-**Requirements**: WRECK-01, WRECK-02, WRECK-03, WRECK-04
+**Requirements**: WRECK-01, WRECK-02, WRECK-03, WRECK-04, AUTH-01, AUTH-02
 **Success Criteria** (what must be TRUE):
   1. La pagina del SS Thistlegorm incluye: historia del barco, descripcion del buceo, profundidad, nivel requerido, que ver dentro y fuera del pecio, y consejos practicos -- publicada en Wagtail CMS con schema BlogPosting correcto
   2. La pagina de Abu Nuhas cubre los 4 pecios del arrecife (Giannis D, Carnatic, Tile Wreck, Kimon M) con seccion dedicada a cada uno
   3. La pagina de Ras Mohammed cubre Shark Reef, Yolanda Reef y Anemone City con informacion de corrientes, nivel y vida marina
   4. Existen al menos 5 paginas adicionales de spots/pecios que completan el cluster, cada una con contenido de profundidad experta (no generico)
   5. Todas las paginas de pecios/spots siguen la plantilla SEO estandar (H1 con keyword, ToC, interlinks, schema) y estan publicadas en Wagtail
+  6. Cada pagina cita al menos 2-3 fuentes autoritativas (PADI, SSI, NOAA, guias nauticas, registros historicos) con enlaces externos
+  7. Cada pagina experta incluye seccion de fuentes/referencias al final
 **Plans**: TBD
 
 ### Phase 25: Route Comparisons
 **Goal**: Los usuarios pueden comparar rutas de vida a bordo de forma objetiva para decidir cual reservar segun su nivel, intereses y punto de salida
 **Depends on**: Phase 23 (necesita keyword map)
-**Requirements**: COMP-01, COMP-02, COMP-03
+**Requirements**: COMP-01, COMP-02, COMP-03, AUTH-01, AUTH-02
 **Success Criteria** (what must be TRUE):
   1. Existe una comparativa Ruta Norte vs Ruta Brothers con tabla comparativa (pecios, vida marina, nivel, precio, duracion) y recomendacion clara por perfil de buceador
   2. Existe una comparativa Hurghada vs Sharm el-Sheikh como punto de salida, cubriendo logistica, rutas disponibles, precio, y ventajas/desventajas de cada puerto
   3. Existe una guia "mejor ruta segun tu nivel" que orienta desde Open Water hasta buceadores avanzados, con recomendacion de ruta y temporada para cada nivel
   4. Las 3 paginas estan publicadas en Wagtail CMS con schema, interlinks a paginas de rutas existentes, y CTAs hacia el formulario de contacto
+  5. Cada comparativa cita fuentes (SSI, operadores, datos de profundidad/corrientes verificables) con enlaces externos
 **Plans**: TBD
 
 ### Phase 26: Friction & Logistics Content
 **Goal**: Los usuarios encuentran respuesta a todas las dudas previas a reservar un liveaboard (que llevar, requisitos, seguridad, logistica), reduciendo la friccion de conversion
 **Depends on**: Phase 23 (necesita keyword map)
-**Requirements**: FRIC-01, FRIC-02, FRIC-03, FRIC-04
+**Requirements**: FRIC-01, FRIC-02, FRIC-03, FRIC-04, AUTH-01, AUTH-02
 **Success Criteria** (what must be TRUE):
   1. Existe un packing list completo para liveaboard con secciones por categoria (equipo de buceo, ropa, documentos, botiquin) publicado en Wagtail
   2. Existe una pagina de requisitos y certificaciones que explica nivel minimo (Open Water), certificaciones recomendadas, y como se relaciona con las rutas del producto
   3. Existe una pagina de seguridad que cubre: seguro de buceo recomendado, ubicacion de camaras hiperbaricas, protocolos de emergencia y DAN
   4. Existe una guia de logistica que cubre: visa de Egipto para espanoles, como llegar a Hurghada (vuelos), transfers aeropuerto-puerto, propinas y moneda
   5. Las 4 paginas capturan trafico informacional long-tail y contienen CTAs internos hacia el formulario de contacto y paginas de rutas
+  6. Cada pagina cita fuentes autoritativas (DAN, ministerio egipcio, PADI/SSI, aerolineas) y tiene seccion de referencias
 **Plans**: TBD
 
 ### Phase 27: Cluster Wiring & Monitoring

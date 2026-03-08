@@ -191,6 +191,11 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 - [ ] **FRIC-03**: Seguridad en buceo: seguro, camara hiperbarica, protocolos
 - [ ] **FRIC-04**: Logistica: visa Egipto, como llegar a Hurghada, transfers, propinas
 
+### Content Quality & Authority
+
+- [ ] **AUTH-01**: Cada pagina cita al menos 2-3 fuentes autoritativas (PADI, SSI, DAN, NOAA, autoridades egipcias, guias de buceo reconocidas) con enlaces externos
+- [ ] **AUTH-02**: Seccion de fuentes/referencias al final de cada pagina experta (pecios, seguridad, logistica)
+
 ### Cluster Infrastructure
 
 - [ ] **CLUST-01**: Paginas pillar creadas para cada cluster (vida a bordo, pecios, destinos, logistica)
@@ -307,6 +312,8 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 | CLUST-02 | Phase 27 | Pending |
 | CLUST-03 | Phase 27 | Pending |
 | MON-01 | Phase 27 | Pending |
+| AUTH-01 | Phase 24, 25, 26 | Pending |
+| AUTH-02 | Phase 24, 25, 26 | Pending |
 
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13
@@ -314,7 +321,7 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 - v3.0 requirements: 16 total -- mapped: 16
 - v3.1 requirements: 16 total -- mapped: 16
 - v3.2 requirements: 16 total -- mapped: 16
-- v4.0 requirements: 17 total -- mapped: 17
+- v4.0 requirements: 19 total -- mapped: 19
 
 ---
 *Requirements defined: 2026-03-06*
