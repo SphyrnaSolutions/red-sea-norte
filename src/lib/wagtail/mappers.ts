@@ -161,11 +161,22 @@ function getImageUrl(wagtailImage: unknown): string {
  * Helper: Mapear StreamField blocks a nuestro formato
  */
 function mapStreamField(blocks: WagtailStreamFieldBlock[]): Block[] {
-  return blocks.map(block => ({
-    type: block.type,
-    id: block.id,
-    value: block.value
-  }))
+  return blocks.map(block => {
+    // Wagtail returns rich_text value as plain HTML string,
+    // but RichTextBlock expects { content: string }
+    if (block.type === 'rich_text' && typeof block.value === 'string') {
+      return {
+        type: block.type,
+        id: block.id,
+        value: { content: block.value },
+      }
+    }
+    return {
+      type: block.type,
+      id: block.id,
+      value: block.value,
+    }
+  })
 }
 
 /**

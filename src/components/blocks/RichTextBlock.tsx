@@ -1,9 +1,10 @@
-import DOMPurify from 'isomorphic-dompurify'
 import type { Block, RichTextValue } from './types'
 
 export function RichTextBlock({ block }: { block: Block }) {
   const value = block.value as Partial<RichTextValue>
-  if (!value?.content) return null
+  // Support both normalized { content: string } and raw HTML string from Wagtail
+  const html = typeof block.value === 'string' ? block.value : value?.content
+  if (!html) return null
 
   return (
     <div className="w-full max-w-[800px] mb-10">
@@ -15,7 +16,7 @@ export function RichTextBlock({ block }: { block: Block }) {
           lineHeight: 1.7,
           fontFamily: 'var(--font-sans)',
         }}
-        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(value.content) }}
+        dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>
   )
