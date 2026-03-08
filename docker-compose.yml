@@ -26,6 +26,7 @@ services:
       - ODOO_DB=${ODOO_DB}
       - ODOO_LOGIN=${ODOO_LOGIN}
       - ODOO_API_KEY=${ODOO_API_KEY}
+      - REVALIDATION_SECRET=${REVALIDATION_SECRET}
     # Puerto expuesto solo internamente (para reverse proxy)
     expose:
       - "3000"
