@@ -76,7 +76,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 - [x] **Phase 23: Content Planning & Keyword Map** - Mapa de 30 paginas con keyword target, cluster assignment, y estrategia de internal linking (completed 2026-03-08)
 - [ ] **Phase 24: Wreck & Spot Content** - Contenido experto por pecio/spot: Thistlegorm, Abu Nuhas, Ras Mohammed, y spots adicionales (~5-8 paginas)
-- [ ] **Phase 25: Route Comparisons** - Comparativas de rutas y guia por nivel de buceo (3 paginas)
+- [x] **Phase 25: Route Comparisons** - Comparativas de rutas y guia por nivel de buceo (3 paginas) (completed 2026-03-08)
 - [ ] **Phase 26: Friction & Logistics Content** - Contenido informacional de friccion: packing list, certificaciones, seguridad, logistica (4 paginas)
 - [ ] **Phase 27: Cluster Wiring & Monitoring** - Paginas pillar, internal links bidireccionales, breadcrumbs de cluster, y deteccion de canibalizacion
 
@@ -186,7 +186,7 @@ Plans:
   3. Existe una guia "mejor ruta segun tu nivel" que orienta desde Open Water hasta buceadores avanzados, con recomendacion de ruta y temporada para cada nivel
   4. Las 3 paginas estan publicadas en Wagtail CMS con schema, interlinks a paginas de rutas existentes, y CTAs hacia el formulario de contacto
   5. Cada comparativa cita fuentes (SSI, operadores, datos de profundidad/corrientes verificables) con enlaces externos
-**Plans:** 3 plans
+**Plans:** 3/3 plans complete
 Plans:
 - [ ] 25-01-PLAN.md -- Comparativa Ruta Norte vs Ruta Brothers con tabla y recomendacion por perfil
 - [ ] 25-02-PLAN.md -- Comparativa Hurghada vs Sharm el-Sheikh como puerto de salida
@@ -247,6 +247,6 @@ Plans:
 | 22. Content & Config Cleanup | v3.2 | 1/1 | Complete | 2026-03-08 |
 | 23. Content Planning & Keyword Map | 1/1 | Complete    | 2026-03-08 | - |
 | 24. Wreck & Spot Content | v4.0 | 0/? | Not started | - |
-| 25. Route Comparisons | v4.0 | 0/? | Not started | - |
+| 25. Route Comparisons | 0/3 | Complete    | 2026-03-08 | - |
 | 26. Friction & Logistics Content | v4.0 | 0/? | Not started | - |
 | 27. Cluster Wiring & Monitoring | v4.0 | 0/? | Not started | - |
