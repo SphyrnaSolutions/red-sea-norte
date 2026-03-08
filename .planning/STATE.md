@@ -2,19 +2,19 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-07)
+See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** v2.1 Real Content COMPLETE — all milestones shipped
+**Current focus:** v3.0 SEO Operations — defining requirements
 
 ## Current Position
 
-Phase: 9 of 9 (Blog Audit) — COMPLETE
-Plan: 1 of 1 — COMPLETE
-Status: v2.1 milestone shipped
-Last activity: 2026-03-07 -- Phase 9 complete (25 blog posts audited, 4 factual errors fixed, thin content flagged)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements for v3.0
+Last activity: 2026-03-08 -- Milestone v3.0 started
 
-Progress: [################] 100% (all 9 phases complete, v1.0 + v2.0 + v2.1 shipped)
+Progress: [░░░░░░░░░░░░░░░░] 0% (v3.0 requirements phase)
 
 ## Accumulated Context
 
@@ -46,7 +46,11 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-- [ ] Preguntar a Karlos: ¿hay wifi en el M/Y Dolce Vita? (para actualizar blog post como-es-vida-a-bordo)
+- [ ] Enviar lista de contenido a Karlos: 31-50 fotos + 6 videos (ver .planning/KARLOS-CONTENT-REQUEST.md)
+- [ ] Preguntar a Karlos: ¿hay wifi en el M/Y Dolce Vita?
+- [ ] Preguntar a Karlos: ¿tiene canal de YouTube?
+- [ ] Preguntar a Karlos: ¿tiene fotos de clientes con permiso de uso?
+- [ ] Actualizar populate_blog.py con hero_image_id mapping (persistir asignacion de imagenes)
 
 ### Blockers/Concerns
 
@@ -54,6 +58,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-03-07
-Stopped at: Phase 9 complete — v2.1 milestone shipped
-Resume file: N/A — milestone complete, ready for v3.0 planning
+Last session: 2026-03-08
+Stopped at: Defining v3.0 requirements
+Resume file: N/A

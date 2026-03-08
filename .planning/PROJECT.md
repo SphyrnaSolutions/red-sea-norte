@@ -31,12 +31,25 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - v2.0: Integracion Odoo CRM: crear crm.lead con source tracking
 - v2.0: Pagina de politica de privacidad
 
-### Active — v2.1 Real Content
+### Validated — v2.1 Real Content
 
-- [ ] Sustituir imagenes stock (Unsplash) por fotos reales del barco y buceo
-- [ ] Integrar datos reales del producto: barco M/Y Dolce Vita, 5 rutas, precios, itinerarios
-- [ ] Auditar y actualizar los 25 blog posts existentes contra data real
-- [ ] Optimizar imagenes para web (responsive, lazy load, alt text SEO)
+- v2.1: 33 fotos reales subidas a Wagtail CMS y asignadas a imagenes del frontend
+- v2.1: 5 rutas reales con precios, itinerarios y spots migradas a Wagtail CMS
+- v2.1: 25 blog posts auditados, 4 errores factuales corregidos, 13 posts reescritos con contenido real
+- v2.1: Frontend CMS-first con fallback a mock-data para desarrollo local
+
+### Active — v3.0 SEO Operations
+
+- [ ] Dar de alta buceoenelmarrojo.com en GSC, Bing Webmaster Tools y GA4
+- [ ] Dividir sitemap unico en sitemaps por categoria (blog, rutas, ofertas, cursos, experiencias)
+- [ ] Configurar 301 redirects para 5 posts merged y excluirlos del sitemap
+- [ ] Enviar sitemaps a GSC y Bing
+- [ ] Recibir fotos/videos de pecios, spots y formacion de Karlos y subirlas a Wagtail
+- [ ] Webhook Wagtail para ISR on-demand al publicar contenido
+- [ ] Eliminar draftMode() de fetchers para habilitar ISR real
+- [ ] Self-host fuentes con next/font/local (eliminar FOUT)
+- [ ] Core Web Vitals optimization pass
+- [ ] Fix Wagtail 500s durante Docker build
 
 ### Backlog
 
@@ -44,9 +57,7 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - [ ] Contenido por pecio/spot con profundidad experta (Thistlegorm, Abu Nuhas, Ras Mohammed)
 - [ ] Comparativas de rutas (Norte vs Brothers, Hurghada vs Sharm)
 - [ ] Contenido de "friccion" (que llevar, requisitos, seguridad, certificaciones)
-- [ ] Webhook Wagtail para ISR on-demand al publicar contenido
 - [ ] Monitorizacion de canibalizacion de keywords
-- [ ] Core Web Vitals optimization pass
 
 ### Out of Scope
 
@@ -58,13 +69,14 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 
 ## Context
 
-**Current state (post-v2.0):**
+**Current state (post-v2.1):**
 - Stack: Next.js 16 + React 19 + Tailwind CSS 4 + TypeScript + Wagtail headless
 - SEO infrastructure completa y funcional (schema, clusters, interlinks)
 - Lead capture form conectado a Odoo CRM via XML-RPC
-- 25 blog posts en Wagtail (pendientes de audit contra data real)
-- Imagenes actualmente stock (Unsplash) -- 33 fotos reales de Karlos disponibles
-- Datos reales scrapeados: 5 rutas, barco M/Y Dolce Vita, precios, itinerarios
+- 25 blog posts live en Wagtail CMS con contenido real (13 reescritos, 5 merged stubs)
+- 33 fotos reales del barco/vida marina en Wagtail, asignadas como hero a posts
+- 5 rutas reales en Wagtail CMS con datos verificados del producto
+- Faltan: fotos de pecios/spots/formacion, videos, GA4, GSC, Bing, sitemaps separados
 
 **Producto real (via viajeskarlossimon.com):**
 - Barco: M/Y Dolce Vita (40m, 12 camarotes, 24 pax, Divers Fleet)
@@ -101,15 +113,17 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - **Leads**: Formularios deben conectar con Odoo CRM via API
 
 ---
-## Current Milestone: v2.1 Real Content
+## Current Milestone: v3.0 SEO Operations
 
-**Goal:** Sustituir todo el contenido stock/placeholder de la web por datos y fotos reales del producto, para que la web sea credible y util antes de escalar a 30+ paginas de contenido SEO.
+**Goal:** Conectar la web con las herramientas de SEO (GSC, Bing, GA4), optimizar sitemaps e indexacion, incorporar contenido visual de Karlos, y resolver deuda tecnica de rendimiento.
 
 **Target features:**
-- Fotos reales del barco, buceo y vida marina (33 fotos de Karlos)
-- Datos reales: barco M/Y Dolce Vita, 5 rutas con itinerarios y precios
-- Audit de los 25 blog posts existentes contra la data real del producto
-- Imagenes optimizadas para web con alt text SEO descriptivo
+- Alta y verificacion en Google Search Console, Bing Webmaster Tools y GA4
+- Sitemaps divididos por categoria con sitemap index
+- 301 redirects para posts merged, exclusion de stubs del sitemap
+- Fotos/videos de pecios, spots y formacion de Karlos subidas a Wagtail
+- Webhook ISR para publicacion en tiempo real desde Wagtail
+- Core Web Vitals optimization (fonts, draftMode, build fixes)
 
 ---
-*Last updated: 2026-03-07 after v2.1 milestone start*
+*Last updated: 2026-03-08 after v3.0 milestone start*
