@@ -38,6 +38,15 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      { source: '/blog/giannis-d-abu-nuhas', destination: '/blog/abu-nuhas-cementerio-de-barcos', permanent: true },
+      { source: '/blog/dunraven-mar-rojo', destination: '/blog/abu-nuhas-cementerio-de-barcos', permanent: true },
+      { source: '/blog/carnatic-abu-nuhas', destination: '/blog/abu-nuhas-cementerio-de-barcos', permanent: true },
+      { source: '/blog/camarotes-comida-wifi-liveaboard', destination: '/blog/como-es-un-vida-a-bordo-mar-rojo', permanent: true },
+      { source: '/blog/shark-yolanda-reef-mar-rojo', destination: '/blog/ras-mohammed-guia-completa', permanent: true },
+    ]
+  },
   images: {
     remotePatterns: [
       {
