@@ -77,7 +77,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 - [x] **Phase 23: Content Planning & Keyword Map** - Mapa de 30 paginas con keyword target, cluster assignment, y estrategia de internal linking (completed 2026-03-08)
 - [ ] **Phase 24: Wreck & Spot Content** - Contenido experto por pecio/spot: Thistlegorm, Abu Nuhas, Ras Mohammed, y spots adicionales (~5-8 paginas)
 - [x] **Phase 25: Route Comparisons** - Comparativas de rutas y guia por nivel de buceo (3 paginas) (completed 2026-03-08)
-- [ ] **Phase 26: Friction & Logistics Content** - Contenido informacional de friccion: packing list, certificaciones, seguridad, logistica (4 paginas)
+- [x] **Phase 26: Friction & Logistics Content** - Contenido informacional de friccion y vida-a-bordo: 11 paginas (5 logistica + 6 vida-a-bordo) (completed 2026-03-08)
 - [ ] **Phase 27: Cluster Wiring & Monitoring** - Paginas pillar, internal links bidireccionales, breadcrumbs de cluster, y deteccion de canibalizacion
 
 ## Phase Details
@@ -203,10 +203,10 @@ Plans:
   4. Existe una guia de logistica que cubre: visa de Egipto para espanoles, como llegar a Hurghada (vuelos), transfers aeropuerto-puerto, propinas y moneda
   5. Las 4 paginas capturan trafico informacional long-tail y contienen CTAs internos hacia el formulario de contacto y paginas de rutas
   6. Cada pagina cita fuentes autoritativas (DAN, ministerio egipcio, PADI/SSI, aerolineas) y tiene seccion de referencias
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 Plans:
-- [ ] 26-01-PLAN.md -- Create 5 friction/logistics pages (packing list, certifications, safety, visa/flights, tips) in Wagtail CMS
-- [ ] 26-02-PLAN.md -- Create 6 vida-a-bordo satellite pages (typical day, training, gastronomy, night diving, currents, underwater photography) in Wagtail CMS
+- [x] 26-01-PLAN.md -- Create 5 friction/logistics pages (packing list, certifications, safety, visa/flights, tips) in Wagtail CMS
+- [x] 26-02-PLAN.md -- Create 6 vida-a-bordo satellite pages (typical day, training, gastronomy, night diving, currents, underwater photography) in Wagtail CMS
 
 ### Phase 27: Cluster Wiring & Monitoring
 **Goal**: Las 30 paginas nuevas estan integradas en la arquitectura de clusters con paginas pillar, interlinks bidireccionales, y existe un mecanismo para detectar canibalizacion de keywords
@@ -248,5 +248,5 @@ Plans:
 | 23. Content Planning & Keyword Map | 1/1 | Complete    | 2026-03-08 | - |
 | 24. Wreck & Spot Content | v4.0 | 0/? | Not started | - |
 | 25. Route Comparisons | 0/3 | Complete    | 2026-03-08 | - |
-| 26. Friction & Logistics Content | v4.0 | 0/? | Not started | - |
+| 26. Friction & Logistics Content | v4.0 | 2/2 | Complete | 2026-03-08 |
 | 27. Cluster Wiring & Monitoring | v4.0 | 0/? | Not started | - |

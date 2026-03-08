@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** v4.0 Content SEO -- Phase 26 (Friction & Logistics Content)
+**Current focus:** v4.0 Content SEO -- Phase 27 (Cluster Wiring & Monitoring)
 
 ## Current Position
 
-Phase: 26 of 27 (Friction & Logistics Content)
+Phase: 27 of 27 (Cluster Wiring & Monitoring)
 Plan: pending
-Status: Phase 25 complete, advancing to 26
-Last activity: 2026-03-08 -- 3 comparison pages published in Wagtail CMS (Norte vs Brothers, Hurghada vs Sharm, Best Route by Level)
+Status: Phase 26 complete, advancing to 27
+Last activity: 2026-03-08 -- 11 content pages published in Wagtail CMS (5 logistica + 6 vida-a-bordo)
 
-Progress: [========            ] 40% (v4.0)
+Progress: [================    ] 80% (v4.0)
 
 ## Accumulated Context
 
@@ -30,6 +30,8 @@ Progress: [========            ] 40% (v4.0)
 - [v4.0-P23]: 5 pillar pages deferred to Phase 27 (after satellite content exists)
 - [v4.0-P25]: 3 comparison pages published: ruta-norte-vs-brothers, hurghada-vs-sharm (logistics), mejor-ruta-por-nivel
 - [v4.0-P25]: Content published via populate_comparisons.py management command (same pattern as populate_blog.py)
+- [v4.0-P26]: 11 pages published: 5 logistica (IDs 123-127) + 6 vida-a-bordo (IDs 131-136) via populate scripts
+- [v4.0-P26]: SSH stdin pipe to docker exec manage.py shell confirmed as reliable content deployment pattern
 
 ### Pending Todos
 
@@ -45,4 +47,4 @@ Progress: [========            ] 40% (v4.0)
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Phase 25 complete -- 3 comparison pages live in Wagtail, ready for Phase 26 (Friction & Logistics)
+Stopped at: Phase 26 complete -- 11 content pages live in Wagtail (5 logistica + 6 vida-a-bordo), ready for Phase 27 (Cluster Wiring)
