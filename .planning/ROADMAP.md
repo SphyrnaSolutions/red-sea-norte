@@ -69,7 +69,10 @@ Plans:
   3. Los posts merged no aparecen en ningun sitemap de la web
   4. Existe un sitemap de imagenes que lista las fotos indexables para Google Images
   5. Los sitemaps estan enviados y aceptados en GSC y Bing Webmaster Tools
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 11-01-PLAN.md -- Sitemap index + per-category sitemaps + image sitemap + 301 redirects for merged posts
+- [ ] 11-02-PLAN.md -- Submit sitemaps to GSC and Bing via MCP + human verification
 
 ### Phase 12: Technical SEO
 **Goal**: La web carga rapido, las fuentes no producen FOUT, el contenido se revalida automaticamente al publicar en Wagtail, y Cloudflare optimiza la entrega
@@ -108,7 +111,7 @@ Plans:
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
 | 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
-| 10. SEO Tooling Setup | 1/1 | Complete    | 2026-03-08 | - |
-| 11. Sitemaps & Redirects | v3.0 | 0/? | Not started | - |
+| 10. SEO Tooling Setup | v3.0 | 1/1 | Complete | 2026-03-08 |
+| 11. Sitemaps & Redirects | v3.0 | 0/2 | Not started | - |
 | 12. Technical SEO | v3.0 | 0/? | Not started | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
