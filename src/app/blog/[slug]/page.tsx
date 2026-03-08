@@ -99,11 +99,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ? buildArticleSchema(rawPage as WagtailBlogPostPage, BASE_URL, slug)
     : {
         '@context': 'https://schema.org' as const,
-        '@type': 'Article' as const,
+        '@type': 'BlogPosting' as const,
         headline: post.title,
         description: post.excerpt,
-        image: post.hero?.image ? (post.hero.image.startsWith('http') ? post.hero.image : `${BASE_URL}${post.hero.image}`) : undefined,
+        image: post.hero?.image ? (post.hero.image.startsWith('http') ? post.hero.image : `${BASE_URL}${post.hero.image}`) : `${BASE_URL}/images/og-default.jpg`,
         author: { '@type': 'Person' as const, name: 'Karlos Simon' },
+        datePublished: post.publishedAt,
         mainEntityOfPage: { '@type': 'WebPage' as const, '@id': `${BASE_URL}/blog/${slug}` },
       }
 

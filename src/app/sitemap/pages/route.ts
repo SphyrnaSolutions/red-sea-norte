@@ -9,6 +9,7 @@ export async function GET() {
     { loc: `${BASE_URL}/cursos`, lastmod: '2026-03-08' },
     { loc: `${BASE_URL}/experiencias`, lastmod: '2026-03-08' },
     { loc: `${BASE_URL}/politica-de-privacidad`, lastmod: '2026-03-08' },
+    { loc: `${BASE_URL}/contacto`, lastmod: '2026-03-08' },
   ]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

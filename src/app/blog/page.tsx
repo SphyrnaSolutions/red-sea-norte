@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: 'Articulos sobre buceo en el Mar Rojo: guias de rutas, pecios emblematicos y consejos para safaris de buceo.',
   },
   alternates: {
-    canonical: `${BASE_URL}/blog/`,
+    canonical: `${BASE_URL}/blog`,
   },
 }
 
