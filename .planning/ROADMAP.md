@@ -64,7 +64,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 - [x] **Phase 18: Blog SSR Fix** - Blog body content renderiza en server HTML y listing optimizado a <60KB (completed 2026-03-08)
 - [x] **Phase 19: Routing & Dead Links** - /contacto funcional, slugs con tildes corregidos, footer links limpios (completed 2026-03-08)
-- [ ] **Phase 20: Schema Consolidation** - Schema builders reutilizados en todas las paginas, listings con JSON-LD, BlogPosting completo
+- [x] **Phase 20: Schema Consolidation** - Schema builders reutilizados en todas las paginas, listings con JSON-LD, BlogPosting completo (completed 2026-03-08)
 - [x] **Phase 21: Blog & Rutas Performance** - /rutas cacheable con ISR, /blog con canonical y meta tags correctos (completed 2026-03-08)
 - [x] **Phase 22: Content & Config Cleanup** - Notas internas eliminadas, robots.txt limpio, lastmod en sitemaps (completed 2026-03-08)
 
@@ -104,7 +104,7 @@ Plans:
   3. BlogPosting schema incluye image property con URL de la hero image del post
   4. Ninguna pagina construye JSON-LD inline -- todas usan las funciones de src/lib/seo/schema/
   5. Todos los BlogPosting tienen el mismo author.name estandarizado
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 20-01-PLAN.md -- Fix schema builders, create CollectionPage builder, migrate all pages to use centralized builders
 
@@ -155,6 +155,6 @@ Plans:
 | 17. On-Page & Performance | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 18. Blog SSR Fix | 1/1 | Complete   | 2026-03-08 | - |
 | 19. Routing & Dead Links | 1/1 | Complete   | 2026-03-08 | - |
-| 20. Schema Consolidation | v3.2 | 0/1 | Not started | - |
+| 20. Schema Consolidation | 1/1 | Complete   | 2026-03-08 | - |
 | 21. Blog & Rutas Performance | 1/1 | Complete   | 2026-03-08 | - |
 | 22. Content & Config Cleanup | 1/1 | Complete   | 2026-03-08 | - |

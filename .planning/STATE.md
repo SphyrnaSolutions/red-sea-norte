@@ -34,6 +34,7 @@ Progress: [====================] 100% (milestones v1.0-v3.2 complete)
 - [Phase 22]: lastPublishedAt added to RutaData and wired through mappers for sitemap dates
 - [Phase 22]: robots.txt duplication is Cloudflare config issue, documented in code comment
 - [Phase 22]: Static pages lastmod uses fixed date 2026-03-08
+- [Phase 20]: All blog/rutas JSON-LD via centralized schema builders; author standardized to Karlos Simon
 
 ### Pending Todos
 
@@ -48,4 +49,4 @@ Progress: [====================] 100% (milestones v1.0-v3.2 complete)
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Completed 22-01-PLAN.md (Content & Config Cleanup) -- v3.2 milestone complete
+Stopped at: Completed 20-01-PLAN.md (Schema Consolidation) -- all blog/rutas pages use centralized schema builders

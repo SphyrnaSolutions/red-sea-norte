@@ -144,11 +144,11 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 
 ### Schema
 
-- [ ] **SCHEMA-05**: Blog schema mainEntityOfPage.@id usa slug de URL, no slug de CMS
-- [ ] **SCHEMA-06**: Listing pages /blog/ y /rutas/ incluyen JSON-LD (CollectionPage + BreadcrumbList)
-- [ ] **SCHEMA-07**: BlogPosting incluye image property (requerido para Article rich results)
-- [ ] **SCHEMA-08**: Paginas usan schema builders de src/lib/seo/schema/ en vez de construir inline
-- [ ] **SCHEMA-09**: Autor estandarizado con mismo nombre en todos los BlogPosting
+- [x] **SCHEMA-05**: Blog schema mainEntityOfPage.@id usa slug de URL, no slug de CMS
+- [x] **SCHEMA-06**: Listing pages /blog/ y /rutas/ incluyen JSON-LD (CollectionPage + BreadcrumbList)
+- [x] **SCHEMA-07**: BlogPosting incluye image property (requerido para Article rich results)
+- [x] **SCHEMA-08**: Paginas usan schema builders de src/lib/seo/schema/ en vez de construir inline
+- [x] **SCHEMA-09**: Autor estandarizado con mismo nombre en todos los BlogPosting
 
 ### Performance
 
@@ -251,11 +251,11 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 | ROUTE-01 | Phase 19 | Complete |
 | ROUTE-02 | Phase 19 | Complete |
 | ROUTE-03 | Phase 19 | Complete |
-| SCHEMA-05 | Phase 20 | Pending |
-| SCHEMA-06 | Phase 20 | Pending |
-| SCHEMA-07 | Phase 20 | Pending |
-| SCHEMA-08 | Phase 20 | Pending |
-| SCHEMA-09 | Phase 20 | Pending |
+| SCHEMA-05 | Phase 20 | Complete |
+| SCHEMA-06 | Phase 20 | Complete |
+| SCHEMA-07 | Phase 20 | Complete |
+| SCHEMA-08 | Phase 20 | Complete |
+| SCHEMA-09 | Phase 20 | Complete |
 | PERF-03 | Phase 21 | Complete |
 | PERF-04 | Phase 21 | Complete |
 | PERF-05 | Phase 21 | Complete |
