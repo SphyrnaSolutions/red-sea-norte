@@ -81,8 +81,8 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 ### Technical SEO
 
 - [x] **TECH-01**: Webhook Wagtail para ISR on-demand al publicar contenido
-- [ ] **TECH-02**: Self-host fuentes Satoshi/Clash Display con next/font/local (eliminar FOUT)
-- [ ] **TECH-03**: Eliminar draftMode() de fetchers para habilitar ISR real (homepage y blog)
+- [x] **TECH-02**: Self-host fuentes Satoshi/Clash Display con next/font/local (eliminar FOUT)
+- [x] **TECH-03**: Eliminar draftMode() de fetchers para habilitar ISR real (homepage y blog)
 - [ ] **TECH-04**: Core Web Vitals optimization pass (LCP, CLS, INP)
 - [ ] **TECH-05**: Configurar Cloudflare proxy para cache, compresion y rendimiento
 
@@ -153,8 +153,8 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 | SITE-04 | Phase 11 | Complete |
 | TOOL-04 | Phase 11 | Pending |
 | TECH-01 | Phase 12 | Complete |
-| TECH-02 | Phase 12 | Pending |
-| TECH-03 | Phase 12 | Pending |
+| TECH-02 | Phase 12 | Complete |
+| TECH-03 | Phase 12 | Complete |
 | TECH-04 | Phase 12 | Pending |
 | TECH-05 | Phase 12 | Pending |
 | MEDIA-01 | Phase 13 | Blocked |

@@ -33,6 +33,8 @@ Recent decisions affecting current work:
 - [v2.1]: 25 blog posts audited: 4 factual errors fixed, 20/25 flagged thin content
 - [v3.0-P11]: Used raw XML route handlers for sitemaps (MetadataRoute only generates urlset, not sitemapindex)
 - [v3.0-P11]: MERGED_POST_SLUGS constant used to exclude 5 merged posts from all sitemaps
+- [v3.0-P12]: Self-hosted Satoshi/Clash Display variable fonts via next/font/local (no external CDN)
+- [v3.0-P12]: draftMode removed from all data fetchers; fixed revalidate TTLs enable real ISR caching
 - [v3.0-P12]: Used revalidateTag(tag, { expire: 0 }) for Next.js 16 two-arg API compatibility
 - [v3.0-P12]: No rate limiting on /api/revalidate (server-to-server with secret auth)
 
@@ -49,5 +51,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: 12-02-PLAN.md Task 2 checkpoint:human-verify (Wagtail webhook configuration)
+Stopped at: Completed 12-01-PLAN.md (fonts + ISR); 12-02-PLAN.md Task 2 checkpoint:human-verify pending
 Resume file: .planning/phases/12-technical-seo/12-02-PLAN.md
