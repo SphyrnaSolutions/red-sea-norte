@@ -1,10 +1,13 @@
 import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
+import Script from "next/script"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import "./globals.css"
 import { Header } from "@/components/organisms/Header"
 import { Footer } from "@/components/organisms/Footer"
 import { FloatingWhatsApp } from "@/components/atoms/FloatingWhatsApp"
 import { MobileCTABar } from "@/components/organisms/MobileCTABar"
+import { CookieConsent } from "@/components/CookieConsent"
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -25,6 +28,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
+      : undefined,
+  },
 }
 
 export default function RootLayout({
@@ -32,6 +41,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+
   return (
     <html lang="es" className={jetbrainsMono.variable}>
       <head>
@@ -43,11 +54,23 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased font-sans">
+        <Script id="gtag-consent-default" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied'
+});`}
+        </Script>
+        {gaMeasurementId && <GoogleAnalytics gaId={gaMeasurementId} />}
         <Header />
         <main>{children}</main>
         <Footer />
         <FloatingWhatsApp />
         <MobileCTABar />
+        <CookieConsent />
       </body>
     </html>
   )
