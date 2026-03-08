@@ -9,7 +9,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.c
 
 export const metadata: Metadata = {
   title: 'Rutas de Vida a Bordo en el Mar Rojo | Red Sea Norte',
-  description: 'Rutas de vida a bordo en el Mar Rojo desde Hurghada. Itinerarios centrados en Ruta Norte, pecios emblemáticos y experiencias de buceo con intención comercial clara.',
+  description: 'Rutas de vida a bordo en el Mar Rojo desde Hurghada. Itinerarios centrados en Ruta Norte, pecios emblemáticos y experiencias de buceo con itinerarios detallados día a día.',
   openGraph: {
     title: 'Rutas de Vida a Bordo en el Mar Rojo | Red Sea Norte',
     description: 'Rutas de vida a bordo en el Mar Rojo desde Hurghada con foco en Ruta Norte y pecios.',
@@ -124,7 +124,7 @@ export default async function RutasPage() {
               }}
             >
               La prioridad ya no es listar rutas sin contexto, sino presentar productos concretos
-              de vida a bordo con un siguiente paso comercial claro.
+              de vida a bordo con toda la información para elegir tu próxima aventura.
             </p>
           </div>
 
