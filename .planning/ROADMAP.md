@@ -112,6 +112,6 @@ Plans:
 | 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
 | 10. SEO Tooling Setup | v3.0 | 1/1 | Complete | 2026-03-08 |
-| 11. Sitemaps & Redirects | v3.0 | 0/2 | Not started | - |
+| 11. Sitemaps & Redirects | 1/2 | In Progress|  | - |
 | 12. Technical SEO | v3.0 | 0/? | Not started | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |

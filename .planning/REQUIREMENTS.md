@@ -73,10 +73,10 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 
 ### Sitemaps & Indexing
 
-- [ ] **SITE-01**: Convertir sitemap unico en sitemap index con sitemaps separados por categoria (blog, rutas, ofertas, cursos, experiencias, pages)
-- [ ] **SITE-02**: Configurar 301 redirects para 5 posts merged (giannis-d, dunraven, carnatic, camarotes-comida-wifi, shark-yolanda)
-- [ ] **SITE-03**: Excluir posts merged/redirect del sitemap
-- [ ] **SITE-04**: Crear sitemap de imagenes para indexacion de fotos en Google Images
+- [x] **SITE-01**: Convertir sitemap unico en sitemap index con sitemaps separados por categoria (blog, rutas, ofertas, cursos, experiencias, pages)
+- [x] **SITE-02**: Configurar 301 redirects para 5 posts merged (giannis-d, dunraven, carnatic, camarotes-comida-wifi, shark-yolanda)
+- [x] **SITE-03**: Excluir posts merged/redirect del sitemap
+- [x] **SITE-04**: Crear sitemap de imagenes para indexacion de fotos en Google Images
 
 ### Technical SEO
 
@@ -147,10 +147,10 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 | TOOL-01 | Phase 10 | Complete |
 | TOOL-02 | Phase 10 | Complete |
 | TOOL-03 | Phase 10 | Complete |
-| SITE-01 | Phase 11 | Pending |
-| SITE-02 | Phase 11 | Pending |
-| SITE-03 | Phase 11 | Pending |
-| SITE-04 | Phase 11 | Pending |
+| SITE-01 | Phase 11 | Complete |
+| SITE-02 | Phase 11 | Complete |
+| SITE-03 | Phase 11 | Complete |
+| SITE-04 | Phase 11 | Complete |
 | TOOL-04 | Phase 11 | Pending |
 | TECH-01 | Phase 12 | Pending |
 | TECH-02 | Phase 12 | Pending |
