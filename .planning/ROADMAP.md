@@ -203,7 +203,10 @@ Plans:
   4. Existe una guia de logistica que cubre: visa de Egipto para espanoles, como llegar a Hurghada (vuelos), transfers aeropuerto-puerto, propinas y moneda
   5. Las 4 paginas capturan trafico informacional long-tail y contienen CTAs internos hacia el formulario de contacto y paginas de rutas
   6. Cada pagina cita fuentes autoritativas (DAN, ministerio egipcio, PADI/SSI, aerolineas) y tiene seccion de referencias
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 26-01-PLAN.md -- Create 5 friction/logistics pages (packing list, certifications, safety, visa/flights, tips) in Wagtail CMS
+- [ ] 26-02-PLAN.md -- Create 6 vida-a-bordo satellite pages (typical day, training, gastronomy, night diving, currents, underwater photography) in Wagtail CMS
 
 ### Phase 27: Cluster Wiring & Monitoring
 **Goal**: Las 30 paginas nuevas estan integradas en la arquitectura de clusters con paginas pillar, interlinks bidireccionales, y existe un mecanismo para detectar canibalizacion de keywords
