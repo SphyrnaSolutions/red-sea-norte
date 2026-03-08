@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** v3.2 Content Quality — 2/3 done (tildes + posts expandidos, dateModified pendiente)
+**Current focus:** v3.2 SEO Audit Fixes II
 
 ## Current Position
 
-Phase: 14-17 (v3.1 SEO Audit Fixes)
-Plan: All executed
-Status: v3.2 in progress (CONT-01 + CONT-02 done)
-Last activity: 2026-03-08 — Blog posts expandidos a 1500+ palabras y desplegados
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-08 — Milestone v3.2 started after second SEO audit (score 57/100)
 
 ## Accumulated Context
 
@@ -24,27 +24,27 @@ Last activity: 2026-03-08 — Blog posts expandidos a 1500+ palabras y desplegad
 - [v3.0]: Cache Rules creadas en Cloudflare para assets + HTML en edge
 - [v3.0]: REVALIDATION_SECRET configurado en Next.js y Wagtail
 - [v3.1]: SEO audit score 74/100 — content quality (62) es el area mas debil
-- [v3.1]: Content fixes (tildes, thin content) dependen de Karlos — fuera de scope tecnico
 - [v3.1]: FAQPage schema eliminado de rutas (restriccion Google agosto 2023)
 - [v3.1]: HeroSection convertido a server component, CTAs extraidos a HeroCTAButtons client component
 - [v3.1]: AVIF habilitado como formato preferido de imagen
+- [v3.2]: Second audit score 57/100 — blog SSR empty es el issue #1 (no detectado antes)
+- [v3.2]: Blog body content no aparece en HTML server-rendered (solo headings)
+- [v3.2]: /contacto devuelve 404
+- [v3.2]: Schema mainEntityOfPage.@id usa slug CMS en vez de slug URL
+- [v3.2]: Blog listing carga 451KB (89% payload no usado)
 
 ### Pending Todos
 
-- [x] INFRA-01: www → apex 301 redirect via Cloudflare API (completed 2026-03-08)
 - [ ] Enviar lista de contenido a Karlos: 31-50 fotos + 6 videos
 - [ ] Preguntar a Karlos: wifi en M/Y Dolce Vita? canal YouTube? fotos de clientes?
-- [ ] Tildes en todo el sitio (requiere revision de Karlos en CMS)
-- [ ] Blog posts ampliados a 1500+ palabras (requiere contenido de Karlos)
-- [ ] Organization schema: añadir telephone cuando Karlos proporcione numero
+- [ ] Organization schema: anadir telephone cuando Karlos proporcione numero
 
 ### Blockers/Concerns
 
-- INFRA-01 (www redirect) bloqueado: Cloudflare MCP OAuth expirado, necesita accion manual en dashboard
 - Phase 13 (Content Media) bloqueado: Karlos debe entregar fotos y videos
-- Content quality issues (tildes, thin content) requieren intervencion de Karlos en CMS
+- Contenido que necesita Karlos: telefono real, bios autor, testimonios, pagina "Sobre nosotros"
 
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: v3.1 milestone near-complete (15/16 requirements done)
+Stopped at: v3.2 milestone initialization

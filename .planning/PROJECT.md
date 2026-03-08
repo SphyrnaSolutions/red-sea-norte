@@ -51,18 +51,36 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - v3.0: Cloudflare Origin Certificate (15 anos) + SSL Full (strict)
 - v3.0: Cache Rules en Cloudflare para assets y HTML en edge
 
-### Active — v3.1 SEO Audit Fixes
+### Validated — v3.1 SEO Audit Fixes
 
-- [ ] www redirect 301 a non-www (fix error 526)
-- [ ] Content-Security-Policy header
-- [ ] Eliminar FAQPage schema (restriccion Google 2023)
-- [ ] Organization schema completo (sameAs, geo, contacto)
-- [ ] Course duration en ISO 8601
-- [ ] Sitemaps: paginas faltantes, lastmod reales, excluir vacios
-- [ ] og:image y twitter:image en homepage
-- [ ] Eliminar texto interno de estrategia visible en produccion
-- [ ] AVIF habilitado, HeroSection server component
-- [ ] Cache /_next/image en Cloudflare edge
+- v3.1: www redirect 301 a non-www via Cloudflare
+- v3.1: Content-Security-Policy header (report-only)
+- v3.1: FAQPage schema eliminado de rutas
+- v3.1: Organization schema completo (sameAs, geo, contacto)
+- v3.1: Course duration en ISO 8601
+- v3.1: Sitemaps: paginas faltantes, lastmod reales, excluir vacios
+- v3.1: og:image y twitter:image en homepage
+- v3.1: Texto interno de estrategia eliminado
+- v3.1: AVIF habilitado, HeroSection server component
+- v3.1: Cache /_next/image en Cloudflare edge
+
+### Active — v3.2 SEO Audit Fixes II
+
+- [ ] Blog body content renderiza server-side (SSR completo, no solo headings)
+- [ ] /contacto funcional (no 404)
+- [ ] Blog schema URL usa slug de URL, no slug de CMS
+- [ ] URLs con tildes en slugs corregidas (redirect o fix en CMS)
+- [ ] Blog listing optimizado (~50KB en vez de 451KB)
+- [ ] /rutas sin force-dynamic, cacheable con ISR
+- [ ] Schema JSON-LD en listing pages (/blog/, /rutas/)
+- [ ] /blog canonical, title y description correctos
+- [ ] BlogPosting schema con image property
+- [ ] Footer links rotos eliminados (/ofertas, /terminos)
+- [ ] Schema builders reutilizados en vez de inline
+- [ ] Autor estandarizado en todos los posts
+- [ ] Lastmod en sitemaps de rutas y pages
+- [ ] Notas internas de marketing eliminadas del contenido publico
+- [ ] robots.txt User-agent blocks deduplicados
 
 ### Backlog
 
@@ -126,17 +144,17 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - **Leads**: Formularios deben conectar con Odoo CRM via API
 
 ---
-## Current Milestone: v3.1 SEO Audit Fixes
+## Current Milestone: v3.2 SEO Audit Fixes II
 
-**Goal:** Corregir todos los issues criticos, altos y medios detectados en la auditoria SEO del 2026-03-08 (technical, schema, sitemaps, on-page, performance).
+**Goal:** Corregir todos los issues P0-P2 del segundo audit SEO (2026-03-08, score 57/100): blog SSR roto, /contacto 404, schema bugs, performance, y cleanup general.
 
 **Target features:**
-- Fix www 526 error con redirect 301 en Cloudflare
-- Content-Security-Policy header
-- Schema fixes (eliminar FAQPage, completar Organization, ISO 8601 en Course)
-- Sitemap fixes (paginas faltantes, lastmod reales, excluir sitemaps vacios)
-- On-page fixes (og:image homepage, eliminar texto interno)
-- Performance (AVIF, HeroSection server component, cache /_next/image)
+- Blog body content renderiza en SSR (P0 — todo el SEO de blog es cero sin esto)
+- /contacto funcional, schema URL mismatch fix, slugs con tildes fix
+- Blog listing optimizado (451KB → ~50KB), /rutas cacheable
+- Schema en listings, builders reutilizados, BlogPosting con image
+- /blog meta tags correctos, footer links limpios, robots.txt deduplicado
+- Lastmod en sitemaps, notas internas eliminadas, autor estandarizado
 
 ---
-*Last updated: 2026-03-08 after v3.1 milestone start*
+*Last updated: 2026-03-08 after v3.2 milestone start*

@@ -127,13 +127,42 @@ Requirements derived from SEO audit (2026-03-08, score 74/100).
 - [ ] **PERF-01**: Formato AVIF habilitado en next.config.ts para optimizacion de imagenes
 - [ ] **PERF-02**: HeroSection convertido a server component (solo botones CTA como client component)
 
+## v3.2 Requirements — SEO Audit Fixes II
+
+Requirements derived from second SEO audit (2026-03-08, score 57/100).
+
+### Blog SSR
+
+- [ ] **SSR-01**: Blog post body content renderiza completo en HTML server-side (no solo headings)
+- [ ] **SSR-02**: Blog listing solo carga title, excerpt, thumbnail y slug (no body completo) — target <60KB
+
+### Routing
+
+- [ ] **ROUTE-01**: /contacto devuelve 200 con formulario funcional (no 404)
+- [ ] **ROUTE-02**: URLs de blog con tildes en slug redirigen 301 a version ASCII o se corrigen en CMS
+- [ ] **ROUTE-03**: Footer links a /ofertas y /terminos eliminados (ambos 404)
+
+### Schema
+
+- [ ] **SCHEMA-05**: Blog schema mainEntityOfPage.@id usa slug de URL, no slug de CMS
+- [ ] **SCHEMA-06**: Listing pages /blog/ y /rutas/ incluyen JSON-LD (CollectionPage + BreadcrumbList)
+- [ ] **SCHEMA-07**: BlogPosting incluye image property (requerido para Article rich results)
+- [ ] **SCHEMA-08**: Paginas usan schema builders de src/lib/seo/schema/ en vez de construir inline
+- [ ] **SCHEMA-09**: Autor estandarizado con mismo nombre en todos los BlogPosting
+
+### Performance
+
+- [ ] **PERF-03**: /rutas sin force-dynamic, cacheable con ISR (eliminar export const dynamic)
+- [ ] **PERF-04**: /blog listing page con canonical tag correcto
+- [ ] **PERF-05**: /blog title y meta description reflejan contenido de blog (no centro de buceo)
+
+### Cleanup
+
+- [ ] **CLEAN-01**: Notas internas de marketing eliminadas del contenido publico visible
+- [ ] **CLEAN-02**: robots.txt User-agent blocks deduplicados (eliminar duplicado de Cloudflare)
+- [ ] **CLEAN-03**: Lastmod presente en sitemaps de rutas y pages (derivado de CMS o fecha fija)
+
 ## Future Requirements
-
-### Content Quality (v3.2)
-
-- [x] **CONT-01**: Tildes en todos los títulos, headings y meta descriptions (completed 2026-03-08)
-- [x] **CONT-02**: Blog posts ampliados a mínimo 1500 palabras (completed 2026-03-08)
-- **CONT-03**: dateModified en BlogPosting refleja fecha real de edición
 
 ### Contenido SEO (v4.0)
 
