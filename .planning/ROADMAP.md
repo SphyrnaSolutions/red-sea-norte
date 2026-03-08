@@ -186,7 +186,11 @@ Plans:
   3. Existe una guia "mejor ruta segun tu nivel" que orienta desde Open Water hasta buceadores avanzados, con recomendacion de ruta y temporada para cada nivel
   4. Las 3 paginas estan publicadas en Wagtail CMS con schema, interlinks a paginas de rutas existentes, y CTAs hacia el formulario de contacto
   5. Cada comparativa cita fuentes (SSI, operadores, datos de profundidad/corrientes verificables) con enlaces externos
-**Plans**: TBD
+**Plans:** 3 plans
+Plans:
+- [ ] 25-01-PLAN.md -- Comparativa Ruta Norte vs Ruta Brothers con tabla y recomendacion por perfil
+- [ ] 25-02-PLAN.md -- Comparativa Hurghada vs Sharm el-Sheikh como puerto de salida
+- [ ] 25-03-PLAN.md -- Guia mejor ruta segun tu nivel de buceo
 
 ### Phase 26: Friction & Logistics Content
 **Goal**: Los usuarios encuentran respuesta a todas las dudas previas a reservar un liveaboard (que llevar, requisitos, seguridad, logistica), reduciendo la friccion de conversion
