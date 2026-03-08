@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { JetBrains_Mono } from "next/font/google"
 import Script from "next/script"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import "./globals.css"
@@ -8,13 +7,7 @@ import { Footer } from "@/components/organisms/Footer"
 import { FloatingWhatsApp } from "@/components/atoms/FloatingWhatsApp"
 import { MobileCTABar } from "@/components/organisms/MobileCTABar"
 import { CookieConsent } from "@/components/CookieConsent"
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
-  variable: "--font-mono",
-  display: "swap",
-})
+import { satoshi, clashDisplay, jetbrainsMono } from "@/lib/fonts"
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://buceoenelmarrojo.com"),
@@ -44,15 +37,7 @@ export default function RootLayout({
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
   return (
-    <html lang="es" className={jetbrainsMono.variable}>
-      <head>
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://api.fontshare.com" />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&f[]=clash-display@200,300,400,500,600,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="es" className={`${satoshi.variable} ${clashDisplay.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased font-sans">
         <Script id="gtag-consent-default" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
