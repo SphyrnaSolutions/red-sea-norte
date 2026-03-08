@@ -144,12 +144,28 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 | AUDIT-01 | Phase 9 | Pending |
 | AUDIT-02 | Phase 9 | Pending |
 | AUDIT-03 | Phase 9 | Pending |
+| TOOL-01 | Phase 10 | Pending |
+| TOOL-02 | Phase 10 | Pending |
+| TOOL-03 | Phase 10 | Pending |
+| SITE-01 | Phase 11 | Pending |
+| SITE-02 | Phase 11 | Pending |
+| SITE-03 | Phase 11 | Pending |
+| SITE-04 | Phase 11 | Pending |
+| TOOL-04 | Phase 11 | Pending |
+| TECH-01 | Phase 12 | Pending |
+| TECH-02 | Phase 12 | Pending |
+| TECH-03 | Phase 12 | Pending |
+| TECH-04 | Phase 12 | Pending |
+| TECH-05 | Phase 12 | Pending |
+| MEDIA-01 | Phase 13 | Blocked |
+| MEDIA-02 | Phase 13 | Blocked |
+| MEDIA-03 | Phase 13 | Blocked |
 
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13
 - v2.1 requirements: 12 total -- mapped: 12
-- v3.0 requirements: 16 total -- mapped: 0 (pending roadmap)
+- v3.0 requirements: 16 total -- mapped: 16
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-08 after v3.0 requirements definition*
+*Last updated: 2026-03-08 after v3.0 roadmap creation*

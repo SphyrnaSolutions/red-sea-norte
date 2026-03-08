@@ -5,6 +5,7 @@
 - v1.0 SEO Infrastructure -- Phases 1-3 (shipped 2026-03-06)
 - v2.0 Lead Capture -- Phases 4-6 (shipped 2026-03-06)
 - v2.1 Real Content -- Phases 7-9 (shipped 2026-03-07)
+- v3.0 SEO Operations -- Phases 10-13 (in progress)
 
 ## Phases
 
@@ -28,58 +29,69 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 </details>
 
-### v2.1 Real Content
+<details>
+<summary>v2.1 Real Content (Phases 7-9) -- SHIPPED 2026-03-07</summary>
 
-- [x] **Phase 7: Real Images** - Sustituir todas las imagenes stock por fotos reales optimizadas del barco y buceo
-- [x] **Phase 8: Wagtail CMS Migration** - Migrar contenido de mock-data a Wagtail CMS con datos reales del producto
-- [x] **Phase 9: Blog Audit** - Auditar y corregir los 25 blog posts contra data real del producto
+- [x] Phase 7: Real Images (2/2 plans) -- completed 2026-03-07
+- [x] Phase 8: Wagtail CMS Migration (3/3 plans) -- completed 2026-03-07
+- [x] Phase 9: Blog Audit (1/1 plans) -- completed 2026-03-07
+
+</details>
+
+### v3.0 SEO Operations
+
+- [ ] **Phase 10: SEO Tooling Setup** - Dar de alta la web en GSC, Bing Webmaster Tools y GA4 para tener visibilidad de indexacion y trafico
+- [ ] **Phase 11: Sitemaps & Redirects** - Sitemaps divididos por categoria, 301 redirects para posts merged, y envio a buscadores
+- [ ] **Phase 12: Technical SEO** - ISR real, self-hosted fonts, Core Web Vitals y Cloudflare proxy para rendimiento
+- [ ] **Phase 13: Content Media** - Fotos y videos de Karlos subidos a Wagtail y asignados a posts (BLOCKED: pendiente entrega de Karlos)
 
 ## Phase Details
 
-### Phase 7: Real Images
-**Goal**: La web muestra fotos reales del barco M/Y Dolce Vita, cabinas, vida marina y spots de buceo en lugar de stock de Unsplash
-**Depends on**: Nothing (first phase of v2.1)
-**Requirements**: IMG-01, IMG-02, IMG-03, IMG-04
+### Phase 10: SEO Tooling Setup
+**Goal**: La web esta registrada y verificada en los motores de busqueda y tiene analytics instalado para medir trafico real
+**Depends on**: Nothing (first phase of v3.0)
+**Requirements**: TOOL-01, TOOL-02, TOOL-03
 **Success Criteria** (what must be TRUE):
-  1. Todas las URLs de Unsplash en images.ts y componentes estan sustituidas por rutas locales a fotos reales en public/images/
-  2. Las 33 fotos reales estan copiadas en el proyecto y servidas via next/image con optimizacion automatica (WebP/AVIF, resize)
-  3. Cada imagen tiene alt text descriptivo en espanol con keywords relevantes (ej: "Camarote doble del M/Y Dolce Vita con ventana al mar")
-  4. Las imagenes se cargan con srcset/sizes responsivos y lazy loading en viewports movil, tablet y desktop
-**Plans**: 2 plans
+  1. buceoenelmarrojo.com aparece como propiedad verificada en Google Search Console y se puede consultar el estado de indexacion
+  2. buceoenelmarrojo.com aparece como sitio verificado en Bing Webmaster Tools
+  3. El tag de GA4 esta instalado en el frontend y registra pageviews en el panel de Google Analytics al navegar la web
+**Plans**: TBD
 
-Plans:
-- [ ] 07-01-PLAN.md -- Copy and organize 33 real photos into public/images/, update images.ts with local paths, clean next.config.ts
-- [ ] 07-02-PLAN.md -- Replace all Unsplash URLs with real image paths, add SEO alt text, configure responsive sizes
-
-### Phase 8: Wagtail CMS Migration
-**Goal**: Migrar todo el contenido de mock-data al CMS Wagtail con datos reales del producto, y conectar el frontend a la API de Wagtail
-**Depends on**: Phase 7 (images uploaded to Wagtail)
-**Requirements**: DATA-01, DATA-02, DATA-03, DATA-04, CMS-01
+### Phase 11: Sitemaps & Redirects
+**Goal**: Los buscadores reciben sitemaps granulares por categoria y los posts merged redirigen correctamente sin contaminar el sitemap
+**Depends on**: Phase 10 (GSC y Bing verificados para enviar sitemaps)
+**Requirements**: SITE-01, SITE-02, SITE-03, SITE-04, TOOL-04
 **Success Criteria** (what must be TRUE):
-  1. Modelo RutaPage en Wagtail expandido con todos los campos necesarios (precios, spots, itinerario, FAQs, galeria)
-  2. Contenido real del producto migrado a Wagtail: 5 rutas con datos verificados (precios, spots, formacion incluida)
-  3. Frontend consume datos de la API de Wagtail para paginas de rutas; mock-data se mantiene para homepage y otras paginas (enfoque hibrido)
-  4. Las 33 imagenes en Wagtail referenciadas correctamente desde las paginas de rutas
-  5. Mock-data de rutas actualizado con datos reales del producto como fallback para desarrollo sin CMS
-**Plans**: 3 plans
+  1. /sitemap.xml devuelve un sitemap index con enlaces a sitemaps separados para blog, rutas, ofertas, cursos, experiencias y pages
+  2. Las URLs de los 5 posts merged (giannis-d, dunraven, carnatic, camarotes-comida-wifi, shark-yolanda) devuelven 301 redirect a su destino correcto
+  3. Los posts merged no aparecen en ningun sitemap de la web
+  4. Existe un sitemap de imagenes que lista las fotos indexables para Google Images
+  5. Los sitemaps estan enviados y aceptados en GSC y Bing Webmaster Tools
+**Plans**: TBD
 
-Plans:
-- [ ] 08-01-PLAN.md -- Expand RutaPage model with missing fields, update mock-data with real product data
-- [ ] 08-02-PLAN.md -- Create management command to populate 5 real routes in Wagtail CMS
-- [ ] 08-03-PLAN.md -- Fix frontend mappers/types to match actual Wagtail model, enable CMS-first data loading
-
-### Phase 9: Blog Audit
-**Goal**: Los 25 blog posts existentes son precisos respecto a los datos reales del producto y no contienen informacion inventada o contradictoria
-**Depends on**: Phase 7 (images available), Phase 8 (real data established as source of truth)
-**Requirements**: AUDIT-01, AUDIT-02, AUDIT-03
+### Phase 12: Technical SEO
+**Goal**: La web carga rapido, las fuentes no producen FOUT, el contenido se revalida automaticamente al publicar en Wagtail, y Cloudflare optimiza la entrega
+**Depends on**: Phase 10 (necesita GA4 para medir Core Web Vitals)
+**Requirements**: TECH-01, TECH-02, TECH-03, TECH-04, TECH-05
 **Success Criteria** (what must be TRUE):
-  1. Los 25 posts han sido revisados contra PRODUCT-DATA.md y cada dato mencionado (barco, rutas, precios, formacion) coincide con la realidad
-  2. Datos incorrectos o inventados en posts existentes estan corregidos (nombres de rutas, precios, especificaciones del barco, spots)
-  3. Posts identificados como thin content (<800 palabras o sin valor diferencial) estan marcados con recomendacion: reescribir, fusionar o eliminar
-**Plans**: 1 plan
+  1. Al publicar o actualizar una pagina en Wagtail, el contenido se actualiza en la web en menos de 60 segundos sin necesidad de rebuild
+  2. Las fuentes Satoshi y Clash Display se cargan desde el propio servidor (no Google Fonts) y no hay flash de texto sin estilo (FOUT)
+  3. draftMode() eliminado de los fetchers: las paginas de homepage y blog sirven contenido cacheado con ISR real
+  4. Core Web Vitals en verde (LCP < 2.5s, CLS < 0.1, INP < 200ms) medido en PageSpeed Insights
+  5. Cloudflare proxy activo con cache, compresion Brotli y HTTP/3 habilitado para buceoenelmarrojo.com
+**Plans**: TBD
 
-Plans:
-- [x] 09-01-PLAN.md -- Audit all 25 blog posts against PRODUCT-DATA.md, fix inaccuracies, create audit report with thin content flags
+### Phase 13: Content Media
+**Goal**: Las fotos y videos reales de pecios, spots y formacion de Karlos estan en Wagtail y asignados como hero images a los posts
+**Depends on**: Phase 12 (ISR funcional para que el contenido nuevo se publique automaticamente)
+**Requirements**: MEDIA-01, MEDIA-02, MEDIA-03
+**Success Criteria** (what must be TRUE):
+  1. Entre 31-50 fotos de pecios, spots y formacion estan optimizadas y subidas a Wagtail CMS con alt text descriptivo
+  2. 6 videos estan subidos a YouTube y embebidos en los posts relevantes con iframe responsive
+  3. Los 25 blog posts tienen hero images correctas asignadas y el mapping esta persistido en populate_blog.py
+**Plans**: TBD
+
+**BLOCKED**: Phase 13 requiere que Karlos entregue las fotos y videos. No se puede empezar hasta recibir el material.
 
 ## Progress
 
@@ -94,3 +106,7 @@ Plans:
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
 | 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
+| 10. SEO Tooling Setup | v3.0 | 0/? | Not started | - |
+| 11. Sitemaps & Redirects | v3.0 | 0/? | Not started | - |
+| 12. Technical SEO | v3.0 | 0/? | Not started | - |
+| 13. Content Media | v3.0 | 0/? | Blocked | - |
