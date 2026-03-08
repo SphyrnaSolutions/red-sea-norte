@@ -22,3 +22,36 @@
 
 ---
 
+## v2.0 Lead Capture (Shipped: 2026-03-06)
+
+**Phases completed:** 3 phases (4-6)
+**Key accomplishments:**
+1. POST /api/lead endpoint with Odoo CRM integration via XML-RPC
+2. Contact form with WhatsApp consent (GDPR + Meta compliant)
+3. Privacy policy page
+
+---
+
+## v2.1 Real Content (Shipped: 2026-03-07)
+
+**Phases completed:** 3 phases (7-9)
+**Key accomplishments:**
+1. 33 real photos uploaded to Wagtail CMS
+2. 5 real routes with verified pricing and itineraries
+3. 25 blog posts audited (4 factual errors fixed, 13 rewritten)
+
+---
+
+## v3.0 SEO Operations (Shipped: 2026-03-08)
+
+**Phases completed:** 3 phases (10-12), phase 13 blocked
+**Key accomplishments:**
+1. GSC, Bing Webmaster Tools, GA4 with GDPR cookie consent (Consent Mode v2)
+2. Sitemap index with 7 per-category sitemaps + 301 redirects for 5 merged posts
+3. Self-hosted fonts (Satoshi, Clash Display) via next/font/local
+4. ISR on-demand revalidation via Wagtail webhook
+5. Cloudflare proxy: Origin Certificate (15yr), SSL Full strict, Cache Rules, Brotli, HTTP/3
+6. Phase 13 (Content Media) blocked pending Karlos delivering photos/videos
+
+---
+

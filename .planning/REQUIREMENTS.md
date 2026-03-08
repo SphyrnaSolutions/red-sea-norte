@@ -92,16 +92,57 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 - [ ] **MEDIA-02**: Recibir 6 videos, subir a YouTube, embeber en posts relevantes
 - [ ] **MEDIA-03**: Asignar hero images correctas a los 25 posts y persistir mapping en populate_blog.py
 
+## v3.1 Requirements — SEO Audit Fixes
+
+Requirements derived from SEO audit (2026-03-08, score 74/100).
+
+### Infrastructure
+
+- [ ] **INFRA-01**: www.buceoenelmarrojo.com redirige 301 a buceoenelmarrojo.com (actualmente devuelve 526)
+- [ ] **INFRA-02**: Content-Security-Policy header configurado en Next.js (report-only inicialmente)
+- [ ] **INFRA-03**: Header x-powered-by deshabilitado en next.config.ts
+- [ ] **INFRA-04**: Imagenes optimizadas (/_next/image) cacheadas en Cloudflare edge (no DYNAMIC)
+
+### Schema
+
+- [ ] **SCHEMA-01**: FAQPage schema eliminado de paginas de rutas (restriccion Google agosto 2023)
+- [ ] **SCHEMA-02**: Organization schema completado con sameAs (redes sociales), geo coordinates (Hurghada) y datos de contacto
+- [ ] **SCHEMA-03**: Course duration en formato ISO 8601 (P5D en vez de "5 dias")
+- [ ] **SCHEMA-04**: BlogPosting author incluye propiedad url
+
+### Sitemaps
+
+- [ ] **SMAP-01**: /rutas, /cursos y /experiencias incluidos en el sitemap de pages
+- [ ] **SMAP-02**: lastmod del blog usa fecha real de ultima publicacion del CMS (no timestamp de API response)
+- [ ] **SMAP-03**: Sitemaps vacios (ofertas, cursos, experiencias) excluidos del sitemap index hasta tener contenido
+- [ ] **SMAP-04**: Tags deprecated (priority, changefreq) eliminados de todos los sitemaps
+
+### On-Page
+
+- [ ] **ONPAGE-01**: Homepage incluye og:image y twitter:image meta tags para social sharing
+- [ ] **ONPAGE-02**: Texto interno de estrategia eliminado de la web publica
+
+### Performance
+
+- [ ] **PERF-01**: Formato AVIF habilitado en next.config.ts para optimizacion de imagenes
+- [ ] **PERF-02**: HeroSection convertido a server component (solo botones CTA como client component)
+
 ## Future Requirements
 
-### Contenido SEO (v3.1)
+### Content Quality (v3.2 — pendiente Karlos)
 
-- **CONT-01**: 30 primeras paginas de contenido SEO en clusters
-- **CONT-02**: Contenido por pecio/spot con profundidad experta
-- **CONT-03**: Comparativas de rutas (Norte vs Brothers, Hurghada vs Sharm)
-- **CONT-04**: Contenido de friccion (que llevar, requisitos, certificaciones)
+- **CONT-01**: Tildes en todos los titulos, headings y meta descriptions
+- **CONT-02**: Blog posts ampliados a minimo 1500 palabras
+- **CONT-03**: dateModified en BlogPosting refleja fecha real de edicion
 
-### Monitorizacion (v3.1)
+### Contenido SEO (v4.0)
+
+- **SEO-01**: 30 primeras paginas de contenido SEO en clusters
+- **SEO-02**: Contenido por pecio/spot con profundidad experta
+- **SEO-03**: Comparativas de rutas (Norte vs Brothers, Hurghada vs Sharm)
+- **SEO-04**: Contenido de friccion (que llevar, requisitos, certificaciones)
+
+### Monitorizacion (v4.0)
 
 - **MON-01**: Monitorizacion de canibalizacion de keywords
 
@@ -161,11 +202,29 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 | MEDIA-02 | Phase 13 | Blocked |
 | MEDIA-03 | Phase 13 | Blocked |
 
+| INFRA-01 | Phase 14 | Pending |
+| INFRA-02 | Phase 14 | Pending |
+| INFRA-03 | Phase 14 | Pending |
+| INFRA-04 | Phase 14 | Pending |
+| SCHEMA-01 | Phase 15 | Pending |
+| SCHEMA-02 | Phase 15 | Pending |
+| SCHEMA-03 | Phase 15 | Pending |
+| SCHEMA-04 | Phase 15 | Pending |
+| SMAP-01 | Phase 16 | Pending |
+| SMAP-02 | Phase 16 | Pending |
+| SMAP-03 | Phase 16 | Pending |
+| SMAP-04 | Phase 16 | Pending |
+| ONPAGE-01 | Phase 17 | Pending |
+| ONPAGE-02 | Phase 17 | Pending |
+| PERF-01 | Phase 17 | Pending |
+| PERF-02 | Phase 17 | Pending |
+
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13
 - v2.1 requirements: 12 total -- mapped: 12
 - v3.0 requirements: 16 total -- mapped: 16
+- v3.1 requirements: 16 total -- mapped: 16
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-08 after v3.0 roadmap creation*
+*Last updated: 2026-03-08 after v3.1 requirements*

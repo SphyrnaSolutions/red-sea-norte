@@ -5,7 +5,8 @@
 - v1.0 SEO Infrastructure -- Phases 1-3 (shipped 2026-03-06)
 - v2.0 Lead Capture -- Phases 4-6 (shipped 2026-03-06)
 - v2.1 Real Content -- Phases 7-9 (shipped 2026-03-07)
-- v3.0 SEO Operations -- Phases 10-13 (in progress)
+- v3.0 SEO Operations -- Phases 10-13 (shipped 2026-03-08, phase 13 blocked)
+- v3.1 SEO Audit Fixes -- Phases 14-17 (in progress)
 
 ## Phases
 
@@ -102,6 +103,55 @@ Plans:
 
 **BLOCKED**: Phase 13 requiere que Karlos entregue las fotos y videos. No se puede empezar hasta recibir el material.
 
+### v3.1 SEO Audit Fixes
+
+- [ ] **Phase 14: Infrastructure Hardening** - Fix www 526, CSP header, disable x-powered-by, cache /_next/image at edge
+- [ ] **Phase 15: Schema Fixes** - Remove FAQPage, complete Organization, fix Course duration, add author URL
+- [ ] **Phase 16: Sitemap Fixes** - Add missing pages, fix lastmod, exclude empty sitemaps, remove deprecated tags
+- [ ] **Phase 17: On-Page & Performance** - og:image homepage, remove internal text, enable AVIF, HeroSection server component
+
+## Phase Details — v3.1
+
+### Phase 14: Infrastructure Hardening
+**Goal**: La infraestructura web no tiene errores de accesibilidad (www), tiene headers de seguridad completos y cachea imagenes optimizadas en edge
+**Depends on**: Nothing
+**Requirements**: INFRA-01, INFRA-02, INFRA-03, INFRA-04
+**Success Criteria**:
+  1. https://www.buceoenelmarrojo.com redirige con 301 a https://buceoenelmarrojo.com
+  2. Response headers incluyen Content-Security-Policy-Report-Only
+  3. x-powered-by header no presente en responses
+  4. /_next/image responses muestran cf-cache-status: HIT (no DYNAMIC)
+
+### Phase 15: Schema Fixes
+**Goal**: Los structured data de la web son validos y no incluyen schemas que Google ya no soporta para rich results
+**Depends on**: Nothing (parallelizable con Phase 14)
+**Requirements**: SCHEMA-01, SCHEMA-02, SCHEMA-03, SCHEMA-04
+**Success Criteria**:
+  1. No existe FAQPage schema en ninguna pagina de rutas
+  2. Organization schema incluye sameAs con URLs de redes sociales, address con geo coordinates de Hurghada y telefono
+  3. Course hasCourseInstance.duration es formato ISO 8601 (P[N]D)
+  4. BlogPosting author tiene propiedad url apuntando a pagina sobre el autor
+
+### Phase 16: Sitemap Fixes
+**Goal**: Los sitemaps reflejan con precision las paginas indexables del sitio, con fechas reales y sin ruido
+**Depends on**: Nothing (parallelizable)
+**Requirements**: SMAP-01, SMAP-02, SMAP-03, SMAP-04
+**Success Criteria**:
+  1. /rutas, /cursos y /experiencias aparecen en el sitemap de pages
+  2. lastmod de blog posts son fechas YYYY-MM-DD derivadas del campo last_published_at de Wagtail
+  3. Sitemap index no incluye child sitemaps que devuelven 0 URLs
+  4. Ningun sitemap contiene tags priority o changefreq
+
+### Phase 17: On-Page & Performance
+**Goal**: La homepage tiene meta tags de social sharing completos, no hay texto interno visible, y las imagenes se sirven en formato optimo
+**Depends on**: Nothing (parallelizable)
+**Requirements**: ONPAGE-01, ONPAGE-02, PERF-01, PERF-02
+**Success Criteria**:
+  1. Homepage HTML incluye og:image y twitter:image meta tags con URL de imagen valida
+  2. No existe texto de estrategia interna visible en la web (como "La homepage abre la conversacion")
+  3. next.config.ts tiene formats: ['image/avif', 'image/webp'] configurado
+  4. HeroSection renderiza como server component (sin "use client" en el archivo principal)
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -119,3 +169,7 @@ Plans:
 | 11. Sitemaps & Redirects | 1/2 | Complete    | 2026-03-08 | - |
 | 12. Technical SEO | 2/3 | Complete    | 2026-03-08 | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
+| 14. Infrastructure Hardening | v3.1 | 0/1 | Pending | - |
+| 15. Schema Fixes | v3.1 | 0/1 | Pending | - |
+| 16. Sitemap Fixes | v3.1 | 0/1 | Pending | - |
+| 17. On-Page & Performance | v3.1 | 0/1 | Pending | - |

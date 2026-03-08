@@ -38,18 +38,31 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - v2.1: 25 blog posts auditados, 4 errores factuales corregidos, 13 posts reescritos con contenido real
 - v2.1: Frontend CMS-first con fallback a mock-data para desarrollo local
 
-### Active — v3.0 SEO Operations
+### Validated — v3.0 SEO Operations
 
-- [ ] Dar de alta buceoenelmarrojo.com en GSC, Bing Webmaster Tools y GA4
-- [ ] Dividir sitemap unico en sitemaps por categoria (blog, rutas, ofertas, cursos, experiencias)
-- [ ] Configurar 301 redirects para 5 posts merged y excluirlos del sitemap
-- [ ] Enviar sitemaps a GSC y Bing
-- [ ] Recibir fotos/videos de pecios, spots y formacion de Karlos y subirlas a Wagtail
-- [ ] Webhook Wagtail para ISR on-demand al publicar contenido
-- [ ] Eliminar draftMode() de fetchers para habilitar ISR real
-- [ ] Self-host fuentes con next/font/local (eliminar FOUT)
-- [ ] Core Web Vitals optimization pass
-- [ ] Fix Wagtail 500s durante Docker build
+- v3.0: Alta y verificacion en GSC, Bing Webmaster Tools y GA4 con cookie consent GDPR
+- v3.0: Sitemaps divididos por categoria (blog, rutas, ofertas, cursos, experiencias, pages, images)
+- v3.0: 301 redirects para 5 posts merged y excluidos del sitemap
+- v3.0: Sitemaps enviados a GSC y Bing via MCP
+- v3.0: Webhook Wagtail para ISR on-demand al publicar contenido
+- v3.0: draftMode() eliminado de fetchers, ISR real habilitado
+- v3.0: Self-hosted fonts (Satoshi, Clash Display) via next/font/local
+- v3.0: Core Web Vitals: cache headers, Cloudflare proxy, Brotli, HTTP/3
+- v3.0: Cloudflare Origin Certificate (15 anos) + SSL Full (strict)
+- v3.0: Cache Rules en Cloudflare para assets y HTML en edge
+
+### Active — v3.1 SEO Audit Fixes
+
+- [ ] www redirect 301 a non-www (fix error 526)
+- [ ] Content-Security-Policy header
+- [ ] Eliminar FAQPage schema (restriccion Google 2023)
+- [ ] Organization schema completo (sameAs, geo, contacto)
+- [ ] Course duration en ISO 8601
+- [ ] Sitemaps: paginas faltantes, lastmod reales, excluir vacios
+- [ ] og:image y twitter:image en homepage
+- [ ] Eliminar texto interno de estrategia visible en produccion
+- [ ] AVIF habilitado, HeroSection server component
+- [ ] Cache /_next/image en Cloudflare edge
 
 ### Backlog
 
@@ -113,17 +126,17 @@ Posicionar la web como referencia SEO en espanol para "vida a bordo mar rojo" / 
 - **Leads**: Formularios deben conectar con Odoo CRM via API
 
 ---
-## Current Milestone: v3.0 SEO Operations
+## Current Milestone: v3.1 SEO Audit Fixes
 
-**Goal:** Conectar la web con las herramientas de SEO (GSC, Bing, GA4), optimizar sitemaps e indexacion, incorporar contenido visual de Karlos, y resolver deuda tecnica de rendimiento.
+**Goal:** Corregir todos los issues criticos, altos y medios detectados en la auditoria SEO del 2026-03-08 (technical, schema, sitemaps, on-page, performance).
 
 **Target features:**
-- Alta y verificacion en Google Search Console, Bing Webmaster Tools y GA4
-- Sitemaps divididos por categoria con sitemap index
-- 301 redirects para posts merged, exclusion de stubs del sitemap
-- Fotos/videos de pecios, spots y formacion de Karlos subidas a Wagtail
-- Webhook ISR para publicacion en tiempo real desde Wagtail
-- Core Web Vitals optimization (fonts, draftMode, build fixes)
+- Fix www 526 error con redirect 301 en Cloudflare
+- Content-Security-Policy header
+- Schema fixes (eliminar FAQPage, completar Organization, ISO 8601 en Course)
+- Sitemap fixes (paginas faltantes, lastmod reales, excluir sitemaps vacios)
+- On-page fixes (og:image homepage, eliminar texto interno)
+- Performance (AVIF, HeroSection server component, cache /_next/image)
 
 ---
-*Last updated: 2026-03-08 after v3.0 milestone start*
+*Last updated: 2026-03-08 after v3.1 milestone start*
