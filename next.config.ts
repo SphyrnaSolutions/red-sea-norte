@@ -68,6 +68,12 @@ const nextConfig: NextConfig = {
       { source: '/blog/carnatic-abu-nuhas', destination: '/blog/abu-nuhas-cementerio-de-barcos', permanent: true },
       { source: '/blog/camarotes-comida-wifi-liveaboard', destination: '/blog/como-es-un-vida-a-bordo-mar-rojo', permanent: true },
       { source: '/blog/shark-yolanda-reef-mar-rojo', destination: '/blog/ras-mohammed-guia-completa', permanent: true },
+      // Accented slug redirects (URL-encoded)
+      { source: '/blog/ss-thistlegorm-gu%C3%ADa-completa', destination: '/blog/ss-thistlegorm-guia-completa', permanent: true },
+      { source: '/blog/ras-mohammed-gu%C3%ADa-completa', destination: '/blog/ras-mohammed-guia-completa', permanent: true },
+      // Accented slug redirects (raw UTF-8)
+      { source: '/blog/ss-thistlegorm-gu\u00eda-completa', destination: '/blog/ss-thistlegorm-guia-completa', permanent: true },
+      { source: '/blog/ras-mohammed-gu\u00eda-completa', destination: '/blog/ras-mohammed-guia-completa', permanent: true },
     ]
   },
   images: {

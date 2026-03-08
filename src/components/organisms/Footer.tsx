@@ -6,13 +6,13 @@ const footerLinks = {
   explora: [
     { label: "Rutas", href: "/rutas" },
     { label: "Experiencias", href: "/experiencias" },
-    { label: "Ofertas", href: "/ofertas" },
   ],
   cursos: [
     { label: "Todos los Cursos", href: "/cursos" },
   ],
   compania: [
     { label: "Blog", href: "/blog" },
+    { label: "Contacto", href: "/contacto" },
   ],
 }
 
@@ -136,9 +136,6 @@ export function Footer() {
             <div className="flex gap-6">
               <Link href="/politica-de-privacidad" className="hover:text-white transition-colors">
                 Política de Privacidad
-              </Link>
-              <Link href="/terminos" className="hover:text-white transition-colors">
-                Términos y Condiciones
               </Link>
             </div>
           </div>
