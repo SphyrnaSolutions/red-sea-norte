@@ -21,6 +21,8 @@ ENV NEXT_PUBLIC_WAGTAIL_URL=https://back.redsea.sphyrnasolutions.com
 ENV NEXT_PUBLIC_WAGTAIL_API_URL=https://back.redsea.sphyrnasolutions.com/api/v2
 ENV NEXT_PUBLIC_SITE_HOSTNAME=buceoenelmarrojo.com
 ENV NEXT_PUBLIC_SITE_URL=https://buceoenelmarrojo.com
+ARG NEXT_PUBLIC_GA_MEASUREMENT_ID
+ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID}
 
 RUN npm run build
 
