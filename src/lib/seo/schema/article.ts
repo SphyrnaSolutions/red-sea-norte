@@ -23,6 +23,9 @@ export function buildArticleSchema(
       url: `${baseUrl}/sobre-nosotros`,
     },
     datePublished: page.published_at,
+    ...(page.meta.last_published_at
+      ? { dateModified: page.meta.last_published_at.split('T')[0] }
+      : {}),
     publisher: {
       '@type': 'Organization',
       name: 'Red Sea Norte',

@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** v3.1 SEO Audit Fixes — COMPLETE (16/16 requirements)
+**Current focus:** v3.2 Content Quality — 2/3 done (tildes + posts expandidos, dateModified pendiente)
 
 ## Current Position
 
 Phase: 14-17 (v3.1 SEO Audit Fixes)
 Plan: All executed
-Status: Complete (16/16 requirements done)
-Last activity: 2026-03-08 — Phases 14-17 executed in parallel
+Status: v3.2 in progress (CONT-01 + CONT-02 done)
+Last activity: 2026-03-08 — Blog posts expandidos a 1500+ palabras y desplegados
 
 ## Accumulated Context
 

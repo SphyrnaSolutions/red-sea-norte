@@ -129,11 +129,11 @@ Requirements derived from SEO audit (2026-03-08, score 74/100).
 
 ## Future Requirements
 
-### Content Quality (v3.2 — pendiente Karlos)
+### Content Quality (v3.2)
 
-- **CONT-01**: Tildes en todos los titulos, headings y meta descriptions
-- **CONT-02**: Blog posts ampliados a minimo 1500 palabras
-- **CONT-03**: dateModified en BlogPosting refleja fecha real de edicion
+- [x] **CONT-01**: Tildes en todos los títulos, headings y meta descriptions (completed 2026-03-08)
+- [x] **CONT-02**: Blog posts ampliados a mínimo 1500 palabras (completed 2026-03-08)
+- **CONT-03**: dateModified en BlogPosting refleja fecha real de edición
 
 ### Contenido SEO (v4.0)
 
