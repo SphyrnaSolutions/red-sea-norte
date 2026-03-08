@@ -110,7 +110,9 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
   1. /rutas no tiene export const dynamic = "force-dynamic" y es cacheable con ISR (response headers muestran cache HIT)
   2. /blog incluye canonical tag apuntando a https://buceoenelmarrojo.com/blog/
   3. /blog tiene title y meta description que reflejan contenido de blog (no "centro de buceo" ni texto generico)
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 21-01-PLAN.md -- Remove force-dynamic from /rutas, add blog-specific metadata with canonical to /blog
 
 ### Phase 22: Content & Config Cleanup
 **Goal**: No hay contenido interno visible al publico, la configuracion tecnica esta limpia y los sitemaps tienen fechas correctas
@@ -146,5 +148,5 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 | 18. Blog SSR Fix | v3.2 | 0/? | Not started | - |
 | 19. Routing & Dead Links | v3.2 | 0/? | Not started | - |
 | 20. Schema Consolidation | v3.2 | 0/? | Not started | - |
-| 21. Blog & Rutas Performance | v3.2 | 0/? | Not started | - |
+| 21. Blog & Rutas Performance | v3.2 | 0/1 | Not started | - |
 | 22. Content & Config Cleanup | v3.2 | 0/? | Not started | - |
