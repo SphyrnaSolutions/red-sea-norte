@@ -158,9 +158,9 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 
 ### Cleanup
 
-- [ ] **CLEAN-01**: Notas internas de marketing eliminadas del contenido publico visible
-- [ ] **CLEAN-02**: robots.txt User-agent blocks deduplicados (eliminar duplicado de Cloudflare)
-- [ ] **CLEAN-03**: Lastmod presente en sitemaps de rutas y pages (derivado de CMS o fecha fija)
+- [x] **CLEAN-01**: Notas internas de marketing eliminadas del contenido publico visible
+- [x] **CLEAN-02**: robots.txt User-agent blocks deduplicados (eliminar duplicado de Cloudflare)
+- [x] **CLEAN-03**: Lastmod presente en sitemaps de rutas y pages (derivado de CMS o fecha fija)
 
 ## Future Requirements
 
@@ -259,9 +259,9 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 | PERF-03 | Phase 21 | Complete |
 | PERF-04 | Phase 21 | Complete |
 | PERF-05 | Phase 21 | Complete |
-| CLEAN-01 | Phase 22 | Pending |
-| CLEAN-02 | Phase 22 | Pending |
-| CLEAN-03 | Phase 22 | Pending |
+| CLEAN-01 | Phase 22 | Complete |
+| CLEAN-02 | Phase 22 | Complete |
+| CLEAN-03 | Phase 22 | Complete |
 
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13

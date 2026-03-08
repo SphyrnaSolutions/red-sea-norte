@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** v3.2 SEO Audit Fixes II -- Phase 18 Blog SSR Fix executed
+**Current focus:** v3.2 SEO Audit Fixes II -- All phases complete
 
 ## Current Position
 
-Phase: 21 of 22 (Blog & Rutas Performance)
+Phase: 22 of 22 (Content & Config Cleanup)
 Plan: 01 of 01 -- complete
-Status: Phase 21 complete
-Last activity: 2026-03-08 -- Phase 21 Plan 01 executed (rutas ISR + blog metadata)
+Status: Phase 22 complete -- v3.2 milestone done
+Last activity: 2026-03-08 -- Phase 22 Plan 01 executed (marketing notes cleanup, sitemaps lastmod, robots.txt)
 
-Progress: [==================░░] 92% (milestones v1.0-v3.1 complete, v3.2 phases 18-21 done)
+Progress: [====================] 100% (milestones v1.0-v3.2 complete)
 
 ## Accumulated Context
 
@@ -31,6 +31,9 @@ Progress: [==================░░] 92% (milestones v1.0-v3.1 complete, v3.2 ph
 - [Phase 18]: Wagtail rich_text block values normalized in mapStreamField (string -> {content: string})
 - [Phase 18]: Removed isomorphic-dompurify from RichTextBlock -- trusted CMS content, SSR-safe
 - [Phase 18]: Blog listing uses selective fields param to avoid 451KB body payload
+- [Phase 22]: lastPublishedAt added to RutaData and wired through mappers for sitemap dates
+- [Phase 22]: robots.txt duplication is Cloudflare config issue, documented in code comment
+- [Phase 22]: Static pages lastmod uses fixed date 2026-03-08
 
 ### Pending Todos
 
@@ -45,4 +48,4 @@ Progress: [==================░░] 92% (milestones v1.0-v3.1 complete, v3.2 ph
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Completed 18-01-PLAN.md (Blog SSR Fix)
+Stopped at: Completed 22-01-PLAN.md (Content & Config Cleanup) -- v3.2 milestone complete
