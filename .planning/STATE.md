@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** v3.2 SEO Audit Fixes II -- Phase 21 complete (Blog & Rutas Performance)
+**Current focus:** v3.2 SEO Audit Fixes II -- Phase 18 Blog SSR Fix executed
 
 ## Current Position
 
@@ -28,6 +28,9 @@ Progress: [==================░░] 92% (milestones v1.0-v3.1 complete, v3.2 ph
 - [v3.2]: Schema builders existen en src/lib/seo/schema/ pero paginas construyen inline
 - [Phase 21]: Used static Metadata export for /blog listing (no dynamic params)
 - [Phase 19]: Contacto page as static server component; accented slug redirects with both encoded and raw UTF-8 variants
+- [Phase 18]: Wagtail rich_text block values normalized in mapStreamField (string -> {content: string})
+- [Phase 18]: Removed isomorphic-dompurify from RichTextBlock -- trusted CMS content, SSR-safe
+- [Phase 18]: Blog listing uses selective fields param to avoid 451KB body payload
 
 ### Pending Todos
 
@@ -42,4 +45,4 @@ Progress: [==================░░] 92% (milestones v1.0-v3.1 complete, v3.2 ph
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Completed 21-01-PLAN.md (Blog & Rutas Performance)
+Stopped at: Completed 18-01-PLAN.md (Blog SSR Fix)

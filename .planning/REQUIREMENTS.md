@@ -133,8 +133,8 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 
 ### Blog SSR
 
-- [ ] **SSR-01**: Blog post body content renderiza completo en HTML server-side (no solo headings)
-- [ ] **SSR-02**: Blog listing solo carga title, excerpt, thumbnail y slug (no body completo) — target <60KB
+- [x] **SSR-01**: Blog post body content renderiza completo en HTML server-side (no solo headings)
+- [x] **SSR-02**: Blog listing solo carga title, excerpt, thumbnail y slug (no body completo) — target <60KB
 
 ### Routing
 
@@ -246,8 +246,8 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 | ONPAGE-02 | Phase 17 | Complete |
 | PERF-01 | Phase 17 | Complete |
 | PERF-02 | Phase 17 | Complete |
-| SSR-01 | Phase 18 | Pending |
-| SSR-02 | Phase 18 | Pending |
+| SSR-01 | Phase 18 | Complete |
+| SSR-02 | Phase 18 | Complete |
 | ROUTE-01 | Phase 19 | Complete |
 | ROUTE-02 | Phase 19 | Complete |
 | ROUTE-03 | Phase 19 | Complete |
