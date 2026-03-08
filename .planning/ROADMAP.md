@@ -78,7 +78,9 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
   1. Al hacer curl a cualquier URL de blog post, el HTML response contiene el body content completo del articulo (parrafos, listas, imagenes), no solo los headings
   2. La pagina /blog/ (listing) carga en menos de 60KB de payload total, mostrando solo titulo, excerpt, thumbnail y slug por cada post
   3. Google puede rastrear e indexar el contenido textual de los blog posts sin necesidad de ejecutar JavaScript
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 18-01-PLAN.md -- Fix blog body SSR and optimize listing payload
 
 ### Phase 19: Routing & Dead Links
 **Goal**: Todas las URLs visibles en la web devuelven contenido valido -- no hay 404s en paginas enlazadas ni en la navegacion
@@ -145,7 +147,7 @@ Plans:
 | 15. Schema Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 16. Sitemap Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 17. On-Page & Performance | v3.1 | 1/1 | Complete | 2026-03-08 |
-| 18. Blog SSR Fix | v3.2 | 0/? | Not started | - |
+| 18. Blog SSR Fix | v3.2 | 0/1 | Not started | - |
 | 19. Routing & Dead Links | v3.2 | 0/? | Not started | - |
 | 20. Schema Consolidation | v3.2 | 0/? | Not started | - |
 | 21. Blog & Rutas Performance | v3.2 | 0/1 | Not started | - |
