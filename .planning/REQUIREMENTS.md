@@ -66,9 +66,9 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 
 ### SEO Tooling
 
-- [ ] **TOOL-01**: Dar de alta y verificar buceoenelmarrojo.com en Google Search Console
-- [ ] **TOOL-02**: Dar de alta y verificar buceoenelmarrojo.com en Bing Webmaster Tools
-- [ ] **TOOL-03**: Crear propiedad GA4 para buceoenelmarrojo.com e instalar tag en el frontend
+- [x] **TOOL-01**: Dar de alta y verificar buceoenelmarrojo.com en Google Search Console
+- [x] **TOOL-02**: Dar de alta y verificar buceoenelmarrojo.com en Bing Webmaster Tools
+- [x] **TOOL-03**: Crear propiedad GA4 para buceoenelmarrojo.com e instalar tag en el frontend
 - [ ] **TOOL-04**: Enviar sitemaps divididos a GSC y Bing
 
 ### Sitemaps & Indexing
@@ -144,9 +144,9 @@ Requirements for SEO operations, sitemaps, technical optimization and content me
 | AUDIT-01 | Phase 9 | Pending |
 | AUDIT-02 | Phase 9 | Pending |
 | AUDIT-03 | Phase 9 | Pending |
-| TOOL-01 | Phase 10 | Pending |
-| TOOL-02 | Phase 10 | Pending |
-| TOOL-03 | Phase 10 | Pending |
+| TOOL-01 | Phase 10 | Complete |
+| TOOL-02 | Phase 10 | Complete |
+| TOOL-03 | Phase 10 | Complete |
 | SITE-01 | Phase 11 | Pending |
 | SITE-02 | Phase 11 | Pending |
 | SITE-03 | Phase 11 | Pending |
