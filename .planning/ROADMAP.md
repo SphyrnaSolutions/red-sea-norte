@@ -55,7 +55,9 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
   1. buceoenelmarrojo.com aparece como propiedad verificada en Google Search Console y se puede consultar el estado de indexacion
   2. buceoenelmarrojo.com aparece como sitio verificado en Bing Webmaster Tools
   3. El tag de GA4 esta instalado en el frontend y registra pageviews en el panel de Google Analytics al navegar la web
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 10-01-PLAN.md -- GA4 tag + GSC/Bing verification meta tags + human verification checkpoint
 
 ### Phase 11: Sitemaps & Redirects
 **Goal**: Los buscadores reciben sitemaps granulares por categoria y los posts merged redirigen correctamente sin contaminar el sitemap
@@ -106,7 +108,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
 | 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
-| 10. SEO Tooling Setup | v3.0 | 0/? | Not started | - |
+| 10. SEO Tooling Setup | v3.0 | 0/1 | Planning complete | - |
 | 11. Sitemaps & Redirects | v3.0 | 0/? | Not started | - |
 | 12. Technical SEO | v3.0 | 0/? | Not started | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
