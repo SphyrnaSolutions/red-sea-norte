@@ -55,3 +55,27 @@
 
 ---
 
+## v3.1 SEO Audit Fixes (Shipped: 2026-03-08)
+
+**Phases completed:** 4 phases (14-17), all parallelizable
+**Audit score:** 74/100 (pre-fix)
+**Key accomplishments:**
+1. www 301 redirect via Cloudflare, CSP header, x-powered-by disabled
+2. FAQPage schema removed from routes, Organization schema completed, Course duration ISO 8601
+3. Sitemaps: missing pages added, lastmod from CMS, empty sitemaps excluded, deprecated tags removed
+4. og:image/twitter:image on homepage, internal strategy text removed, AVIF enabled, HeroSection server component
+
+---
+
+## v3.2 SEO Audit Fixes II (In Progress)
+
+**Phases planned:** 5 phases (18-22)
+**Audit score:** 57/100 (pre-fix)
+**Target:**
+1. Blog SSR fix (P0) -- body content invisible in server HTML
+2. /contacto 404 fix (P1) -- main conversion page broken
+3. Schema consolidation -- use existing builders, add listings schema
+4. Performance -- /rutas ISR, /blog meta tags
+5. Cleanup -- internal notes, robots.txt, lastmod
+
+---

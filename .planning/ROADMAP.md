@@ -6,7 +6,8 @@
 - v2.0 Lead Capture -- Phases 4-6 (shipped 2026-03-06)
 - v2.1 Real Content -- Phases 7-9 (shipped 2026-03-07)
 - v3.0 SEO Operations -- Phases 10-13 (shipped 2026-03-08, phase 13 blocked)
-- v3.1 SEO Audit Fixes -- Phases 14-17 (in progress)
+- v3.1 SEO Audit Fixes -- Phases 14-17 (shipped 2026-03-08)
+- v3.2 SEO Audit Fixes II -- Phases 18-22 (in progress)
 
 ## Phases
 
@@ -39,118 +40,87 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 </details>
 
-### v3.0 SEO Operations
+<details>
+<summary>v3.0 SEO Operations (Phases 10-13) -- SHIPPED 2026-03-08</summary>
 
-- [x] **Phase 10: SEO Tooling Setup** - Dar de alta la web en GSC, Bing Webmaster Tools y GA4 para tener visibilidad de indexacion y trafico (completed 2026-03-08)
-- [x] **Phase 11: Sitemaps & Redirects** - Sitemaps divididos por categoria, 301 redirects para posts merged, y envio a buscadores (completed 2026-03-08)
-- [x] **Phase 12: Technical SEO** - ISR real, self-hosted fonts, Core Web Vitals y Cloudflare proxy para rendimiento (completed 2026-03-08)
-- [ ] **Phase 13: Content Media** - Fotos y videos de Karlos subidos a Wagtail y asignados a posts (BLOCKED: pendiente entrega de Karlos)
+- [x] Phase 10: SEO Tooling Setup (1/1 plans) -- completed 2026-03-08
+- [x] Phase 11: Sitemaps & Redirects (2/2 plans) -- completed 2026-03-08
+- [x] Phase 12: Technical SEO (3/3 plans) -- completed 2026-03-08
+- [ ] Phase 13: Content Media -- BLOCKED (pendiente entrega de Karlos)
+
+</details>
+
+<details>
+<summary>v3.1 SEO Audit Fixes (Phases 14-17) -- SHIPPED 2026-03-08</summary>
+
+- [x] Phase 14: Infrastructure Hardening (1/1 plans) -- completed 2026-03-08
+- [x] Phase 15: Schema Fixes (1/1 plans) -- completed 2026-03-08
+- [x] Phase 16: Sitemap Fixes (1/1 plans) -- completed 2026-03-08
+- [x] Phase 17: On-Page & Performance (1/1 plans) -- completed 2026-03-08
+
+</details>
+
+### v3.2 SEO Audit Fixes II
+
+- [ ] **Phase 18: Blog SSR Fix** - Blog body content renderiza en server HTML y listing optimizado a <60KB
+- [ ] **Phase 19: Routing & Dead Links** - /contacto funcional, slugs con tildes corregidos, footer links limpios
+- [ ] **Phase 20: Schema Consolidation** - Schema builders reutilizados en todas las paginas, listings con JSON-LD, BlogPosting completo
+- [ ] **Phase 21: Blog & Rutas Performance** - /rutas cacheable con ISR, /blog con canonical y meta tags correctos
+- [ ] **Phase 22: Content & Config Cleanup** - Notas internas eliminadas, robots.txt limpio, lastmod en sitemaps
 
 ## Phase Details
 
-### Phase 10: SEO Tooling Setup
-**Goal**: La web esta registrada y verificada en los motores de busqueda y tiene analytics instalado para medir trafico real
-**Depends on**: Nothing (first phase of v3.0)
-**Requirements**: TOOL-01, TOOL-02, TOOL-03
+### Phase 18: Blog SSR Fix
+**Goal**: El contenido completo de los blog posts es visible en el HTML server-rendered para que Google pueda indexar el body text
+**Depends on**: Nothing (P0 -- maxima prioridad)
+**Requirements**: SSR-01, SSR-02
 **Success Criteria** (what must be TRUE):
-  1. buceoenelmarrojo.com aparece como propiedad verificada en Google Search Console y se puede consultar el estado de indexacion
-  2. buceoenelmarrojo.com aparece como sitio verificado en Bing Webmaster Tools
-  3. El tag de GA4 esta instalado en el frontend y registra pageviews en el panel de Google Analytics al navegar la web
-**Plans**: 1 plan
-Plans:
-- [ ] 10-01-PLAN.md -- GA4 tag + GSC/Bing verification meta tags + human verification checkpoint
-
-### Phase 11: Sitemaps & Redirects
-**Goal**: Los buscadores reciben sitemaps granulares por categoria y los posts merged redirigen correctamente sin contaminar el sitemap
-**Depends on**: Phase 10 (GSC y Bing verificados para enviar sitemaps)
-**Requirements**: SITE-01, SITE-02, SITE-03, SITE-04, TOOL-04
-**Success Criteria** (what must be TRUE):
-  1. /sitemap.xml devuelve un sitemap index con enlaces a sitemaps separados para blog, rutas, ofertas, cursos, experiencias y pages
-  2. Las URLs de los 5 posts merged (giannis-d, dunraven, carnatic, camarotes-comida-wifi, shark-yolanda) devuelven 301 redirect a su destino correcto
-  3. Los posts merged no aparecen en ningun sitemap de la web
-  4. Existe un sitemap de imagenes que lista las fotos indexables para Google Images
-  5. Los sitemaps estan enviados y aceptados en GSC y Bing Webmaster Tools
-**Plans**: 2 plans
-Plans:
-- [ ] 11-01-PLAN.md -- Sitemap index + per-category sitemaps + image sitemap + 301 redirects for merged posts
-- [ ] 11-02-PLAN.md -- Submit sitemaps to GSC and Bing via MCP + human verification
-
-### Phase 12: Technical SEO
-**Goal**: La web carga rapido, las fuentes no producen FOUT, el contenido se revalida automaticamente al publicar en Wagtail, y Cloudflare optimiza la entrega
-**Depends on**: Phase 10 (necesita GA4 para medir Core Web Vitals)
-**Requirements**: TECH-01, TECH-02, TECH-03, TECH-04, TECH-05
-**Success Criteria** (what must be TRUE):
-  1. Al publicar o actualizar una pagina en Wagtail, el contenido se actualiza en la web en menos de 60 segundos sin necesidad de rebuild
-  2. Las fuentes Satoshi y Clash Display se cargan desde el propio servidor (no Google Fonts) y no hay flash de texto sin estilo (FOUT)
-  3. draftMode() eliminado de los fetchers: las paginas de homepage y blog sirven contenido cacheado con ISR real
-  4. Core Web Vitals en verde (LCP < 2.5s, CLS < 0.1, INP < 200ms) medido en PageSpeed Insights
-  5. Cloudflare proxy activo con cache, compresion Brotli y HTTP/3 habilitado para buceoenelmarrojo.com
-**Plans**: 3 plans
-Plans:
-- [ ] 12-01-PLAN.md -- Self-host fonts (Satoshi + Clash Display) with next/font/local + remove draftMode from data fetchers for real ISR
-- [ ] 12-02-PLAN.md -- On-demand ISR revalidation API route + Wagtail webhook configuration
-- [ ] 12-03-PLAN.md -- Core Web Vitals optimization + Cloudflare proxy setup and verification
-
-### Phase 13: Content Media
-**Goal**: Las fotos y videos reales de pecios, spots y formacion de Karlos estan en Wagtail y asignados como hero images a los posts
-**Depends on**: Phase 12 (ISR funcional para que el contenido nuevo se publique automaticamente)
-**Requirements**: MEDIA-01, MEDIA-02, MEDIA-03
-**Success Criteria** (what must be TRUE):
-  1. Entre 31-50 fotos de pecios, spots y formacion estan optimizadas y subidas a Wagtail CMS con alt text descriptivo
-  2. 6 videos estan subidos a YouTube y embebidos en los posts relevantes con iframe responsive
-  3. Los 25 blog posts tienen hero images correctas asignadas y el mapping esta persistido en populate_blog.py
+  1. Al hacer curl a cualquier URL de blog post, el HTML response contiene el body content completo del articulo (parrafos, listas, imagenes), no solo los headings
+  2. La pagina /blog/ (listing) carga en menos de 60KB de payload total, mostrando solo titulo, excerpt, thumbnail y slug por cada post
+  3. Google puede rastrear e indexar el contenido textual de los blog posts sin necesidad de ejecutar JavaScript
 **Plans**: TBD
 
-**BLOCKED**: Phase 13 requiere que Karlos entregue las fotos y videos. No se puede empezar hasta recibir el material.
+### Phase 19: Routing & Dead Links
+**Goal**: Todas las URLs visibles en la web devuelven contenido valido -- no hay 404s en paginas enlazadas ni en la navegacion
+**Depends on**: Nothing (parallelizable con Phase 18)
+**Requirements**: ROUTE-01, ROUTE-02, ROUTE-03
+**Success Criteria** (what must be TRUE):
+  1. /contacto devuelve HTTP 200 con el formulario de contacto funcional y visible
+  2. URLs de blog con tildes en el slug (ej: /blog/que-es-un-liveaboard) redirigen 301 a la version correcta o el CMS sirve el contenido sin error
+  3. El footer no contiene enlaces a /ofertas ni /terminos (ambos eliminados por devolver 404)
+**Plans**: TBD
 
-### v3.1 SEO Audit Fixes
+### Phase 20: Schema Consolidation
+**Goal**: Todas las paginas usan los schema builders centralizados y el structured data es completo y correcto para rich results
+**Depends on**: Phase 18 (SSR fix puede cambiar como se renderiza el schema en blog posts)
+**Requirements**: SCHEMA-05, SCHEMA-06, SCHEMA-07, SCHEMA-08, SCHEMA-09
+**Success Criteria** (what must be TRUE):
+  1. BlogPosting schema mainEntityOfPage.@id usa el slug de la URL del frontend, no el slug interno del CMS
+  2. /blog/ incluye JSON-LD con CollectionPage + BreadcrumbList; /rutas/ incluye JSON-LD con CollectionPage + BreadcrumbList
+  3. BlogPosting schema incluye image property con URL de la hero image del post
+  4. Ninguna pagina construye JSON-LD inline -- todas usan las funciones de src/lib/seo/schema/
+  5. Todos los BlogPosting tienen el mismo author.name estandarizado
+**Plans**: TBD
 
-- [x] **Phase 14: Infrastructure Hardening** - www 301 redirect, CSP header, disable x-powered-by, cache /_next/image (completed 2026-03-08)
-- [x] **Phase 15: Schema Fixes** - Remove FAQPage, complete Organization, fix Course duration, add author URL (completed 2026-03-08)
-- [x] **Phase 16: Sitemap Fixes** - Add missing pages, fix lastmod, exclude empty sitemaps, remove deprecated tags (completed 2026-03-08)
-- [x] **Phase 17: On-Page & Performance** - og:image homepage, remove internal text, enable AVIF, HeroSection server component (completed 2026-03-08)
-
-## Phase Details — v3.1
-
-### Phase 14: Infrastructure Hardening
-**Goal**: La infraestructura web no tiene errores de accesibilidad (www), tiene headers de seguridad completos y cachea imagenes optimizadas en edge
-**Depends on**: Nothing
-**Requirements**: INFRA-01, INFRA-02, INFRA-03, INFRA-04
-**Success Criteria**:
-  1. https://www.buceoenelmarrojo.com redirige con 301 a https://buceoenelmarrojo.com
-  2. Response headers incluyen Content-Security-Policy-Report-Only
-  3. x-powered-by header no presente en responses
-  4. /_next/image responses muestran cf-cache-status: HIT (no DYNAMIC)
-
-### Phase 15: Schema Fixes
-**Goal**: Los structured data de la web son validos y no incluyen schemas que Google ya no soporta para rich results
-**Depends on**: Nothing (parallelizable con Phase 14)
-**Requirements**: SCHEMA-01, SCHEMA-02, SCHEMA-03, SCHEMA-04
-**Success Criteria**:
-  1. No existe FAQPage schema en ninguna pagina de rutas
-  2. Organization schema incluye sameAs con URLs de redes sociales, address con geo coordinates de Hurghada y telefono
-  3. Course hasCourseInstance.duration es formato ISO 8601 (P[N]D)
-  4. BlogPosting author tiene propiedad url apuntando a pagina sobre el autor
-
-### Phase 16: Sitemap Fixes
-**Goal**: Los sitemaps reflejan con precision las paginas indexables del sitio, con fechas reales y sin ruido
+### Phase 21: Blog & Rutas Performance
+**Goal**: Las paginas de listing (/blog, /rutas) son cacheables, rapidas y tienen meta tags correctos para SEO
 **Depends on**: Nothing (parallelizable)
-**Requirements**: SMAP-01, SMAP-02, SMAP-03, SMAP-04
-**Success Criteria**:
-  1. /rutas, /cursos y /experiencias aparecen en el sitemap de pages
-  2. lastmod de blog posts son fechas YYYY-MM-DD derivadas del campo last_published_at de Wagtail
-  3. Sitemap index no incluye child sitemaps que devuelven 0 URLs
-  4. Ningun sitemap contiene tags priority o changefreq
+**Requirements**: PERF-03, PERF-04, PERF-05
+**Success Criteria** (what must be TRUE):
+  1. /rutas no tiene export const dynamic = "force-dynamic" y es cacheable con ISR (response headers muestran cache HIT)
+  2. /blog incluye canonical tag apuntando a https://buceoenelmarrojo.com/blog/
+  3. /blog tiene title y meta description que reflejan contenido de blog (no "centro de buceo" ni texto generico)
+**Plans**: TBD
 
-### Phase 17: On-Page & Performance
-**Goal**: La homepage tiene meta tags de social sharing completos, no hay texto interno visible, y las imagenes se sirven en formato optimo
+### Phase 22: Content & Config Cleanup
+**Goal**: No hay contenido interno visible al publico, la configuracion tecnica esta limpia y los sitemaps tienen fechas correctas
 **Depends on**: Nothing (parallelizable)
-**Requirements**: ONPAGE-01, ONPAGE-02, PERF-01, PERF-02
-**Success Criteria**:
-  1. Homepage HTML incluye og:image y twitter:image meta tags con URL de imagen valida
-  2. No existe texto de estrategia interna visible en la web (como "La homepage abre la conversacion")
-  3. next.config.ts tiene formats: ['image/avif', 'image/webp'] configurado
-  4. HeroSection renderiza como server component (sin "use client" en el archivo principal)
+**Requirements**: CLEAN-01, CLEAN-02, CLEAN-03
+**Success Criteria** (what must be TRUE):
+  1. No existen notas de marketing internas (como "Este post posiciona para..." o "Estrategia:") visibles en ninguna pagina publica
+  2. robots.txt tiene un solo bloque por User-agent (sin duplicados de Cloudflare)
+  3. Sitemaps de rutas y pages incluyen lastmod con fecha YYYY-MM-DD derivada del CMS o fecha fija conocida
+**Plans**: TBD
 
 ## Progress
 
@@ -166,10 +136,15 @@ Plans:
 | 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
 | 10. SEO Tooling Setup | v3.0 | 1/1 | Complete | 2026-03-08 |
-| 11. Sitemaps & Redirects | 1/2 | Complete    | 2026-03-08 | - |
-| 12. Technical SEO | 2/3 | Complete    | 2026-03-08 | - |
+| 11. Sitemaps & Redirects | v3.0 | 2/2 | Complete | 2026-03-08 |
+| 12. Technical SEO | v3.0 | 3/3 | Complete | 2026-03-08 |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
 | 14. Infrastructure Hardening | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 15. Schema Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 16. Sitemap Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 17. On-Page & Performance | v3.1 | 1/1 | Complete | 2026-03-08 |
+| 18. Blog SSR Fix | v3.2 | 0/? | Not started | - |
+| 19. Routing & Dead Links | v3.2 | 0/? | Not started | - |
+| 20. Schema Consolidation | v3.2 | 0/? | Not started | - |
+| 21. Blog & Rutas Performance | v3.2 | 0/? | Not started | - |
+| 22. Content & Config Cleanup | v3.2 | 0/? | Not started | - |
