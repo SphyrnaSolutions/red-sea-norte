@@ -66,9 +66,10 @@ function buildArticleJsonLd(page: SEOArticlePageData) {
       : `${BASE_URL}${page.heroImage}`,
     ...(page.publishedAt ? { datePublished: page.publishedAt } : {}),
     ...(page.updatedAt ? { dateModified: page.updatedAt } : {}),
-    author: page.author
-      ? { '@type': 'Person', name: page.author.name }
-      : { '@type': 'Organization', name: 'Red Sea Norte' },
+    author: {
+      '@type': 'Person',
+      name: 'Karlos Simon',
+    },
     publisher: {
       '@type': 'Organization',
       name: 'Red Sea Norte',

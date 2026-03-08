@@ -6,7 +6,9 @@ import { JsonLd } from "@/components/seo/JsonLd"
 import { Breadcrumbs, buildBreadcrumbItems } from "@/components/seo/Breadcrumbs"
 import { RelatedContent } from "@/components/seo/RelatedContent"
 import { resolveCluster, computeInterlinks } from "@/lib/seo"
+import { buildArticleSchema } from "@/lib/seo/schema"
 import { getRawPageBySlug } from "@/lib/wagtail/fetchers"
+import type { WagtailBlogPostPage } from "@/lib/wagtail/types"
 import { BlockRenderer } from "@/components/blocks"
 import type { Metadata } from 'next'
 
@@ -85,39 +87,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Base URL for structured data
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
-  // JSON-LD structured data for SEO
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.hero?.image ? (post.hero.image.startsWith('http') ? post.hero.image : `${BASE_URL}${post.hero.image}`) : undefined,
-    datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
-    author: {
-      '@type': 'Person',
-      name: post.author?.name || 'Red Sea Norte',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Red Sea Norte',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${BASE_URL}/logo.png`,
-      },
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${BASE_URL}/blog/${post.slug}`,
-    },
-  }
-
-  // Resolve cluster for interlinks
+  // Resolve cluster for interlinks (uses raw Wagtail page data)
   const rawPage = await getRawPageBySlug('blog.BlogPostPage', slug, {
     tags: ['blog', `blog-${slug}`],
   })
   const cluster = rawPage ? await resolveCluster(rawPage) : null
   const interlinks = computeInterlinks(cluster, slug)
+
+  // JSON-LD structured data via centralized builder -- uses URL slug, not CMS slug
+  const jsonLd = rawPage
+    ? buildArticleSchema(rawPage as WagtailBlogPostPage, BASE_URL, slug)
+    : {
+        '@context': 'https://schema.org' as const,
+        '@type': 'Article' as const,
+        headline: post.title,
+        description: post.excerpt,
+        image: post.hero?.image ? (post.hero.image.startsWith('http') ? post.hero.image : `${BASE_URL}${post.hero.image}`) : undefined,
+        author: { '@type': 'Person' as const, name: 'Karlos Simon' },
+        mainEntityOfPage: { '@type': 'WebPage' as const, '@id': `${BASE_URL}/blog/${slug}` },
+      }
 
   return (
     <div className="pt-20">

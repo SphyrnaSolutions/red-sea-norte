@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllRutasData } from '@/lib/data'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { buildCollectionPageSchema } from '@/lib/seo/schema'
 import { Calendar, Waves, MapPin, ArrowRight } from 'lucide-react'
 
 // Base URL for SEO
@@ -32,8 +34,30 @@ export const revalidate = 1800
 export default async function RutasPage() {
   const rutas = await getAllRutasData()
 
+  const collectionItems = rutas.map(r => ({
+    name: r.title,
+    url: `${BASE_URL}/rutas/${r.slug}`,
+    description: r.hero?.subtitle || r.storyIntro?.description,
+    image: r.hero?.backgroundImage,
+  }))
+
+  const schemas = buildCollectionPageSchema({
+    name: 'Rutas de Vida a Bordo en el Mar Rojo',
+    description: 'Itinerarios de vida a bordo desde Hurghada con rutas por el Mar Rojo',
+    url: `${BASE_URL}/rutas`,
+    baseUrl: BASE_URL,
+    breadcrumbItems: [
+      { name: 'Inicio', url: BASE_URL },
+      { name: 'Rutas', url: `${BASE_URL}/rutas` },
+    ],
+    items: collectionItems,
+  })
+
   return (
     <div className="pt-20">
+      {schemas.map((schema, i) => (
+        <JsonLd key={i} data={schema} />
+      ))}
       {/* Hero Section */}
       <section className="relative w-full h-[500px] max-md:h-[400px] overflow-hidden">
         {/* Background Image */}

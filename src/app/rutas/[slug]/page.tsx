@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/seo/JsonLd"
 import { Breadcrumbs, buildBreadcrumbItems } from "@/components/seo/Breadcrumbs"
 import { RelatedContent } from "@/components/seo/RelatedContent"
 import { resolveCluster, computeInterlinks } from "@/lib/seo"
+import { buildTouristTripSchema } from "@/lib/seo/schema"
 import { getRawPageBySlug } from "@/lib/wagtail/fetchers"
 import type { ItineraryDay, ResourceLinkItem, RouteSpotData, RutaData } from "@/lib/mock-data/types"
 import type { Metadata } from 'next'
@@ -77,48 +78,6 @@ export async function generateStaticParams() {
   }))
 }
 
-// Generate JSON-LD structured data for TouristTrip schema
-function generateJsonLd(ruta: RutaData) {
-  // Extract price from infoCards (look for the price card)
-  const priceCard = ruta.infoCards?.find(card => card.label.toLowerCase() === 'precio')
-  const priceValue = priceCard?.value?.replace(/[^0-9]/g, '') || undefined
-
-  // Build itinerary from days data
-  const itinerary = ruta.itinerary?.days?.map(day => ({
-    '@type': 'ItemList' as const,
-    name: `Día ${day.day}: ${day.title}`,
-    description: day.description,
-    itemListElement: day.dives.map((dive, index) => ({
-      '@type': 'ListItem' as const,
-      position: index + 1,
-      name: dive,
-    })),
-  }))
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'TouristTrip',
-    name: ruta.title,
-    description: ruta.storyIntro?.description || ruta.hero.subtitle,
-    image: ruta.hero.backgroundImage ?
-      (ruta.hero.backgroundImage.startsWith('http') ? ruta.hero.backgroundImage : `${BASE_URL}${ruta.hero.backgroundImage}`)
-      : undefined,
-    touristType: 'Scuba Diving',
-    itinerary: itinerary,
-    offers: priceValue ? {
-      '@type': 'Offer',
-      price: priceValue,
-      priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
-      url: `${BASE_URL}/rutas/${ruta.slug}`,
-    } : undefined,
-    provider: {
-      '@type': 'Organization',
-      name: 'Red Sea Norte',
-    },
-  }
-}
-
 export default async function RutaPage({ params }: RutaPageProps) {
   const { slug } = await params
   const { isEnabled } = await draftMode()
@@ -130,15 +89,24 @@ export default async function RutaPage({ params }: RutaPageProps) {
     notFound()
   }
 
-  // Generate JSON-LD structured data
-  const jsonLd = generateJsonLd(ruta)
-
   // Resolve cluster for interlinks (uses raw Wagtail page data)
   const rawPage = await getRawPageBySlug('rutas.RutaPage', slug, {
     tags: ['rutas', `ruta-${slug}`],
   })
   const cluster = rawPage ? await resolveCluster(rawPage) : null
   const interlinks = computeInterlinks(cluster, slug)
+
+  // JSON-LD structured data via centralized builder
+  const jsonLd = rawPage
+    ? buildTouristTripSchema(rawPage, BASE_URL)
+    : {
+        '@context': 'https://schema.org' as const,
+        '@type': 'TouristTrip' as const,
+        name: ruta.title,
+        description: ruta.storyIntro?.description || ruta.hero.subtitle,
+        touristType: 'Scuba Diving',
+        provider: { '@type': 'Organization' as const, name: 'Red Sea Norte' },
+      }
 
   return (
     <div className="pt-20">

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { getAllBlogPostsListingData } from "@/lib/data"
+import { JsonLd } from "@/components/seo/JsonLd"
+import { buildCollectionPageSchema } from "@/lib/seo/schema"
 import BlogListingClient from "./blog-listing-client"
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
@@ -29,5 +31,31 @@ export const revalidate = 600
 export default async function BlogListingPage() {
   const posts = await getAllBlogPostsListingData()
 
-  return <BlogListingClient posts={posts} />
+  const collectionItems = posts.map(p => ({
+    name: p.title,
+    url: `${BASE_URL}/blog/${p.slug}`,
+    description: p.excerpt,
+    image: p.hero?.image,
+  }))
+
+  const schemas = buildCollectionPageSchema({
+    name: 'Blog de Buceo en el Mar Rojo',
+    description: 'Articulos sobre buceo, vida a bordo y rutas en el Mar Rojo desde Hurghada',
+    url: `${BASE_URL}/blog`,
+    baseUrl: BASE_URL,
+    breadcrumbItems: [
+      { name: 'Inicio', url: BASE_URL },
+      { name: 'Blog', url: `${BASE_URL}/blog` },
+    ],
+    items: collectionItems,
+  })
+
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <JsonLd key={i} data={schema} />
+      ))}
+      <BlogListingClient posts={posts} />
+    </>
+  )
 }
