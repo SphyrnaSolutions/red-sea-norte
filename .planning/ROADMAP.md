@@ -126,7 +126,9 @@ Plans:
   1. No existen notas de marketing internas (como "Este post posiciona para..." o "Estrategia:") visibles en ninguna pagina publica
   2. robots.txt tiene un solo bloque por User-agent (sin duplicados de Cloudflare)
   3. Sitemaps de rutas y pages incluyen lastmod con fecha YYYY-MM-DD derivada del CMS o fecha fija conocida
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 22-01-PLAN.md -- Remove internal marketing notes, document robots.txt Cloudflare dedup, add lastmod to sitemaps
 
 ## Progress
 
@@ -153,4 +155,4 @@ Plans:
 | 19. Routing & Dead Links | v3.2 | 0/? | Not started | - |
 | 20. Schema Consolidation | v3.2 | 0/1 | Not started | - |
 | 21. Blog & Rutas Performance | v3.2 | 0/1 | Not started | - |
-| 22. Content & Config Cleanup | v3.2 | 0/? | Not started | - |
+| 22. Content & Config Cleanup | v3.2 | 0/1 | Not started | - |
