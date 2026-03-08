@@ -102,7 +102,9 @@ Plans:
   3. BlogPosting schema incluye image property con URL de la hero image del post
   4. Ninguna pagina construye JSON-LD inline -- todas usan las funciones de src/lib/seo/schema/
   5. Todos los BlogPosting tienen el mismo author.name estandarizado
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 20-01-PLAN.md -- Fix schema builders, create CollectionPage builder, migrate all pages to use centralized builders
 
 ### Phase 21: Blog & Rutas Performance
 **Goal**: Las paginas de listing (/blog, /rutas) son cacheables, rapidas y tienen meta tags correctos para SEO
@@ -149,6 +151,6 @@ Plans:
 | 17. On-Page & Performance | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 18. Blog SSR Fix | v3.2 | 0/1 | Not started | - |
 | 19. Routing & Dead Links | v3.2 | 0/? | Not started | - |
-| 20. Schema Consolidation | v3.2 | 0/? | Not started | - |
+| 20. Schema Consolidation | v3.2 | 0/1 | Not started | - |
 | 21. Blog & Rutas Performance | v3.2 | 0/1 | Not started | - |
 | 22. Content & Config Cleanup | v3.2 | 0/? | Not started | - |
