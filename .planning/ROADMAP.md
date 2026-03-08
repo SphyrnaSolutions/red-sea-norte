@@ -42,7 +42,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 - [x] **Phase 10: SEO Tooling Setup** - Dar de alta la web en GSC, Bing Webmaster Tools y GA4 para tener visibilidad de indexacion y trafico (completed 2026-03-08)
 - [x] **Phase 11: Sitemaps & Redirects** - Sitemaps divididos por categoria, 301 redirects para posts merged, y envio a buscadores (completed 2026-03-08)
-- [ ] **Phase 12: Technical SEO** - ISR real, self-hosted fonts, Core Web Vitals y Cloudflare proxy para rendimiento
+- [x] **Phase 12: Technical SEO** - ISR real, self-hosted fonts, Core Web Vitals y Cloudflare proxy para rendimiento (completed 2026-03-08)
 - [ ] **Phase 13: Content Media** - Fotos y videos de Karlos subidos a Wagtail y asignados a posts (BLOCKED: pendiente entrega de Karlos)
 
 ## Phase Details
@@ -117,5 +117,5 @@ Plans:
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
 | 10. SEO Tooling Setup | v3.0 | 1/1 | Complete | 2026-03-08 |
 | 11. Sitemaps & Redirects | 1/2 | Complete    | 2026-03-08 | - |
-| 12. Technical SEO | 2/3 | In Progress|  | - |
+| 12. Technical SEO | 2/3 | Complete    | 2026-03-08 | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
