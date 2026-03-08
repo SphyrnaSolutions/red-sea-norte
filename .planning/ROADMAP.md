@@ -105,10 +105,10 @@ Plans:
 
 ### v3.1 SEO Audit Fixes
 
-- [ ] **Phase 14: Infrastructure Hardening** - Fix www 526, CSP header, disable x-powered-by, cache /_next/image at edge
-- [ ] **Phase 15: Schema Fixes** - Remove FAQPage, complete Organization, fix Course duration, add author URL
-- [ ] **Phase 16: Sitemap Fixes** - Add missing pages, fix lastmod, exclude empty sitemaps, remove deprecated tags
-- [ ] **Phase 17: On-Page & Performance** - og:image homepage, remove internal text, enable AVIF, HeroSection server component
+- [x] **Phase 14: Infrastructure Hardening** - www 301 redirect, CSP header, disable x-powered-by, cache /_next/image (completed 2026-03-08)
+- [x] **Phase 15: Schema Fixes** - Remove FAQPage, complete Organization, fix Course duration, add author URL (completed 2026-03-08)
+- [x] **Phase 16: Sitemap Fixes** - Add missing pages, fix lastmod, exclude empty sitemaps, remove deprecated tags (completed 2026-03-08)
+- [x] **Phase 17: On-Page & Performance** - og:image homepage, remove internal text, enable AVIF, HeroSection server component (completed 2026-03-08)
 
 ## Phase Details — v3.1
 
@@ -169,7 +169,7 @@ Plans:
 | 11. Sitemaps & Redirects | 1/2 | Complete    | 2026-03-08 | - |
 | 12. Technical SEO | 2/3 | Complete    | 2026-03-08 | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
-| 14. Infrastructure Hardening | v3.1 | 0/1 | Pending | - |
-| 15. Schema Fixes | v3.1 | 0/1 | Pending | - |
-| 16. Sitemap Fixes | v3.1 | 0/1 | Pending | - |
-| 17. On-Page & Performance | v3.1 | 0/1 | Pending | - |
+| 14. Infrastructure Hardening | v3.1 | 1/1 | Complete | 2026-03-08 |
+| 15. Schema Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
+| 16. Sitemap Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
+| 17. On-Page & Performance | v3.1 | 1/1 | Complete | 2026-03-08 |

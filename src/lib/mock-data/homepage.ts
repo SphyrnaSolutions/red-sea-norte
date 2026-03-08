@@ -89,7 +89,7 @@ export const homepageData: HomepageData = {
   routeValueSection: {
     title: "Por que esta ruta es la mejor puerta de entrada al Mar Rojo",
     subtitle:
-      "La homepage deja de vender solo un curso y pasa a presentar una experiencia completa: pecios, arrecifes, vida a bordo y progresion real para distintos niveles.",
+      "Pecios miticos, arrecifes vibrantes, vida a bordo y progresion real para distintos niveles en una sola semana.",
     cards: [
       {
         eyebrow: "PECIOS MITICOS",
@@ -119,7 +119,7 @@ export const homepageData: HomepageData = {
         eyebrow: "VALOR ANADIDO",
         title: "Advanced SSI como extra, no como barrera",
         description:
-          "El Advanced aparece como una forma de aprovechar mejor el viaje, no como el unico motivo para venir. Eso alinea la home con la estrategia marcada en Odoo.",
+          "El Advanced aparece como una forma de aprovechar mejor el viaje, no como el unico motivo para venir. Asi el curso suma valor sin restar protagonismo a la ruta.",
         image: "/images/deck/deck-dive-station-gear-rack.jpg",
         alt: "Cubierta de buceo del M/Y Dolce Vita con equipo preparado",
       },
@@ -169,7 +169,7 @@ export const homepageData: HomepageData = {
   diveSites: {
     title: "Que vas a bucear en la Ruta Norte",
     subtitle:
-      "Los spots de esta homepage deben reforzar el producto principal y preparar el salto hacia el cluster de contenido y conversion.",
+      "Pecios legendarios, arrecifes de coral y paredes verticales que hacen de la Ruta Norte una de las mejores semanas de buceo del mundo.",
     sites: [
       {
         name: "Thistlegorm",
@@ -206,7 +206,7 @@ export const homepageData: HomepageData = {
     eyebrow: "COMO ES EL VIAJE",
     title: "Una semana de vida a bordo pensada para bucear mucho y decidir con claridad",
     subtitle:
-      "Esta seccion sustituye el bloque antiguo de especialidades. Su funcion es explicar la experiencia real del viaje y resolver objeciones antes del formulario.",
+      "Asi es una semana tipica a bordo del M/Y Dolce Vita: inmersiones, vida a bordo y todo lo que necesitas saber antes de reservar.",
     highlights: [
       "7 noches a bordo del M/Y Dolce Vita (40m, 12 camarotes, 24 buceadores)",
       "16-18 inmersiones en pecios legendarios y arrecifes",
@@ -225,7 +225,7 @@ export const homepageData: HomepageData = {
       "Sin contaminar la intencion principal de vida a bordo + Ruta Norte",
     ],
     note:
-      "En esta fase la home no enseña salidas ni precios cerrados. La prioridad es reposicionar y estructurar.",
+      "Consulta fechas y disponibilidad a traves del formulario. Te orientamos segun tu nivel y preferencias.",
   },
 
   programSection: {
@@ -252,7 +252,7 @@ export const homepageData: HomepageData = {
   audienceFit: {
     title: "Esta experiencia encaja contigo si...",
     subtitle:
-      "La homepage tiene que filtrar y orientar. No se trata de meter a cualquiera, sino de que el usuario se vea dentro o fuera con honestidad.",
+      "Queremos que encuentres el viaje adecuado para ti. Mira si tu perfil encaja con lo que ofrece esta ruta.",
     profiles: [
       {
         title: "Quieres tu primer liveaboard potente",
@@ -300,7 +300,7 @@ export const homepageData: HomepageData = {
         description: "Valor adicional para quien quiere aprovechar mas la semana",
       },
     ],
-    mainTitle: "Producto principal primero. El curso va despues.",
+    mainTitle: "La Ruta Norte como experiencia completa",
     navCards: [
       {
         type: "icon",
@@ -336,7 +336,7 @@ export const homepageData: HomepageData = {
   leadForm: {
     title: "¿Quieres que te contemos si esta ruta encaja contigo?",
     subtitle:
-      "Este modal se mantiene como apoyo secundario. La captacion principal ya ocurre dentro de la homepage.",
+      "Dejanos tus datos y te contactaremos con informacion personalizada sobre la ruta.",
     fields: [
       ...baseLeadFields,
       {
@@ -359,7 +359,7 @@ export const homepageData: HomepageData = {
     eyebrow: "CONSULTA EL VIAJE",
     title: "Recibe informacion de la Ruta Norte y Pecios",
     subtitle:
-      "Bloque principal de conversion para esta fase. Pide solo lo necesario para cualificar el lead sin meter demasiada friccion.",
+      "Rellena el formulario y te contactaremos para resolver tus dudas sobre la ruta, fechas y disponibilidad.",
     highlights: [
       "Te orientamos segun tu nivel de buceo",
       "Te contamos si esta ruta es adecuada para ti",
@@ -376,9 +376,9 @@ export const homepageData: HomepageData = {
 
   routeTeaser: {
     eyebrow: "SIGUIENTE PASO",
-    title: "La homepage abre la conversacion. La landing de Ruta Norte la cierra.",
+    title: "Descubre el itinerario completo de la Ruta Norte",
     description:
-      "Este bloque prepara el salto hacia el cluster principal: itinerario, requisitos, spots, logistica y objeciones de compra en un silo centrado en Ruta Norte + Pecios.",
+      "Itinerario dia a dia, requisitos, spots detallados, logistica y todo lo que necesitas para decidir si esta ruta es para ti.",
     primaryCTA: {
       text: "Explorar Ruta Norte",
       href: "/rutas",

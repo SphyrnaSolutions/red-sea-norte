@@ -266,6 +266,7 @@ export interface BlogPost {
   title: string
   excerpt: string
   publishedAt: string
+  lastPublishedAt?: string
   author: {
     name: string
     avatar: string

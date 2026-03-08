@@ -405,6 +405,10 @@ export function mapBlogPost(wagtailPage: WagtailBlogPostPage): BlogPost {
     title: wagtailPage.title,
     excerpt: getNonEmptyString(wagtailPage.excerpt),
     publishedAt: getNonEmptyString(wagtailPage.published_at, wagtailPage.meta.first_published_at),
+    lastPublishedAt: getNonEmptyString(
+      wagtailPage.meta.last_published_at,
+      getNonEmptyString(wagtailPage.published_at, wagtailPage.meta.first_published_at),
+    ),
     author: {
       name: getNonEmptyString(wagtailPage.author?.name, 'Red Sea Diving'),
       avatar: getImageUrl(wagtailPage.author?.avatar),

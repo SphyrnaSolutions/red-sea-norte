@@ -28,12 +28,21 @@ export const metadata: Metadata = {
       "Safari de buceo por la Ruta Norte del Mar Rojo desde Hurghada con Thistlegorm, Abu Nuhas y Ras Mohammed.",
     type: "website",
     url: BASE_URL,
+    images: [
+      {
+        url: `${BASE_URL}/images/underwater/underwater-diver-pink-soft-coral.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Buceador junto a coral rosa en el Mar Rojo - Vida a bordo Ruta Norte",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vida a bordo en el Mar Rojo desde Hurghada",
     description:
       "Ruta Norte y Pecios desde Hurghada con vida a bordo y opcion de Advanced SSI a bordo.",
+    images: [`${BASE_URL}/images/underwater/underwater-diver-pink-soft-coral.jpg`],
   },
 }
 
@@ -44,12 +53,25 @@ const organizationJsonLd = {
   url: BASE_URL,
   logo: `${BASE_URL}/logo.png`,
   description: 'Vida a bordo en el Mar Rojo desde Hurghada con foco en Ruta Norte, pecios y experiencias de buceo.',
+  // telephone: '+34-XXX-XXX-XXX', // TODO: add real phone number
   address: {
     '@type': 'PostalAddress',
+    addressLocality: 'Hurghada',
     addressCountry: 'EG',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 27.2579,
+    longitude: 33.8116,
+  },
+  areaServed: {
+    '@type': 'Place',
+    name: 'Red Sea, Egypt',
+  },
   sameAs: [
-    // Add social media URLs if available
+    'https://www.instagram.com/karlossimon/',
+    'https://www.facebook.com/viajeskarlossimon',
+    'https://www.tiktok.com/@karlossimon',
   ],
 }
 

@@ -7,6 +7,24 @@ import { getAllCursosSlugsData, getCursoData } from "@/lib/data"
 import { Check, Book, Waves, Award, Package, Ship, Camera } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 
+/**
+ * Convert a human-readable Spanish duration string to ISO 8601 duration.
+ * Examples: "5 dias" -> "P5D", "2 semanas" -> "P14D", "3 horas" -> "PT3H"
+ */
+function toISO8601Duration(raw: string): string {
+  const normalized = raw.toLowerCase().trim()
+  const num = parseInt(normalized.replace(/[^0-9]/g, ''), 10)
+  if (isNaN(num)) return raw
+
+  if (/d[ií]a/.test(normalized)) return `P${num}D`
+  if (/semana/.test(normalized)) return `P${num * 7}D`
+  if (/hora/.test(normalized)) return `PT${num}H`
+  if (/mes/.test(normalized)) return `P${num}M`
+
+  // Fallback: assume days
+  return `P${num}D`
+}
+
 interface CursoPageProps {
   params: Promise<{ slug: string }>
 }
@@ -106,7 +124,7 @@ export default async function CursoPage({ params }: CursoPageProps) {
     hasCourseInstance: {
       '@type': 'CourseInstance',
       courseMode: 'onsite',
-      duration: durationBar?.value,
+      duration: durationBar?.value ? toISO8601Duration(durationBar.value) : undefined,
     },
     offers: priceValue ? {
       '@type': 'Offer',

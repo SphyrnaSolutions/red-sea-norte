@@ -24,11 +24,16 @@ const securityHeaders = [
   {
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()'
+  },
+  {
+    key: 'Content-Security-Policy-Report-Only',
+    value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://back.redsea.sphyrnasolutions.com; frame-src 'self' https://www.youtube.com; object-src 'none'; base-uri 'self'"
   }
 ];
 
 const nextConfig: NextConfig = {
   output: 'standalone', // Para Docker
+  poweredByHeader: false,
   serverExternalPackages: ['xmlrpc'],
   async headers() {
     return [
@@ -44,6 +49,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/_next/static/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/_next/image(.*)',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
@@ -68,6 +79,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 2592000,
     qualities: [75, 90],
   },

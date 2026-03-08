@@ -12,11 +12,9 @@ ${rutas
     (ruta) => `  <url>
     <loc>${BASE_URL}/rutas/${ruta.slug}</loc>${
       ruta.lastModified
-        ? `\n    <lastmod>${new Date(ruta.lastModified).toISOString()}</lastmod>`
+        ? `\n    <lastmod>${new Date(ruta.lastModified).toISOString().split('T')[0]}</lastmod>`
         : ''
     }
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>`
   )
   .join('\n')}

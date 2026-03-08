@@ -22,11 +22,9 @@ ${filtered
     (post) => `  <url>
     <loc>${BASE_URL}/blog/${post.slug}</loc>${
       post.lastModified
-        ? `\n    <lastmod>${new Date(post.lastModified).toISOString()}</lastmod>`
+        ? `\n    <lastmod>${new Date(post.lastModified).toISOString().split('T')[0]}</lastmod>`
         : ''
     }
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>`
   )
   .join('\n')}

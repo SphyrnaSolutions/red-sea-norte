@@ -12,11 +12,9 @@ ${cursos
     (curso) => `  <url>
     <loc>${BASE_URL}/cursos/${curso.slug}</loc>${
       curso.lastModified
-        ? `\n    <lastmod>${new Date(curso.lastModified).toISOString()}</lastmod>`
+        ? `\n    <lastmod>${new Date(curso.lastModified).toISOString().split('T')[0]}</lastmod>`
         : ''
     }
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>`
   )
   .join('\n')}

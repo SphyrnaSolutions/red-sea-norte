@@ -12,11 +12,9 @@ ${experiencias
     (exp) => `  <url>
     <loc>${BASE_URL}/experiencias/${exp.slug}</loc>${
       exp.lastModified
-        ? `\n    <lastmod>${new Date(exp.lastModified).toISOString()}</lastmod>`
+        ? `\n    <lastmod>${new Date(exp.lastModified).toISOString().split('T')[0]}</lastmod>`
         : ''
     }
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>`
   )
   .join('\n')}

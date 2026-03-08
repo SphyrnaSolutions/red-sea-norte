@@ -60,14 +60,14 @@ export async function getAllBlogPostSlugsData() {
     })
     return posts.map(p => ({
       slug: p.slug,
-      lastModified: p.publishedAt || undefined,
+      lastModified: p.lastPublishedAt || p.publishedAt || undefined,
     }))
   } catch (error) {
     logDataError(error, 'getAllBlogPostSlugsData')
     if (shouldUseFallback(error, 'blog')) {
       return mockPosts.map(p => ({
         slug: p.slug,
-        lastModified: p.publishedAt || undefined,
+        lastModified: p.lastPublishedAt || p.publishedAt || undefined,
       }))
     }
     return []

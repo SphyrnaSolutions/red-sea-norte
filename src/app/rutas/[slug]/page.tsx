@@ -9,7 +9,7 @@ import { LeadFormModal } from "@/components/organisms/LeadFormModal"
 import { JsonLd } from "@/components/seo/JsonLd"
 import { Breadcrumbs, buildBreadcrumbItems } from "@/components/seo/Breadcrumbs"
 import { RelatedContent } from "@/components/seo/RelatedContent"
-import { resolveCluster, computeInterlinks, buildFAQPageSchema } from "@/lib/seo"
+import { resolveCluster, computeInterlinks } from "@/lib/seo"
 import { getRawPageBySlug } from "@/lib/wagtail/fetchers"
 import type { ItineraryDay, ResourceLinkItem, RouteSpotData, RutaData } from "@/lib/mock-data/types"
 import type { Metadata } from 'next'
@@ -133,11 +133,6 @@ export default async function RutaPage({ params }: RutaPageProps) {
   // Generate JSON-LD structured data
   const jsonLd = generateJsonLd(ruta)
 
-  // FAQ schema if FAQ section exists
-  const faqSchema = ruta.faqSection?.items
-    ? buildFAQPageSchema(ruta.faqSection.items, `${BASE_URL}/rutas/${slug}`)
-    : null
-
   // Resolve cluster for interlinks (uses raw Wagtail page data)
   const rawPage = await getRawPageBySlug('rutas.RutaPage', slug, {
     tags: ['rutas', `ruta-${slug}`],
@@ -148,9 +143,6 @@ export default async function RutaPage({ params }: RutaPageProps) {
   return (
     <div className="pt-20">
       <JsonLd data={jsonLd} />
-      {faqSchema && (
-        <JsonLd data={faqSchema} />
-      )}
       {isEnabled && (
         <div className="fixed top-20 left-0 right-0 z-50 bg-yellow-400 text-black px-6 py-3 text-center font-semibold shadow-lg">
           <div className="flex items-center justify-center gap-3">

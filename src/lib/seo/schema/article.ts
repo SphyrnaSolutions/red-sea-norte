@@ -20,6 +20,7 @@ export function buildArticleSchema(
     author: {
       '@type': 'Person',
       name: page.author?.name || 'Red Sea Norte',
+      url: `${baseUrl}/sobre-nosotros`,
     },
     datePublished: page.published_at,
     publisher: {
