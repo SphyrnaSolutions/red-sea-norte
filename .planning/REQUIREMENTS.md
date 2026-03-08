@@ -162,18 +162,46 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 - [x] **CLEAN-02**: robots.txt User-agent blocks deduplicados (eliminar duplicado de Cloudflare)
 - [x] **CLEAN-03**: Lastmod presente en sitemaps de rutas y pages (derivado de CMS o fecha fija)
 
+## v4.0 Requirements — Content SEO
+
+Requirements for producing 30 SEO content pages across thematic clusters.
+
+### Content Planning
+
+- [ ] **PLAN-01**: Mapa de contenido con 30 paginas, keyword target por pagina, y asignacion a cluster
+- [ ] **PLAN-02**: Estrategia de internal linking entre paginas nuevas y contenido existente (25 blog posts + 5 rutas)
+
+### Wreck/Spot Content
+
+- [ ] **WRECK-01**: Pagina experta de SS Thistlegorm (historia, buceo, profundidad, nivel, que ver)
+- [ ] **WRECK-02**: Pagina experta de Abu Nuhas (Giannis D, Carnatic, Tile Wreck, Kimon M)
+- [ ] **WRECK-03**: Pagina experta de Ras Mohammed (Shark & Yolanda Reef, Anemone City)
+- [ ] **WRECK-04**: Paginas de spots adicionales hasta completar cluster de pecios/spots (~5-8 paginas)
+
+### Route Comparisons
+
+- [ ] **COMP-01**: Comparativa Ruta Norte vs Ruta Brothers
+- [ ] **COMP-02**: Comparativa salir desde Hurghada vs salir desde Sharm el-Sheikh
+- [ ] **COMP-03**: Guia "mejor ruta segun tu nivel de buceo"
+
+### Friction Content
+
+- [ ] **FRIC-01**: Que llevar a un liveaboard (packing list completo)
+- [ ] **FRIC-02**: Requisitos y certificaciones minimas para bucear en el Mar Rojo
+- [ ] **FRIC-03**: Seguridad en buceo: seguro, camara hiperbarica, protocolos
+- [ ] **FRIC-04**: Logistica: visa Egipto, como llegar a Hurghada, transfers, propinas
+
+### Cluster Infrastructure
+
+- [ ] **CLUST-01**: Paginas pillar creadas para cada cluster (vida a bordo, pecios, destinos, logistica)
+- [ ] **CLUST-02**: Internal links inyectados en contenido existente apuntando a paginas nuevas
+- [ ] **CLUST-03**: Schema BreadcrumbList actualizado para reflejar jerarquia de clusters
+
+### Monitoring
+
+- [ ] **MON-01**: Script o proceso para detectar canibalizacion de keywords entre paginas
+
 ## Future Requirements
-
-### Contenido SEO (v4.0)
-
-- **SEO-01**: 30 primeras paginas de contenido SEO en clusters
-- **SEO-02**: Contenido por pecio/spot con profundidad experta
-- **SEO-03**: Comparativas de rutas (Norte vs Brothers, Hurghada vs Sharm)
-- **SEO-04**: Contenido de friccion (que llevar, requisitos, certificaciones)
-
-### Monitorizacion (v4.0)
-
-- **MON-01**: Monitorizacion de canibalizacion de keywords
 
 ## Out of Scope
 
