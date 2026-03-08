@@ -63,7 +63,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 ### v3.2 SEO Audit Fixes II
 
 - [ ] **Phase 18: Blog SSR Fix** - Blog body content renderiza en server HTML y listing optimizado a <60KB
-- [ ] **Phase 19: Routing & Dead Links** - /contacto funcional, slugs con tildes corregidos, footer links limpios
+- [x] **Phase 19: Routing & Dead Links** - /contacto funcional, slugs con tildes corregidos, footer links limpios (completed 2026-03-08)
 - [ ] **Phase 20: Schema Consolidation** - Schema builders reutilizados en todas las paginas, listings con JSON-LD, BlogPosting completo
 - [x] **Phase 21: Blog & Rutas Performance** - /rutas cacheable con ISR, /blog con canonical y meta tags correctos (completed 2026-03-08)
 - [ ] **Phase 22: Content & Config Cleanup** - Notas internas eliminadas, robots.txt limpio, lastmod en sitemaps
@@ -90,7 +90,7 @@ Plans:
   1. /contacto devuelve HTTP 200 con el formulario de contacto funcional y visible
   2. URLs de blog con tildes en el slug (ej: /blog/que-es-un-liveaboard) redirigen 301 a la version correcta o el CMS sirve el contenido sin error
   3. El footer no contiene enlaces a /ofertas ni /terminos (ambos eliminados por devolver 404)
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 19-01-PLAN.md -- Create /contacto page, add accented slug 301 redirects, clean footer dead links
 
@@ -154,7 +154,7 @@ Plans:
 | 16. Sitemap Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 17. On-Page & Performance | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 18. Blog SSR Fix | v3.2 | 0/1 | Not started | - |
-| 19. Routing & Dead Links | v3.2 | 0/1 | Not started | - |
+| 19. Routing & Dead Links | 1/1 | Complete   | 2026-03-08 | - |
 | 20. Schema Consolidation | v3.2 | 0/1 | Not started | - |
 | 21. Blog & Rutas Performance | 1/1 | Complete   | 2026-03-08 | - |
 | 22. Content & Config Cleanup | v3.2 | 0/1 | Not started | - |

@@ -138,9 +138,9 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 
 ### Routing
 
-- [ ] **ROUTE-01**: /contacto devuelve 200 con formulario funcional (no 404)
-- [ ] **ROUTE-02**: URLs de blog con tildes en slug redirigen 301 a version ASCII o se corrigen en CMS
-- [ ] **ROUTE-03**: Footer links a /ofertas y /terminos eliminados (ambos 404)
+- [x] **ROUTE-01**: /contacto devuelve 200 con formulario funcional (no 404)
+- [x] **ROUTE-02**: URLs de blog con tildes en slug redirigen 301 a version ASCII o se corrigen en CMS
+- [x] **ROUTE-03**: Footer links a /ofertas y /terminos eliminados (ambos 404)
 
 ### Schema
 
@@ -248,9 +248,9 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 | PERF-02 | Phase 17 | Complete |
 | SSR-01 | Phase 18 | Pending |
 | SSR-02 | Phase 18 | Pending |
-| ROUTE-01 | Phase 19 | Pending |
-| ROUTE-02 | Phase 19 | Pending |
-| ROUTE-03 | Phase 19 | Pending |
+| ROUTE-01 | Phase 19 | Complete |
+| ROUTE-02 | Phase 19 | Complete |
+| ROUTE-03 | Phase 19 | Complete |
 | SCHEMA-05 | Phase 20 | Pending |
 | SCHEMA-06 | Phase 20 | Pending |
 | SCHEMA-07 | Phase 20 | Pending |

@@ -27,6 +27,7 @@ Progress: [==================░░] 92% (milestones v1.0-v3.1 complete, v3.2 ph
 - [v3.2]: Blog listing carga 451KB (89% payload no usado)
 - [v3.2]: Schema builders existen en src/lib/seo/schema/ pero paginas construyen inline
 - [Phase 21]: Used static Metadata export for /blog listing (no dynamic params)
+- [Phase 19]: Contacto page as static server component; accented slug redirects with both encoded and raw UTF-8 variants
 
 ### Pending Todos
 
