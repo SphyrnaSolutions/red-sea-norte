@@ -1,14 +1,11 @@
-import { draftMode } from 'next/headers'
 import { getAllRutas, getRuta } from '@/lib/wagtail/fetchers'
 import { getAllRutas as getAllMockRutas, getRuta as getMockRuta } from '@/lib/mock-data/rutas'
 import { shouldUseFallback, logDataError } from './config'
 
 export async function getAllRutasData() {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getAllRutas({
-      revalidate: isDraft ? 0 : 1800,
+      revalidate: 1800,
       tags: ['rutas', 'rutas-list'],
     })
     if (!data || data.length === 0) throw new Error('No rutas received from API')
@@ -24,11 +21,9 @@ export async function getAllRutasData() {
 }
 
 export async function getRutaData(slug: string) {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getRuta(slug, {
-      revalidate: isDraft ? 0 : 1800,
+      revalidate: 1800,
       tags: ['rutas', `ruta-${slug}`],
     })
     if (!data) {

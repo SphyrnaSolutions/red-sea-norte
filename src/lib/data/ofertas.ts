@@ -1,4 +1,3 @@
-import { draftMode } from 'next/headers'
 import { getAllOfertas, getOferta } from '@/lib/wagtail/fetchers'
 import { getOferta as getMockOferta, getAllOfertaSlugs } from '@/lib/mock-data/ofertas'
 import { shouldUseFallback, logDataError } from './config'
@@ -8,11 +7,9 @@ function getAllMockOfertas() {
 }
 
 export async function getAllOfertasData() {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getAllOfertas({
-      revalidate: isDraft ? 0 : 900,
+      revalidate: 900,
       tags: ['ofertas', 'ofertas-list'],
     })
     if (!data || data.length === 0) throw new Error('No ofertas received from API')
@@ -28,11 +25,9 @@ export async function getAllOfertasData() {
 }
 
 export async function getOfertaData(slug: string) {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getOferta(slug, {
-      revalidate: isDraft ? 0 : 900,
+      revalidate: 900,
       tags: ['ofertas', `oferta-${slug}`],
     })
     if (!data) {

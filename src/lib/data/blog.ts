@@ -1,14 +1,11 @@
-import { draftMode } from 'next/headers'
 import { getAllBlogPosts, getBlogPost } from '@/lib/wagtail/fetchers'
 import { blogPosts as mockPosts } from '@/lib/mock-data/blog-posts'
 import { shouldUseFallback, logDataError } from './config'
 
 export async function getAllBlogPostsData() {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getAllBlogPosts({
-      revalidate: isDraft ? 0 : 600,
+      revalidate: 600,
       tags: ['blog', 'blog-list'],
     })
     if (!data || data.length === 0) throw new Error('No blog posts received from API')
@@ -24,11 +21,9 @@ export async function getAllBlogPostsData() {
 }
 
 export async function getBlogPostData(slug: string) {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getBlogPost(slug, {
-      revalidate: isDraft ? 0 : 600,
+      revalidate: 600,
       tags: ['blog', `blog-${slug}`],
     })
     if (!data) {

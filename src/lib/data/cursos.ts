@@ -1,14 +1,11 @@
-import { draftMode } from 'next/headers'
 import { getAllCursos, getCurso } from '@/lib/wagtail/fetchers'
 import { getAllCursos as getAllMockCursos, getCurso as getMockCurso } from '@/lib/mock-data/cursos'
 import { shouldUseFallback, logDataError } from './config'
 
 export async function getAllCursosData() {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getAllCursos({
-      revalidate: isDraft ? 0 : 3600,
+      revalidate: 3600,
       tags: ['cursos', 'cursos-list'],
     })
     if (!data || data.length === 0) throw new Error('No cursos received from API')
@@ -24,11 +21,9 @@ export async function getAllCursosData() {
 }
 
 export async function getCursoData(slug: string) {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getCurso(slug, {
-      revalidate: isDraft ? 0 : 3600,
+      revalidate: 3600,
       tags: ['cursos', `curso-${slug}`],
     })
     if (!data) {

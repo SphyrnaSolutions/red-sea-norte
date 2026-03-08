@@ -1,8 +1,8 @@
 import { getAllBlogPostsData } from "@/lib/data"
 import BlogListingClient from "./blog-listing-client"
 
-// Render on demand, fetch-level caching in client.ts handles ISR
-export const dynamic = 'force-dynamic'
+// ISR: revalidate every 10 minutes (matches blog data layer TTL)
+export const revalidate = 600
 
 export default async function BlogListingPage() {
   const posts = await getAllBlogPostsData()

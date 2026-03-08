@@ -1,14 +1,11 @@
-import { draftMode } from 'next/headers'
 import { getAllExperiencias, getExperiencia } from '@/lib/wagtail/fetchers'
 import { getAllExperiencias as getAllMockExperiencias, getExperiencia as getMockExperiencia } from '@/lib/mock-data/experiencias'
 import { shouldUseFallback, logDataError } from './config'
 
 export async function getAllExperienciasData() {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getAllExperiencias({
-      revalidate: isDraft ? 0 : 1800,
+      revalidate: 1800,
       tags: ['experiencias', 'experiencias-list'],
     })
     if (!data || data.length === 0) throw new Error('No experiencias received from API')
@@ -24,11 +21,9 @@ export async function getAllExperienciasData() {
 }
 
 export async function getExperienciaData(slug: string) {
-  const { isEnabled: isDraft } = await draftMode()
-
   try {
     const data = await getExperiencia(slug, {
-      revalidate: isDraft ? 0 : 1800,
+      revalidate: 1800,
       tags: ['experiencias', `experiencia-${slug}`],
     })
     if (!data) {
