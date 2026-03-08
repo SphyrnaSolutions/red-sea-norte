@@ -84,7 +84,11 @@ Plans:
   3. draftMode() eliminado de los fetchers: las paginas de homepage y blog sirven contenido cacheado con ISR real
   4. Core Web Vitals en verde (LCP < 2.5s, CLS < 0.1, INP < 200ms) medido en PageSpeed Insights
   5. Cloudflare proxy activo con cache, compresion Brotli y HTTP/3 habilitado para buceoenelmarrojo.com
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 12-01-PLAN.md -- Self-host fonts (Satoshi + Clash Display) with next/font/local + remove draftMode from data fetchers for real ISR
+- [ ] 12-02-PLAN.md -- On-demand ISR revalidation API route + Wagtail webhook configuration
+- [ ] 12-03-PLAN.md -- Core Web Vitals optimization + Cloudflare proxy setup and verification
 
 ### Phase 13: Content Media
 **Goal**: Las fotos y videos reales de pecios, spots y formacion de Karlos estan en Wagtail y asignados como hero images a los posts
@@ -113,5 +117,5 @@ Plans:
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
 | 10. SEO Tooling Setup | v3.0 | 1/1 | Complete | 2026-03-08 |
 | 11. Sitemaps & Redirects | 1/2 | Complete    | 2026-03-08 | - |
-| 12. Technical SEO | v3.0 | 0/? | Not started | - |
+| 12. Technical SEO | v3.0 | 0/3 | Not started | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
