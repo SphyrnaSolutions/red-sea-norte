@@ -168,8 +168,8 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 
 ### Content Planning
 
-- [ ] **PLAN-01**: Mapa de contenido con 30 paginas, keyword target por pagina, y asignacion a cluster
-- [ ] **PLAN-02**: Estrategia de internal linking entre paginas nuevas y contenido existente (25 blog posts + 5 rutas)
+- [x] **PLAN-01**: Mapa de contenido con 30 paginas, keyword target por pagina, y asignacion a cluster
+- [x] **PLAN-02**: Estrategia de internal linking entre paginas nuevas y contenido existente (25 blog posts + 5 rutas)
 
 ### Wreck/Spot Content
 
@@ -295,8 +295,8 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 | CLEAN-01 | Phase 22 | Complete |
 | CLEAN-02 | Phase 22 | Complete |
 | CLEAN-03 | Phase 22 | Complete |
-| PLAN-01 | Phase 23 | Pending |
-| PLAN-02 | Phase 23 | Pending |
+| PLAN-01 | Phase 23 | Complete |
+| PLAN-02 | Phase 23 | Complete |
 | WRECK-01 | Phase 24 | Pending |
 | WRECK-02 | Phase 24 | Pending |
 | WRECK-03 | Phase 24 | Pending |
