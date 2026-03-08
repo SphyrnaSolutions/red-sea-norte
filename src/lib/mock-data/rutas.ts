@@ -45,7 +45,7 @@ const routeLeadFields: NonNullable<RutaData["inlineLead"]>["fields"] = [
   {
     name: "phone",
     type: "tel",
-    placeholder: "Telefono (opcional)",
+    placeholder: "Teléfono (opcional)",
     required: false,
   },
 ]
@@ -59,7 +59,7 @@ export const rutasData: Record<string, RutaData> = {
       badge: { text: "RUTA NORTE · HURGHADA", backgroundColor: "#00CED1" },
       title: "Ruta Norte y Pecios del Mar Rojo desde Hurghada",
       subtitle:
-        "La landing principal para vender vida a bordo en el Mar Rojo: Thistlegorm, Abu Nuhas, Ras Mohammed y una semana pensada para convertir interes en reserva.",
+        "La landing principal para vender vida a bordo en el Mar Rojo: Thistlegorm, Abu Nuhas, Ras Mohammed y una semana pensada para convertir interés en reserva.",
       primaryCTA: {
         text: "Consultar esta ruta",
         href: "#ruta-lead",
@@ -77,20 +77,20 @@ export const rutasData: Record<string, RutaData> = {
       trustLine: [
         "Salida desde Hurghada",
         "Pecios + arrecifes en una sola semana",
-        "Opcion de Advanced a bordo",
+        "Opción de Advanced a bordo",
       ],
     },
     storyIntro: {
       badge: "RUTA NORTE Y PECIOS",
-      title: "Explora los pecios mas miticos del norte del Mar Rojo",
+      title: "Explora los pecios más míticos del norte del Mar Rojo",
       description:
-        "Embarcate en una ruta unica por los naufragios mas emblematicos del norte del Mar Rojo: desde el mitico SS Thistlegorm hasta joyas historicas como el Giannis D o el Carnatic. Una expedicion para buceadores apasionados por la historia, los pecios y los arrecifes, con inmersiones llenas de vida marina, buena visibilidad y el encanto intacto del desierto submarino egipcio. Vive este viaje de Ruta Norte y Pecios en el Mar Rojo con nosotros, desde la comodidad de un moderno barco de vida a bordo durante 7 dias.",
+        "Embárcate en una ruta única por los naufragios más emblemáticos del norte del Mar Rojo: desde el mítico SS Thistlegorm hasta joyas históricas como el Giannis D o el Carnatic. Una expedición para buceadores apasionados por la historia, los pecios y los arrecifes, con inmersiones llenas de vida marina, buena visibilidad y el encanto intacto del desierto submarino egipcio. Vive este viaje de Ruta Norte y Pecios en el Mar Rojo con nosotros, desde la comodidad de un moderno barco de vida a bordo durante 7 días.",
     },
     infoCards: [
       {
         icon: "Calendar",
-        value: "8 dias (7 noches)",
-        label: "Duracion",
+        value: "8 días (7 noches)",
+        label: "Duración",
         color: "blue",
       },
       {
@@ -118,25 +118,25 @@ export const rutasData: Record<string, RutaData> = {
       ],
     },
     spotsSection: {
-      title: "Principales puntos de inmersion de la Ruta Norte",
+      title: "Principales puntos de inmersión de la Ruta Norte",
       subtitle:
-        "Los spots mas destacados de esta ruta: pecios historicos de la Segunda Guerra Mundial y del siglo XIX combinados con arrecifes vibrantes del Parque Nacional de Ras Mohammed.",
+        "Los spots más destacados de esta ruta: pecios históricos de la Segunda Guerra Mundial y del siglo XIX combinados con arrecifes vibrantes del Parque Nacional de Ras Mohammed.",
       spots: [
         {
           name: "SS Thistlegorm",
           image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
           alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
           summary:
-            "El pecio mas iconico del Mar Rojo. Este carguero britanico, hundido en 1941 durante la Segunda Guerra Mundial, alberga un museo sumergido: motocicletas, camiones, locomotoras y cajas de municion atrapadas en el tiempo.",
+            "El pecio más icónico del Mar Rojo. Este carguero británico, hundido en 1941 durante la Segunda Guerra Mundial, alberga un museo sumergido: motocicletas, camiones, locomotoras y cajas de munición atrapadas en el tiempo.",
           depth: "14-30m",
-          tag: "Pecio iconico",
+          tag: "Pecio icónico",
         },
         {
           name: "Giannis D (Abu Nuhas)",
           image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
           alt: "Proa del pecio Giannis D en Abu Nuhas, cementerio de barcos del Mar Rojo",
           summary:
-            "Este carguero griego naufrago en 1983 y yace inclinado sobre el arrecife de Abu Nuhas. Su estructura esta casi intacta, lo que permite exploraciones fascinantes entre pasillos, cubiertas y sala de maquinas.",
+            "Este carguero griego naufragó en 1983 y yace inclinado sobre el arrecife de Abu Nuhas. Su estructura está casi intacta, lo que permite exploraciones fascinantes entre pasillos, cubiertas y sala de máquinas.",
           depth: "10-27m",
           tag: "Cementerio de barcos",
         },
@@ -145,60 +145,60 @@ export const rutasData: Record<string, RutaData> = {
           image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
           alt: "Arrecife de coral con peces anthias en Ras Mohammed, Mar Rojo",
           summary:
-            "Un paraiso submarino protegido donde arrecifes vibrantes se funden con grandes bancos de barracudas, peces payaso, pargos Bohar y jardines de coral. Ideal para los amantes de la biodiversidad y la fotografia submarina.",
+            "Un paraíso submarino protegido donde arrecifes vibrantes se funden con grandes bancos de barracudas, peces payaso, pargos Bohar y jardines de coral. Ideal para los amantes de la biodiversidad y la fotografía submarina.",
           depth: "5-40m",
-          tag: "Arrecife clasico",
+          tag: "Arrecife clásico",
         },
         {
           name: "Carnatic",
           image: "/images/underwater/underwater-blue-spotted-stingray.jpg",
           alt: "Vida marina en el pecio Carnatic del Mar Rojo",
           summary:
-            "Naufragado en 1869, el Carnatic es un elegante buque de vela y vapor que descansa sobre un lecho de coral. Su esqueleto metalico, cubierto de vida marina, revela su arquitectura original.",
+            "Naufragado en 1869, el Carnatic es un elegante buque de vela y vapor que descansa sobre un lecho de coral. Su esqueleto metálico, cubierto de vida marina, revela su arquitectura original.",
           depth: "10-28m",
-          tag: "Pecio historico",
+          tag: "Pecio histórico",
         },
         {
           name: "Dunraven",
           image: "/images/underwater/underwater-hammerhead-sharks-pair.jpg",
           alt: "Pecio Dunraven cerca de Beacon Rock en el Mar Rojo",
           summary:
-            "Hundido cerca de Beacon Rock en 1876, este historico buque de vapor ofrece una experiencia unica entre restos antiguos colonizados por coral. Peces leon, nudibranquios y peces cristal llenan sus interiores oscuros.",
+            "Hundido cerca de Beacon Rock en 1876, este histórico buque de vapor ofrece una experiencia única entre restos antiguos colonizados por coral. Peces león, nudibranquios y peces cristal llenan sus interiores oscuros.",
           depth: "5-28m",
-          tag: "Pecio historico",
+          tag: "Pecio histórico",
         },
         {
           name: "Gubal y Ulysses",
           image: "/images/underwater/underwater-dolphins-pod-reef.jpg",
           alt: "Zona de Gubal Island con el pecio Ulysses en el Mar Rojo",
           summary:
-            "Zona rica en biodiversidad con aguas tranquilas. Aqui se encuentra el pecio Ulysses, encallado en 1887, junto a jardines de coral, praderas de arena blanca y canales ideales para inmersiones relajadas.",
+            "Zona rica en biodiversidad con aguas tranquilas. Aquí se encuentra el pecio Ulysses, encallado en 1887, junto a jardines de coral, praderas de arena blanca y canales ideales para inmersiones relajadas.",
           depth: "1-30m",
           tag: "Biodiversidad",
         },
       ],
     },
     itinerary: {
-      title: "Itinerario dia a dia",
+      title: "Itinerario día a día",
       days: [
         {
           day: 1,
           title: "Embarque en Hurghada y bienvenida a bordo",
           description:
-            "El embarque puede ser a partir de las 16:00. Tendras tiempo para instalarte en tu camarote, conocer a la tripulacion y disfrutar de una cena de bienvenida para todos los clientes que lleguen antes de las 20:00.",
+            "El embarque puede ser a partir de las 16:00. Tendrás tiempo para instalarte en tu camarote, conocer a la tripulación y disfrutar de una cena de bienvenida para todos los clientes que lleguen antes de las 20:00.",
           dives: [],
-          highlights: ["Embarque desde las 16:00", "Cena de bienvenida", "Instalacion en camarote"],
+          highlights: ["Embarque desde las 16:00", "Cena de bienvenida", "Instalación en camarote"],
           image: "/images/boat/boat-exterior-side-profile.jpg",
           alt: "M/Y Dolce Vita en el puerto de Hurghada listo para embarque",
           overlayDirection: "left",
         },
         {
           day: 2,
-          title: "Inmersiones de chequeo y navegacion al norte",
+          title: "Inmersiones de chequeo y navegación al norte",
           description:
-            "Comienza tu expedicion entre los pecios mas legendarios del Mar Rojo. Realizaras dos inmersiones de chequeo para aclimatarte, probar el equipo y familiarizarte con el ritmo de vida a bordo. Despues, el barco pondra rumbo hacia el norte.",
+            "Comienza tu expedición entre los pecios más legendarios del Mar Rojo. Realizarás dos inmersiones de chequeo para aclimatarte, probar el equipo y familiarizarte con el ritmo de vida a bordo. Después, el barco pondrá rumbo hacia el norte.",
           dives: ["Check dive 1", "Check dive 2"],
-          highlights: ["Aclimatacion", "Prueba de equipo", "Navegacion al norte"],
+          highlights: ["Aclimatación", "Prueba de equipo", "Navegación al norte"],
           image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
           alt: "Arrecife de coral con peces anthias en las inmersiones de chequeo de la Ruta Norte",
           overlayDirection: "right",
@@ -207,20 +207,20 @@ export const rutasData: Record<string, RutaData> = {
           day: 3,
           title: "Parque Nacional de Ras Mohamed y pecio SS Dunraven",
           description:
-            "Tres inmersiones espectaculares te sumergen en el vibrante ecosistema del Parque Nacional de Ras Mohamed. Bucearas en arrecifes llenos de color, rodeado de bancos de barracudas, peces payaso y pargos Bohar. Ademas, visitaras el historico SS Dunraven, un buque de vapor del siglo XIX.",
+            "Tres inmersiones espectaculares te sumergen en el vibrante ecosistema del Parque Nacional de Ras Mohamed. Bucearás en arrecifes llenos de color, rodeado de bancos de barracudas, peces payaso y pargos Bohar. Además, visitarás el histórico SS Dunraven, un buque de vapor del siglo XIX.",
           dives: ["Ras Mohamed", "Shark & Yolanda Reef", "SS Dunraven"],
-          highlights: ["Parque Nacional", "Arrecifes vibrantes", "Pecio historico"],
+          highlights: ["Parque Nacional", "Arrecifes vibrantes", "Pecio histórico"],
           image: "/images/underwater/underwater-sea-turtle-fish-school.jpg",
           alt: "Tortuga marina con banco de peces en Ras Mohammed, Mar Rojo",
           overlayDirection: "left",
         },
         {
           day: 4,
-          title: "El mitico SS Thistlegorm",
+          title: "El mítico SS Thistlegorm",
           description:
-            "Tres inmersiones en uno de los pecios mas famosos del mundo: el SS Thistlegorm, un carguero britanico hundido en 1941. Dentro del pecio aun se conservan motos, camiones, vagones y cajas de municion. Profundidades de entre 16 y 30 metros lo convierten en un museo submarino unico.",
+            "Tres inmersiones en uno de los pecios más famosos del mundo: el SS Thistlegorm, un carguero británico hundido en 1941. Dentro del pecio aún se conservan motos, camiones, vagones y cajas de munición. Profundidades de entre 16 y 30 metros lo convierten en un museo submarino único.",
           dives: ["SS Thistlegorm (exterior)", "SS Thistlegorm (interior)", "SS Thistlegorm (nocturna)"],
-          highlights: ["Pecio iconico WWII", "Museo submarino", "Historia y emocion"],
+          highlights: ["Pecio icónico WWII", "Museo submarino", "Historia y emoción"],
           image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
           alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
           overlayDirection: "right",
@@ -229,7 +229,7 @@ export const rutasData: Record<string, RutaData> = {
           day: 5,
           title: "Arrecife Abu Nuhas y sus tesoros hundidos",
           description:
-            "Este arrecife es conocido como el cementerio de barcos del Mar Rojo. Tres o cuatro inmersiones te permitiran explorar varios pecios legendarios: Giannis D, Carnatic y Chrisoula K si las condiciones lo permiten. Cada uno ofrece estructuras accesibles, vida marina abundante y la posibilidad de hacer varias exploraciones en un mismo punto.",
+            "Este arrecife es conocido como el cementerio de barcos del Mar Rojo. Tres o cuatro inmersiones te permitirán explorar varios pecios legendarios: Giannis D, Carnatic y Chrisoula K si las condiciones lo permiten. Cada uno ofrece estructuras accesibles, vida marina abundante y la posibilidad de hacer varias exploraciones en un mismo punto.",
           dives: ["Giannis D", "Carnatic", "Chrisoula K"],
           highlights: ["Cementerio de barcos", "Pecios accesibles", "Vida marina abundante"],
           image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
@@ -240,20 +240,20 @@ export const rutasData: Record<string, RutaData> = {
           day: 6,
           title: "Rosalie Moller y Ulysses",
           description:
-            "Dos pecios muy diferentes completan esta jornada. Rosalie Moller, buque carbonero hundido durante la Segunda Guerra Mundial, entre 30 y 50 m de profundidad. Ulysses, carguero britanico encallado en 1887 en Gubal Island, descansa entre 5 y 27 m, ideal para una inmersion relajada entre estructuras antiguas.",
+            "Dos pecios muy diferentes completan esta jornada. Rosalie Moller, buque carbonero hundido durante la Segunda Guerra Mundial, entre 30 y 50 m de profundidad. Ulysses, carguero británico encallado en 1887 en Gubal Island, descansa entre 5 y 27 m, ideal para una inmersión relajada entre estructuras antiguas.",
           dives: ["Rosalie Moller", "Ulysses (Gubal)"],
-          highlights: ["Pecios de distintas epocas", "Exploracion profunda", "Gubal Island"],
+          highlights: ["Pecios de distintas épocas", "Exploración profunda", "Gubal Island"],
           image: "/images/underwater/underwater-dolphins-pod-reef.jpg",
           alt: "Vida marina en la zona de Gubal Island, Mar Rojo",
           overlayDirection: "right",
         },
         {
           day: 7,
-          title: "Ultimas inmersiones y regreso al puerto",
+          title: "Últimas inmersiones y regreso al puerto",
           description:
-            "Dos inmersiones matinales para despedirte del Mar Rojo en sus mejores condiciones de luz y calma. Regreso al puerto por la tarde, donde podras relajarte, organizar tu equipo y revivir mentalmente cada inmersion del viaje.",
-          dives: ["Inmersion matinal 1", "Inmersion matinal 2"],
-          highlights: ["Ultimas inmersiones", "Regreso a Hurghada", "Cierre del viaje"],
+            "Dos inmersiones matinales para despedirte del Mar Rojo en sus mejores condiciones de luz y calma. Regreso al puerto por la tarde, donde podrás relajarte, organizar tu equipo y revivir mentalmente cada inmersión del viaje.",
+          dives: ["Inmersión matinal 1", "Inmersión matinal 2"],
+          highlights: ["Últimas inmersiones", "Regreso a Hurghada", "Cierre del viaje"],
           image: "/images/deck/sundeck-loungers-glass-railing.jpg",
           alt: "Solarium del M/Y Dolce Vita al atardecer regresando a Hurghada",
           overlayDirection: "left",
@@ -262,11 +262,11 @@ export const rutasData: Record<string, RutaData> = {
           day: 8,
           title: "Desembarque",
           description:
-            "Check-out hasta las 10:00 en Hurghada, poniendo fin a una semana epica de buceo entre los mejores pecios del norte del Mar Rojo.",
+            "Check-out hasta las 10:00 en Hurghada, poniendo fin a una semana épica de buceo entre los mejores pecios del norte del Mar Rojo.",
           dives: [],
           highlights: ["Check-out 10:00", "Traslado al aeropuerto", "Fin del viaje"],
           image: "/images/boat/boat-aerial-anchored-reef.jpg",
-          alt: "Vista aerea del M/Y Dolce Vita en el puerto de Hurghada al desembarque",
+          alt: "Vista aérea del M/Y Dolce Vita en el puerto de Hurghada al desembarque",
           overlayDirection: "right",
         },
       ],
@@ -297,32 +297,32 @@ export const rutasData: Record<string, RutaData> = {
       ],
     },
     incluye: {
-      title: "Que incluye el viaje",
+      title: "Qué incluye el viaje",
       items: [
         "Traslados aeropuerto-barco-aeropuerto",
         "7 Noches de crucero",
-        "Pension completa a bordo",
-        "Refrescos, agua mineral, te y cafe",
-        "2 cervezas por persona y dia",
-        "Guias de buceo locales",
+        "Pensión completa a bordo",
+        "Refrescos, agua mineral, té y café",
+        "2 cervezas por persona y día",
+        "Guías de buceo locales",
         "Tour Leader de nuestra agencia",
         "16/18 Inmersiones",
         "Botella de 12L, plomos y NITROX (28%)",
         "Seguro de viaje",
-        "Formacion avanzada gratuita a bordo",
+        "Formación avanzada gratuita a bordo",
         "Seminarios gratuitos a bordo",
       ],
     },
     practicalInfo: {
-      title: "Informacion practica",
+      title: "Información práctica",
       subtitle:
-        "Todo lo que necesitas saber antes de reservar: que esta incluido, que se paga aparte y como funciona la logistica del viaje.",
+        "Todo lo que necesitas saber antes de reservar: qué está incluido, qué se paga aparte y cómo funciona la logística del viaje.",
       includedTitle: "Incluido en el precio",
       included: [
         "Traslados aeropuerto-barco-aeropuerto",
         "7 noches de crucero en el M/Y Dolce Vita",
-        "Pension completa a bordo (refrescos, te, cafe, 2 cervezas/dia)",
-        "16-18 inmersiones con guias de buceo locales",
+        "Pensión completa a bordo (refrescos, té, café, 2 cervezas/día)",
+        "16-18 inmersiones con guías de buceo locales",
         "Tour Leader de la agencia incluido",
         "Botella de 12L, plomos y Nitrox (28%)",
         "Advanced Open Water SSI + 4 especialidades gratis",
@@ -333,69 +333,69 @@ export const rutasData: Record<string, RutaData> = {
       extras: [
         "Vuelos (te podemos asesorar en la compra)",
         "Visado de entrada en Egipto online - 30 EUR",
-        "Seguro opcional de cancelacion - 47,75 EUR",
+        "Seguro opcional de cancelación - 47,75 EUR",
         "Alquiler de equipo de buceo",
-        "Tasas - Entre 120 EUR y 220 EUR (pago en metalico en el barco)",
-        "Propinas - Tripulacion 75 EUR (pago en metalico en el barco)",
-        "Propinas - Guias 25 EUR (pago en metalico en el barco)",
-        "Botella de 15L - 40 EUR (pago en metalico en el barco)",
-        "Bebidas alcoholicas y cualquier otro servicio",
+        "Tasas - Entre 120 EUR y 220 EUR (pago en metálico en el barco)",
+        "Propinas - Tripulación 75 EUR (pago en metálico en el barco)",
+        "Propinas - Guías 25 EUR (pago en metálico en el barco)",
+        "Botella de 15L - 40 EUR (pago en metálico en el barco)",
+        "Bebidas alcohólicas y cualquier otro servicio",
       ],
-      logisticsTitle: "Logistica",
+      logisticsTitle: "Logística",
       logistics: [
         "Salida y regreso desde Hurghada",
-        "Embarque a partir de las 16:00 del dia 1",
-        "Check-out hasta las 10:00 del dia 8",
-        "Certificacion minima: Open Water Diver (cualquier certificadora)",
+        "Embarque a partir de las 16:00 del día 1",
+        "Check-out hasta las 10:00 del día 8",
+        "Certificación mínima: Open Water Diver (cualquier certificadora)",
       ],
     },
     faqSection: {
       title: "Preguntas frecuentes sobre la Ruta Norte y Pecios",
       items: [
         {
-          question: "Que nivel de certificacion necesito para sumergirme en los pecios de la Ruta Norte?",
+          question: "¿Qué nivel de certificación necesito para sumergirme en los pecios de la Ruta Norte?",
           answer:
-            "Este viaje de buceo en el Mar Rojo esta abierto a buceadores certificados a partir de Open Water. Sin embargo, muchas inmersiones son profundas (hasta 30 m), por lo que se recomienda tener el curso Advanced Open Water o hacerlo a bordo sin coste. Una de las muchas ventajas de viajar con Karlos Simon es que te ofrecemos este tipo de formacion gratuita a bordo.",
+            "Este viaje de buceo en el Mar Rojo está abierto a buceadores certificados a partir de Open Water. Sin embargo, muchas inmersiones son profundas (hasta 30 m), por lo que se recomienda tener el curso Advanced Open Water o hacerlo a bordo sin coste. Una de las muchas ventajas de viajar con Karlos Simon es que te ofrecemos este tipo de formación gratuita a bordo.",
         },
         {
-          question: "Cuantas inmersiones se realizan durante la semana?",
+          question: "¿Cuántas inmersiones se realizan durante la semana?",
           answer:
-            "En la Ruta Norte del Mar Rojo se programan entre 16 y 18 inmersiones en total, incluyendo algunas nocturnas si las condiciones lo permiten. El ritmo habitual es de 3-4 inmersiones al dia, con tiempo para descansar y disfrutar del barco.",
+            "En la Ruta Norte del Mar Rojo se programan entre 16 y 18 inmersiones en total, incluyendo algunas nocturnas si las condiciones lo permiten. El ritmo habitual es de 3-4 inmersiones al día, con tiempo para descansar y disfrutar del barco.",
         },
         {
-          question: "Que tipo de pecios vamos a visitar en la Ruta Norte?",
+          question: "¿Qué tipo de pecios vamos a visitar en la Ruta Norte?",
           answer:
-            "Durante este viaje de buceo por la Ruta Norte exploraras pecios historicos del Mar Rojo, como el SS Thistlegorm, Giannis D, Carnatic, Dunraven y Rosalie Moller, ademas de otros como el Ulysses en Gubal. Todos ofrecen estructuras interesantes, accesibles y llenas de vida marina.",
+            "Durante este viaje de buceo por la Ruta Norte explorarás pecios históricos del Mar Rojo, como el SS Thistlegorm, Giannis D, Carnatic, Dunraven y Rosalie Moller, además de otros como el Ulysses en Gubal. Todos ofrecen estructuras interesantes, accesibles y llenas de vida marina.",
         },
         {
-          question: "Puedo alquilar equipo de buceo si no llevo el mio?",
+          question: "¿Puedo alquilar equipo de buceo si no llevo el mío?",
           answer:
-            "Si. Es posible alquilar equipo completo (traje, regulador, jacket, ordenador, etc.) con antelacion. Tambien puedes alquilar piezas sueltas si solo necesitas completar tu configuracion. Preguntanos antes, para que podamos llevar todo el equipo que necesitas a bordo.",
+            "Sí. Es posible alquilar equipo completo (traje, regulador, jacket, ordenador, etc.) con antelación. También puedes alquilar piezas sueltas si solo necesitas completar tu configuración. Pregúntanos antes, para que podamos llevar todo el equipo que necesitas a bordo.",
         },
         {
-          question: "Que temperatura tiene el agua en esta ruta del Mar Rojo?",
+          question: "¿Qué temperatura tiene el agua en esta ruta del Mar Rojo?",
           answer:
             "La temperatura del agua en el norte del Mar Rojo oscila entre 26 y 29 grados C durante los meses de verano. Un traje de 3 mm o 5 mm es suficiente para bucear con comodidad.",
         },
         {
-          question: "Hay nitrox disponible a bordo?",
+          question: "¿Hay nitrox disponible a bordo?",
           answer:
-            "Si, el nitrox esta incluido (28%) para buceadores certificados. Si no tienes el curso, puedes realizarlo, sin coste, durante el viaje y aprovecharlo desde el primer dia.",
+            "Sí, el nitrox está incluido (28%) para buceadores certificados. Si no tienes el curso, puedes realizarlo, sin coste, durante el viaje y aprovecharlo desde el primer día.",
         },
         {
-          question: "Que ocurre si no quiero hacer todas las inmersiones?",
+          question: "¿Qué ocurre si no quiero hacer todas las inmersiones?",
           answer:
-            "No hay problema. Aunque el plan incluye varias inmersiones, puedes ajustar el ritmo segun como te sientas. Tambien forma parte del viaje disfrutar del barco, descansar o simplemente bucear menos.",
+            "No hay problema. Aunque el plan incluye varias inmersiones, puedes ajustar el ritmo según como te sientas. También forma parte del viaje disfrutar del barco, descansar o simplemente bucear menos.",
         },
         {
-          question: "Como es el barco y que incluye el vida a bordo?",
+          question: "¿Cómo es el barco y qué incluye el vida a bordo?",
           answer:
-            "Nuestro barco, el Dolce Vita es un vida a bordo completamente equipado, con camarotes dobles, banios privados, aire acondicionado, solarium, comedor interior y exterior. Esta incluida la pension completa, snacks, refrescos, nitrox (28%), toallas y albornoz.",
+            "Nuestro barco, el Dolce Vita es un vida a bordo completamente equipado, con camarotes dobles, baños privados, aire acondicionado, solarium, comedor interior y exterior. Está incluida la pensión completa, snacks, refrescos, nitrox (28%), toallas y albornoz.",
         },
         {
-          question: "Se necesita visado para entrar en Egipto?",
+          question: "¿Se necesita visado para entrar en Egipto?",
           answer:
-            "Si, necesitaras un visado turistico. Nuestra agencia te ayudara a conseguirlo (30 EUR), para que no tengas que preocuparte por nada.",
+            "Sí, necesitarás un visado turístico. Nuestra agencia te ayudará a conseguirlo (30 EUR), para que no tengas que preocuparte por nada.",
         },
       ],
     },
@@ -596,7 +596,7 @@ export const rutasData: Record<string, RutaData> = {
     cta: {
       title: "Reserva tu plaza en la Ruta Norte y Pecios",
       description:
-        "8 dias de buceo entre pecios legendarios desde Hurghada. Desde 1.190 EUR con Advanced SSI incluido.",
+        "8 días de buceo entre pecios legendarios desde Hurghada. Desde 1.190 EUR con Advanced SSI incluido.",
       backgroundImage: "/images/boat/boat-aerial-anchored-reef.jpg",
       primaryCTA: {
         text: "Ir al formulario",

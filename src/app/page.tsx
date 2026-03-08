@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: "Vida a bordo en el Mar Rojo desde Hurghada | Ruta Norte y Pecios",
   description:
-    "Ruta Norte y Pecios desde Hurghada: vida a bordo en el Mar Rojo con spots iconicos, enfoque comercial claro y opcion de Advanced SSI a bordo.",
+    "Ruta Norte y Pecios desde Hurghada: vida a bordo en el Mar Rojo con spots icónicos, enfoque comercial claro y opción de Advanced SSI a bordo.",
   alternates: {
     canonical: BASE_URL,
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vida a bordo en el Mar Rojo desde Hurghada",
     description:
-      "Ruta Norte y Pecios desde Hurghada con vida a bordo y opcion de Advanced SSI a bordo.",
+      "Ruta Norte y Pecios desde Hurghada con vida a bordo y opción de Advanced SSI a bordo.",
     images: [`${BASE_URL}/images/underwater/underwater-diver-pink-soft-coral.jpg`],
   },
 }

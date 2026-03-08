@@ -15,10 +15,10 @@ import { BASE_URL } from '@/lib/seo/metadata'
  */
 const DEFAULT_LEAD_CONFIG = {
   sectionId: 'article-lead',
-  eyebrow: 'PLANIFICA TU INMERSION',
+  eyebrow: 'PLANIFICA TU INMERSIÓN',
   title: 'Reserva tu Safari de Buceo',
   subtitle:
-    'Cuentanos tu experiencia y te ayudamos a elegir la ruta perfecta para ti.',
+    'Cuéntanos tu experiencia y te ayudamos a elegir la ruta perfecta para ti.',
   highlights: [
     'Respuesta en menos de 24h',
     'Itinerarios personalizados',
@@ -40,13 +40,13 @@ const DEFAULT_LEAD_CONFIG = {
     {
       name: 'mensaje',
       type: 'textarea' as const,
-      placeholder: 'Cuentanos sobre tu experiencia de buceo y que buscas...',
+      placeholder: 'Cuéntanos sobre tu experiencia de buceo y qué buscas...',
       required: false,
     },
   ],
-  submitButton: 'Solicitar informacion',
+  submitButton: 'Solicitar información',
   privacyText:
-    'Tus datos seran tratados para responder a tu consulta. Puedes ejercer tus derechos en cualquier momento.',
+    'Tus datos serán tratados para responder a tu consulta. Puedes ejercer tus derechos en cualquier momento.',
   successMessage: 'Recibido. Te contactamos pronto.',
 }
 

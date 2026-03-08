@@ -7,11 +7,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.c
 
 export const metadata: Metadata = {
   title: 'Experiencias de Buceo | Red Sea Norte',
-  description: 'Experiencias unicas de buceo en el Mar Rojo. Pecios de la Segunda Guerra Mundial, arrecifes virgenes y encuentros con vida marina espectacular.',
+  description: 'Experiencias únicas de buceo en el Mar Rojo. Pecios de la Segunda Guerra Mundial, arrecifes vírgenes y encuentros con vida marina espectacular.',
   keywords: ['experiencias buceo', 'mar rojo', 'pecios', 'arrecifes', 'buceo egipto', 'diving experiences'],
   openGraph: {
     title: 'Experiencias de Buceo | Red Sea Norte',
-    description: 'Experiencias unicas de buceo en el Mar Rojo. Pecios de la Segunda Guerra Mundial, arrecifes virgenes y encuentros con vida marina espectacular.',
+    description: 'Experiencias únicas de buceo en el Mar Rojo. Pecios de la Segunda Guerra Mundial, arrecifes vírgenes y encuentros con vida marina espectacular.',
     type: 'website',
     url: `${BASE_URL}/experiencias`,
     siteName: 'Red Sea Norte',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Experiencias de Buceo | Red Sea Norte',
-    description: 'Experiencias unicas de buceo en el Mar Rojo. Pecios, arrecifes y vida marina espectacular.',
+    description: 'Experiencias únicas de buceo en el Mar Rojo. Pecios, arrecifes y vida marina espectacular.',
   },
   alternates: {
     canonical: `${BASE_URL}/experiencias`,
@@ -37,7 +37,7 @@ export default async function ExperienciasPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Experiencias de Buceo en el Mar Rojo',
-    description: 'Coleccion de experiencias de buceo unicas en el Mar Rojo Norte',
+    description: 'Colección de experiencias de buceo únicas en el Mar Rojo Norte',
     numberOfItems: experiencias.length,
     itemListElement: experiencias.map((exp, index) => ({
       '@type': 'ListItem',
@@ -93,8 +93,8 @@ export default async function ExperienciasPage() {
             className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto leading-relaxed"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
-            Vive aventuras unicas bajo el agua. Pecios historicos de la Segunda Guerra Mundial,
-            arrecifes de coral virgenes y encuentros inolvidables con la vida marina.
+            Vive aventuras únicas bajo el agua. Pecios históricos de la Segunda Guerra Mundial,
+            arrecifes de coral vírgenes y encuentros inolvidables con la vida marina.
           </p>
         </div>
       </section>
@@ -171,7 +171,7 @@ export default async function ExperienciasPage() {
 
                     {/* CTA */}
                     <div className="flex items-center gap-2 text-coral-fire font-semibold group-hover:gap-4 transition-all duration-300">
-                      <span style={{ fontFamily: 'var(--font-sans)' }}>Descubrir mas</span>
+                      <span style={{ fontFamily: 'var(--font-sans)' }}>Descubrir más</span>
                       <svg
                         className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
                         fill="none"
@@ -213,15 +213,15 @@ export default async function ExperienciasPage() {
             className="text-3xl md:text-5xl font-bold text-white mb-6"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
-            No encuentras lo que buscas?
+            ¿No encuentras lo que buscas?
           </h2>
 
           <p
             className="text-xl text-white/80 mb-10 max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
-            Contactanos para disenar una experiencia de buceo personalizada
-            adaptada a tus preferencias y nivel de certificacion.
+            Contáctanos para diseñar una experiencia de buceo personalizada
+            adaptada a tus preferencias y nivel de certificación.
           </p>
 
           <Link

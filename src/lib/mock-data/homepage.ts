@@ -16,7 +16,7 @@ const baseLeadFields: HomepageData["leadForm"]["fields"] = [
   {
     name: "phone",
     type: "tel",
-    placeholder: "Tu telefono",
+    placeholder: "Tu teléfono",
     required: true,
   },
   {
@@ -36,7 +36,7 @@ const baseLeadFields: HomepageData["leadForm"]["fields"] = [
   {
     name: "preferredMonth",
     type: "select",
-    placeholder: "Cuando te interesa viajar",
+    placeholder: "Cuándo te interesa viajar",
     required: false,
     options: [
       { value: "Enero", label: "Enero" },
@@ -64,7 +64,7 @@ export const homepageData: HomepageData = {
     },
     title: "Vida a Bordo en el Mar Rojo: Ruta Norte y Pecios desde Hurghada",
     subtitle:
-      "Safari de buceo de 7 noches en el M/Y Dolce Vita entre pecios legendarios, arrecifes iconicos y formacion Advanced SSI gratuita a bordo. Desde 1.190 EUR.",
+      "Safari de buceo de 7 noches en el M/Y Dolce Vita entre pecios legendarios, arrecifes icónicos y formación Advanced SSI gratuita a bordo. Desde 1.190 EUR.",
     ctas: [
       {
         text: "Consultar viaje",
@@ -82,20 +82,20 @@ export const homepageData: HomepageData = {
     trustLine: [
       "Salida desde Hurghada",
       "Ruta Norte + Pecios",
-      "Opcion de Advanced a bordo",
+      "Opción de Advanced a bordo",
     ],
   },
 
   routeValueSection: {
-    title: "Por que esta ruta es la mejor puerta de entrada al Mar Rojo",
+    title: "¿Por qué esta ruta es la mejor puerta de entrada al Mar Rojo?",
     subtitle:
-      "Pecios miticos, arrecifes vibrantes, vida a bordo y progresion real para distintos niveles en una sola semana.",
+      "Pecios míticos, arrecifes vibrantes, vida a bordo y progresión real para distintos niveles en una sola semana.",
     cards: [
       {
-        eyebrow: "PECIOS MITICOS",
+        eyebrow: "PECIOS MÍTICOS",
         title: "Thistlegorm, Abu Nuhas y Dunraven en una sola semana",
         description:
-          "La Ruta Norte concentra algunos de los pecios mas buscados del Mar Rojo y los combina con inmersiones de arrecife que equilibran intensidad y disfrute.",
+          "La Ruta Norte concentra algunos de los pecios más buscados del Mar Rojo y los combina con inmersiones de arrecife que equilibran intensidad y disfrute.",
         image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
         alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
       },
@@ -103,23 +103,23 @@ export const homepageData: HomepageData = {
         eyebrow: "ARRECIFES Y VIDA",
         title: "Ras Mohammed y fondos llenos de vida marina",
         description:
-          "No es solo una ruta de pecios. Tambien incluye paredes, jardines de coral y puntos en los que la visibilidad convierte cada inmersion en un argumento de venta por si mismo.",
+          "No es solo una ruta de pecios. También incluye paredes, jardines de coral y puntos en los que la visibilidad convierte cada inmersión en un argumento de venta por sí mismo.",
         image: "/images/underwater/underwater-coral-reef-anthias-fish.jpg",
         alt: "Arrecife de coral con peces anthias en la Ruta Norte del Mar Rojo",
       },
       {
-        eyebrow: "LOGISTICA SIMPLE",
-        title: "Salida desde Hurghada con un producto facil de entender",
+        eyebrow: "LOGÍSTICA SIMPLE",
+        title: "Salida desde Hurghada con un producto fácil de entender",
         description:
-          "La ruta conecta mejor con la intencion comercial del usuario: quiere saber que se bucea, como es la semana y si encaja con su nivel sin navegar por veinte paginas.",
+          "La ruta conecta mejor con la intención comercial del usuario: quiere saber qué se bucea, cómo es la semana y si encaja con su nivel sin navegar por veinte páginas.",
         image: "/images/boat/boat-exterior-side-profile.jpg",
         alt: "M/Y Dolce Vita navegando en el Mar Rojo vista de perfil",
       },
       {
-        eyebrow: "VALOR ANADIDO",
+        eyebrow: "VALOR AÑADIDO",
         title: "Advanced SSI como extra, no como barrera",
         description:
-          "El Advanced aparece como una forma de aprovechar mejor el viaje, no como el unico motivo para venir. Asi el curso suma valor sin restar protagonismo a la ruta.",
+          "El Advanced aparece como una forma de aprovechar mejor el viaje, no como el único motivo para venir. Así el curso suma valor sin restar protagonismo a la ruta.",
         image: "/images/deck/deck-dive-station-gear-rack.jpg",
         alt: "Cubierta de buceo del M/Y Dolce Vita con equipo preparado",
       },
@@ -127,14 +127,14 @@ export const homepageData: HomepageData = {
   },
 
   whySection: {
-    title: "Por Que Bucear la Ruta Norte",
-    subtitle: "Experiencia de viaje, no solo certificacion",
+    title: "¿Por Qué Bucear la Ruta Norte?",
+    subtitle: "Experiencia de viaje, no solo certificación",
     topRow: [
       {
         type: "image-large",
         image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
         title: "Pecios que justifican el viaje",
-        description: "Thistlegorm y Abu Nuhas convierten esta ruta en un clasico comercial.",
+        description: "Thistlegorm y Abu Nuhas convierten esta ruta en un clásico comercial.",
       },
       {
         type: "conditions-image",
@@ -149,7 +149,7 @@ export const homepageData: HomepageData = {
         type: "certification",
         icon: "✓",
         title: "Advanced a bordo",
-        subtitle: "Valor anadido para quien quiera progresar",
+        subtitle: "Valor añadido para quien quiera progresar",
       },
       {
         type: "image-small",
@@ -160,14 +160,14 @@ export const homepageData: HomepageData = {
       {
         type: "equipment",
         image: "/images/deck/deck-swim-platform-sea-access.jpg",
-        badge: "MENOS FRICCION",
-        title: "Producto facil de explicar y de reservar",
+        badge: "MENOS FRICCIÓN",
+        title: "Producto fácil de explicar y de reservar",
       },
     ],
   },
 
   diveSites: {
-    title: "Que vas a bucear en la Ruta Norte",
+    title: "Qué vas a bucear en la Ruta Norte",
     subtitle:
       "Pecios legendarios, arrecifes de coral y paredes verticales que hacen de la Ruta Norte una de las mejores semanas de buceo del mundo.",
     sites: [
@@ -176,14 +176,14 @@ export const homepageData: HomepageData = {
         image: "/images/wrecks/underwater-wreck-motorcycle-thistlegorm.jpg",
         alt: "Motocicleta BSA dentro del pecio SS Thistlegorm en el Mar Rojo",
         depth: "14-30m",
-        highlight: "El pecio iconico del Mar Rojo",
+        highlight: "El pecio icónico del Mar Rojo",
       },
       {
         name: "Abu Nuhas",
         image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
         alt: "Proa de pecio hundido en Abu Nuhas, cementerio de barcos del Mar Rojo",
         depth: "10-27m",
-        highlight: "Cementerio de barcos y ruta clasica",
+        highlight: "Cementerio de barcos y ruta clásica",
       },
       {
         name: "Ras Mohammed",
@@ -197,35 +197,35 @@ export const homepageData: HomepageData = {
         image: "/images/underwater/underwater-blue-spotted-stingray.jpg",
         alt: "Raya de puntos azules en el pecio Dunraven del Mar Rojo",
         depth: "5-28m",
-        highlight: "Pecio historico ideal para enriquecer la semana",
+        highlight: "Pecio histórico ideal para enriquecer la semana",
       },
     ],
   },
 
   journeyOverview: {
-    eyebrow: "COMO ES EL VIAJE",
+    eyebrow: "CÓMO ES EL VIAJE",
     title: "Una semana de vida a bordo pensada para bucear mucho y decidir con claridad",
     subtitle:
-      "Asi es una semana tipica a bordo del M/Y Dolce Vita: inmersiones, vida a bordo y todo lo que necesitas saber antes de reservar.",
+      "Así es una semana típica a bordo del M/Y Dolce Vita: inmersiones, vida a bordo y todo lo que necesitas saber antes de reservar.",
     highlights: [
       "7 noches a bordo del M/Y Dolce Vita (40m, 12 camarotes, 24 buceadores)",
       "16-18 inmersiones en pecios legendarios y arrecifes",
       "Salida desde Hurghada, traslados incluidos",
     ],
-    includesTitle: "Que espera el usuario cuando reserva este viaje",
+    includesTitle: "Qué espera el usuario cuando reserva este viaje",
     includes: [
-      "Pension completa con refrescos, te, cafe y 2 cervezas/dia",
+      "Pensión completa con refrescos, té, café y 2 cervezas/día",
       "Advanced SSI + 4 especialidades + seminarios gratuitos a bordo",
       "Botella 12L, plomos y Nitrox (28%) incluidos",
     ],
-    fitTitle: "Como presentamos el Advanced dentro del viaje",
+    fitTitle: "Cómo presentamos el Advanced dentro del viaje",
     fitItems: [
       "No como mensaje principal de la homepage",
-      "Si como valor anadido para quien quiere progresar durante la semana",
-      "Sin contaminar la intencion principal de vida a bordo + Ruta Norte",
+      "Sí como valor añadido para quien quiere progresar durante la semana",
+      "Sin contaminar la intención principal de vida a bordo + Ruta Norte",
     ],
     note:
-      "Consulta fechas y disponibilidad a traves del formulario. Te orientamos segun tu nivel y preferencias.",
+      "Consulta fechas y disponibilidad a través del formulario. Te orientamos según tu nivel y preferencias.",
   },
 
   programSection: {
@@ -233,8 +233,8 @@ export const homepageData: HomepageData = {
     subtitle: "Bloque legado mantenido por compatibilidad de datos",
     includes: [
       "7 noches de vida a bordo en el M/Y Dolce Vita",
-      "16-18 inmersiones con guias profesionales",
-      "Pension completa, refrescos, te y cafe",
+      "16-18 inmersiones con guías profesionales",
+      "Pensión completa, refrescos, té y café",
       "Advanced Open Water SSI gratuito a bordo",
       "4 especialidades SSI incluidas",
       "Nitrox (28%) incluido",
@@ -257,19 +257,19 @@ export const homepageData: HomepageData = {
       {
         title: "Quieres tu primer liveaboard potente",
         description:
-          "Si ya buceas y buscas una semana con spots iconicos, esta ruta funciona muy bien como entrada seria al Mar Rojo.",
+          "Si ya buceas y buscas una semana con spots icónicos, esta ruta funciona muy bien como entrada seria al Mar Rojo.",
         tone: "good-fit",
       },
       {
         title: "Eres Open Water y quieres progresar",
         description:
-          "La experiencia puede encajar si tu objetivo es dar el salto con criterio y aprovechar la opcion de Advanced a bordo como valor adicional.",
+          "La experiencia puede encajar si tu objetivo es dar el salto con criterio y aprovechar la opción de Advanced a bordo como valor adicional.",
         tone: "consider",
       },
       {
         title: "Solo buscas un curso sin foco en viaje",
         description:
-          "Entonces esta homepage no debe venderte una promesa equivocada. Aqui el producto principal es la ruta de vida a bordo, no un curso aislado.",
+          "Entonces esta homepage no debe venderte una promesa equivocada. Aquí el producto principal es la ruta de vida a bordo, no un curso aislado.",
         tone: "not-now",
       },
     ],
@@ -287,7 +287,7 @@ export const homepageData: HomepageData = {
       {
         type: "depth",
         image: "/images/boat/boat-aerial-anchored-reef.jpg",
-        alt: "Vista aerea del M/Y Dolce Vita anclado en arrecife del Mar Rojo",
+        alt: "Vista aérea del M/Y Dolce Vita anclado en arrecife del Mar Rojo",
         label: "RUTA",
         value: "7D",
         description: "Semana tipo de vida a bordo con foco comercial claro",
@@ -297,7 +297,7 @@ export const homepageData: HomepageData = {
         image: "/images/deck/deck-dive-station-gear-rack.jpg",
         alt: "Cubierta de buceo del M/Y Dolce Vita con equipo preparado",
         title: "Advanced a bordo",
-        description: "Valor adicional para quien quiere aprovechar mas la semana",
+        description: "Valor adicional para quien quiere aprovechar más la semana",
       },
     ],
     mainTitle: "La Ruta Norte como experiencia completa",
@@ -314,15 +314,15 @@ export const homepageData: HomepageData = {
         type: "image",
         image: "/images/deck/sundeck-loungers-glass-railing.jpg",
         alt: "Solarium del M/Y Dolce Vita con tumbonas y barandilla de cristal",
-        title: "Menos ambiguedad",
-        description: "La home deja de parecer una landing de curso generica",
+        title: "Menos ambigüedad",
+        description: "La home deja de parecer una landing de curso genérica",
       },
       {
         type: "stat",
         image: "/images/underwater/underwater-hammerhead-sharks-pair.jpg",
         alt: "Pareja de tiburones martillo en aguas del Mar Rojo",
         number: "4",
-        label: "Bloques que preparan la conversion",
+        label: "Bloques que preparan la conversión",
         sublabel: "valor, spots, encaje y lead",
       },
     ],
@@ -336,7 +336,7 @@ export const homepageData: HomepageData = {
   leadForm: {
     title: "¿Quieres que te contemos si esta ruta encaja contigo?",
     subtitle:
-      "Dejanos tus datos y te contactaremos con informacion personalizada sobre la ruta.",
+      "Déjanos tus datos y te contactaremos con información personalizada sobre la ruta.",
     fields: [
       ...baseLeadFields,
       {
@@ -346,31 +346,31 @@ export const homepageData: HomepageData = {
         required: false,
       },
     ],
-    submitButton: "Quiero mas informacion",
+    submitButton: "Quiero más información",
     privacyText: "",
-    successMessage: "Gracias. Te escribiremos con mas detalles de la ruta.",
+    successMessage: "Gracias. Te escribiremos con más detalles de la ruta.",
     consentText: "Acepto recibir ofertas y novedades sobre viajes de buceo por WhatsApp de buceoenelmarrojo.com. Puedo darme de baja en cualquier momento.",
-    privacyLinkText: "Politica de privacidad",
+    privacyLinkText: "Política de privacidad",
     privacyLinkHref: "/politica-de-privacidad",
   },
 
   inlineLead: {
     sectionId: "inline-lead",
     eyebrow: "CONSULTA EL VIAJE",
-    title: "Recibe informacion de la Ruta Norte y Pecios",
+    title: "Recibe información de la Ruta Norte y Pecios",
     subtitle:
       "Rellena el formulario y te contactaremos para resolver tus dudas sobre la ruta, fechas y disponibilidad.",
     highlights: [
-      "Te orientamos segun tu nivel de buceo",
+      "Te orientamos según tu nivel de buceo",
       "Te contamos si esta ruta es adecuada para ti",
-      "Te guiamos hacia la landing o detalle adecuado despues",
+      "Te guiamos hacia la landing o detalle adecuado después",
     ],
     fields: [...baseLeadFields],
-    submitButton: "Recibir informacion del viaje",
+    submitButton: "Recibir información del viaje",
     privacyText: "",
     successMessage: "Gracias. Te contactaremos para orientarte sobre la ruta.",
     consentText: "Acepto recibir ofertas y novedades sobre viajes de buceo por WhatsApp de buceoenelmarrojo.com. Puedo darme de baja en cualquier momento.",
-    privacyLinkText: "Politica de privacidad",
+    privacyLinkText: "Política de privacidad",
     privacyLinkHref: "/politica-de-privacidad",
   },
 
@@ -378,7 +378,7 @@ export const homepageData: HomepageData = {
     eyebrow: "SIGUIENTE PASO",
     title: "Descubre el itinerario completo de la Ruta Norte",
     description:
-      "Itinerario dia a dia, requisitos, spots detallados, logistica y todo lo que necesitas para decidir si esta ruta es para ti.",
+      "Itinerario día a día, requisitos, spots detallados, logística y todo lo que necesitas para decidir si esta ruta es para ti.",
     primaryCTA: {
       text: "Explorar Ruta Norte",
       href: "/rutas",
@@ -394,7 +394,7 @@ export const homepageData: HomepageData = {
 
   ctaSection: {
     title: "Listo para hablar de tu viaje",
-    description: "Salida desde Hurghada, spots iconicos y una propuesta clara.",
+    description: "Salida desde Hurghada, spots icónicos y una propuesta clara.",
     primaryCTA: {
       text: "Consultar viaje",
       href: "#inline-lead",

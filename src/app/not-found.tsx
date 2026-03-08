@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '404 - Pagina no encontrada | Red Sea Norte',
-  description: 'La pagina que buscas no existe o ha sido movida. Vuelve a la superficie con Red Sea Norte.',
+  title: '404 - Página no encontrada | Red Sea Norte',
+  description: 'La página que buscas no existe o ha sido movida. Vuelve a la superficie con Red Sea Norte.',
 }
 
 export default function NotFound() {
@@ -53,7 +53,7 @@ export default function NotFound() {
 
         {/* Diving mask/submarine icon */}
         <div className="mb-6 animate-fadeInUp">
-          <div className="text-8xl md:text-9xl" role="img" aria-label="Mascara de buceo">
+          <div className="text-8xl md:text-9xl" role="img" aria-label="Máscara de buceo">
             🤿
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function NotFound() {
             textShadow: '0 2px 16px rgba(0, 0, 0, 0.4)',
           }}
         >
-          Pagina no encontrada
+          Página no encontrada
         </h2>
 
         {/* Description */}
@@ -90,7 +90,7 @@ export default function NotFound() {
             textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
           }}
         >
-          Parece que esta pagina se ha sumergido demasiado profundo en el Mar Rojo.
+          Parece que esta página se ha sumergido demasiado profundo en el Mar Rojo.
           No podemos encontrarla en nuestras aguas.
         </p>
 
@@ -119,7 +119,7 @@ export default function NotFound() {
 
         {/* Additional helpful links */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-white/60 text-sm animate-fadeInUp delay-500">
-          <span>Tambien puedes explorar:</span>
+          <span>También puedes explorar:</span>
           <Link
             href="/cursos"
             className="text-[#00CED1] hover:text-white transition-colors duration-200 underline underline-offset-2"
