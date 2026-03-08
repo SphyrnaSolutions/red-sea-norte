@@ -301,7 +301,7 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
         'El Advanced funciona como un valor anadido para quien quiere progresar.',
         'La decision principal debe seguir siendo Ruta Norte + vida a bordo.',
       ],
-      note: 'Esta home sintetiza la experiencia y deja la profundizacion comercial para el cluster y las landings.',
+      note: '',
     },
     programSection: {
       title: getNonEmptyString(wagtailPage.program_section_title, 'Como es el viaje'),
@@ -316,11 +316,11 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
     },
     audienceFit: {
       title: 'Esta experiencia encaja contigo si...',
-      subtitle: 'Bloque derivado mientras Wagtail mantiene el esquema anterior de homepage.',
+      subtitle: 'Comprueba si esta experiencia es para ti.',
       profiles: [
         {
-          title: 'Buscas una ruta comercial clara por el Mar Rojo',
-          description: 'Usuario interesado en vida a bordo, spots conocidos y una propuesta simple de entender.',
+          title: 'Buscas una ruta definida por el Mar Rojo',
+          description: 'Te interesa vida a bordo con spots reconocidos y una propuesta clara.',
           tone: 'good-fit',
         },
         {
@@ -330,7 +330,7 @@ export function mapHomePage(wagtailPage: WagtailHomePage): HomepageData {
         },
         {
           title: 'Solo buscas un curso aislado',
-          description: 'La homepage ya no debe vender exclusivamente certificacion como producto principal.',
+          description: 'La formacion es un complemento del viaje, no el producto principal.',
           tone: 'not-now',
         },
       ],

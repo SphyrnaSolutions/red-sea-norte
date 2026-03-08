@@ -111,7 +111,7 @@ export const homepageData: HomepageData = {
         eyebrow: "LOGÍSTICA SIMPLE",
         title: "Salida desde Hurghada con un producto fácil de entender",
         description:
-          "La ruta conecta mejor con la intención comercial del usuario: quiere saber qué se bucea, cómo es la semana y si encaja con su nivel sin navegar por veinte páginas.",
+          "La ruta conecta mejor con lo que busca el buceador: saber qué se bucea, cómo es la semana y si encaja con su nivel sin navegar por veinte páginas.",
         image: "/images/boat/boat-exterior-side-profile.jpg",
         alt: "M/Y Dolce Vita navegando en el Mar Rojo vista de perfil",
       },
@@ -134,7 +134,7 @@ export const homepageData: HomepageData = {
         type: "image-large",
         image: "/images/wrecks/underwater-wreck-bow-shipwreck.jpg",
         title: "Pecios que justifican el viaje",
-        description: "Thistlegorm y Abu Nuhas convierten esta ruta en un clásico comercial.",
+        description: "Thistlegorm y Abu Nuhas convierten esta ruta en un clásico del Mar Rojo.",
       },
       {
         type: "conditions-image",
@@ -290,7 +290,7 @@ export const homepageData: HomepageData = {
         alt: "Vista aérea del M/Y Dolce Vita anclado en arrecife del Mar Rojo",
         label: "RUTA",
         value: "7D",
-        description: "Semana tipo de vida a bordo con foco comercial claro",
+        description: "Semana tipo de vida a bordo con foco en los mejores spots",
       },
       {
         type: "nitrox",
@@ -323,7 +323,7 @@ export const homepageData: HomepageData = {
         alt: "Pareja de tiburones martillo en aguas del Mar Rojo",
         number: "4",
         label: "Bloques que preparan la conversión",
-        sublabel: "valor, spots, encaje y lead",
+        sublabel: "valor, spots y experiencia",
       },
     ],
     cta: {

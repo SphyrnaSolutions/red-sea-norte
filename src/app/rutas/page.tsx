@@ -83,7 +83,7 @@ export default async function RutasPage() {
               textShadow: '0 2px 10px rgba(0,0,0,0.3)'
             }}
           >
-            Itinerarios pensados para convertir interés en consulta: Ruta Norte, pecios legendarios,
+            Itinerarios detallados día a día: Ruta Norte, pecios legendarios,
             arrecifes clásicos y propuestas claras de viaje por el Mar Rojo.
           </p>
         </div>

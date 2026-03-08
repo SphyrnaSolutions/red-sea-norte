@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: "Vida a bordo en el Mar Rojo desde Hurghada | Ruta Norte y Pecios",
   description:
-    "Ruta Norte y Pecios desde Hurghada: vida a bordo en el Mar Rojo con spots icónicos, enfoque comercial claro y opción de Advanced SSI a bordo.",
+    "Ruta Norte y Pecios desde Hurghada: vida a bordo en el Mar Rojo con spots icónicos como Thistlegorm y Abu Nuhas, y opción de Advanced SSI a bordo.",
   alternates: {
     canonical: BASE_URL,
   },

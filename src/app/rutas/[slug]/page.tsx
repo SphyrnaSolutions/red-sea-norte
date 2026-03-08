@@ -183,9 +183,9 @@ function getSummarySection(ruta: RutaData) {
       subtitle:
         ruta.storyIntro.description,
       bullets: [
-        "Ruta comercial pensada para explicar producto y encaje antes de pedir el lead",
+        "Itinerario diseñado para combinar los mejores pecios y arrecifes en una semana",
         "Pecios y arrecifes en una sola semana",
-        "Salida desde Hurghada con narrativa clara de viaje",
+        "Salida desde Hurghada con un plan de viaje claro día a día",
       ],
     }
   )
@@ -195,7 +195,7 @@ function getSpotsSection(ruta: RutaData) {
   return (
     ruta.spotsSection || {
       title: "Puntos de inmersión destacados",
-      subtitle: "La página debe explicar qué spots justifican esta ruta y por qué.",
+      subtitle: "Descubre los puntos de inmersión que hacen única esta ruta.",
       spots: ruta.itinerary.days.slice(0, 4).map((day) => ({
         name: day.title,
         image: day.image,
@@ -211,7 +211,7 @@ function getPracticalInfo(ruta: RutaData) {
   return (
     ruta.practicalInfo || {
       title: "Información práctica",
-      subtitle: "Bloque de apoyo mientras Wagtail mantiene el esquema actual.",
+      subtitle: "Todo lo que necesitas saber antes de reservar.",
       includedTitle: "Incluido",
       included: ruta.incluye.items,
       extrasTitle: "A revisar",
