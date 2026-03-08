@@ -173,28 +173,28 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 
 ### Wreck/Spot Content
 
-- [ ] **WRECK-01**: Pagina experta de SS Thistlegorm (historia, buceo, profundidad, nivel, que ver)
-- [ ] **WRECK-02**: Pagina experta de Abu Nuhas (Giannis D, Carnatic, Tile Wreck, Kimon M)
-- [ ] **WRECK-03**: Pagina experta de Ras Mohammed (Shark & Yolanda Reef, Anemone City)
-- [ ] **WRECK-04**: Paginas de spots adicionales hasta completar cluster de pecios/spots (~5-8 paginas)
+- [x] **WRECK-01**: Pagina experta de SS Thistlegorm (historia, buceo, profundidad, nivel, que ver)
+- [x] **WRECK-02**: Pagina experta de Abu Nuhas (Giannis D, Carnatic, Tile Wreck, Kimon M)
+- [x] **WRECK-03**: Pagina experta de Ras Mohammed (Shark & Yolanda Reef, Anemone City)
+- [x] **WRECK-04**: Paginas de spots adicionales hasta completar cluster de pecios/spots (~5-8 paginas)
 
 ### Route Comparisons
 
-- [ ] **COMP-01**: Comparativa Ruta Norte vs Ruta Brothers
-- [ ] **COMP-02**: Comparativa salir desde Hurghada vs salir desde Sharm el-Sheikh
-- [ ] **COMP-03**: Guia "mejor ruta segun tu nivel de buceo"
+- [x] **COMP-01**: Comparativa Ruta Norte vs Ruta Brothers
+- [x] **COMP-02**: Comparativa salir desde Hurghada vs salir desde Sharm el-Sheikh
+- [x] **COMP-03**: Guia "mejor ruta segun tu nivel de buceo"
 
 ### Friction Content
 
-- [ ] **FRIC-01**: Que llevar a un liveaboard (packing list completo)
-- [ ] **FRIC-02**: Requisitos y certificaciones minimas para bucear en el Mar Rojo
-- [ ] **FRIC-03**: Seguridad en buceo: seguro, camara hiperbarica, protocolos
-- [ ] **FRIC-04**: Logistica: visa Egipto, como llegar a Hurghada, transfers, propinas
+- [x] **FRIC-01**: Que llevar a un liveaboard (packing list completo)
+- [x] **FRIC-02**: Requisitos y certificaciones minimas para bucear en el Mar Rojo
+- [x] **FRIC-03**: Seguridad en buceo: seguro, camara hiperbarica, protocolos
+- [x] **FRIC-04**: Logistica: visa Egipto, como llegar a Hurghada, transfers, propinas
 
 ### Content Quality & Authority
 
-- [ ] **AUTH-01**: Cada pagina cita al menos 2-3 fuentes autoritativas (PADI, SSI, DAN, NOAA, autoridades egipcias, guias de buceo reconocidas) con enlaces externos
-- [ ] **AUTH-02**: Seccion de fuentes/referencias al final de cada pagina experta (pecios, seguridad, logistica)
+- [x] **AUTH-01**: Cada pagina cita al menos 2-3 fuentes autoritativas (PADI, SSI, DAN, NOAA, autoridades egipcias, guias de buceo reconocidas) con enlaces externos
+- [x] **AUTH-02**: Seccion de fuentes/referencias al final de cada pagina experta (pecios, seguridad, logistica)
 
 ### Cluster Infrastructure
 
@@ -297,23 +297,23 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 | CLEAN-03 | Phase 22 | Complete |
 | PLAN-01 | Phase 23 | Complete |
 | PLAN-02 | Phase 23 | Complete |
-| WRECK-01 | Phase 24 | Pending |
-| WRECK-02 | Phase 24 | Pending |
-| WRECK-03 | Phase 24 | Pending |
-| WRECK-04 | Phase 24 | Pending |
-| COMP-01 | Phase 25 | Pending |
-| COMP-02 | Phase 25 | Pending |
-| COMP-03 | Phase 25 | Pending |
-| FRIC-01 | Phase 26 | Pending |
-| FRIC-02 | Phase 26 | Pending |
-| FRIC-03 | Phase 26 | Pending |
-| FRIC-04 | Phase 26 | Pending |
+| WRECK-01 | Phase 24 | Complete |
+| WRECK-02 | Phase 24 | Complete |
+| WRECK-03 | Phase 24 | Complete |
+| WRECK-04 | Phase 24 | Complete |
+| COMP-01 | Phase 25 | Complete |
+| COMP-02 | Phase 25 | Complete |
+| COMP-03 | Phase 25 | Complete |
+| FRIC-01 | Phase 26 | Complete |
+| FRIC-02 | Phase 26 | Complete |
+| FRIC-03 | Phase 26 | Complete |
+| FRIC-04 | Phase 26 | Complete |
 | CLUST-01 | Phase 27 | Pending |
 | CLUST-02 | Phase 27 | Pending |
 | CLUST-03 | Phase 27 | Pending |
 | MON-01 | Phase 27 | Pending |
-| AUTH-01 | Phase 24, 25, 26 | Pending |
-| AUTH-02 | Phase 24, 25, 26 | Pending |
+| AUTH-01 | Phase 24, 25, 26 | Complete |
+| AUTH-02 | Phase 24, 25, 26 | Complete |
 
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13
@@ -325,4 +325,4 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-08 after v4.0 Content SEO roadmap*
+*Last updated: 2026-03-08 after Phase 24 completion (WRECK-01-04, AUTH-01-02 done)*

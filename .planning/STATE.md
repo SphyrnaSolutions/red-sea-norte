@@ -11,10 +11,10 @@ See: .planning/PROJECT.md (updated 2026-03-08)
 
 Phase: 27 of 27 (Cluster Wiring & Monitoring)
 Plan: pending
-Status: Phase 26 complete, advancing to 27
-Last activity: 2026-03-08 -- 11 content pages published in Wagtail CMS (5 logistica + 6 vida-a-bordo)
+Status: Phase 24 complete, advancing to 27
+Last activity: 2026-03-08 -- 11 wreck/spot pages published in Wagtail CMS (5 pecios + 6 destinos)
 
-Progress: [================    ] 80% (v4.0)
+Progress: [==================  ] 90% (v4.0)
 
 ## Accumulated Context
 
@@ -32,6 +32,7 @@ Progress: [================    ] 80% (v4.0)
 - [v4.0-P25]: Content published via populate_comparisons.py management command (same pattern as populate_blog.py)
 - [v4.0-P26]: 11 pages published: 5 logistica (IDs 123-127) + 6 vida-a-bordo (IDs 131-136) via populate scripts
 - [v4.0-P26]: SSH stdin pipe to docker exec manage.py shell confirmed as reliable content deployment pattern
+- [v4.0-P24]: 11 wreck/spot pages published: 5 pecios (IDs 137-141) + 6 destinos (IDs 142-147) via populate_phase24 commands
 
 ### Pending Todos
 
@@ -47,4 +48,4 @@ Progress: [================    ] 80% (v4.0)
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: Phase 26 complete -- 11 content pages live in Wagtail (5 logistica + 6 vida-a-bordo), ready for Phase 27 (Cluster Wiring)
+Stopped at: Phase 24 complete -- 11 wreck/spot pages live in Wagtail (5 pecios + 6 destinos), ready for Phase 27 (Cluster Wiring)

@@ -75,7 +75,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 ### v4.0 Content SEO
 
 - [x] **Phase 23: Content Planning & Keyword Map** - Mapa de 30 paginas con keyword target, cluster assignment, y estrategia de internal linking (completed 2026-03-08)
-- [ ] **Phase 24: Wreck & Spot Content** - Contenido experto por pecio/spot: Thistlegorm, Abu Nuhas, Ras Mohammed, y spots adicionales (~5-8 paginas)
+- [x] **Phase 24: Wreck & Spot Content** - Contenido experto por pecio/spot: 11 paginas (5 pecios + 6 destinos) publicadas en Wagtail CMS (completed 2026-03-08)
 - [x] **Phase 25: Route Comparisons** - Comparativas de rutas y guia por nivel de buceo (3 paginas) (completed 2026-03-08)
 - [x] **Phase 26: Friction & Logistics Content** - Contenido informacional de friccion y vida-a-bordo: 11 paginas (5 logistica + 6 vida-a-bordo) (completed 2026-03-08)
 - [ ] **Phase 27: Cluster Wiring & Monitoring** - Paginas pillar, internal links bidireccionales, breadcrumbs de cluster, y deteccion de canibalizacion
@@ -174,7 +174,11 @@ Plans:
   5. Todas las paginas de pecios/spots siguen la plantilla SEO estandar (H1 con keyword, ToC, interlinks, schema) y estan publicadas en Wagtail
   6. Cada pagina cita al menos 2-3 fuentes autoritativas (PADI, SSI, NOAA, guias nauticas, registros historicos) con enlaces externos
   7. Cada pagina experta incluye seccion de fuentes/referencias al final
-**Plans**: TBD
+**Plans:** 3/3 plans complete
+Plans:
+- [x] 24-01-PLAN.md -- Create populate_phase24_pecios.py management command (5 wreck posts)
+- [x] 24-02-PLAN.md -- Create populate_phase24_destinos.py management command (6 destination posts)
+- [x] 24-03-PLAN.md -- Deploy to production Wagtail, verify API, trigger ISR revalidation
 
 ### Phase 25: Route Comparisons
 **Goal**: Los usuarios pueden comparar rutas de vida a bordo de forma objetiva para decidir cual reservar segun su nivel, intereses y punto de salida
@@ -246,7 +250,7 @@ Plans:
 | 21. Blog & Rutas Performance | v3.2 | 1/1 | Complete | 2026-03-08 |
 | 22. Content & Config Cleanup | v3.2 | 1/1 | Complete | 2026-03-08 |
 | 23. Content Planning & Keyword Map | 1/1 | Complete    | 2026-03-08 | - |
-| 24. Wreck & Spot Content | v4.0 | 0/? | Not started | - |
+| 24. Wreck & Spot Content | v4.0 | 3/3 | Complete | 2026-03-08 |
 | 25. Route Comparisons | 0/3 | Complete    | 2026-03-08 | - |
 | 26. Friction & Logistics Content | v4.0 | 2/2 | Complete | 2026-03-08 |
 | 27. Cluster Wiring & Monitoring | v4.0 | 0/? | Not started | - |
