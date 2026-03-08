@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
 }
 
-// Render on demand, fetch-level caching in client.ts handles ISR
-export const dynamic = 'force-dynamic'
+// ISR: revalidate every 30 minutes (matches rutas data layer TTL)
+export const revalidate = 1800
 
 export default async function RutasPage() {
   const rutas = await getAllRutasData()
