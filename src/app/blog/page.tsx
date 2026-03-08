@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getAllBlogPostsData } from "@/lib/data"
+import { getAllBlogPostsListingData } from "@/lib/data"
 import BlogListingClient from "./blog-listing-client"
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export const revalidate = 600
 
 export default async function BlogListingPage() {
-  const posts = await getAllBlogPostsData()
+  const posts = await getAllBlogPostsListingData()
 
   return <BlogListingClient posts={posts} />
 }
