@@ -602,6 +602,7 @@ export function mapRutaPage(wagtailPage: WagtailRutaPage): RutaData {
   return {
     slug: wagtailPage.meta.slug,
     title: wagtailPage.title,
+    lastPublishedAt: wagtailPage.meta.last_published_at || wagtailPage.meta.first_published_at,
     hero,
     storyIntro,
     infoCards,

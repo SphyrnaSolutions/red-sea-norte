@@ -3,20 +3,21 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.c
 /** Static pages sitemap -- homepage, listing pages, privacy policy */
 export async function GET() {
   const staticPages = [
-    BASE_URL,
-    `${BASE_URL}/blog`,
-    `${BASE_URL}/rutas`,
-    `${BASE_URL}/cursos`,
-    `${BASE_URL}/experiencias`,
-    `${BASE_URL}/politica-de-privacidad`,
+    { loc: BASE_URL, lastmod: '2026-03-08' },
+    { loc: `${BASE_URL}/blog`, lastmod: '2026-03-08' },
+    { loc: `${BASE_URL}/rutas`, lastmod: '2026-03-08' },
+    { loc: `${BASE_URL}/cursos`, lastmod: '2026-03-08' },
+    { loc: `${BASE_URL}/experiencias`, lastmod: '2026-03-08' },
+    { loc: `${BASE_URL}/politica-de-privacidad`, lastmod: '2026-03-08' },
   ]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticPages
   .map(
-    (loc) => `  <url>
-    <loc>${loc}</loc>
+    (page) => `  <url>
+    <loc>${page.loc}</loc>
+    <lastmod>${page.lastmod}</lastmod>
   </url>`
   )
   .join('\n')}

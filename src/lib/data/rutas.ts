@@ -58,14 +58,14 @@ export async function getAllRutasSlugsData() {
     })
     return rutas.map(r => ({
       slug: r.slug,
-      lastModified: undefined as string | undefined,
+      lastModified: r.lastPublishedAt || undefined,
     }))
   } catch (error) {
     logDataError(error, 'getAllRutasSlugsData')
     if (shouldUseFallback(error, 'rutas')) {
       return getAllMockRutas().map(r => ({
         slug: r.slug,
-        lastModified: undefined as string | undefined,
+        lastModified: r.lastPublishedAt || '2026-03-08',
       }))
     }
     return []
