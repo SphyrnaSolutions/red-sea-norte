@@ -4,10 +4,10 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { images } from "@/lib/constants/images"
-import type { BlogPost } from "@/lib/mock-data/types"
+import type { BlogPostListing } from "@/lib/mock-data/types"
 
 interface BlogListingClientProps {
-  posts: BlogPost[]
+  posts: BlogPostListing[]
 }
 
 export default function BlogListingClient({ posts }: BlogListingClientProps) {
@@ -143,7 +143,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
    Inline Card Components
    =========================== */
 
-function FeaturedCard({ post }: { post: BlogPost }) {
+function FeaturedCard({ post }: { post: BlogPostListing }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -207,7 +207,7 @@ function FeaturedCard({ post }: { post: BlogPost }) {
   )
 }
 
-function SolidCard({ post }: { post: BlogPost }) {
+function SolidCard({ post }: { post: BlogPostListing }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -272,7 +272,7 @@ function SolidCard({ post }: { post: BlogPost }) {
   )
 }
 
-function ImageCard({ post }: { post: BlogPost }) {
+function ImageCard({ post }: { post: BlogPostListing }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -331,7 +331,7 @@ function ImageCard({ post }: { post: BlogPost }) {
   )
 }
 
-function DarkCard({ post }: { post: BlogPost }) {
+function DarkCard({ post }: { post: BlogPostListing }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}

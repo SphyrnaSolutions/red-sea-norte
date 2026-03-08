@@ -27,6 +27,7 @@ import type {
 import type {
   HomepageData,
   BlogPost,
+  BlogPostListing,
   RutaData,
   ExperienciaData,
   OfertaData,
@@ -92,8 +93,42 @@ export async function getBlogPost(slug: string, config?: FetchConfig): Promise<B
  * Obtener slugs de todos los posts (para generateStaticParams)
  */
 export async function getAllBlogPostSlugs(config?: FetchConfig): Promise<string[]> {
-  const pages = await getPages<WagtailBlogPostPage>('blog.BlogPostPage', undefined, config)
+  const listingFields = 'title,excerpt,published_at,read_time,author,category,hero_image,hero_alt'
+  const pages = await getPages<WagtailBlogPostPage>(
+    'blog.BlogPostPage',
+    undefined,
+    { ...config, fields: listingFields }
+  )
   return pages.map(page => page.meta.slug)
+}
+
+/**
+ * Obtener todos los posts sin body (para listing page)
+ * Requests only listing fields to avoid serializing full StreamField bodies.
+ */
+export async function getAllBlogPostsListing(config?: FetchConfig): Promise<BlogPostListing[]> {
+  const listingFields = 'title,excerpt,published_at,read_time,author,category,hero_image,hero_alt'
+  const pages = await getPages<WagtailBlogPostPage>(
+    'blog.BlogPostPage',
+    undefined,
+    { ...config, fields: listingFields }
+  )
+
+  return pages
+    .map(page => {
+      const full = mapBlogPost(page)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { body, ...listing } = full
+      return listing
+    })
+    .sort((a, b) => {
+      const aTime = Date.parse(a.publishedAt || '')
+      const bTime = Date.parse(b.publishedAt || '')
+      if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0
+      if (Number.isNaN(aTime)) return 1
+      if (Number.isNaN(bTime)) return -1
+      return bTime - aTime
+    })
 }
 
 // ============================================================================

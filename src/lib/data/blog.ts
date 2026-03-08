@@ -1,4 +1,4 @@
-import { getAllBlogPosts, getBlogPost } from '@/lib/wagtail/fetchers'
+import { getAllBlogPosts, getAllBlogPostsListing, getBlogPost } from '@/lib/wagtail/fetchers'
 import { blogPosts as mockPosts } from '@/lib/mock-data/blog-posts'
 import { shouldUseFallback, logDataError } from './config'
 
@@ -15,6 +15,28 @@ export async function getAllBlogPostsData() {
     if (shouldUseFallback(error, 'blog')) {
       console.warn('[Data Layer] Using mock data fallback for blog posts')
       return mockPosts
+    }
+    throw error
+  }
+}
+
+/**
+ * Lightweight listing data without body content.
+ * Reduces /blog/ page payload from ~451KB to ~50KB.
+ */
+export async function getAllBlogPostsListingData() {
+  try {
+    const data = await getAllBlogPostsListing({
+      revalidate: 600,
+      tags: ['blog', 'blog-list'],
+    })
+    if (!data || data.length === 0) throw new Error('No blog posts received from API')
+    return data
+  } catch (error) {
+    logDataError(error, 'getAllBlogPostsListingData')
+    if (shouldUseFallback(error, 'blog')) {
+      console.warn('[Data Layer] Using mock data fallback for blog listing')
+      return mockPosts.map(({ body, ...rest }) => rest)
     }
     throw error
   }
@@ -54,7 +76,7 @@ export async function getBlogPostData(slug: string) {
  */
 export async function getAllBlogPostSlugsData() {
   try {
-    const posts = await getAllBlogPosts({
+    const posts = await getAllBlogPostsListing({
       revalidate: 600,
       tags: ['blog', 'blog-list'],
     })

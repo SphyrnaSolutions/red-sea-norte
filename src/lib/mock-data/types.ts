@@ -283,6 +283,8 @@ export interface BlogPost {
   readTime?: string
 }
 
+export type BlogPostListing = Omit<BlogPost, 'body'>
+
 export interface BlogListingData {
   hero: HeroData
   featuredPost: BlogPost
@@ -388,6 +390,7 @@ export interface ResourceLinkItem {
 export interface RutaData {
   slug: string
   title: string
+  lastPublishedAt?: string
   hero: HeroData
   storyIntro: StoryIntro
   infoCards: Array<{

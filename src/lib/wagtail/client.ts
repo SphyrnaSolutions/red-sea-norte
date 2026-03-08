@@ -15,6 +15,7 @@ const SITE_HOSTNAME = process.env.NEXT_PUBLIC_SITE_HOSTNAME || 'localhost'
 export interface FetchConfig {
   revalidate?: number | false
   tags?: string[]
+  fields?: string  // Override default fields: '*'
 }
 
 export interface WagtailAPIResponse<T> {
@@ -115,7 +116,7 @@ export async function getPages<T extends WagtailPage>(
       {
         type,
         site: SITE_HOSTNAME,
-        fields: '*',
+        fields: config?.fields || '*',
         limit: String(BATCH_SIZE),
         offset: String(offset),
         ...params,
