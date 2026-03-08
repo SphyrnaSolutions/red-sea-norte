@@ -74,7 +74,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 
 ### v4.0 Content SEO
 
-- [ ] **Phase 23: Content Planning & Keyword Map** - Mapa de 30 paginas con keyword target, cluster assignment, y estrategia de internal linking
+- [x] **Phase 23: Content Planning & Keyword Map** - Mapa de 30 paginas con keyword target, cluster assignment, y estrategia de internal linking (completed 2026-03-08)
 - [ ] **Phase 24: Wreck & Spot Content** - Contenido experto por pecio/spot: Thistlegorm, Abu Nuhas, Ras Mohammed, y spots adicionales (~5-8 paginas)
 - [ ] **Phase 25: Route Comparisons** - Comparativas de rutas y guia por nivel de buceo (3 paginas)
 - [ ] **Phase 26: Friction & Logistics Content** - Contenido informacional de friccion: packing list, certificaciones, seguridad, logistica (4 paginas)
@@ -158,7 +158,7 @@ Plans:
   2. Ninguna keyword target se solapa con los primary_keyword de los 25 blog posts existentes ni las 5 rutas (sin canibalizacion planificada)
   3. Existe un mapa de internal linking que define que paginas nuevas enlazan a que contenido existente y viceversa, con anchor text propuesto
   4. Las 30 paginas cubren los 5 clusters tematicos con al menos 3 paginas por cluster
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 23-01-PLAN.md -- Content map (30 pages) with keyword targets, cluster assignment, and internal linking strategy
 
@@ -238,7 +238,7 @@ Plans:
 | 20. Schema Consolidation | v3.2 | 1/1 | Complete | 2026-03-08 |
 | 21. Blog & Rutas Performance | v3.2 | 1/1 | Complete | 2026-03-08 |
 | 22. Content & Config Cleanup | v3.2 | 1/1 | Complete | 2026-03-08 |
-| 23. Content Planning & Keyword Map | v4.0 | 0/1 | In progress | - |
+| 23. Content Planning & Keyword Map | 1/1 | Complete   | 2026-03-08 | - |
 | 24. Wreck & Spot Content | v4.0 | 0/? | Not started | - |
 | 25. Route Comparisons | v4.0 | 0/? | Not started | - |
 | 26. Friction & Logistics Content | v4.0 | 0/? | Not started | - |
