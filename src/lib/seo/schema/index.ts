@@ -5,6 +5,7 @@ import { buildArticleSchema } from './article'
 
 export { buildTouristTripSchema } from './tourist-trip'
 export { buildArticleSchema } from './article'
+export { buildCollectionPageSchema } from './collection-page'
 // FAQPage schemas should call buildFAQPageSchema directly with their FAQ items
 export { buildFAQPageSchema } from './faq-page'
 export { buildBreadcrumbSchema } from './breadcrumb'
@@ -17,6 +18,10 @@ interface SchemaInput {
   baseUrl: string
 }
 
+/**
+ * Generic schema generator -- backward-compat fallback.
+ * For Article pages, prefer calling buildArticleSchema directly with urlSlug param.
+ */
 export function generateSchema(
   input: SchemaInput
 ): WithContext<TouristTrip | Article> | null {
