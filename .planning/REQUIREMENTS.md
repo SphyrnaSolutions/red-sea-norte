@@ -60,23 +60,50 @@ Requirements for replacing stock content with real product data and images.
 - [ ] **AUDIT-02**: Corregir datos incorrectos o inventados en posts existentes
 - [ ] **AUDIT-03**: Identificar posts thin content para reescribir o fusionar
 
+## v3.0 Requirements
+
+Requirements for SEO operations, sitemaps, technical optimization and content media.
+
+### SEO Tooling
+
+- [ ] **TOOL-01**: Dar de alta y verificar buceoenelmarrojo.com en Google Search Console
+- [ ] **TOOL-02**: Dar de alta y verificar buceoenelmarrojo.com en Bing Webmaster Tools
+- [ ] **TOOL-03**: Crear propiedad GA4 para buceoenelmarrojo.com e instalar tag en el frontend
+- [ ] **TOOL-04**: Enviar sitemaps divididos a GSC y Bing
+
+### Sitemaps & Indexing
+
+- [ ] **SITE-01**: Convertir sitemap unico en sitemap index con sitemaps separados por categoria (blog, rutas, ofertas, cursos, experiencias, pages)
+- [ ] **SITE-02**: Configurar 301 redirects para 5 posts merged (giannis-d, dunraven, carnatic, camarotes-comida-wifi, shark-yolanda)
+- [ ] **SITE-03**: Excluir posts merged/redirect del sitemap
+- [ ] **SITE-04**: Crear sitemap de imagenes para indexacion de fotos en Google Images
+
+### Technical SEO
+
+- [ ] **TECH-01**: Webhook Wagtail para ISR on-demand al publicar contenido
+- [ ] **TECH-02**: Self-host fuentes Satoshi/Clash Display con next/font/local (eliminar FOUT)
+- [ ] **TECH-03**: Eliminar draftMode() de fetchers para habilitar ISR real (homepage y blog)
+- [ ] **TECH-04**: Core Web Vitals optimization pass (LCP, CLS, INP)
+- [ ] **TECH-05**: Configurar Cloudflare proxy para cache, compresion y rendimiento
+
+### Content de Karlos (bloqueado por entrega)
+
+- [ ] **MEDIA-01**: Recibir 31-50 fotos de pecios, spots y formacion de Karlos, optimizar y subir a Wagtail CMS
+- [ ] **MEDIA-02**: Recibir 6 videos, subir a YouTube, embeber en posts relevantes
+- [ ] **MEDIA-03**: Asignar hero images correctas a los 25 posts y persistir mapping en populate_blog.py
+
 ## Future Requirements
 
-### Contenido SEO (v3.0)
+### Contenido SEO (v3.1)
 
 - **CONT-01**: 30 primeras paginas de contenido SEO en clusters
 - **CONT-02**: Contenido por pecio/spot con profundidad experta
 - **CONT-03**: Comparativas de rutas (Norte vs Brothers, Hurghada vs Sharm)
 - **CONT-04**: Contenido de friccion (que llevar, requisitos, certificaciones)
 
-### Tecnico (v3.0)
+### Monitorizacion (v3.1)
 
-- **TECH-01**: Webhook Wagtail para ISR on-demand al publicar contenido
-- **TECH-02**: Fix Wagtail 500s durante Docker build
-- **TECH-03**: Core Web Vitals optimization pass
-- **TECH-04**: Monitorizacion de canibalizacion de keywords
-- **TECH-05**: Eliminar draftMode() de fetchers para habilitar ISR real (homepage y blog)
-- **TECH-06**: Self-host fuentes Satoshi/Clash Display con next/font/local (eliminar FOUT)
+- **MON-01**: Monitorizacion de canibalizacion de keywords
 
 ## Out of Scope
 
@@ -121,7 +148,8 @@ Requirements for replacing stock content with real product data and images.
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13
 - v2.1 requirements: 12 total -- mapped: 12
+- v3.0 requirements: 16 total -- mapped: 0 (pending roadmap)
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-07 after v2.1 roadmap creation*
+*Last updated: 2026-03-08 after v3.0 requirements definition*
