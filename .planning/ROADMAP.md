@@ -90,7 +90,9 @@ Plans:
   1. /contacto devuelve HTTP 200 con el formulario de contacto funcional y visible
   2. URLs de blog con tildes en el slug (ej: /blog/que-es-un-liveaboard) redirigen 301 a la version correcta o el CMS sirve el contenido sin error
   3. El footer no contiene enlaces a /ofertas ni /terminos (ambos eliminados por devolver 404)
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 19-01-PLAN.md -- Create /contacto page, add accented slug 301 redirects, clean footer dead links
 
 ### Phase 20: Schema Consolidation
 **Goal**: Todas las paginas usan los schema builders centralizados y el structured data es completo y correcto para rich results
@@ -152,7 +154,7 @@ Plans:
 | 16. Sitemap Fixes | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 17. On-Page & Performance | v3.1 | 1/1 | Complete | 2026-03-08 |
 | 18. Blog SSR Fix | v3.2 | 0/1 | Not started | - |
-| 19. Routing & Dead Links | v3.2 | 0/? | Not started | - |
+| 19. Routing & Dead Links | v3.2 | 0/1 | Not started | - |
 | 20. Schema Consolidation | v3.2 | 0/1 | Not started | - |
 | 21. Blog & Rutas Performance | v3.2 | 0/1 | Not started | - |
 | 22. Content & Config Cleanup | v3.2 | 0/1 | Not started | - |
