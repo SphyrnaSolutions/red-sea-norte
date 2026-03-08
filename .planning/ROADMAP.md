@@ -158,7 +158,9 @@ Plans:
   2. Ninguna keyword target se solapa con los primary_keyword de los 25 blog posts existentes ni las 5 rutas (sin canibalizacion planificada)
   3. Existe un mapa de internal linking que define que paginas nuevas enlazan a que contenido existente y viceversa, con anchor text propuesto
   4. Las 30 paginas cubren los 5 clusters tematicos con al menos 3 paginas por cluster
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 23-01-PLAN.md -- Content map (30 pages) with keyword targets, cluster assignment, and internal linking strategy
 
 ### Phase 24: Wreck & Spot Content
 **Goal**: Los usuarios encuentran contenido experto y detallado sobre cada pecio y spot de buceo principal del Mar Rojo, con informacion que no existe en la competencia en espanol
@@ -236,7 +238,7 @@ Plans:
 | 20. Schema Consolidation | v3.2 | 1/1 | Complete | 2026-03-08 |
 | 21. Blog & Rutas Performance | v3.2 | 1/1 | Complete | 2026-03-08 |
 | 22. Content & Config Cleanup | v3.2 | 1/1 | Complete | 2026-03-08 |
-| 23. Content Planning & Keyword Map | v4.0 | 0/? | Not started | - |
+| 23. Content Planning & Keyword Map | v4.0 | 0/1 | In progress | - |
 | 24. Wreck & Spot Content | v4.0 | 0/? | Not started | - |
 | 25. Route Comparisons | v4.0 | 0/? | Not started | - |
 | 26. Friction & Logistics Content | v4.0 | 0/? | Not started | - |
