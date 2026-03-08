@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Logo } from "@/components/atoms/Logo"
+import { CookieSettingsButton } from "@/components/atoms/CookieSettingsButton"
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
 
 const footerLinks = {
@@ -137,6 +138,7 @@ export function Footer() {
               <Link href="/politica-de-privacidad" className="hover:text-white transition-colors">
                 Política de Privacidad
               </Link>
+              <CookieSettingsButton />
             </div>
           </div>
         </div>

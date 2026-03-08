@@ -1,11 +1,18 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import Link from "next/link"
 
 declare function gtag(...args: unknown[]): void
 
 const COOKIE_CONSENT_KEY = "cookie-consent"
+
+/** Re-open the cookie consent banner from anywhere (e.g. footer link) */
+export function useCookieConsentReset() {
+  return useCallback(() => {
+    window.dispatchEvent(new CustomEvent("cookie-consent-reopen"))
+  }, [])
+}
 
 export function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false)
@@ -21,6 +28,12 @@ export function CookieConsent() {
       setShowBanner(true)
     }
     // If "rejected", do nothing -- GA4 stays in denied mode
+
+    function handleReopen() {
+      setShowBanner(true)
+    }
+    window.addEventListener("cookie-consent-reopen", handleReopen)
+    return () => window.removeEventListener("cookie-consent-reopen", handleReopen)
   }, [])
 
   function handleAccept() {
