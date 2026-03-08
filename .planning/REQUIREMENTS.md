@@ -152,9 +152,9 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 
 ### Performance
 
-- [ ] **PERF-03**: /rutas sin force-dynamic, cacheable con ISR (eliminar export const dynamic)
-- [ ] **PERF-04**: /blog listing page con canonical tag correcto
-- [ ] **PERF-05**: /blog title y meta description reflejan contenido de blog (no centro de buceo)
+- [x] **PERF-03**: /rutas sin force-dynamic, cacheable con ISR (eliminar export const dynamic)
+- [x] **PERF-04**: /blog listing page con canonical tag correcto
+- [x] **PERF-05**: /blog title y meta description reflejan contenido de blog (no centro de buceo)
 
 ### Cleanup
 
@@ -256,9 +256,9 @@ Requirements derived from second SEO audit (2026-03-08, score 57/100).
 | SCHEMA-07 | Phase 20 | Pending |
 | SCHEMA-08 | Phase 20 | Pending |
 | SCHEMA-09 | Phase 20 | Pending |
-| PERF-03 | Phase 21 | Pending |
-| PERF-04 | Phase 21 | Pending |
-| PERF-05 | Phase 21 | Pending |
+| PERF-03 | Phase 21 | Complete |
+| PERF-04 | Phase 21 | Complete |
+| PERF-05 | Phase 21 | Complete |
 | CLEAN-01 | Phase 22 | Pending |
 | CLEAN-02 | Phase 22 | Pending |
 | CLEAN-03 | Phase 22 | Pending |

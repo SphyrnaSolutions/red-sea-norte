@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Posicionar la web como referencia SEO en espanol para buceo en el Mar Rojo y convertir trafico en leads via Odoo CRM
-**Current focus:** v3.2 SEO Audit Fixes II -- Phase 18 (Blog SSR Fix)
+**Current focus:** v3.2 SEO Audit Fixes II -- Phase 21 complete (Blog & Rutas Performance)
 
 ## Current Position
 
-Phase: 18 of 22 (Blog SSR Fix)
-Plan: Not yet planned
-Status: Ready to plan
-Last activity: 2026-03-08 -- Roadmap created for v3.2 (5 phases, 16 requirements)
+Phase: 21 of 22 (Blog & Rutas Performance)
+Plan: 01 of 01 -- complete
+Status: Phase 21 complete
+Last activity: 2026-03-08 -- Phase 21 Plan 01 executed (rutas ISR + blog metadata)
 
-Progress: [==================░░] 90% (milestones v1.0-v3.1 complete, v3.2 starting)
+Progress: [==================░░] 92% (milestones v1.0-v3.1 complete, v3.2 phases 18-21 done)
 
 ## Accumulated Context
 
@@ -26,6 +26,7 @@ Progress: [==================░░] 90% (milestones v1.0-v3.1 complete, v3.2 st
 - [v3.2]: /contacto devuelve 404 -- pagina de conversion principal rota
 - [v3.2]: Blog listing carga 451KB (89% payload no usado)
 - [v3.2]: Schema builders existen en src/lib/seo/schema/ pero paginas construyen inline
+- [Phase 21]: Used static Metadata export for /blog listing (no dynamic params)
 
 ### Pending Todos
 
@@ -40,4 +41,4 @@ Progress: [==================░░] 90% (milestones v1.0-v3.1 complete, v3.2 st
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: v3.2 roadmap created, ready to plan Phase 18
+Stopped at: Completed 21-01-PLAN.md (Blog & Rutas Performance)

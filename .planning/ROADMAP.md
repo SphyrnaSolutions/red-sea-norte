@@ -65,7 +65,7 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
 - [ ] **Phase 18: Blog SSR Fix** - Blog body content renderiza en server HTML y listing optimizado a <60KB
 - [ ] **Phase 19: Routing & Dead Links** - /contacto funcional, slugs con tildes corregidos, footer links limpios
 - [ ] **Phase 20: Schema Consolidation** - Schema builders reutilizados en todas las paginas, listings con JSON-LD, BlogPosting completo
-- [ ] **Phase 21: Blog & Rutas Performance** - /rutas cacheable con ISR, /blog con canonical y meta tags correctos
+- [x] **Phase 21: Blog & Rutas Performance** - /rutas cacheable con ISR, /blog con canonical y meta tags correctos (completed 2026-03-08)
 - [ ] **Phase 22: Content & Config Cleanup** - Notas internas eliminadas, robots.txt limpio, lastmod en sitemaps
 
 ## Phase Details
@@ -116,7 +116,7 @@ Plans:
   1. /rutas no tiene export const dynamic = "force-dynamic" y es cacheable con ISR (response headers muestran cache HIT)
   2. /blog incluye canonical tag apuntando a https://buceoenelmarrojo.com/blog/
   3. /blog tiene title y meta description que reflejan contenido de blog (no "centro de buceo" ni texto generico)
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 21-01-PLAN.md -- Remove force-dynamic from /rutas, add blog-specific metadata with canonical to /blog
 
@@ -156,5 +156,5 @@ Plans:
 | 18. Blog SSR Fix | v3.2 | 0/1 | Not started | - |
 | 19. Routing & Dead Links | v3.2 | 0/1 | Not started | - |
 | 20. Schema Consolidation | v3.2 | 0/1 | Not started | - |
-| 21. Blog & Rutas Performance | v3.2 | 0/1 | Not started | - |
+| 21. Blog & Rutas Performance | 1/1 | Complete   | 2026-03-08 | - |
 | 22. Content & Config Cleanup | v3.2 | 0/1 | Not started | - |
