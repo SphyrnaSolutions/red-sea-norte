@@ -108,7 +108,7 @@ Plans:
 | 7. Real Images | v2.1 | 2/2 | Complete | 2026-03-07 |
 | 8. Wagtail CMS Migration | v2.1 | 3/3 | Complete | 2026-03-07 |
 | 9. Blog Audit | v2.1 | 1/1 | Complete | 2026-03-07 |
-| 10. SEO Tooling Setup | 1/1 | Complete   | 2026-03-08 | - |
+| 10. SEO Tooling Setup | 1/1 | Complete    | 2026-03-08 | - |
 | 11. Sitemaps & Redirects | v3.0 | 0/? | Not started | - |
 | 12. Technical SEO | v3.0 | 0/? | Not started | - |
 | 13. Content Media | v3.0 | 0/? | Blocked | - |
