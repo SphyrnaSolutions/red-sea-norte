@@ -36,6 +36,18 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: securityHeaders,
       },
+      {
+        source: '/fonts/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
     ]
   },
   async redirects() {
@@ -51,17 +63,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.pravatar.cc',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'back.redsea.sphyrnasolutions.com',
         port: '',
         pathname: '/**',
       },
     ],
+    minimumCacheTTL: 2592000,
     qualities: [75, 90],
   },
 };
