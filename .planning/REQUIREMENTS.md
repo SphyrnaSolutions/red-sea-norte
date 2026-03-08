@@ -290,6 +290,23 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 | CLEAN-01 | Phase 22 | Complete |
 | CLEAN-02 | Phase 22 | Complete |
 | CLEAN-03 | Phase 22 | Complete |
+| PLAN-01 | Phase 23 | Pending |
+| PLAN-02 | Phase 23 | Pending |
+| WRECK-01 | Phase 24 | Pending |
+| WRECK-02 | Phase 24 | Pending |
+| WRECK-03 | Phase 24 | Pending |
+| WRECK-04 | Phase 24 | Pending |
+| COMP-01 | Phase 25 | Pending |
+| COMP-02 | Phase 25 | Pending |
+| COMP-03 | Phase 25 | Pending |
+| FRIC-01 | Phase 26 | Pending |
+| FRIC-02 | Phase 26 | Pending |
+| FRIC-03 | Phase 26 | Pending |
+| FRIC-04 | Phase 26 | Pending |
+| CLUST-01 | Phase 27 | Pending |
+| CLUST-02 | Phase 27 | Pending |
+| CLUST-03 | Phase 27 | Pending |
+| MON-01 | Phase 27 | Pending |
 
 **Coverage:**
 - v2.0 requirements: 13 total -- mapped: 13
@@ -297,7 +314,8 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 - v3.0 requirements: 16 total -- mapped: 16
 - v3.1 requirements: 16 total -- mapped: 16
 - v3.2 requirements: 16 total -- mapped: 16
+- v4.0 requirements: 17 total -- mapped: 17
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-08 after v3.2 requirements*
+*Last updated: 2026-03-08 after v4.0 Content SEO roadmap*
