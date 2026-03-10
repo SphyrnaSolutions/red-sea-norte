@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-08)
 ## Current Position
 
 Phase: 27 of 27 (Cluster Wiring & Monitoring)
-Plan: 02 complete (03 next)
-Status: Phase 27 in progress — plan 02 done (keyword cannibalization script)
-Last activity: 2026-03-10 -- keyword cannibalization detection script created and verified
+Plan: 04 complete (05 next)
+Status: Phase 27 in progress — plan 04 done (cluster breadcrumb hierarchy for blog satellite pages)
+Last activity: 2026-03-10 -- breadcrumb system updated with cluster pillar as middle level
 
 Progress: [==================  ] 90% (v4.0)
 
@@ -38,6 +38,8 @@ Progress: [==================  ] 90% (v4.0)
 - [v4.0-P27-01]: SSH must use direct IP (213.239.201.108:22222) not hostname -- Cloudflare blocks port 22222 on domain
 - [v4.0-P27-01]: Large scripts deployed via 'cat file | docker exec -i container manage.py shell' -- stdin redirection through SSH+docker doesn't work
 - [v4.0-P27-01]: ISR revalidation API uses type=blog parameter, not paths parameter
+- [Phase 27]: clusterPillar param optional+nullable in buildBreadcrumbItems — backward compatible, all existing call sites unaffected
+- [Phase 27]: Pillar pages guard (cluster.role !== 'pillar') prevents self-referential breadcrumb hierarchy
 
 ### Pending Todos
 
@@ -53,4 +55,4 @@ Progress: [==================  ] 90% (v4.0)
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Completed 27-01-PLAN.md -- 5 pillar pages deployed to Wagtail CMS (IDs 148-152), cluster architecture complete
+Stopped at: Completed 27-04-PLAN.md -- cluster breadcrumb hierarchy wired for blog satellite pages (CLUST-03 satisfied)
