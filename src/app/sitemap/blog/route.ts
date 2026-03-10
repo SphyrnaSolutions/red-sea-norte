@@ -1,6 +1,6 @@
 import { getAllBlogPostSlugsData } from '@/lib/data'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://buceoenelmarrojo.com'
 
