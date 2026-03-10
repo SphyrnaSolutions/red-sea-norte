@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-08)
 ## Current Position
 
 Phase: 27 of 27 (Cluster Wiring & Monitoring)
-Plan: pending
-Status: Phase 24 complete, advancing to 27
-Last activity: 2026-03-08 -- 11 wreck/spot pages published in Wagtail CMS (5 pecios + 6 destinos)
+Plan: 02 complete (03 next)
+Status: Phase 27 in progress — plan 02 done (keyword cannibalization script)
+Last activity: 2026-03-10 -- keyword cannibalization detection script created and verified
 
 Progress: [==================  ] 90% (v4.0)
 
@@ -33,6 +33,7 @@ Progress: [==================  ] 90% (v4.0)
 - [v4.0-P26]: 11 pages published: 5 logistica (IDs 123-127) + 6 vida-a-bordo (IDs 131-136) via populate scripts
 - [v4.0-P26]: SSH stdin pipe to docker exec manage.py shell confirmed as reliable content deployment pattern
 - [v4.0-P24]: 11 wreck/spot pages published: 5 pecios (IDs 137-141) + 6 destinos (IDs 142-147) via populate_phase24 commands
+- [Phase 27]: Wagtail API requires ?type= filter for custom fields; type-filtered fetch pattern established for scripts
 
 ### Pending Todos
 
@@ -47,5 +48,5 @@ Progress: [==================  ] 90% (v4.0)
 
 ## Session Continuity
 
-Last session: 2026-03-08
-Stopped at: Phase 24 complete -- 11 wreck/spot pages live in Wagtail (5 pecios + 6 destinos), ready for Phase 27 (Cluster Wiring)
+Last session: 2026-03-10
+Stopped at: Completed 27-02-PLAN.md -- keyword cannibalization detection script (scripts/keyword_cannibalization_check.py)

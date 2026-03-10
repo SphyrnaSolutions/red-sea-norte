@@ -221,7 +221,7 @@ Plans:
   2. Los 25 blog posts existentes y las 5 rutas contienen internal links actualizados apuntando a las paginas nuevas relevantes (bidireccional: nuevo enlaza a existente Y existente enlaza a nuevo)
   3. El schema BreadcrumbList de las paginas nuevas refleja la jerarquia de cluster (Home > Cluster Pillar > Pagina) correctamente
   4. Existe un script o proceso documentado que compara primary_keyword de todas las paginas y detecta solapamientos de keyword entre URLs, con output accionable
-**Plans:** 4 plans
+**Plans:** 1/4 plans executed
 Plans:
 - [ ] 27-01-PLAN.md -- Create 5 pillar pages in Wagtail CMS (one per cluster)
 - [ ] 27-02-PLAN.md -- Keyword cannibalization detection script
@@ -258,4 +258,4 @@ Plans:
 | 24. Wreck & Spot Content | v4.0 | 3/3 | Complete | 2026-03-08 |
 | 25. Route Comparisons | 0/3 | Complete    | 2026-03-08 | - |
 | 26. Friction & Logistics Content | v4.0 | 2/2 | Complete | 2026-03-08 |
-| 27. Cluster Wiring & Monitoring | v4.0 | 0/? | Not started | - |
+| 27. Cluster Wiring & Monitoring | 1/4 | In Progress|  | - |
