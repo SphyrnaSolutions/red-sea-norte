@@ -94,6 +94,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const cluster = rawPage ? await resolveCluster(rawPage) : null
   const interlinks = computeInterlinks(cluster, slug)
 
+  // Derive cluster pillar for breadcrumb hierarchy.
+  // Exclude pillar pages from injecting themselves as the middle crumb.
+  const clusterPillar =
+    cluster?.pillar && cluster.role !== 'pillar'
+      ? { title: cluster.pillar.title, url: cluster.pillar.url }
+      : null
+
   // JSON-LD structured data via centralized builder -- uses URL slug, not CMS slug
   const jsonLd = rawPage
     ? buildArticleSchema(rawPage as WagtailBlogPostPage, BASE_URL, slug)
@@ -126,7 +133,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       )}
 
-      <Breadcrumbs items={buildBreadcrumbItems('blog', post.title, slug)} />
+      <Breadcrumbs items={buildBreadcrumbItems('blog', post.title, slug, clusterPillar)} />
 
       {/* Hero Section */}
       <section className="relative h-[600px] max-md:h-[500px] w-full">
