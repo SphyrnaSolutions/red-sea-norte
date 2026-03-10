@@ -40,6 +40,8 @@ Progress: [==================  ] 90% (v4.0)
 - [v4.0-P27-01]: ISR revalidation API uses type=blog parameter, not paths parameter
 - [Phase 27]: clusterPillar param optional+nullable in buildBreadcrumbItems — backward compatible, all existing call sites unaffected
 - [Phase 27]: Pillar pages guard (cluster.role !== 'pillar') prevents self-referential breadcrumb hierarchy
+- [Phase 27]: RutaPage uses resources_items StreamField for related links (not body StreamField) -- StructBlock with title/description/href/label
+- [Phase 27]: 27-03: Bidirectional links injected into 25 blog posts + 5 rutas via rl27- block prefix -- CLUST-02 satisfied
 
 ### Pending Todos
 
