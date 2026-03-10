@@ -221,7 +221,12 @@ Plans:
   2. Los 25 blog posts existentes y las 5 rutas contienen internal links actualizados apuntando a las paginas nuevas relevantes (bidireccional: nuevo enlaza a existente Y existente enlaza a nuevo)
   3. El schema BreadcrumbList de las paginas nuevas refleja la jerarquia de cluster (Home > Cluster Pillar > Pagina) correctamente
   4. Existe un script o proceso documentado que compara primary_keyword de todas las paginas y detecta solapamientos de keyword entre URLs, con output accionable
-**Plans**: TBD
+**Plans:** 4 plans
+Plans:
+- [ ] 27-01-PLAN.md -- Create 5 pillar pages in Wagtail CMS (one per cluster)
+- [ ] 27-02-PLAN.md -- Keyword cannibalization detection script
+- [ ] 27-03-PLAN.md -- Inject bidirectional internal links into 25 blog posts + 5 rutas
+- [ ] 27-04-PLAN.md -- Update BreadcrumbList schema to reflect cluster hierarchy (Home > Pillar > Page)
 
 ## Progress
 
