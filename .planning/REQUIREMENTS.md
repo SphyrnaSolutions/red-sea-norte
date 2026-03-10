@@ -198,13 +198,13 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 
 ### Cluster Infrastructure
 
-- [ ] **CLUST-01**: Paginas pillar creadas para cada cluster (vida a bordo, pecios, destinos, logistica)
+- [x] **CLUST-01**: Paginas pillar creadas para cada cluster (vida a bordo, pecios, destinos, logistica)
 - [ ] **CLUST-02**: Internal links inyectados en contenido existente apuntando a paginas nuevas
 - [ ] **CLUST-03**: Schema BreadcrumbList actualizado para reflejar jerarquia de clusters
 
 ### Monitoring
 
-- [ ] **MON-01**: Script o proceso para detectar canibalizacion de keywords entre paginas
+- [x] **MON-01**: Script o proceso para detectar canibalizacion de keywords entre paginas
 
 ## Future Requirements
 
@@ -308,10 +308,10 @@ Requirements for producing 30 SEO content pages across thematic clusters.
 | FRIC-02 | Phase 26 | Complete |
 | FRIC-03 | Phase 26 | Complete |
 | FRIC-04 | Phase 26 | Complete |
-| CLUST-01 | Phase 27 | Pending |
+| CLUST-01 | Phase 27 | Complete |
 | CLUST-02 | Phase 27 | Pending |
 | CLUST-03 | Phase 27 | Pending |
-| MON-01 | Phase 27 | Pending |
+| MON-01 | Phase 27 | Complete |
 | AUTH-01 | Phase 24, 25, 26 | Complete |
 | AUTH-02 | Phase 24, 25, 26 | Complete |
 

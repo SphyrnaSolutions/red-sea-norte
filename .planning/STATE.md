@@ -34,6 +34,10 @@ Progress: [==================  ] 90% (v4.0)
 - [v4.0-P26]: SSH stdin pipe to docker exec manage.py shell confirmed as reliable content deployment pattern
 - [v4.0-P24]: 11 wreck/spot pages published: 5 pecios (IDs 137-141) + 6 destinos (IDs 142-147) via populate_phase24 commands
 - [Phase 27]: Wagtail API requires ?type= filter for custom fields; type-filtered fetch pattern established for scripts
+- [v4.0-P27-01]: 5 pillar pages deployed (IDs 148-152): pecios, destinos, vida-a-bordo, logistica, rutas -- cluster hub-and-spoke architecture complete
+- [v4.0-P27-01]: SSH must use direct IP (213.239.201.108:22222) not hostname -- Cloudflare blocks port 22222 on domain
+- [v4.0-P27-01]: Large scripts deployed via 'cat file | docker exec -i container manage.py shell' -- stdin redirection through SSH+docker doesn't work
+- [v4.0-P27-01]: ISR revalidation API uses type=blog parameter, not paths parameter
 
 ### Pending Todos
 
@@ -49,4 +53,4 @@ Progress: [==================  ] 90% (v4.0)
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Completed 27-02-PLAN.md -- keyword cannibalization detection script (scripts/keyword_cannibalization_check.py)
+Stopped at: Completed 27-01-PLAN.md -- 5 pillar pages deployed to Wagtail CMS (IDs 148-152), cluster architecture complete
