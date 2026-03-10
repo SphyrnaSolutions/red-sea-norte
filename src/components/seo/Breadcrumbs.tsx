@@ -17,22 +17,34 @@ const CONTENT_TYPE_LABELS: Record<string, string> = {
 
 /**
  * Build breadcrumb items for a content page.
- * Always starts with Inicio, then content type, then current page.
+ * Always starts with Inicio, then content type (or cluster pillar), then current page.
  * The last item carries the page URL for schema accuracy but is rendered non-clickable.
+ *
+ * When clusterPillar is provided (and the current page is not the pillar itself),
+ * the middle crumb becomes the pillar page instead of the content type:
+ *   Inicio > [Pillar Title] > [Current Page]
+ *
+ * Without clusterPillar (or when clusterPillar is null), the original behavior is preserved:
+ *   Inicio > Blog > [Current Page]
  */
 export function buildBreadcrumbItems(
   contentType: string,
   pageTitle: string,
-  pageSlug?: string
+  pageSlug?: string,
+  clusterPillar?: { title: string; url: string } | null
 ): Array<{ name: string; href: string }> {
   const displayName = CONTENT_TYPE_LABELS[contentType] || contentType
   const pageHref = pageSlug
     ? `/${contentType}/${pageSlug}`
     : `/${contentType}`
 
+  const middleItem = clusterPillar
+    ? { name: clusterPillar.title, href: clusterPillar.url }
+    : { name: displayName, href: `/${contentType}` }
+
   return [
     { name: 'Inicio', href: '/' },
-    { name: displayName, href: `/${contentType}` },
+    middleItem,
     { name: pageTitle, href: pageHref },
   ]
 }
