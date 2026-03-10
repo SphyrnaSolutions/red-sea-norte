@@ -258,4 +258,4 @@ Plans:
 | 24. Wreck & Spot Content | v4.0 | 3/3 | Complete | 2026-03-08 |
 | 25. Route Comparisons | 0/3 | Complete    | 2026-03-08 | - |
 | 26. Friction & Logistics Content | v4.0 | 2/2 | Complete | 2026-03-08 |
-| 27. Cluster Wiring & Monitoring | 4/4 | Complete   | 2026-03-10 | - |
+| 27. Cluster Wiring & Monitoring | 4/4 | Complete    | 2026-03-10 | - |
